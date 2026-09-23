@@ -1,0 +1,12 @@
+{
+  "n_cards": 167,
+  "n_claims": 446,
+  "nulled_anchor": 7,
+  "nulled_number": 0,
+  "dropped_papers": 0,
+  "median_claims": 3,
+  "with_pce": 97,
+  "with_certified": 14,
+  "tokens_in": 84,
+  "tokens_out": 163904
+}

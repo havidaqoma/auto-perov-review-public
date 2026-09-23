@@ -1,0 +1,11 @@
+work_key,doi,device_class,t80_hours,stability_protocol,source_quotation
+10.1002/adma.73682,10.1002/adma.73682,all_perovskite_tandem,1080,,Both devices retain approximately 80% of their initial efficiency after 1080 h of continuous operation under one‐sun illumination.
+10.1126/sciadv.aef6596,10.1126/sciadv.aef6596,single_junction,3566,,while encapsulated devices maintained 80% of their initial efficiency after 3566 hours at 85°C under the ISOS-L-2 protocol
+10.1021/acsenergylett.6c01291,10.1021/acsenergylett.6c01291,single_junction,,ISOS-D-1,
+10.1002/anie.5595275,10.1002/anie.5595275,all_perovskite_tandem,500,,retains 80% of its initial efficiency after 500 h of continuous maximum power point tracking under simulated sunlight
+10.1021/acsaem.6c00778,10.1021/acsaem.6c00778,single_junction,,ISOS-D-1,
+10.1002/smll.74278,10.1002/smll.74278,single_junction,,ISOS-L-1,
+10.1021/acs.jpclett.6c01531,10.1021/acs.jpclett.6c01531,single_junction,3600,,"cytosine-based devices achieve a champion power conversion efficiency of 22.4% and demonstrate excellent thermal stability, with over 80% of the initial performance retained after 3600"
+10.1016/j.cej.2026.177834,10.1016/j.cej.2026.177834,single_junction,1000,ISOS-D,Stability tests revealed a T80 > 1000 h for PME-based cells under ISOS-D shelf life test.
+10.1002/smll.74320,10.1002/smll.74320,single_junction,2000,,retaining 80.18% of its initial efficiency after 2000 h under N 2
+10.1021/acsami.6c01472,10.1021/acsami.6c01472,single_junction,,MPP tracking,

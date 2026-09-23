@@ -1,0 +1,3 @@
+role,cli,model,calls_total,calls_shipped,calls_reported,calls_estimated,tokens_in,tokens_out_total,tokens_out_shipped,cache_read,est_tokens_out_total,est_tokens_out_shipped,words_out_total,words_out_shipped
+llm,agy,gemini-3.8-flash-high,27,13,0,27,0,0,0,0,34150,15347,25676,11539
+none,python,,4,4,0,0,0,0,0,0,0,0,0,0

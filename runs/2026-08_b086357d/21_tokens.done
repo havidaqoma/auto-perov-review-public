@@ -1,0 +1,18 @@
+{
+  "stage": "21_tokens",
+  "at": "2026-09-08T17:54:47",
+  "detail_csv": "manuscript\\2026-08_v4\\data\\token_usage.csv",
+  "summary_csv": "manuscript\\2026-08_v4\\data\\token_summary.csv",
+  "rows": 63,
+  "llm_calls": 12,
+  "models": [
+    "gemini-3.8-flash-high",
+    "opencode-go/qwen3.8-flash"
+  ],
+  "tokens_in_reported": 72,
+  "tokens_out_reported": 134472,
+  "tokens_out_estimated": 17717,
+  "cache_read": 83897,
+  "calls_shipped": 32,
+  "note": "agy reports no usage for -p calls, so writer rows are estimated from word counts at x1.33; reported and estimated are never summed into one figure. `shipped=yes` marks the call whose output reached the manuscript: totals are cost INCURRED, shipped columns are cost OF THE ARTIFACT."
+}

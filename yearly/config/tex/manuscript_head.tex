@@ -1,0 +1,62 @@
+% v3 header: single column, tight reference list, clickable links.
+% Loaded via pandoc -H. Fixes for the six issues Havid found in the v2 PDF are
+% mostly in the markdown generator; this file only carries LaTeX-side settings.
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+
+% Notation typesetting. Havid asked for consistency of format (2026-09-08),
+% so units and species are expressed with the packages the field uses rather
+% than a hand-rolled $^2$ regex table.
+%
+% VERIFIED before adoption: both compile under tectonic, which auto-downloads
+% mhchem.sty and chemgreek.sty from its bundle -- no manual TeX Live install.
+% Verified at PDF span level too: \qty{1.3e-3}{\centi\meter\squared\per\volt
+% \per\second} raises every exponent AND every minus, and \ce{[PbI4]^2-} puts
+% the subscript 4 BELOW the baseline with the charge ABOVE it in one token.
+% A regex table cannot script one token in two directions.
+%
+% mhchem version=4 pinned: version 3 changed the charge syntax, so an
+% unpinned load would silently alter every ion in the paper.
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+
+% Journal-style units: upright glyphs, thin space between value and unit,
+% and a real minus in exponents. detect-weight keeps units upright inside a
+% bold heading instead of inheriting the surrounding bold.
+\sisetup{
+  detect-all,
+  detect-weight        = true,
+  range-units          = single,
+  % reciprocal, NOT symbol. With per-mode=symbol the electron mobility
+  % rendered as "cm2/(V s)", which is typographically correct but is not the
+  % convention this literature uses; every perovskite paper writes
+  % "cm2 V-1 s-1" with reciprocal powers. Verified at span level: reciprocal
+  % raises both the 2 and each minus sign.
+  per-mode             = reciprocal,
+  exponent-product     = \times,
+  output-decimal-marker = {.},
+  group-digits         = none
+}
+
+% Figure captions: LaTeX owns the "Figure N." label. The v2 PDF rendered
+% "Figure 4: Figure 4." because the caption text ALSO began with "Figure 4.",
+% written into the markdown by the generator. v3 passes a bare caption and lets
+% LaTeX number it, so the label appears exactly once.
+\captionsetup[figure]{labelfont=bf, labelsep=period, font=small,
+                      justification=justified, singlelinecheck=false,
+                      skip=6pt}
+
+% Tighten the numbered reference list produced by pandoc's default
+% CSLReferences environment.
+\usepackage{etoolbox}
+\AtBeginEnvironment{CSLReferences}{%
+  \small
+  \setlength{\parskip}{0pt}%
+  \setlength{\itemsep}{0pt}%
+  \setlength{\topsep}{2pt}%
+}
+
+% No section numbering from LaTeX: the generator already writes "1. Introduction",
+% "2. The Certified Frontier ...", so LaTeX numbering would double it.
+\setcounter{secnumdepth}{0}

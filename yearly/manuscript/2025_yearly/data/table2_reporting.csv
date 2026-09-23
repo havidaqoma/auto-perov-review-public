@@ -1,0 +1,5 @@
+device_class,label,n_certification,pct_certification,n_area,pct_area,n_stabilised,pct_stabilised,n_isos,pct_isos,n_papers
+single_junction,Single-junction cells,30,9.0,26,7.8,4,1.2,17,5.1,332
+all_perovskite_tandem,All-perovskite tandems,8,28.6,2,7.1,1,3.6,1,3.6,28
+hybrid_tandem,Perovskite/silicon and other hybrid tandems,12,25.5,8,17.0,2,4.3,3,6.4,47
+module,Modules and large-area devices,16,37.2,24,55.8,1,2.3,3,7.0,43

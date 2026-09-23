@@ -1,0 +1,335 @@
+{
+  "G4": {
+    "status": "pass",
+    "detail": {
+      "em_dash": 0,
+      "banned": {},
+      "self_report_leak": []
+    }
+  },
+  "G1": {
+    "status": "pass",
+    "detail": {
+      "resolved": 170,
+      "unresolved": [],
+      "aliased": {}
+    }
+  },
+  "G2c-cite-count": {
+    "status": "pass",
+    "detail": {
+      "cited": 170,
+      "target_range": [
+        160,
+        220
+      ],
+      "words_per_citation": 55.0
+    }
+  },
+  "G2": {
+    "status": "pass",
+    "detail": {
+      "prose_words": 9356,
+      "ceiling": 11833,
+      "per_section_within_135pct": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true,
+        "7": true,
+        "8": true,
+        "9": true
+      },
+      "map_sha256": "2382b7c2c99a0970",
+      "input_freeze": {
+        "1": {
+          "words": 389,
+          "sha256": "187da85ba0fecbce"
+        },
+        "2": {
+          "words": 811,
+          "sha256": "12d2e7d86bfd3905"
+        },
+        "3": {
+          "words": 2042,
+          "sha256": "f581e43ac5edd599"
+        },
+        "4": {
+          "words": 1297,
+          "sha256": "3250dd09a78695be"
+        },
+        "5": {
+          "words": 1417,
+          "sha256": "a2edeb1b3dfefce3"
+        },
+        "6": {
+          "words": 1310,
+          "sha256": "f829ad4422c4aa21"
+        },
+        "7": {
+          "words": 793,
+          "sha256": "74fa0d3d3e985b0a"
+        },
+        "8": {
+          "words": 571,
+          "sha256": "b1167e6d4fd51fc9"
+        },
+        "9": {
+          "words": 726,
+          "sha256": "ec0057cf90389c3c"
+        }
+      }
+    }
+  },
+  "G2b-cite-order": {
+    "status": "pass",
+    "detail": {
+      "first_appearance_sequence": [],
+      "monotonic": true
+    }
+  },
+  "G6": {
+    "status": "pass",
+    "detail": {
+      "hits": []
+    }
+  },
+  "G3-abstract": {
+    "status": "pass",
+    "detail": {
+      "unverified": [],
+      "words": 482,
+      "placeholders_resolved": [
+        "A_MAX",
+        "DELTA_CERT_PP",
+        "H_T80_MAX",
+        "N_CERT",
+        "N_CORPUS",
+        "N_DEPTH",
+        "N_MONTHS",
+        "N_MONTH_UNKNOWN",
+        "N_PROTO",
+        "N_T80",
+        "PCT_CERT_MAX",
+        "PCT_CERT_MIN",
+        "PCT_CERT_YEAR",
+        "P_CERT_FIRST",
+        "P_CERT_LAST",
+        "P_TOP_CERT_YEAR"
+      ]
+    }
+  },
+  "G3c-abstract-physics": {
+    "status": "pass",
+    "detail": {
+      "implausible": [],
+      "illumination_conflicts": [],
+      "single_junction_limit_pct": 29.4,
+      "tandem_2t_limit_pct": 47.6
+    }
+  },
+  "G3b-abstract-form": {
+    "status": "pass",
+    "detail": {
+      "words": 482,
+      "band": [
+        400,
+        550
+      ],
+      "citation_markers": 0
+    }
+  },
+  "G7-abbrev": {
+    "status": "pass",
+    "detail": {
+      "expanded_automatically": [
+        "SAM",
+        "SAM",
+        "ETL",
+        "HTL",
+        "SAMs",
+        "SAM",
+        "ETL",
+        "HTL",
+        "ISOS",
+        "SAMs",
+        "ETL",
+        "SAMs"
+      ],
+      "still_bare": []
+    }
+  },
+  "G8-novelty": {
+    "status": "cold-start",
+    "detail": {
+      "reason": "no prior yearly issue in this repository; similarity cannot be measured against nothing",
+      "action_for_next_issue": "port prior_closing_block() and run G8 against this issue"
+    }
+  },
+  "G9a-notation": {
+    "status": "pass",
+    "detail": {
+      "residual_defects": {},
+      "ambiguous_for_human_review": {
+        "bare anion": [
+          "Cl-",
+          "I-"
+        ]
+      },
+      "substitutions_applied": 220
+    }
+  },
+  "G9b-cite-links": {
+    "status": "pass",
+    "detail": {
+      "hyperlinked_markers": 305,
+      "unlinked_markers": [],
+      "works_without_doi": 0
+    }
+  },
+  "G9c-figure-unique": {
+    "status": "pass",
+    "detail": {
+      "attached": [
+        "F1a_frontier_single_junction.pdf",
+        "F5_frontier_trajectory.pdf",
+        "F6_audit_trajectory.pdf",
+        "F4_stability_evidence.pdf",
+        "F1b_frontier_tandem.pdf",
+        "F2_area_penalty.pdf",
+        "F3b_effort_tandem.pdf",
+        "F3a_effort_single_junction.pdf"
+      ],
+      "duplicates": [],
+      "n_attached": 8,
+      "figures_present_on_disk": [
+        "F1a_frontier_single_junction.pdf",
+        "F1b_frontier_tandem.pdf",
+        "F2_area_penalty.pdf",
+        "F3a_effort_single_junction.pdf",
+        "F3b_effort_tandem.pdf",
+        "F4_stability_evidence.pdf",
+        "F5_frontier_trajectory.pdf",
+        "F6_audit_trajectory.pdf",
+        "S1_corpus_funnel.pdf",
+        "S2_reporting_audit.pdf"
+      ]
+    }
+  },
+  "G9e-figures-present": {
+    "status": "pass",
+    "detail": {
+      "n_attached": 8,
+      "on_disk": [
+        "F1a_frontier_single_junction.pdf",
+        "F1b_frontier_tandem.pdf",
+        "F2_area_penalty.pdf",
+        "F3a_effort_single_junction.pdf",
+        "F3b_effort_tandem.pdf",
+        "F4_stability_evidence.pdf",
+        "F5_frontier_trajectory.pdf",
+        "F6_audit_trajectory.pdf",
+        "S1_corpus_funnel.pdf",
+        "S2_reporting_audit.pdf"
+      ],
+      "missing_required": [],
+      "why": "F5 plots the certified frontier month by month and F6 plots reporting practice month by month. Both carry quantities only a yearly issue has, and the trajectory and audit sections argue from them. This gate carries the figure alarm that G5 lost when its page band was widened on 2026-09-09."
+    }
+  },
+  "G9f-tables-present": {
+    "status": "pass",
+    "detail": {
+      "expected": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "placed": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "missing": [],
+      "rendered_in_manuscript": 3,
+      "why": "a table computed but never rendered is invisible to every gate that reads the manuscript; this gate measures PLACEMENT, not construction"
+    }
+  },
+  "G9d-model-names": {
+    "status": "pass",
+    "detail": {
+      "bare_slugs_found": []
+    }
+  },
+  "G11-coverage": {
+    "status": "pass",
+    "detail": {
+      "n_months": 12,
+      "expected_months": 12,
+      "cards_n": 450,
+      "cards_band": [
+        350,
+        550
+      ],
+      "month_unknown_corpus": 1089,
+      "cross_month_duplicates": 0,
+      "duplicate_semantics": "within a single annual sweep; cross-month double-indexing is structurally impossible in backfill mode",
+      "corpus_n": 7931
+    }
+  },
+  "G10-title-block": {
+    "status": "pass",
+    "detail": {
+      "gaps_pt": {
+        "author_to_affil": 14.42,
+        "affil_to_date": 22.52,
+        "date_to_abstract": 23.74,
+        "abstract_to_body": 10.17
+      },
+      "bands": {
+        "author_to_affil": [
+          8.0,
+          24.0
+        ],
+        "affil_to_date": [
+          14.0,
+          34.0
+        ],
+        "date_to_abstract": [
+          14.0,
+          40.0
+        ],
+        "abstract_to_body": [
+          5.0,
+          20.0
+        ]
+      },
+      "middle_ratio": 1.05,
+      "max_middle_ratio": 2.5,
+      "title_block_fraction_measured": 0.355,
+      "page_count": 36,
+      "status": "pass",
+      "failures": []
+    }
+  },
+  "G5": {
+    "status": "pass",
+    "detail": {
+      "pages_to_refs": 25,
+      "content_pages": 24.6,
+      "total_pages": 36,
+      "reference_pages": 11,
+      "content_band": [
+        18,
+        28
+      ],
+      "total_band": [
+        28,
+        45
+      ],
+      "content_ok": true,
+      "total_ok": true
+    }
+  }
+}

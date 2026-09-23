@@ -1,0 +1,145 @@
+{
+  "G4": {
+    "status": "pass",
+    "detail": {
+      "em_dash": 0,
+      "banned": {},
+      "self_report_leak": []
+    }
+  },
+  "G1": {
+    "status": "pass",
+    "detail": {
+      "resolved": 82,
+      "unresolved": []
+    }
+  },
+  "G2c-cite-count": {
+    "status": "pass",
+    "detail": {
+      "cited": 82,
+      "target_range": [
+        60,
+        85
+      ],
+      "words_per_citation": 36.3
+    }
+  },
+  "G2": {
+    "status": "pass",
+    "detail": {
+      "prose_words": 2980,
+      "ceiling": 3800,
+      "v2_words": 6990,
+      "reduction_pct": 57.4,
+      "cited": 82,
+      "figures": 4,
+      "input_freeze": {
+        "1": {
+          "words": 155,
+          "sha256": "fdd193a5c59df0ff"
+        },
+        "2": {
+          "words": 205,
+          "sha256": "ad1d83e7d049ca86"
+        },
+        "3": {
+          "words": 565,
+          "sha256": "23ecea1522b0a2e6"
+        },
+        "4": {
+          "words": 529,
+          "sha256": "7172224710427eb3"
+        },
+        "5": {
+          "words": 455,
+          "sha256": "73cfa76487a82f54"
+        },
+        "6": {
+          "words": 340,
+          "sha256": "0b4a723401ff32c5"
+        },
+        "7": {
+          "words": 362,
+          "sha256": "5b01a0b19fdddcea"
+        },
+        "8": {
+          "words": 369,
+          "sha256": "0a5b5b3a7878e0df"
+        }
+      }
+    }
+  },
+  "G2b-cite-order": {
+    "status": "pass",
+    "detail": {
+      "first_appearance_sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "monotonic": true
+    }
+  },
+  "G6": {
+    "status": "pass",
+    "detail": {
+      "hits": []
+    }
+  },
+  "G3-abstract": {
+    "status": "pass",
+    "detail": {
+      "unverified": [],
+      "words": 326
+    }
+  },
+  "G7-abbrev": {
+    "status": "pass",
+    "detail": {
+      "expanded_automatically": [
+        "SAMs",
+        "SAM",
+        "SAM"
+      ],
+      "still_bare": []
+    }
+  },
+  "G5": {
+    "status": "pass",
+    "detail": {
+      "pages_to_refs": 10,
+      "title_block_fraction": 0.4,
+      "content_pages": 9.6,
+      "total_pages": 15,
+      "reference_pages": 5,
+      "content_band": [
+        8,
+        11
+      ],
+      "total_band": [
+        12,
+        17
+      ],
+      "content_ok": true,
+      "total_ok": true
+    }
+  }
+}

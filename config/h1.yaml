@@ -1,0 +1,105 @@
+# H1 (half-year) review bands and knobs.
+#
+# NEW keys, never widened monthly or yearly ones (MASTER_HANDBOOK 6.1).
+# config/gates.yaml describes a 15-page monthly issue and must keep describing
+# exactly that. config/yearly.yaml describes a 12-month issue. An H1 issue is a
+# third artifact with its own envelope, its own gate report
+# (gate_report_h1.json), and therefore its own keys.
+#
+# Havid's spec (2026-09-09): "3x" the monthly issue, ChemRxiv package included,
+# monthly workflow untouched.
+#
+# MEASURED basis, on disk, not assumed:
+#
+#   month     corpus   depth   cards    source
+#   2026-06      642     167     167    shipped v4
+#   2026-07      655     181     169    shipped v4
+#   2026-08      538     144     144    shipped v4
+#
+# Live OpenAlex counts probed 2026-09-09 for the H1 window (scripts/probe_h1_counts.py
+# logic, keyed client, type:article|preprint|review):
+#
+#   2026-01   1311  <- 823 of these are stamped exactly 2026-01-01 (placeholder
+#                      for year-only indexing). Real dated January = 488.
+#                      See docs/H1_JANUARY_DATE_DECISION.md.
+#   2026-02    511
+#   2026-03    569
+#   2026-04    611
+#   2026-05    595
+#   2026-06    644
+#
+# So the H1 raw union is ~3418 works (488 + 511 + 569 + 611 + 595 + 644),
+# BEFORE cross-month duplicate collapse. That is 5.3x a single month, and it is
+# six runs, so the corpus band is wide on purpose: publisher indexing backfills
+# for months (handbook 3.4).
+
+h1:
+  # ---- coverage ----
+  # An H1 issue is assembled from SIX monthly runs. All six are required: a
+  # missing month is not an empty month, it is the silent-zero class (7.1).
+  months: ["2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06"]
+  require_all_months: true
+
+  # ---- corpus ----
+  count_band: [2200, 4800]
+
+  # ---- selection ----
+  # NOT 6x the monthly depth tier. A depth tier larger than the citation
+  # ceiling is a tier that lies about what was read (the yearly file's
+  # reasoning, applied at half scale). Monthly depth ~150; 6x would be 900
+  # against a citation ceiling of ~250. 320 is ~2.1x monthly and still lets
+  # every depth paper be a candidate for individual citation.
+  depth_target: 320
+  depth_band: [250, 400]
+  axis_min_depth: 20          # monthly 12, yearly 25
+  sensitivity_draws: 200      # same as monthly
+  seed: 0                     # same as monthly: reproducible selection
+
+  # ---- month coverage floor ----
+  # THE gate that makes "January-June" an honest title. June indexes better
+  # than January (handbook 3.4: older months retrieve worse), so without a
+  # floor the issue silently becomes a May-June review wearing a six-month
+  # label. 8% of citations per month = roughly half of even representation
+  # (16.7%), which allows real variation without allowing a month to vanish.
+  month_min_citation_share_pct: 8.0
+  month_min_depth_share_pct: 8.0
+
+  # ---- manuscript envelope ----
+  # Monthly ships 14-15 pages / 75-80 citations at BODY_WORDS 2400.
+  # 3x body = 7200 words. Pages scale slightly sublinearly because the title
+  # block, acknowledgements and AI declaration are fixed overhead paid once.
+  content_page_band: [20, 30]
+  total_page_band: [30, 44]
+
+citations_h1:
+  total_band: [150, 250]      # monthly [60, 85]; ~2.5-3x
+
+abstract_h1:
+  # Monthly [260, 340]. An H1 abstract must additionally carry the six-month
+  # trajectory, which is another job, not another sentence. Same hard
+  # contract as monthly: NO digits, NO citations (handbook 3.3).
+  word_band: [380, 520]
+
+novelty_h1:
+  # G8 for an H1 issue compares against every monthly issue in its own window
+  # that shipped, plus any prior H1. Thresholds unchanged from monthly on
+  # purpose: a synthesis that legitimately overlaps a monthly issue is still
+  # not allowed to REUSE its sentences.
+  body_max_ratio: 0.25
+  abstract_max_ratio: 0.30
+  shingle_words: 12
+  monthly_reuse_max_ratio: 0.20
+
+  # NEW, and specific to a long issue: six mechanism sections on overlapping
+  # axes (defects vs interfaces) can converge on each other even when every
+  # one of them is novel against the prior issues. Monthly G8 cannot see this
+  # because a monthly issue has 4-5 shorter sections drafted in one pass.
+  intra_issue_max_ratio: 0.22
+
+plausibility:
+  # 7.8 corollary: a plausibility gate wherever physics bounds a quantity.
+  single_junction_pce_max_pct: 29.4   # 1.55 eV Shockley-Queisser, as monthly
+  tandem_2t_pce_max_pct: 47.6         # 2-junction detailed-balance limit
+  pce_min_pct: 0.0
+  eqe_max_pct: 100.0
+  ff_max_pct: 92.0

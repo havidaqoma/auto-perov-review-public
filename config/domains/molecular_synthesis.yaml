@@ -1,0 +1,323 @@
+# Molecular synthesis and methodology. THE TYPE-D INSTANCE.
+#
+# WHY THIS FILE IS THE IMPORTANT ONE
+# ----------------------------------
+# perovskite_led.yaml proves the registry ports across DEVICES. This file
+# proves it ports across EPISTEMOLOGY, which is the harder claim and the one
+# that would have failed silently.
+#
+# A Type-P domain has a scalar figure of merit that legitimately ranks
+# devices: a certified 27.1% cell IS better than a certified 24.0% cell, all
+# else equal. Discovery chemistry has no such number. Ranking papers by yield
+# is a CATEGORY ERROR:
+#
+#   - 41% yield forming a quaternary stereocentre in one step beats 95% on a
+#     Suzuki coupling, and no scalar ordering expresses that
+#   - a 12% yield on a total synthesis of a 30-step target can be the
+#     achievement of the decade
+#   - yield is a property of a RUN, not of a method: the same reaction gives
+#     different yields on different substrates, which is why scope tables
+#     exist at all
+#
+# So Type-D removes the frontier section and the champion curve entirely.
+# There is no "best molecule of the month" and the handbook forbids inventing
+# one. What replaces them:
+#
+#   frontier section  -> significance section (curated, argued, not ranked)
+#   F1 certified bar  -> F1 advance-class map (what KIND of advance, by count)
+#   F2 area penalty   -> F2 scope map (substrate class x outcome)
+#   F4 lifetime strip -> F4 characterisation-completeness strip
+#
+# The single largest risk when configuring a Type-D domain is choosing
+# topic_type: P because the metrics happen to be numeric. Yield, ee and dr
+# are all numbers. They are not a frontier. domain_lint.py refuses a Type-D
+# domain that declares a `frontier` role for exactly this reason.
+
+domain:
+  name: molecular synthesis and synthetic methodology
+  slug: molecular_synthesis
+  topic_type: D
+  scope_note: >
+    New synthetic methods, total syntheses, and reaction-development studies
+    in organic and organometallic chemistry: bond constructions,
+    stereocontrol, catalysis applied to synthesis, and substrate scope.
+    Materials-performance work, formulation and biological-activity studies
+    are out of scope even when the compounds are novel.
+
+harvest:
+  query_terms:
+    - [total synthesis, synthetic method, catalytic, enantioselective,
+       C-H functionalization, cross-coupling, asymmetric synthesis]
+    - [reaction, synthesis, catalysis]
+  count_band: [400, 2000]
+  arxiv_categories: []      # chemistry preprints sit on ChemRxiv, not arXiv
+
+exclude:
+  substring: [solar cell, photovoltaic, light-emitting diode, transistor,
+              clinical trial, patient, in vivo efficacy, crop yield,
+              battery cathode, thermoelectric]
+  word_bound: [perovskite, magnet, superconductor]
+
+axes:
+  bond_construction:
+    name: New bond constructions and coupling methods
+    keywords: [cross-coupling, C-H activation, C-H functionalization,
+               C-C bond, C-N bond, C-O bond, arylation, alkylation,
+               carbene, nitrene, radical coupling, decarboxylative]
+    fold_into: catalysis
+  stereocontrol:
+    name: Stereocontrol and asymmetric catalysis
+    keywords: [enantioselective, diastereoselective, asymmetric,
+               chiral ligand, stereocentre, stereocenter, atroposelective,
+               desymmetrization, enantiomeric excess, kinetic resolution]
+    fold_into: catalysis
+  catalysis:
+    name: Catalyst design and mechanism
+    keywords: [catalyst, ligand design, turnover, photocatalysis,
+               electrocatalysis, organocatalysis, transition metal,
+               nickel, palladium, copper, iron, earth-abundant]
+    fold_into: bond_construction
+  mechanism:
+    name: Mechanistic study and reaction understanding
+    keywords: [mechanism, kinetic isotope effect, DFT, computational study,
+               intermediate, rate-determining, Hammett, transition state,
+               operando, kinetics]
+    fold_into: catalysis
+  total_synthesis:
+    name: Total synthesis and complex-molecule assembly
+    keywords: [total synthesis, natural product, formal synthesis,
+               step count, convergent synthesis, fragment coupling,
+               late-stage, scaffold, alkaloid, terpenoid, macrocycle]
+    fold_into: bond_construction
+  process_scale:
+    name: Scalability, sustainability and practicality
+    keywords: [flow chemistry, continuous flow, gram scale, kilogram,
+               green chemistry, solvent-free, atom economy, E-factor,
+               process mass intensity, telescoped, one-pot]
+    fold_into: catalysis
+
+# ---------------------------------------------------------------- metrics
+# NOTE the roles. There is no `frontier`. Every metric is `secondary`,
+# `scope` or `quality`, because none of them ranks a paper on its own.
+metrics:
+  - key: yield_pct
+    label: isolated yield
+    unit: "%"
+    direction: none
+    role: secondary
+    plausibility: {min: 0.0, max: 100.0}
+    plausibility_note: >
+      A yield above 100% is impossible and indicates either a
+      mass-balance error or, far more often, that the extracted number is
+      not a yield at all (conversion, purity, recovery, or an NMR ratio).
+      Fails closed.
+    # direction: none is deliberate and load-bearing. Declaring
+    # higher_better would license the pipeline to build a champion curve
+    # over yields, which is the category error this whole file exists to
+    # prevent.
+    direction_note: >
+      Yield does not order papers. A lower yield on a harder
+      transformation is the better result. Never rank on this field.
+    device_binding: true
+    binding_note: >
+      A yield is meaningless without the SUBSTRATE and SCALE it was
+      obtained on. This is the same class as PV's area binding and the
+      misattribution defect of handbook 7.8: one abstract routinely
+      reports a model-substrate yield and a scope-average yield, and a
+      label taken from the paper will attach to the wrong number.
+    requires_condition: substrate
+  - key: ee_pct
+    label: enantiomeric excess
+    unit: "%"
+    direction: higher_better
+    role: quality
+    plausibility: {min: 0.0, max: 100.0}
+    plausibility_note: "ee is a normalised ratio; >100% is impossible."
+    device_binding: true
+    requires_condition: substrate
+  - key: dr_ratio
+    label: diastereomeric ratio
+    unit: ""
+    direction: higher_better
+    role: quality
+    plausibility: {min: 0.5, max: 1000.0}
+    device_binding: true
+    requires_condition: substrate
+  - key: substrate_scope_n
+    label: number of substrates in the scope table
+    unit: ""
+    direction: higher_better
+    role: scope
+    plausibility: {min: 1.0, max: 500.0}
+    # The one metric where more genuinely is more: a method demonstrated on
+    # 62 substrates is better evidenced than one shown on 3. It measures
+    # EVIDENCE BREADTH, not chemical merit.
+    device_binding: false
+  - key: scale_g
+    label: largest demonstrated scale
+    unit: g
+    direction: higher_better
+    role: scope
+    plausibility: {min: 0.0, max: 1000000.0}
+    device_binding: false
+  - key: step_count
+    label: longest linear sequence
+    unit: ""
+    direction: lower_better
+    role: quality
+    plausibility: {min: 1.0, max: 200.0}
+    # Only meaningful for total_synthesis papers, and only against a named
+    # target. Fewer steps to the SAME target is a real advance; fewer steps
+    # to an easier target is not a comparison at all.
+    device_binding: true
+    requires_condition: target_molecule
+  - key: turnover_number
+    label: catalyst turnover number
+    unit: ""
+    direction: higher_better
+    role: quality
+    plausibility: {min: 0.0, max: 100000000.0}
+    device_binding: true
+    requires_condition: substrate
+
+# ----------------------------------------------------- advance taxonomy
+# Type-D's replacement for a champion metric. A paper's contribution is
+# CLASSIFIED, not scored. The significance section argues from this
+# distribution; it never ranks within it.
+advance_taxonomy:
+  field: advance_class
+  values:
+    - new_transformation      # a bond construction not previously possible
+    - improved_selectivity    # known transformation, better stereocontrol
+    - broadened_scope         # known method, substantially wider substrates
+    - simplified_route        # fewer steps / milder / cheaper to same target
+    - mechanistic_insight     # explains rather than enables
+    - enabling_target         # unlocks a specific molecule or class
+    - practical_scale         # makes an existing method actually usable
+    - unknown
+  # Which classes may be called an advance in the significance section
+  # WITHOUT a quantitative comparator. `improved_selectivity` and
+  # `simplified_route` are comparative claims by construction, so they
+  # require the prior art's number in the same anchor or they are demoted.
+  requires_comparator: [improved_selectivity, simplified_route,
+                        broadened_scope]
+
+sample_taxonomy:
+  field: substrate_class
+  values: [arene, heteroarene, alkene, alkyne, alkane, carbonyl, amine,
+           alcohol, halide, natural_product, peptide, polymer, other,
+           unknown]
+  bound_overrides: {}
+
+lens:
+  values: [experimental, computational, review]
+  measured_lenses: [experimental]
+  # A DFT-only study reporting a computed barrier must never sit on a plot
+  # of measured outcomes. Identical to handbook 5.1's simulated 30.8%
+  # standing beside certified hardware.
+  exclude_from_measured_figures: [computational, review]
+
+# --------------------------------------------------------------- figures
+# No certified-frontier bar and no penalty scatter. These four carry
+# arguments a Type-D reader actually needs.
+figure_roles:
+  - id: F1
+    argument: >
+      what KIND of advance the month contained, which a yield histogram
+      cannot show
+    kind: class_bar
+    class_field: advance_class
+    attach_role: significance
+    lens_filter: all
+  - id: F2
+    argument: >
+      where the methods actually work: substrate class against outcome,
+      which is the scope question a synthetic chemist reads first
+    kind: scope_map
+    x_field: substrate_class
+    y_metric: yield_pct
+    colour_metric: ee_pct
+    attach_axis: [bond_construction, stereocontrol]
+    lens_filter: measured
+  - id: F3
+    argument: which mechanism axis each advance class is being pushed on
+    kind: heatmap
+    attach_axis: [catalysis, mechanism]
+    lens_filter: all
+  - id: F4
+    argument: >
+      how completely the month's methods are characterised: scope breadth
+      against demonstrated scale, with the uncharacterised fraction shown
+    kind: strip
+    y_metric: substrate_scope_n
+    attach_axis: process_scale
+    lens_filter: measured
+
+# ------------------------------------------------- abstract placeholders
+# Same hard contract as PV: no digits, no citations, tokens substituted by
+# the build. NOTE there is no P_TOP_* token: a Type-D abstract has no
+# champion value to state, and adding one would invite the ranking error.
+abstract_tokens:
+  - {token: N_CORPUS, source: "stats:corpus.n"}
+  - {token: N_DEPTH, source: "stats:selection.n_depth"}
+  - {token: N_NEW_TRANSFORM, source: "cards:count_class:new_transformation",
+     computed: true}
+  - {token: N_ASYM, source: "cards:count:ee_pct", computed: true}
+  - {token: EE_TOP, source: "cards:max:ee_pct", suffix: "%"}
+  - {token: N_SCOPE_MAX, source: "cards:max:substrate_scope_n"}
+  - {token: G_SCALE_MAX, source: "cards:max:scale_g", suffix: " g"}
+  - {token: PCT_WITH_SCOPE, source: "stats:audit.corpus.scope_table.pct"}
+  - {token: PCT_WITH_EE, source: "stats:audit.corpus.ee_stated.pct"}
+
+title_terms:
+  frame: Synthetic methodology
+  max_words: 16
+  neutral_slot: a monthly survey of new bond constructions
+  axis_phrases:
+    bond_construction: ["new bond constructions", "C-H functionalisation",
+                        "cross-coupling methodology"]
+    stereocontrol: ["asymmetric catalysis", "stereocontrol strategies",
+                    "enantioselective methods"]
+    catalysis: ["catalyst and ligand design", "earth-abundant catalysis",
+                "photocatalytic methods"]
+    mechanism: ["mechanistic understanding", "reaction mechanism studies",
+                "kinetic and computational analysis"]
+    total_synthesis: ["total synthesis", "complex-molecule assembly",
+                      "route design and step economy"]
+    process_scale: ["scalability and flow chemistry", "practical methodology",
+                    "sustainable process design"]
+  banned: [comprehensive, novel, unprecedented, breakthrough, cutting-edge,
+           state-of-the-art, enhanced, improved, superior, remarkable,
+           pivotal, delve, unlock, showcase, realm, update,
+           # "novel" is banned in EVERY domain, but in synthetic chemistry it
+           # is also the field's most abused word, and a title claiming
+           # novelty is making the exact comparative claim that
+           # requires_comparator exists to police.
+           first synthesis, elegant, powerful]
+
+section_spine:
+  # NOT `frontier`. domain_lint.py rejects a Type-D domain declaring one.
+  lead_role: significance
+  lead_title_template: "Most Significant Advances in {month}"
+  spine_words: {intro: 300, lead: 340, gaps: 400}
+  spine_cites: {intro: 0, lead: 10, gaps: 4}
+  # The significance section is CURATED and must argue. It is the one place
+  # a Type-D issue is allowed to say a paper matters more than another, and
+  # it must say WHY in terms of what became possible, never by comparing
+  # yields.
+  lead_note: >
+    State the job, never the wording (handbook 4.1c). The job: identify
+    which of the month's advances changed what is synthetically possible,
+    and justify each in terms of the transformation it enables. Do not rank
+    by yield, and do not use a superlative that the anchors cannot support.
+
+notation:
+  extra_units:
+    "mol": "\\mole"
+    "mmol": "\\milli\\mole"
+    "M": "\\molar"
+    "mM": "\\milli\\molar"
+    "equiv": "\\equiv"
+    "mol%": "\\mol\\percent"
+  defined_terms: [ee, dr, er, NMR, HRMS, DFT, KIE, TON, TOF, rr,
+                  d.r., e.r., C-H, C-C, C-N, sp3, sp2, PMI, E-factor]

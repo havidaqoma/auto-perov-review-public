@@ -1,0 +1,95 @@
+{
+  "G4": {
+    "status": "pass",
+    "detail": {
+      "em_dash": 0,
+      "banned": {}
+    }
+  },
+  "G2": {
+    "status": "pass",
+    "detail": {
+      "prose_words": 4299,
+      "ceiling": 5500,
+      "per_section_over": {},
+      "input_freeze": {
+        "1": {
+          "words": 282,
+          "sha256": "4d56d63747a0da88",
+          "mtime": "15:14:31"
+        },
+        "2": {
+          "words": 226,
+          "sha256": "eca0e42f3f54e3d6",
+          "mtime": "15:15:29"
+        },
+        "3": {
+          "words": 898,
+          "sha256": "6979e75c9c0c1c08",
+          "mtime": "15:51:06"
+        },
+        "4": {
+          "words": 897,
+          "sha256": "5a3191b2a8546b87",
+          "mtime": "15:45:13"
+        },
+        "5": {
+          "words": 879,
+          "sha256": "7ac023ce58ec58a2",
+          "mtime": "15:08:35"
+        },
+        "6": {
+          "words": 545,
+          "sha256": "6068d449de5a4e11",
+          "mtime": "15:32:17"
+        },
+        "7": {
+          "words": 300,
+          "sha256": "36d85bb8dd20e40f",
+          "mtime": "15:40:18"
+        },
+        "8": {
+          "words": 272,
+          "sha256": "406dfaecbc00dcf0",
+          "mtime": "15:12:40"
+        }
+      },
+      "title_words": 14,
+      "title_colons": 1,
+      "cited": 116,
+      "cap": 180
+    }
+  },
+  "G1": {
+    "status": "pass",
+    "detail": {
+      "resolved": 116,
+      "unresolved": []
+    }
+  },
+  "G6": {
+    "status": "pass",
+    "detail": {
+      "hits": []
+    }
+  },
+  "G5": {
+    "status": "fail",
+    "detail": {
+      "pages_to_refs": 7,
+      "title_block_fraction": 0.4,
+      "content_pages": 6.6,
+      "total_pages": 13,
+      "content_band": [
+        6,
+        7
+      ],
+      "total_band": [
+        8,
+        10
+      ],
+      "content_ok": true,
+      "total_ok": false
+    }
+  }
+}

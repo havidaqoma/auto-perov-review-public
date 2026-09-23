@@ -1,0 +1,15 @@
+metric,tier,n_detected,percent,denominator,printable,note
+efficiency_stated,corpus,205,48.1,426,False,lower bound: validation set incomplete
+stabilised,corpus,43,10.1,426,False,lower bound: validation set incomplete
+certified,corpus,25,5.9,426,False,lower bound: validation set incomplete
+area_stated,corpus,36,8.5,426,False,lower bound: validation set incomplete
+hysteresis,corpus,11,2.6,426,False,lower bound: validation set incomplete
+isos_label,corpus,7,1.6,426,False,lower bound: validation set incomplete
+triplet_complete,corpus,13,3.1,426,False,lower bound: validation set incomplete
+efficiency_stated,depth,100,59.9,167,False,lower bound: validation set incomplete
+stabilised,depth,28,16.8,167,False,lower bound: validation set incomplete
+certified,depth,14,8.4,167,False,lower bound: validation set incomplete
+area_stated,depth,21,12.6,167,False,lower bound: validation set incomplete
+hysteresis,depth,8,4.8,167,False,lower bound: validation set incomplete
+isos_label,depth,5,3.0,167,False,lower bound: validation set incomplete
+triplet_complete,depth,1,0.6,167,False,lower bound: validation set incomplete

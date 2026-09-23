@@ -1,0 +1,221 @@
+# Perovskite photovoltaics. THE BACKWARD-COMPATIBILITY INSTANCE.
+#
+# Every value here is transcribed from the live monthly pipeline as it ran for
+# June/July/August 2026, so a domain-driven run must reproduce the shipped
+# issues. If this file and config/axes.yaml + title_terms.yaml disagree, that
+# is a defect in one of them (MASTER_HANDBOOK §0 preamble).
+
+domain:
+  name: perovskite photovoltaics
+  slug: perovskite_pv
+  topic_type: P
+  scope_note: >
+    Perovskite absorbers used for photovoltaic energy conversion, including
+    single junction, all-perovskite and perovskite/silicon tandems, and
+    modules. Light-emitting, detector, laser and X-ray applications are out
+    of scope even when the absorber is identical.
+
+harvest:
+  query_terms:
+    - [perovskite]
+    - [solar cell, photovoltaic, solar module, tandem]
+  count_band: [250, 1200]
+  arxiv_categories: [physics.app-ph, cond-mat.mtrl-sci]
+
+exclude:
+  # Trimmed to the PV-scope list; the full biomedical/off-topic list stays in
+  # config/exclude.yaml, which this instance does not duplicate.
+  substring: [photodetector, photodiode, phototransistor, x-ray detector,
+              x-ray imaging, lasing, laser, electroluminescen,
+              light-emitting diode, light emitting diode, organic light,
+              micro-led, led array, cement]
+  word_bound: [battery, magnet, thermoelectric, superconductor]
+
+axes:
+  composition:
+    name: Composition and phase stability
+    keywords: [cation, FA, MA, Cs, A-site, halide segregation, phase stability,
+               Ruddlesden-Popper, 2D perovskite, 3D perovskite, lead-free,
+               tin perovskite, mixed-halide, alloying, dopant, additive]
+    fold_into: defects
+  defects:
+    name: Defects, ion migration, passivation chemistry
+    keywords: [defect, vacancy, interstitial, ion migration, passivation,
+               passivate, trap, grain boundary, antisite]
+    fold_into: interfaces
+  interfaces:
+    name: Interfaces and charge extraction
+    keywords: [interface, SAM, self-assembled monolayer, ETL,
+               electron transport, HTL, hole transport, buried interface,
+               band alignment, surface modification, contact layer]
+    fold_into: defects
+  architecture:
+    name: Device architecture and tandems
+    keywords: [tandem, all-perovskite, perovskite-silicon, 2-terminal,
+               4-terminal, current matching, recombination layer, p-i-n,
+               n-i-p, device architecture, interconnection]
+    fold_into: interfaces
+  stability:
+    name: Stability and degradation pathways
+    keywords: [ISOS, damp heat, light soaking, thermal stability,
+               operational stability, degradation, encapsulation,
+               reverse bias, MPPT, T80, T90, moisture, ultraviolet]
+    fold_into: defects
+  scale_up:
+    name: Scale-up, coating and modules
+    keywords: [module, mini-module, blade coating, slot-die, inkjet,
+               roll-to-roll, scalable, area scaling, upscal,
+               techno-economic, manufacturing cost]
+    fold_into: architecture
+
+metrics:
+  - key: pce_certified
+    label: certified power conversion efficiency
+    unit: "%"
+    direction: higher_better
+    role: frontier
+    plausibility: {min: 0.0, max: 29.4}
+    plausibility_note: >
+      1.55 eV single-junction Shockley-Queisser limit. This bound is the
+      G3c gate: June 2026 shipped a certified 32.95% perovskite/silicon
+      tandem described as a single-junction inverted cell, in the abstract,
+      the body and Figure 1. Every evidence guard passed and was right to
+      pass. The value was real; the device was wrong.
+    device_binding: true
+  - key: pce_champion
+    label: champion power conversion efficiency
+    unit: "%"
+    direction: higher_better
+    role: secondary
+    plausibility: {min: 0.0, max: 29.4}
+    device_binding: true
+  - key: pce_stabilised
+    label: stabilised power conversion efficiency
+    unit: "%"
+    direction: higher_better
+    role: secondary
+    plausibility: {min: 0.0, max: 29.4}
+    device_binding: true
+  - key: active_area_cm2
+    label: active area
+    unit: cm2
+    direction: higher_better
+    role: penalty_x
+    plausibility: {min: 0.0, max: 100000.0}
+    device_binding: true
+  - key: t80_h
+    label: T80 operational lifetime
+    unit: h
+    direction: higher_better
+    role: durability
+    plausibility: {min: 0.0, max: 100000.0}
+    device_binding: true
+  - key: stability_protocol
+    label: stated stability protocol
+    unit: ""
+    direction: none
+    role: quality
+    # A CATEGORICAL field, not a scalar: the value is an ISOS label such as
+    # ISOS-L-1, verified by regex against the source abstract in s09_cards.
+    # It is declared here because the N_PROTO abstract token counts it, and
+    # domain_lint refuses a token whose source names an undeclared field --
+    # which is how this omission was caught rather than shipping a token
+    # that could never resolve.
+    categorical: true
+    plausibility: {min: 0.0, max: 1.0}
+    plausibility_note: >
+      Presence flag only: 0 or 1. A categorical field has no numeric range,
+      so the bound records that it is counted, never measured.
+    device_binding: true
+
+sample_taxonomy:
+  field: architecture
+  values: [p-i-n, n-i-p, tandem_2T, tandem_4T, module, none, unknown]
+  bound_overrides:
+    # A 2-junction stack has a different detailed-balance limit, so the
+    # plausibility bound is selected by sample class. Applying the
+    # single-junction bound globally would reject legitimate tandem records.
+    tandem_2T: {pce_certified: {max: 47.6}, pce_champion: {max: 47.6}}
+    tandem_4T: {pce_certified: {max: 47.6}, pce_champion: {max: 47.6}}
+
+lens:
+  values: [experimental, theory, review, scale_up]
+  # scale_up is KEPT in measured figures: those are real module
+  # measurements. Filtering to `experimental` alone silently dropped 11 real
+  # papers (handbook 5.1).
+  measured_lenses: [experimental, scale_up]
+  exclude_from_measured_figures: [theory, review]
+
+figure_roles:
+  - id: F1
+    argument: how thin the independently verified layer is
+    kind: paired_bar
+    y_metric: pce_certified
+    compare_metric: pce_champion
+    attach_role: frontier
+    lens_filter: measured
+  - id: F2
+    argument: the cell-to-module gap
+    kind: scatter_log_x
+    x_metric: active_area_cm2
+    y_metric: pce_champion
+    attach_axis: scale_up
+    lens_filter: measured
+  - id: F3
+    argument: which physics each device family is pushed on
+    kind: heatmap
+    attach_axis: [composition, defects]
+    lens_filter: all
+  - id: F4
+    argument: the thinness of lifetime reporting is itself the finding
+    kind: strip
+    y_metric: t80_h
+    attach_axis: stability
+    lens_filter: measured
+
+abstract_tokens:
+  - {token: N_CORPUS, source: "stats:corpus.n"}
+  - {token: N_DEPTH, source: "stats:selection.n_depth"}
+  - {token: N_CERT, source: "cards:count:pce_certified", computed: true}
+  - {token: P_TOP_CERT, source: "cards:max:pce_certified", suffix: "%"}
+  - {token: P_TOP_SJ, source: "cards:max:pce_certified:single_junction", suffix: "%"}
+  - {token: A_MAX, source: "cards:max:active_area_cm2:with_certified"}
+  - {token: P_AREA_MAX, source: "cards:at:pce_certified:a_max", suffix: "%"}
+  - {token: N_T80, source: "cards:count:t80_h", computed: true}
+  - {token: H_T80_MAX, source: "cards:max:t80_h", suffix: " h"}
+  - {token: N_PROTO, source: "cards:count:stability_protocol", computed: true}
+  - {token: PCT_EFF, source: "stats:audit.corpus.efficiency_stated.pct"}
+  - {token: PCT_CERT, source: "stats:audit.corpus.certified.pct"}
+
+title_terms:
+  frame: Perovskite photovoltaics
+  max_words: 16
+  neutral_slot: a monthly mechanism and reporting audit
+  axis_phrases:
+    composition: ["composition and phase control", "A-site and halide composition",
+                  "phase segregation control"]
+    defects: ["defect passivation", "trap density and ion migration",
+              "non-radiative recombination control"]
+    interfaces: ["interface and contact engineering",
+                 "self-assembled monolayer contacts", "buried-interface treatment"]
+    architecture: ["tandem architecture", "device architecture and current matching",
+                   "two-terminal tandem design"]
+    stability: ["operational stability", "damp-heat and light-soak stability",
+                "degradation pathways"]
+    scale_up: ["module scale-up", "large-area coating",
+               "slot-die and roll-to-roll processing"]
+  banned: [progress in perovskite photovoltaics, comprehensive, novel,
+           unprecedented, breakthrough, cutting-edge, state-of-the-art,
+           enhanced, improved, superior, remarkable, pivotal, delve, unlock,
+           showcase, realm, update]
+
+section_spine:
+  lead_role: frontier
+  lead_title_template: "The Certified Frontier in {month}"
+  spine_words: {intro: 300, lead: 290, gaps: 400}
+  spine_cites: {intro: 0, lead: 8, gaps: 4}
+
+notation:
+  extra_units: {}
+  defined_terms: [T80, T90, ISOS-L-1, ISOS-D-1, p-i-n, n-i-p, 2T, 4T,
+                  C60-PA, I-V, PCE, SAM, MPPT]

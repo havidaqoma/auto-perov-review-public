@@ -1,0 +1,40 @@
+{
+  "stage": "20_chemrxiv",
+  "at": "2026-09-09T17:17:34",
+  "platform": "ChemRxiv",
+  "package_dir": "manuscript\\2026-06_v4\\chemrxiv",
+  "main_content_pdf": "manuscript\\2026-06_v4\\chemrxiv\\manuscript_v4.pdf",
+  "supplementary_pdf": "manuscript\\2026-06_v4\\chemrxiv\\supplementary_v4.pdf",
+  "tex": "manuscript\\2026-06_v4\\chemrxiv\\manuscript.tex",
+  "tex_compiles": true,
+  "tarball": "manuscript\\2026-06_v4\\chemrxiv_2026-06.tar.gz",
+  "tarball_bytes": 300250,
+  "tarball_members": [
+    "manuscript.tex",
+    "submission_metadata.json",
+    "SUBMISSION_CHECKLIST.md",
+    "manuscript_v4.pdf",
+    "supplementary_v4.pdf",
+    "fig/F1_certified_frontier.pdf",
+    "fig/F2_area_penalty.pdf",
+    "fig/F3_effort_map.pdf",
+    "fig/F4_stability_evidence.pdf"
+  ],
+  "absolute_paths_in_tar": [],
+  "stale_platform_refs": [],
+  "checklist": "manuscript\\2026-06_v4\\chemrxiv\\SUBMISSION_CHECKLIST.md",
+  "metadata": "manuscript\\2026-06_v4\\chemrxiv\\submission_metadata.json",
+  "csv_files": [
+    "axis_distribution.csv",
+    "corpus_metadata.csv",
+    "extracted_claims.csv",
+    "figure1_certified_frontier.csv",
+    "figure2_area_penalty.csv",
+    "figure3_effort_map.csv",
+    "figure4_stability_evidence.csv",
+    "reporting_audit.csv",
+    "token_summary.csv",
+    "token_usage.csv"
+  ],
+  "data_dir": "manuscript\\2026-06_v4\\data"
+}

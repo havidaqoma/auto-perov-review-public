@@ -1,0 +1,33 @@
+{
+  "stage": "18d_build_v4",
+  "at": "2026-09-09T13:36:40",
+  "pdf": "manuscript\\2026-08_v4\\manuscript_v4.pdf",
+  "bytes": 189000,
+  "pages": 14,
+  "title": "Perovskite Photovoltaics in August 2026: Non-radiative recombination control and buried-interface treatment",
+  "prose_words": 2949,
+  "abstract_words": 289,
+  "cited": 75,
+  "figures": 4,
+  "sections": 8,
+  "map_sha256": "05f30c1551fc1dfb",
+  "gates": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "fail",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9d-model-names": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+  }
+}

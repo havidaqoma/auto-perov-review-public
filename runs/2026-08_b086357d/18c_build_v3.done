@@ -1,0 +1,22 @@
+{
+  "stage": "18c_build_v3",
+  "at": "2026-09-08T02:41:02",
+  "pdf": "manuscript\\2026-08_v3\\manuscript_v3.pdf",
+  "bytes": 182007,
+  "pages": 15,
+  "prose_words": 2980,
+  "abstract_words": 326,
+  "cited": 82,
+  "figures": 4,
+  "gates": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G7-abbrev": "pass",
+    "G5": "pass"
+  }
+}

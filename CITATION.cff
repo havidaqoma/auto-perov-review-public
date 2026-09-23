@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: >-
+  If you use this pipeline, its stored corpora, or its gate reports, please
+  cite this repository. The manuscripts it produces are not yet published, so
+  there is no journal reference to cite instead.
+title: >-
+  Automated perovskite photovoltaics literature review: a validator-gated
+  pipeline at monthly, half-year, and yearly cadence
+abstract: >-
+  A staged pipeline that turns a scholarly-database query into a review
+  manuscript, where a language model writes prose and extracts values and
+  deterministic scripts decide whether that output may ship. Seventeen gates
+  compute over stored JSON, no gate consults a model, and the model that
+  reviews an output is never the model that produced it. This repository holds
+  the code, the stored run artifacts for eleven runs, the gate reports
+  including the failing ones, and the rendered documents, so results can be
+  re-verified offline without re-running any paid API or model call.
+type: software
+authors:
+  - given-names: Havid
+    family-names: Aqoma
+    email: havidaqoma.khoiruddin@xmu.edu.my
+    orcid: 'https://orcid.org/0000-0003-1264-1916'
+    affiliation: >-
+      School of Energy and Chemical Engineering, Xiamen University Malaysia,
+      Selangor Darul Ehsan 43900, Malaysia
+license: MIT
+keywords:
+  - perovskite solar cells
+  - photovoltaics
+  - automated literature review
+  - reproducibility
+  - deterministic validation
+  - large language models
+  - research automation

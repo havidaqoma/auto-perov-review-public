@@ -1,0 +1,52 @@
+{
+  "study": "R1 -- extraction precision and recall against human labels",
+  "built": "2026-09-12",
+  "seed": 20260912,
+  "n_target": 100,
+  "months": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08"
+  ],
+  "population": "corpus works carrying an abstract (the pool audit_over() builds)",
+  "population_size": 3056,
+  "denominator_check": {
+    "audit.corpus.denominator": 456,
+    "corpus.n": 648,
+    "selection.n_depth": 181,
+    "claim_cards": 169,
+    "resolved": "audit rates divide by corpus works WITH abstracts, so the label population is that pool, NOT the cards"
+  },
+  "questions": [
+    "states_pce",
+    "states_certified",
+    "states_area",
+    "states_t80",
+    "isos_protocol"
+  ],
+  "stratification": "regex flag cell (isos > certified > pce_only > none)",
+  "cell_weights": {
+    "certified": 4.0,
+    "isos": 6.0,
+    "pce_only": 1.0,
+    "none": 0.7
+  },
+  "primary_metrics": [
+    "precision and recall of each extractor flag vs human label",
+    "Wilson 95% intervals",
+    "inverse-probability weighted population rates"
+  ],
+  "secondary_metrics": [
+    "numeric accuracy of the declared headline PCE",
+    "intra-rater agreement (kappa) on a 20-paper re-label",
+    "per-extractor-model breakdown (qwen3.8-flash vs glm-5.3-flash)"
+  ],
+  "blinding": "the sheet shows title, venue and abstract only; no extractor output, no pre-filled answer, no flag",
+  "labeller": "Havid Aqoma (human). No model may label, pre-label or assist any row.",
+  "analysis_frozen_before_labelling": true
+}

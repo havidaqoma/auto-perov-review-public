@@ -1,0 +1,33 @@
+{
+  "stage": "18d_build_v4",
+  "at": "2026-09-09T13:36:26",
+  "pdf": "manuscript\\2026-06_v4\\manuscript_v4.pdf",
+  "bytes": 190578,
+  "pages": 15,
+  "title": "Perovskite Photovoltaics in June 2026: Defect passivation, composition and phase control",
+  "prose_words": 2987,
+  "abstract_words": 306,
+  "cited": 76,
+  "figures": 4,
+  "sections": 8,
+  "map_sha256": "0eb2c11a35305cac",
+  "gates": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "skip",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9d-model-names": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+  }
+}

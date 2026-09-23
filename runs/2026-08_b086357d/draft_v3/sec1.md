@@ -1,0 +1,5 @@
+Perovskite single junctions are now certified above 27% power conversion efficiency (PCE) and perovskite/silicon tandems above 33%, so the field's open problems have moved from raw efficiency to whether a claimed efficiency is verifiable, whether it survives at module area, and whether it survives operation. In August 2026, 531 indexed works met the scope gate and 144 were read closely.
+
+This review follows four mechanistic threads: buried-interface and contact chemistry, defect tolerance and ion migration, wide-bandgap absorbers for tandems, and operational stability, with scale-up as the constraint coupling them. Buried interfaces dictate band alignment and non-radiative recombination kinetics, while mobile ionic defects screen internal fields and accelerate chemical corrosion at selective contacts. In wide-bandgap absorbers required for tandems, light-induced halide segregation pins photovoltages, whereas rapid crystallization during large-area coating multiplies carrier-trapping boundaries across the absorber volume.
+
+The month's headline numbers are strong, the evidence behind them is unevenly reported, and this review separates the two.

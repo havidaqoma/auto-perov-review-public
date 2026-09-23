@@ -1,0 +1,12 @@
+{
+  "stage": "11y_si_figures",
+  "at": "2026-09-13T13:23:00",
+  "year": "2025",
+  "figures": [
+    "S1_corpus_funnel.pdf",
+    "S2_reporting_audit.pdf"
+  ],
+  "fig_dir": "perovskite_pv_yearly\\runs\\2025_6cb0e6ed\\fig",
+  "measured_reports": 387,
+  "year_only_dated": 1089
+}

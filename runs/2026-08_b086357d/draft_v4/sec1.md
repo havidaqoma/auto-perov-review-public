@@ -1,0 +1,7 @@
+Perovskite photovoltaic research has moved beyond maximizing unencapsulated power conversion efficiency (PCE) on sub-millimetre laboratory apertures. The strongest mechanistic consensus demonstrates that coordinating Lewis-base ligands and self-assembled monolayers (SAMs) passivate non-radiative recombination centres at buried contacts by coordinating undercoordinated lead sites. Yet the critical open problem has shifted to operational lifetime, device area, and rigorous verification. Arresting field-driven halide migration, phase segregation, and contact corrosion during prolonged continuous operation across scalable apertures remains unresolved, presenting barriers that transient efficiency improvements cannot circumvent.
+
+To evaluate these challenges, 531 indexed works met the scope gate in August 2026 and 144 were read closely.
+
+The resulting evidence base is structured across core physical domains: defect tolerance, passivation and ion migration, buried interfaces and contact chemistry, composition, phase control and crystallisation, wide-bandgap absorbers and tandem integration, as well as operational stability and degradation pathways.
+
+Throughout each topic, this review distinguishes what the month's literature verified from what it asserted. Theoretical passivation mechanisms and charge-transport claims are scrutinized directly against empirical device behavior, separating documented operational survivability from unverified assertions based on uncertified, small-area cells subjected to brief, non-standardized aging routines.

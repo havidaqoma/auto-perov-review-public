@@ -1,0 +1,15 @@
+work_key,doi,device_class,area_cm2,pce_percent
+10.1126/science.aef5355,10.1126/science.aef5355,perovskite_silicon_tandem,1,33.2
+10.1002/adma.73561,10.1002/adma.73561,single_junction,0.05,26.14
+10.1002/anie.4500167,10.1002/anie.4500167,single_junction,1.04,26.66
+10.1002/adfm.76257,10.1002/adfm.76257,single_junction,0.04,26.09
+10.1002/adfm.76756,10.1002/adfm.76756,single_junction,12,26.76
+10.1002/anie.2974414,10.1002/anie.2974414,module,50,26.52
+10.1002/adma.73656,10.1002/adma.73656,single_junction,0.0524,26.6
+10.1038/s41467-026-74288-2,10.1038/s41467-026-74288-2,single_junction,29.7,26.88
+10.1021/acsenergylett.6c01291,10.1021/acsenergylett.6c01291,single_junction,0.1,26.54
+10.1002/adma.73855,10.1002/adma.73855,module,655.2,27.12
+10.1002/aenm.71123,10.1002/aenm.71123,single_junction,1,21
+10.1038/s41467-026-73276-w,10.1038/s41467-026-73276-w,all_perovskite_tandem,57.6,26.13
+10.1002/solr.70410,10.1002/solr.70410,perovskite_silicon_tandem,1,23.4
+10.1016/j.rineng.2026.111690,10.1016/j.rineng.2026.111690,single_junction,2,19.93

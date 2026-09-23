@@ -1,0 +1,16 @@
+{
+  "stage": "06_mechanism",
+  "at": "2026-09-08T18:09:04",
+  "n_kept": 623,
+  "n_dropped": 19,
+  "axis_distribution": {
+    "composition": 268,
+    "architecture": 61,
+    "defects": 113,
+    "stability": 50,
+    "interfaces": 107,
+    "scale_up": 24
+  },
+  "validation": "unvalidated",
+  "n_with_abstract": 426
+}

@@ -1,0 +1,102 @@
+{
+  "per_month": {
+    "2026-01": {
+      "denominator": 308,
+      "isos_old_n": 2,
+      "isos_old_pct": 0.65,
+      "isos_new_n": 7,
+      "isos_new_pct": 2.27,
+      "isos_delta_pp": 1.62,
+      "shipped_pct": 0.6,
+      "t80_n": 67,
+      "t80_pct": 21.75
+    },
+    "2026-02": {
+      "denominator": 331,
+      "isos_old_n": 6,
+      "isos_old_pct": 1.81,
+      "isos_new_n": 17,
+      "isos_new_pct": 5.14,
+      "isos_delta_pp": 3.32,
+      "shipped_pct": 1.8,
+      "t80_n": 76,
+      "t80_pct": 22.96
+    },
+    "2026-03": {
+      "denominator": 370,
+      "isos_old_n": 8,
+      "isos_old_pct": 2.16,
+      "isos_new_n": 18,
+      "isos_new_pct": 4.86,
+      "isos_delta_pp": 2.7,
+      "shipped_pct": 2.2,
+      "t80_n": 82,
+      "t80_pct": 22.16
+    },
+    "2026-04": {
+      "denominator": 414,
+      "isos_old_n": 11,
+      "isos_old_pct": 2.66,
+      "isos_new_n": 23,
+      "isos_new_pct": 5.56,
+      "isos_delta_pp": 2.9,
+      "shipped_pct": 2.7,
+      "t80_n": 98,
+      "t80_pct": 23.67
+    },
+    "2026-05": {
+      "denominator": 389,
+      "isos_old_n": 4,
+      "isos_old_pct": 1.03,
+      "isos_new_n": 13,
+      "isos_new_pct": 3.34,
+      "isos_delta_pp": 2.31,
+      "shipped_pct": 1.0,
+      "t80_n": 77,
+      "t80_pct": 19.79
+    },
+    "2026-06": {
+      "denominator": 426,
+      "isos_old_n": 7,
+      "isos_old_pct": 1.64,
+      "isos_new_n": 13,
+      "isos_new_pct": 3.05,
+      "isos_delta_pp": 1.41,
+      "shipped_pct": 1.6,
+      "t80_n": 85,
+      "t80_pct": 19.95
+    },
+    "2026-07": {
+      "denominator": 456,
+      "isos_old_n": 6,
+      "isos_old_pct": 1.32,
+      "isos_new_n": 15,
+      "isos_new_pct": 3.29,
+      "isos_delta_pp": 1.97,
+      "shipped_pct": 1.3,
+      "t80_n": 109,
+      "t80_pct": 23.9
+    },
+    "2026-08": {
+      "denominator": 362,
+      "isos_old_n": 7,
+      "isos_old_pct": 1.93,
+      "isos_new_n": 13,
+      "isos_new_pct": 3.59,
+      "isos_delta_pp": 1.66,
+      "shipped_pct": 1.9,
+      "t80_n": 81,
+      "t80_pct": 22.38
+    }
+  },
+  "pooled": {
+    "denominator": 3056,
+    "isos_old_n": 51,
+    "isos_new_n": 119,
+    "isos_old_pct": 1.67,
+    "isos_new_pct": 3.89,
+    "t80_n": 675,
+    "t80_pct": 22.09
+  },
+  "status": "RECORDED NOT APPLIED: shipped issues still carry the old ISOS rate; rebuilding eight months touches stats.json, figures, tables and abstracts and needs a human read (11.1)"
+}

@@ -1,0 +1,180 @@
+# Domain registry TEMPLATE. Copy to config/domains/<name>.yaml and fill in.
+#
+# WHY THIS FILE EXISTS
+# --------------------
+# MASTER_HANDBOOK §9 measured the topic lock in the monthly pipeline:
+#   s13d 22 strings, s18d 20, s09_cards 10, s11b 9, s19 4.
+# Swapping axes.yaml does NOT touch it, because the deep lock is the
+# EXTRACTION SCHEMA: pce_certified, t80_h, active_area_cm2 and
+# architecture: p-i-n|n-i-p|tandem_2T|module are photovoltaic concepts.
+#
+# So a domain is declared, not coded. Every topic-specific string in the
+# pipeline is GENERATED from this file. There is no `if domain == "..."`
+# branch anywhere; a branch is how two domains drift apart.
+#
+# THE TWO TOPIC TYPES
+# -------------------
+# topic_type: P  (performance-device)
+#   PV, LED, photodetector, battery, sensor, transistor, thermoelectric.
+#   A single scalar figure of merit ranks devices, so the monthly logic
+#   ports directly: a certified frontier, an area/scale penalty, a
+#   durability metric. Only the metric NAMES change.
+#
+# topic_type: D  (discovery-chemistry)
+#   Total synthesis, methodology, novel molecules, catalysis, mechanism.
+#   There is NO champion curve. Ranking papers by yield would be a
+#   category error: a 41% yield forming a quaternary stereocentre beats a
+#   95% yield on a trivial coupling. Type-D replaces the frontier section
+#   with a significance synthesis and replaces the penalty plot with a
+#   scope / structure-property map.
+#
+# Choosing P for a discovery topic is the single worst mistake available
+# here. It produces a paper that ranks chemistry by a number chemists do
+# not rank chemistry by, and every gate will pass.
+
+domain:
+  name: ""                # e.g. "perovskite photovoltaics"
+  slug: ""                # e.g. perovskite_pv  (filenames, run dirs)
+  topic_type: ""          # P | D  -- read the note above before choosing
+  scope_note: ""          # one sentence: what is IN and what is OUT
+
+# ---------------------------------------------------------------- harvest
+harvest:
+  # The search conjunction. NEVER put exclusions here: a `-term` in an
+  # OpenAlex query returns count 0, not a filtered set (handbook 9.1).
+  # Wildcards are rejected on title_and_abstract.search; spell out variants.
+  query_terms: []         # OR-ed groups, AND-ed across groups
+  # Assert the count band with per-page=1 BEFORE paginating. Abort if the
+  # count is 0 or outside this band -- a zero is a bug until proven
+  # otherwise (handbook 7.1).
+  count_band: [250, 1200]
+  arxiv_categories: []    # arXiv has no server-side month filter; filter
+                          # `published` client-side.
+
+# Applied in PYTHON after the query, never in the query string.
+exclude:
+  substring: []           # matched against title + journal + abstract
+  word_bound: []          # word-boundary match, for short ambiguous terms
+
+# ------------------------------------------------------------------- axes
+# The mechanism axes. 4-8 of them. Each needs enough literature to support
+# a section in a typical month, or it will be permanently folded.
+axes: {}
+  # example:
+  # defects:
+  #   name: Defects and passivation chemistry
+  #   keywords: [defect, vacancy, passivation, trap, grain boundary]
+  #   fold_into: interfaces     # where its papers go if it misses the cut
+
+# ---------------------------------------------------------------- metrics
+# THE CENTREPIECE. Every number the manuscript may ever report is declared
+# here with its unit, direction and physical bounds.
+#
+# Required per metric:
+#   key                  field name in the extraction schema
+#   label                human-readable name for prose and figures
+#   unit                 the unit as a WRITER would type it (notation.py
+#                        converts to siunitx); "" for dimensionless
+#   direction            higher_better | lower_better | none
+#   role                 frontier | penalty_x | durability | secondary
+#   plausibility.min/max HARD physical bounds. The build FAILS CLOSED on a
+#                        violation. This is handbook 7.8's corollary:
+#                        traceability proves provenance, not meaning. A
+#                        value above a physical limit is self-refuting.
+#   device_binding       true if the value is meaningless without the
+#                        device/sample it was measured on. When true, the
+#                        label MUST come from the value's own anchor, never
+#                        from the paper (handbook 3, guard 5). This is the
+#                        flag that would have prevented the worst defect
+#                        the PV pipeline ever shipped.
+metrics: []
+  # example:
+  # - key: pce_certified
+  #   label: certified power conversion efficiency
+  #   unit: "%"
+  #   direction: higher_better
+  #   role: frontier
+  #   plausibility: {min: 0.0, max: 29.4}
+  #   plausibility_note: "1.55 eV Shockley-Queisser single-junction limit"
+  #   device_binding: true
+
+# ------------------------------------------------------- sample taxonomy
+# The controlled vocabulary for what a measurement was performed ON.
+# For Type-P this is the device architecture; for Type-D the compound or
+# reaction class. A value whose sample label is not in this list is
+# flagged, never silently coerced.
+sample_taxonomy:
+  field: ""               # e.g. architecture | compound_class
+  values: []              # closed list + "unknown"
+  # Sub-classes that make a metric bound DIFFERENT. A 2-junction tandem
+  # has a different SQ limit from a single junction, so the plausibility
+  # bound must be selected by sample class, not applied globally.
+  bound_overrides: {}
+  #   tandem_2T: {pce_certified: {max: 47.6}}
+
+# ------------------------------------------------------------ study lens
+# Study type. `measured_lenses` are the ones that may appear on a
+# measured-performance figure. Handbook 5.1: a drift-diffusion study
+# reporting ~30.8% sat beside certified hardware until a human noticed.
+lens:
+  values: [experimental, theory, review]
+  measured_lenses: [experimental]
+  exclude_from_measured_figures: [theory, review]
+
+# --------------------------------------------------------------- figures
+# Figures are declared by ROLE and attached by role, never by section
+# number (section numbers vary per issue). One file attaches to at most
+# one section, asserted by G9c.
+figure_roles: []
+  # example:
+  # - id: F1
+  #   argument: "how thin the independently verified layer is"
+  #   kind: paired_bar          # paired_bar | scatter_log_x | heatmap | strip
+  #   y_metric: pce_certified
+  #   compare_metric: pce_champion
+  #   attach_role: frontier
+  #   lens_filter: measured
+
+# ------------------------------------------------- abstract placeholders
+# The abstract is written LAST, by the writer, and is FORBIDDEN from
+# emitting any digit. It emits these named tokens and the build
+# substitutes canonical values (handbook 3.3).
+#
+# Every token here must be resolvable from stats or cards. An unresolvable
+# token FAILS THE BUILD -- a hole never ships. Values the build itself
+# computes must be admitted to the G3 allow-list explicitly, or G3 flags a
+# number the build derived (handbook 7.6 #7).
+abstract_tokens: []
+  # - {token: N_CORPUS, source: "stats:corpus.n"}
+  # - {token: P_TOP_CERT, source: "cards:max:pce_certified", suffix: "%"}
+
+# ------------------------------------------------------------ title terms
+title_terms:
+  frame: ""               # e.g. "Perovskite photovoltaics"
+  max_words: 16
+  neutral_slot: ""        # fallback when no axis phrase fits
+  axis_phrases: {}        # axis -> list of plain descriptive phrases
+  # Banned with NO exceptions. Include any frame that collides with a real
+  # journal title: "Progress in Perovskite Photovoltaics" mimics Progress
+  # in Photovoltaics (Wiley).
+  banned: [comprehensive, novel, unprecedented, breakthrough, cutting-edge,
+           state-of-the-art, enhanced, improved, superior, remarkable,
+           pivotal, delve, unlock, showcase, realm, update]
+
+# --------------------------------------------------------- section spine
+# Role order for the generated section map. `gaps` MUST be last.
+# Type-P uses a `frontier` role; Type-D uses `significance` instead.
+section_spine:
+  lead_role: ""           # frontier (P) | significance (D)
+  lead_title_template: "" # e.g. "The Certified Frontier in {month}"
+  # Words and cite targets for the fixed spine sections.
+  spine_words: {intro: 300, lead: 290, gaps: 400}
+  spine_cites: {intro: 0, lead: 8, gaps: 4}
+
+# -------------------------------------------------------------- notation
+# Domain-specific units added to notation.py's table. A MISSING UNIT DOES
+# NOT DEGRADE GRACEFULLY: one unknown token in a unit run leaves every
+# unit beside it flat (handbook 7.7 #3, the missing `J`).
+notation:
+  extra_units: {}         # "ppm": "\\ppm"  etc.
+  defined_terms: []       # masked before substitution: T80, ISOS-L-1, p-i-n

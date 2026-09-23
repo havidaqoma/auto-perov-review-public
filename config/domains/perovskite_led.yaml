@@ -1,0 +1,227 @@
+# Perovskite LEDs. A SECOND TYPE-P DOMAIN, to prove type P is not "PV".
+#
+# The point of this instance: everything structural is unchanged from
+# perovskite_pv.yaml. The frontier metric, the penalty axis and the durability
+# metric all still exist; only their identities change. If porting to a
+# same-type domain required touching any gate, guard or build code, the
+# registry design would have failed.
+#
+#   PV                          LED
+#   pce_certified   frontier    eqe_max          frontier
+#   active_area_cm2 penalty_x   luminance_cd_m2  penalty_x
+#   t80_h           durability  t50_h            durability
+#
+# The bound that changes character: PV's frontier is capped by
+# Shockley-Queisser (a thermodynamic limit on conversion). An LED's external
+# quantum efficiency is capped at 100% by definition of a ratio, and in
+# practice photon recycling and outcoupling put credible devices well below
+# it. So the plausibility bound is 100 (hard, definitional) with a REVIEW
+# threshold below it, because a 95% EQE claim is not impossible but is
+# extraordinary.
+
+domain:
+  name: perovskite light-emitting diodes
+  slug: perovskite_led
+  topic_type: P
+  scope_note: >
+    Perovskite emitters used for electroluminescent devices: LEDs and
+    display-oriented emitters, including quantum-dot and nanocrystal
+    emissive layers. Photovoltaic, detector and laser applications are out
+    of scope even when the emitter composition is identical.
+
+harvest:
+  query_terms:
+    - [perovskite]
+    - [light-emitting diode, LED, electroluminescen, emitter]
+  count_band: [150, 900]
+  arxiv_categories: [physics.app-ph, cond-mat.mtrl-sci]
+
+exclude:
+  substring: [solar cell, photovoltaic, power conversion efficiency,
+              x-ray detector, photodetector, lasing threshold,
+              water splitting, photocatal]
+  word_bound: [battery, magnet, thermoelectric, superconductor]
+
+axes:
+  emitter_composition:
+    name: Emitter composition and dimensionality
+    keywords: [quasi-2D, nanocrystal, quantum dot, CsPbBr3, mixed-halide,
+               A-site, halide segregation, dimensional, ligand, perovskite
+               nanoplatelet]
+    fold_into: defects
+  defects:
+    name: Trap states and non-radiative recombination
+    keywords: [trap, defect, passivation, non-radiative, Auger,
+               halide vacancy, surface trap, PLQY]
+    fold_into: charge_balance
+  charge_balance:
+    name: Charge injection and carrier balance
+    keywords: [charge balance, injection, hole injection, electron injection,
+               transport layer, energy level alignment, exciton confinement,
+               leakage current]
+    fold_into: defects
+  outcoupling:
+    name: Photon outcoupling and optical design
+    keywords: [outcoupling, light extraction, microlens, cavity,
+               waveguided, angular emission, refractive index, scattering]
+    fold_into: charge_balance
+  operational_stability:
+    name: Operational stability and degradation
+    keywords: [T50, operational lifetime, luminance decay, ion migration,
+               Joule heating, encapsulation, degradation, roll-off]
+    fold_into: defects
+  colour_purity:
+    name: Colour purity and spectral stability
+    keywords: [FWHM, colour coordinate, CIE, spectral shift, blue emission,
+               deep-red, Rec. 2020, colour stability, emission peak]
+    fold_into: emitter_composition
+
+metrics:
+  - key: eqe_max
+    label: peak external quantum efficiency
+    unit: "%"
+    direction: higher_better
+    role: frontier
+    plausibility: {min: 0.0, max: 100.0}
+    plausibility_note: >
+      EQE is a ratio of photons out to electrons in, so 100% is a
+      definitional cap, not a thermodynamic one. Values above 30% for a
+      planar device imply significant outcoupling enhancement and must say
+      so; the review_above threshold flags them for a human rather than
+      failing, because they are extraordinary rather than impossible.
+    review_above: 32.0
+    device_binding: true
+  - key: eqe_certified
+    label: independently certified external quantum efficiency
+    unit: "%"
+    direction: higher_better
+    role: secondary
+    plausibility: {min: 0.0, max: 100.0}
+    device_binding: true
+  - key: luminance_cd_m2
+    label: peak luminance
+    unit: cd m-2
+    direction: higher_better
+    role: penalty_x
+    plausibility: {min: 0.0, max: 10000000.0}
+    device_binding: true
+  - key: t50_h
+    label: T50 operational lifetime
+    unit: h
+    direction: higher_better
+    role: durability
+    plausibility: {min: 0.0, max: 1000000.0}
+    # T50 is meaningless without the luminance it was measured at: a T50 of
+    # 10000 h at 100 cd/m2 and at 1000 cd/m2 are different claims by orders
+    # of magnitude. This is the same class as PV's area binding.
+    device_binding: true
+    requires_condition: initial_luminance_cd_m2
+  - key: el_peak_nm
+    label: electroluminescence peak wavelength
+    unit: nm
+    direction: none
+    role: secondary
+    plausibility: {min: 200.0, max: 2500.0}
+    device_binding: false
+  - key: fwhm_nm
+    label: emission full width at half maximum
+    unit: nm
+    direction: lower_better
+    role: secondary
+    plausibility: {min: 0.0, max: 400.0}
+    device_binding: false
+  - key: plqy_pct
+    label: photoluminescence quantum yield
+    unit: "%"
+    direction: higher_better
+    role: secondary
+    plausibility: {min: 0.0, max: 100.0}
+    # A FILM/SOLUTION property, not a device property. Reporting it beside
+    # device EQE without saying which is which is the LED analogue of PV's
+    # certified-vs-champion conflation.
+    device_binding: false
+
+sample_taxonomy:
+  field: device_stack
+  values: [planar_3D, quasi_2D, nanocrystal, single_crystal, film_only,
+           solution_only, none, unknown]
+  bound_overrides:
+    # Film and solution measurements cannot carry a device EQE at all.
+    film_only: {eqe_max: {max: 0.0}}
+    solution_only: {eqe_max: {max: 0.0}}
+
+lens:
+  values: [experimental, theory, review]
+  measured_lenses: [experimental]
+  exclude_from_measured_figures: [theory, review]
+
+figure_roles:
+  - id: F1
+    argument: how much of the reported efficiency frontier is independently verified
+    kind: paired_bar
+    y_metric: eqe_certified
+    compare_metric: eqe_max
+    attach_role: frontier
+    lens_filter: measured
+  - id: F2
+    argument: the efficiency roll-off penalty at display-relevant brightness
+    kind: scatter_log_x
+    x_metric: luminance_cd_m2
+    y_metric: eqe_max
+    attach_axis: charge_balance
+    lens_filter: measured
+  - id: F3
+    argument: which physics each emitter class is pushed on
+    kind: heatmap
+    attach_axis: [emitter_composition, defects]
+    lens_filter: all
+  - id: F4
+    argument: lifetime reporting is thin and rarely states its luminance
+    kind: strip
+    y_metric: t50_h
+    attach_axis: operational_stability
+    lens_filter: measured
+
+abstract_tokens:
+  - {token: N_CORPUS, source: "stats:corpus.n"}
+  - {token: N_DEPTH, source: "stats:selection.n_depth"}
+  - {token: P_TOP_EQE, source: "cards:max:eqe_max", suffix: "%"}
+  - {token: N_EQE, source: "cards:count:eqe_max", computed: true}
+  - {token: L_MAX, source: "cards:max:luminance_cd_m2"}
+  - {token: N_T50, source: "cards:count:t50_h", computed: true}
+  - {token: H_T50_MAX, source: "cards:max:t50_h", suffix: " h"}
+  - {token: PCT_LIFETIME, source: "stats:audit.corpus.lifetime_stated.pct"}
+
+title_terms:
+  frame: Perovskite light-emitting diodes
+  max_words: 16
+  neutral_slot: a monthly mechanism and reporting audit
+  axis_phrases:
+    emitter_composition: ["emitter dimensionality", "nanocrystal emitter design",
+                          "halide composition control"]
+    defects: ["trap passivation", "non-radiative loss control",
+              "surface trap chemistry"]
+    charge_balance: ["carrier balance", "charge injection control",
+                     "efficiency roll-off control"]
+    outcoupling: ["photon outcoupling", "light extraction design",
+                  "optical cavity design"]
+    operational_stability: ["operational lifetime", "luminance decay pathways",
+                            "degradation under drive"]
+    colour_purity: ["colour purity", "spectral stability", "blue emitter stability"]
+  banned: [comprehensive, novel, unprecedented, breakthrough, cutting-edge,
+           state-of-the-art, enhanced, improved, superior, remarkable,
+           pivotal, delve, unlock, showcase, realm, update]
+
+section_spine:
+  lead_role: frontier
+  lead_title_template: "The Efficiency Frontier in {month}"
+  spine_words: {intro: 300, lead: 290, gaps: 400}
+  spine_cites: {intro: 0, lead: 8, gaps: 4}
+
+notation:
+  extra_units:
+    "cd": "\\candela"
+    "lm": "\\lumen"
+    "sr": "\\steradian"
+  defined_terms: [T50, T95, EQE, PLQY, FWHM, CIE, EL, PL, quasi-2D,
+                  Rec. 2020, cd m-2]

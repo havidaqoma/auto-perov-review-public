@@ -1,0 +1,100 @@
+# Yearly review bands and knobs.
+#
+# These are NEW keys, not widened monthly ones (MASTER_HANDBOOK 6.1). The
+# monthly `paper_v3`, `citations`, `abstract` bands describe a 15-page issue
+# built from one month of evidence and must keep describing exactly that. A
+# yearly issue is a different artifact with a different envelope, so it gets
+# its own keys and its own gate report (gate_report_yearly.json).
+#
+# Every number below is bracketed on MEASURED monthly output, never assumed.
+# Verified on disk 2026-09-08, three shipped v4 issues:
+#
+#   month     corpus   depth   cards
+#   2026-06      623     167     167
+#   2026-07      648     181     169
+#   2026-08      531     144     144
+#   -------------------------------
+#   3 months    1802     492     480
+#
+# Linear projection to 12 months: 7208 works, 1968 depth papers. The corpus
+# band allows for cross-month duplicate removal (a work indexed in two months
+# collapses to one work_key) and for late backfill, which 3.4 measured as
+# real: a fourteen-month-old month retrieves WORSE than a two-month-old one,
+# so the yearly corpus is assembled from the monthly runs plus one delta pass,
+# never re-harvested from scratch.
+
+yearly:
+  # ---- corpus ----
+  # 7208 projected. Band is deliberately wide because publisher indexing
+  # backfills for months and the aggregate is a union across 12 runs.
+  count_band: [4500, 9500]
+
+  # ---- selection ----
+  # NOT 12x the monthly depth tier. A yearly review that closely reads 1968
+  # papers cannot cite them individually inside a 200-citation ceiling, and a
+  # depth tier larger than the citation ceiling is a tier that lies about what
+  # was read. 450 is ~2.25x monthly, which is the largest pool that still lets
+  # every depth paper be a candidate for individual citation.
+  depth_target: 450
+  depth_band: [350, 550]
+  axis_min_depth: 25          # scaled from monthly 12; an axis needs real mass
+  quarter_min_share_pct: 15   # per-quarter floor so December cannot eat January
+  sensitivity_draws: 200      # same as monthly
+  seed: 0                     # same as monthly: reproducible selection
+
+  # ---- manuscript envelope ----
+  # Monthly ships 14-15 pages / 75-80 citations. Havid asked for 2-3x content.
+  # 2.7x on body words, 2.5x on citations, 2.6x on content pages.
+  # MEASURED, replacing a projection. Appendix B listed the previous
+  # [20,28]/[32,45] as PROJECTED, scaled from monthly 14-15 pp. The first
+  # real yearly build rendered 19.6 content / 30 total pages from 9,070
+  # words and 174 references, so the projection was optimistic by roughly
+  # two pages at the floor.
+  #
+  # Widened on Havid's explicit decision (2026-09-09) after the first build,
+  # and recorded here rather than quietly edited. THIS IS A DELIBERATE
+  # EXCEPTION to "never widen a gate to make output pass": the band was
+  # never bracketed on a real yearly artifact, so the floor described an
+  # issue nobody had built. That is a different act from relaxing a band
+  # that a measured artifact had already satisfied.
+  #
+  # WHAT THIS COSTS, stated because the cost is easy to lose: the previous
+  # floor was the only reason the build refused a figure-less manuscript.
+  # G5 measures pages and a missing figure shows up as a page shortfall, so
+  # widening the band removes the pipeline's only alarm for `figures: 0`.
+  # G9c-figures-present now carries that alarm explicitly instead.
+  content_page_band: [18, 28]
+  total_page_band: [28, 45]
+
+citations_yearly:
+  total_band: [160, 220]      # monthly [60, 85]
+
+abstract_yearly:
+  # Monthly [260, 340]. A yearly abstract must additionally carry the
+  # month-to-month trajectory and the year-over-year delta, which is two more
+  # jobs, not two more sentences. Same hard contract: no digits, no citations.
+  word_band: [400, 550]
+
+novelty_yearly:
+  # G8 for a yearly issue compares against ALL TWELVE monthly issues plus the
+  # prior yearly, not against one prior. Thresholds unchanged from monthly on
+  # purpose: a yearly synthesis that legitimately overlaps a monthly issue is
+  # still not allowed to REUSE its sentences. If this proves too tight in
+  # practice, the fix is recorded as a deliberate decision with its reason,
+  # never a quiet edit (6.1).
+  body_max_ratio: 0.25
+  abstract_max_ratio: 0.30
+  shingle_words: 12
+  # A yearly issue quotes 12 monthlies. Overlap of FACTS is expected and fine;
+  # overlap of PROSE is not. This cap is on the fraction of monthly-issue
+  # shingles that may appear anywhere in the yearly text.
+  monthly_reuse_max_ratio: 0.20
+
+plausibility:
+  # 7.8 corollary: add a plausibility gate wherever physics bounds a quantity.
+  # Traceability proves provenance, not meaning.
+  single_junction_pce_max_pct: 29.4   # 1.55 eV Shockley-Queisser, as monthly
+  tandem_2t_pce_max_pct: 47.6         # 2-junction detailed-balance limit
+  pce_min_pct: 0.0
+  eqe_max_pct: 100.0
+  ff_max_pct: 92.0

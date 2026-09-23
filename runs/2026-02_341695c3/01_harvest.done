@@ -1,0 +1,13 @@
+{
+  "stage": "01_harvest",
+  "at": "2026-09-09T18:39:39",
+  "month": "2026-02",
+  "sources": {
+    "openalex": 511,
+    "arxiv": 9,
+    "crossref": 200,
+    "s2": 392
+  },
+  "openalex_count": 511,
+  "pages": 6
+}

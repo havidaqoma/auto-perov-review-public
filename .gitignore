@@ -1,0 +1,63 @@
+# Public release tree.
+#
+# Deliberately NOT a copy of the private repo's .gitignore. That file carries
+# `runs/*` with a `!runs/*/` re-include, which keeps per-run raw payloads out
+# of the private history. Copying it here silently dropped the
+# `runs/<period>.active` pointers from the first release commit, and without
+# those pointers no stage and no check can resolve a run directory: a fresh
+# clone failed claim-card-provenance with "no claim_cards.jsonl found" while
+# the file sat right there on disk.
+#
+# The rule for this tree is simpler and safer. The release builder already
+# decided what ships; everything it wrote to disk is meant to be committed.
+# So nothing under runs/ is ignored here. Only genuinely local, regenerable,
+# or secret things are.
+
+# Credentials. The template ships, real values never do.
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python caches, created by running the test suites.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# LaTeX intermediates. Note manuscript.bbl IS a shipped deliverable.
+*.aux
+*.out
+*.flc
+*.synctex.gz
+*.toc
+*.nav
+*.snm
+
+# Rehydrated abstract payloads. tools/rehydrate_abstracts.py writes these
+# from the publisher APIs under the user's own terms. They are not ours to
+# redistribute, which is the whole reason only digests ship.
+runs/*/private/01_abstracts.jsonl
+runs/*/private/02_abstracts.jsonl
+yearly/runs/*/private/01_abstracts.jsonl
+yearly/runs/*/private/02_abstracts.jsonl
+
+# Per-run build staging and generated gate-band config.
+.staging/
+staging/
+.h1_config/
+
+# Fault-injection sandboxes, one per mutation, regenerable.
+sandbox/
+
+# Local scratch and verification output.
+scratch/
+repro.txt
+audit.txt
+
+# OS noise.
+Thumbs.db
+.DS_Store

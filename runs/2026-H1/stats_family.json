@@ -1,0 +1,373 @@
+{
+  "family.raw_counts_honest": {
+    "sj": 692,
+    "hyb": 77,
+    "ap": 13,
+    "tandem_unspecified": 47,
+    "mod": 43
+  },
+  "family.unspecified_tandem_n": 47,
+  "family.sj.label": "Single junction",
+  "family.sj.n_cards": 692,
+  "family.sj.n_measured": 531,
+  "family.sj.n_excluded_theory_review": 161,
+  "family.sj.n_certified": 63,
+  "family.sj.pct_certified": 9.1,
+  "family.sj.top_certified": 27.6,
+  "family.sj.median_certified": 26.22,
+  "family.sj.n_champion": 363,
+  "family.sj.pct_champion": 52.5,
+  "family.sj.top_champion": 28.01,
+  "family.sj.n_area": 46,
+  "family.sj.pct_area": 6.6,
+  "family.sj.max_area_cm2": 4,
+  "family.sj.n_t80": 27,
+  "family.sj.pct_t80": 3.9,
+  "family.sj.max_t80_h": 4100,
+  "family.sj.n_protocol": 33,
+  "family.sj.n_isos_specified": 25,
+  "family.sj.pct_isos": 3.6,
+  "family.sj.champion": {
+    "value": 27.6,
+    "anchor": "We achieved a certified power conversion efficiency (PCE) of 27.6% in FAPbI 3 -based PSCs.",
+    "work_key": "10.1126/science.aeb9953",
+    "venue": "Science",
+    "month": "2026-05",
+    "architecture": "unknown",
+    "area_cm2": null,
+    "t80_h": null,
+    "title": "An entropy-regulating molecular lock stabilizes formamidinium lead halide perovskite"
+  },
+  "family.ap.label": "All-perovskite tandem",
+  "family.ap.n_cards": 60,
+  "family.ap.n_measured": 48,
+  "family.ap.n_excluded_theory_review": 12,
+  "family.ap.n_certified": 15,
+  "family.ap.pct_certified": 25.0,
+  "family.ap.top_certified": 30.3,
+  "family.ap.median_certified": 28.34,
+  "family.ap.n_champion": 43,
+  "family.ap.pct_champion": 71.7,
+  "family.ap.top_champion": 30.3,
+  "family.ap.n_area": 6,
+  "family.ap.pct_area": 10.0,
+  "family.ap.max_area_cm2": 64.64,
+  "family.ap.n_t80": 8,
+  "family.ap.pct_t80": 13.3,
+  "family.ap.max_t80_h": 1600,
+  "family.ap.n_protocol": 2,
+  "family.ap.n_isos_specified": 2,
+  "family.ap.pct_isos": 3.3,
+  "family.ap.champion": {
+    "value": 30.3,
+    "anchor": "Monolithic two-terminal tandems achieve an efficiency of 30.3% (certified, 30.3%)",
+    "work_key": "10.1038/s41565-026-02165-6",
+    "venue": "Nature Nanotechnology",
+    "month": "2026-04",
+    "architecture": "tandem_2T",
+    "area_cm2": null,
+    "t80_h": null,
+    "title": "Chemical hardness engineering synchronizes crystallization in perovskite tandems"
+  },
+  "family.hyb.label": "Perovskite/silicon and other hybrid tandems",
+  "family.hyb.n_cards": 77,
+  "family.hyb.n_measured": 66,
+  "family.hyb.n_excluded_theory_review": 11,
+  "family.hyb.n_certified": 19,
+  "family.hyb.pct_certified": 24.7,
+  "family.hyb.top_certified": 33.6,
+  "family.hyb.median_certified": 31.93,
+  "family.hyb.n_champion": 49,
+  "family.hyb.pct_champion": 63.6,
+  "family.hyb.top_champion": 34.02,
+  "family.hyb.n_area": 12,
+  "family.hyb.pct_area": 15.6,
+  "family.hyb.max_area_cm2": 16,
+  "family.hyb.n_t80": 2,
+  "family.hyb.pct_t80": 2.6,
+  "family.hyb.max_t80_h": 1000,
+  "family.hyb.n_protocol": 1,
+  "family.hyb.n_isos_specified": 1,
+  "family.hyb.pct_isos": 1.3,
+  "family.hyb.champion": {
+    "value": 33.6,
+    "anchor": "For RPD-SnO x as the recombination layer, we achieved a certified efficiency of 33.6%",
+    "work_key": "10.1126/science.aef5355",
+    "venue": "Science",
+    "month": "2026-06",
+    "architecture": "tandem_2T",
+    "area_cm2": 1,
+    "t80_h": null,
+    "title": "Indium-free perovskite/silicon tandem solar cells with tin oxide recombination layer and electrodes"
+  },
+  "family.mod.label": "Module",
+  "family.mod.n_cards": 43,
+  "family.mod.n_measured": 40,
+  "family.mod.n_excluded_theory_review": 3,
+  "family.mod.n_certified": 10,
+  "family.mod.pct_certified": 23.3,
+  "family.mod.top_certified": 26.8,
+  "family.mod.median_certified": 26.27,
+  "family.mod.n_champion": 30,
+  "family.mod.pct_champion": 69.8,
+  "family.mod.top_champion": 27.12,
+  "family.mod.n_area": 30,
+  "family.mod.pct_area": 69.8,
+  "family.mod.max_area_cm2": 900,
+  "family.mod.n_t80": 2,
+  "family.mod.pct_t80": 4.7,
+  "family.mod.max_t80_h": 1050,
+  "family.mod.n_protocol": 3,
+  "family.mod.n_isos_specified": 3,
+  "family.mod.pct_isos": 7.0,
+  "family.mod.champion": {
+    "value": 26.8,
+    "anchor": "a power conversion efficiency (PCE) of 27.12% (certified 26.80%) for small\u2010area rigid PSCs",
+    "work_key": "10.1002/adma.73855",
+    "venue": "Advanced Materials",
+    "month": "2026-06",
+    "architecture": "p-i-n",
+    "area_cm2": 655.2,
+    "t80_h": null,
+    "title": "Molecularly Engineered Self\u2010Healing Scaffold With Customized Dynamic Bonds Enable Stable and Scalable Flexible Perovskite Solar Cells and Modules"
+  },
+  "family.month_matrix": {
+    "sj": {
+      "2026-01": 88,
+      "2026-02": 106,
+      "2026-03": 119,
+      "2026-04": 127,
+      "2026-05": 117,
+      "2026-06": 135
+    },
+    "ap": {
+      "2026-01": 10,
+      "2026-02": 10,
+      "2026-03": 9,
+      "2026-04": 13,
+      "2026-05": 10,
+      "2026-06": 8
+    },
+    "hyb": {
+      "2026-01": 7,
+      "2026-02": 8,
+      "2026-03": 11,
+      "2026-04": 19,
+      "2026-05": 17,
+      "2026-06": 15
+    },
+    "mod": {
+      "2026-01": 5,
+      "2026-02": 7,
+      "2026-03": 7,
+      "2026-04": 5,
+      "2026-05": 10,
+      "2026-06": 9
+    }
+  },
+  "family.frontier_series": {
+    "sj": [
+      27.1,
+      26.9,
+      26.78,
+      27.03,
+      27.6,
+      27.28
+    ],
+    "ap": [
+      29.2,
+      20.02,
+      27.7,
+      30.3,
+      29.44,
+      28.79
+    ],
+    "hyb": [
+      28.25,
+      32.46,
+      31.93,
+      32.81,
+      33.5,
+      33.6
+    ],
+    "mod": [
+      25.62,
+      26.75,
+      null,
+      25.55,
+      26.64,
+      32.95
+    ]
+  },
+  "family.area_ladder": [
+    {
+      "band_cm2": "< 0.1",
+      "n": 33,
+      "best_certified": 28.98,
+      "best_champion": 29.35,
+      "median_champion": 26.47
+    },
+    {
+      "band_cm2": "0.1 - 1",
+      "n": 11,
+      "best_certified": 28.25,
+      "best_champion": 29.73,
+      "median_champion": 22.51
+    },
+    {
+      "band_cm2": "1 - 10",
+      "n": 24,
+      "best_certified": 33.6,
+      "best_champion": 33.84,
+      "median_champion": 26.22
+    },
+    {
+      "band_cm2": "10 - 100",
+      "n": 26,
+      "best_certified": 32.95,
+      "best_champion": 28.16,
+      "median_champion": 26.01
+    },
+    {
+      "band_cm2": "> 100",
+      "n": 5,
+      "best_certified": 26.8,
+      "best_champion": 27.12,
+      "median_champion": 26.62
+    }
+  ],
+  "indoor.n_values": 4,
+  "indoor.n_papers": 4,
+  "indoor.by_family": {
+    "sj": 2,
+    "mod": 1,
+    "hyb": 1
+  },
+  "indoor.top": {
+    "value": 44.36,
+    "field": "pce_champion",
+    "family": "sj",
+    "lens": "experimental",
+    "work_key": "10.1007/s40820-026-02225-5",
+    "venue": "Nano-Micro Letters",
+    "month": "2026-05",
+    "title": "Electronic Blockade of Shunting Pathways via Dual Insulator Contacts for High-Efficiency Wide-Bandgap Perovskite Indoor Photovoltaics",
+    "anchor": "wide-band gap (WBG)-PIPVs achieve a PCE(i) of 44.36% (a power output of 127.94 \u00b5W cm\u22122) with a high Voc of 1.091 V and FF of",
+    "markers": [
+      "pce(i)",
+      "pipvs",
+      "\u03bcw cm"
+    ]
+  },
+  "indoor.values": [
+    {
+      "value": 44.36,
+      "field": "pce_champion",
+      "family": "sj",
+      "lens": "experimental",
+      "work_key": "10.1007/s40820-026-02225-5",
+      "venue": "Nano-Micro Letters",
+      "month": "2026-05",
+      "title": "Electronic Blockade of Shunting Pathways via Dual Insulator Contacts for High-Efficiency Wide-Bandgap Perovskite Indoor Photovoltaics",
+      "anchor": "wide-band gap (WBG)-PIPVs achieve a PCE(i) of 44.36% (a power output of 127.94 \u00b5W cm\u22122) with a high Voc of 1.091 V and FF of",
+      "markers": [
+        "pce(i)",
+        "pipvs",
+        "\u03bcw cm"
+      ]
+    },
+    {
+      "value": 41.6,
+      "field": "pce_champion",
+      "family": "mod",
+      "lens": "scale_up",
+      "work_key": "10.1002/smtd.70654",
+      "venue": "Small Methods",
+      "month": "2026-04",
+      "title": "A Defect\u2010Engineered Vacuum Evaporation Strategy for High\u2010Efficiency Indoor Perovskite Mini Solar Modules",
+      "anchor": "Consequently, the optimized fully evaporated PSCs deliver record indoor power conversion efficiencies of 41.60% at 900 lux and 41.22% at 300 lux under TL84 illumination.",
+      "markers": [
+        "indoor",
+        "lux",
+        "tl84"
+      ]
+    },
+    {
+      "value": 16.36,
+      "field": "pce_champion",
+      "family": "sj",
+      "lens": "experimental",
+      "work_key": "10.1021/acsenergylett.5c04174",
+      "venue": "ACS Energy Letters",
+      "month": "2026-03",
+      "title": "Intermediate-Phase Engineering of Thermally-Evaporated Lead-Free Halide Perovskites for Indoor Photovoltaics",
+      "anchor": "The resulting IPV devices achieve a power conversion efficiency (PCE) of 16.36% under 1000 lx illumination and a stability for over 3000 h under N",
+      "markers": [
+        "lx"
+      ]
+    },
+    {
+      "value": 12.53,
+      "field": "pce_champion",
+      "family": "hyb",
+      "lens": "experimental",
+      "work_key": "10.1016/j.rineng.2026.110377",
+      "venue": "Results in Engineering",
+      "month": "2026-04",
+      "title": "ETL-free and HTL-free perovskite solar cell as the simplified power source for energy-frugal indoor IoTs",
+      "anchor": "The fully striped-down structure surprisingly achieves an efficiency of 12.53% under 1,000 lux, sufficient to be a battery replacement for indoor energy frugal IoTs, while",
+      "markers": [
+        "indoor",
+        "lux"
+      ]
+    }
+  ],
+  "indoor.n_ambiguous": 3,
+  "indoor.ambiguous": [
+    {
+      "value": 35.54,
+      "field": "pce_champion",
+      "family": "sj",
+      "lens": "theory",
+      "work_key": "10.1002/smll.202512808",
+      "venue": "Small",
+      "month": "2026-04",
+      "title": "Computational and Experimental Investigations of Mg\u2010Doped SnO 2 Electron Transport Layer for Indoor Perovskite Solar Cells",
+      "anchor": "achieving 35.54% under indoor LED illumination and 20.28% under standard one sun conditions",
+      "markers": [
+        "indoor",
+        "led"
+      ]
+    },
+    {
+      "value": 22.27,
+      "field": "pce_champion",
+      "family": "sj",
+      "lens": "experimental",
+      "work_key": "10.1002/anie.2535666",
+      "venue": "Angewandte Chemie International Edition",
+      "month": "2026-06",
+      "title": "Eutectic Urea Phosphate Suppresses Phase Segregation in Wide\u2010Bandgap Photovoltaic Perovskites",
+      "anchor": "Consequently, the champion perovskite photovoltaic devices present a power conversion efficiency (PCE) of 22.27% under AM 1.5G illumination and a promising indoor PCE of 42.64%",
+      "markers": [
+        "indoor"
+      ]
+    },
+    {
+      "value": 18.4,
+      "field": "pce_champion",
+      "family": "sj",
+      "lens": "experimental",
+      "work_key": "10.1021/acsaem.6c00285",
+      "venue": "ACS Applied Energy Materials",
+      "month": "2026-05",
+      "title": "Enhancing the Performance of Perovskite Solar Cells through Interfacial Modification by Fluorinated 2D Perovskite",
+      "anchor": "The optimized 3D/2D hybrid device achieves PCEs of 18.40% under 1 sun and 34.54% under indoor LED illumination (1000 lux).",
+      "markers": [
+        "indoor",
+        "led",
+        "lux"
+      ]
+    }
+  ]
+}

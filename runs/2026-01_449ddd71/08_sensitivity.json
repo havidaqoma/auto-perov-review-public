@@ -1,0 +1,6 @@
+{
+  "draws": 200,
+  "jaccard_median": 0.992,
+  "core_n": 110,
+  "marginal_n": 1
+}

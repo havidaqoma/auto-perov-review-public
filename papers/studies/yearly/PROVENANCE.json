@@ -1,0 +1,15 @@
+{
+ "repo": "https://github.com/havidaqoma/perovskite_pv_yearly.git",
+ "commit": "9011e16358c6988e979c2234cd9867f087bea68b",
+ "imported_files": {
+  "stats_yearly.json": "manuscript/2025_yearly/stats_yearly.json",
+  "gate_report_yearly.json": "manuscript/2025_yearly/gate_report_yearly.json",
+  "anchor_verification.json": "runs/2025_6cb0e6ed/09_anchor_verification.json",
+  "cards_summary.json": "runs/2025_6cb0e6ed/09_cards_summary.json"
+ },
+ "gates_total": 20,
+ "gates_pass": 19,
+ "gates_nonpass": {
+  "G8-novelty": "cold-start"
+ }
+}

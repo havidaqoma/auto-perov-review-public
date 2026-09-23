@@ -1,0 +1,7 @@
+{
+  "stage": "04_venues",
+  "at": "2026-09-08T01:39:08",
+  "n_distinct": 191,
+  "n_reference_venues": 303,
+  "n_null_percentile": 10
+}

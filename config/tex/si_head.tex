@@ -1,0 +1,40 @@
+% Supplementary Information caption setup.
+%
+% WHY THIS FILE EXISTS
+% --------------------
+% The SI numbers its floats manually as "Figure S1.", "Table S4." and so on,
+% because supplementary floats carry an S prefix that LaTeX's counters do not
+% produce. Pandoc, meanwhile, wraps every captioned image and table in a float
+% and prepends its OWN auto-generated label. The two collide and the reader
+% sees the label twice:
+%
+%     Figure 1: Figure S1. Corpus construction funnel.
+%     Figure 2: Figure S2. Reporting-completeness detection rates...
+%
+% Havid found both by reading the rendered page.
+%
+% Suppressing the automatic label is the correct fix rather than deleting the
+% manual one, because the manual labels are what the body text cross-references
+% ("see Note S3", "Table S4") and what a reader cites when quoting the SI. An
+% automatic counter would renumber those references to 1, 2, 3 and silently
+% break every cross-reference in the document.
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty,justification=raggedright,singlelinecheck=false,font=small}
+\captionsetup[table]{labelformat=empty,justification=raggedright,singlelinecheck=false,font=small}
+
+% Keep a table caption with its table.
+%
+% Table S4's caption rendered at the foot of one page while its body began on
+% the next, separated by an intervening figure. A caption stranded from its
+% table is worse than an uncaptioned table: the reader attributes it to
+% whatever float follows.
+%
+% Raising the float penalties and requiring a minimum block of free space
+% before a float is allowed to break makes LaTeX move the pair together rather
+% than splitting it.
+\usepackage{needspace}
+\setlength{\intextsep}{12pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{14pt plus 2pt minus 2pt}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000

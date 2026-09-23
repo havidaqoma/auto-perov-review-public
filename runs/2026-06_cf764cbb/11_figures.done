@@ -1,0 +1,17 @@
+{
+  "stage": "11_figures",
+  "at": "2026-09-08T21:54:54",
+  "figures": [
+    "F1_certified_frontier.pdf",
+    "F2_area_penalty.pdf",
+    "F3_effort_map.pdf",
+    "F4_stability_evidence.pdf",
+    "S1_reporting_audit.pdf",
+    "S2_corpus_funnel.pdf"
+  ],
+  "n": 6,
+  "n_certified": 14,
+  "n_self": 90,
+  "n_area": 14,
+  "n_t80": 6
+}

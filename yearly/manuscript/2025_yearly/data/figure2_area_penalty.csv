@@ -1,0 +1,59 @@
+work_key,month,area_cm2,pce_pct,verification,device_class
+10.1007/s42114-024-01208-7,2025-04,0.04,23,self-reported,n-i-p
+10.1002/anie.202504237,2025-07,1.07,25.45,certified,tandem (2T)
+10.1002/aenm.202500650,2025-05,1.05,22.1,self-reported,unspecified
+10.1002/adma.202503435,2025-05,14.0,25.34,self-reported,unspecified
+10.1002/adma.202507435,2025-07,61.6,24.72,self-reported,unspecified
+10.1038/s41467-025-63673-y,2025-09,60,28.9,certified,tandem (2T)
+10.1038/s41467-025-63389-z,2025-09,764,26.65,certified,p-i-n
+10.1038/s41467-025-64111-9,2025-10,0.0655,19.5,certified,p-i-n
+10.1021/acsenergylett.5c01010,2025-06,1.21,30.49,self-reported,tandem (2T)
+10.1021/acsami.5c15868,2025-10,0.0575,23.31,self-reported,p-i-n
+10.1002/aenm.202500572,2025-03,1.02,25.0,certified,p-i-n
+10.1002/aenm.202502006,2025-06,1,21.36,self-reported,n-i-p
+10.1002/adfm.202505921,2025-05,25,26.04,self-reported,unspecified
+10.1038/s41467-025-62388-4,2025-07,0.0715,26.21,self-reported,unspecified
+10.1021/acsnano.5c01479,2025-04,0.16,22.15,self-reported,p-i-n
+10.1002/anie.202505470,2025-03,0.09,25.41,self-reported,n-i-p
+10.1002/anie.202524079,2025-12,0.09,26.03,self-reported,p-i-n
+10.1002/smll.202412837,2025-04,0.09,21.35,self-reported,unspecified
+10.1021/acsenergylett.5c01437,2025-06,0.06,25.1,self-reported,p-i-n
+10.1038/s41467-024-55654-4,2025-01,1,26.0,self-reported,tandem (2T)
+10.1038/s41467-025-67350-y,2025-12,0.15,30.1,certified,tandem (2T)
+10.1002/aenm.202405441,2025-01,14,25.33,self-reported,unspecified
+10.1002/aenm.202504647,2025-11,15.17,25.73,self-reported,n-i-p
+10.1002/aenm.202501206,2025-05,18.55,25.61,self-reported,n-i-p
+10.1002/anie.202508169,2025-05,0.07065,25.95,self-reported,n-i-p
+10.1007/s40820-025-01838-6,2025-06,10.5,23.0,self-reported,unspecified
+10.1021/acsnano.5c13163,2025-12,1,22.67,self-reported,unspecified
+10.1007/s12598-025-03346-3,2025-04,0.2,22.22,self-reported,p-i-n
+10.1007/s40820-025-01846-6,2025-07,1,25.5,self-reported,n-i-p
+10.1002/anie.202509782,2025-09,0.945,31.47,certified,tandem (2T)
+10.1002/adfm.202423397,2025-03,12.44,18.83,certified,module
+10.1002/inf2.12656,2025-01,0.0935,21.42,certified,tandem (2T)
+10.1002/aenm.202502639,2025-08,63.09,20.16,self-reported,module
+10.1126/sciadv.ady3621,2025-08,0.07,19.72,certified,tandem (4T)
+10.1021/acsnano.5c07208,2025-11,8.5,22.09,certified,p-i-n
+10.1002/adma.202513600,2025-09,0.049,26.67,self-reported,p-i-n
+10.1007/s40820-024-01631-x,2025-02,1.04,31.5,self-reported,tandem (2T)
+10.1126/science.ado2351,2025-01,0.074,25.9,certified,p-i-n
+10.1021/acs.jpclett.5c01590,2025-07,65,25.23,self-reported,unspecified
+10.1002/aenm.202405675,2025-03,1,29.8,self-reported,tandem (2T)
+10.1002/anie.202512660,2025-07,0.09,25.81,certified,p-i-n
+10.1038/s41467-025-58111-y,2025-03,0.087,28.78,certified,tandem (2T)
+10.1038/s41467-025-64038-1,2025-10,10.4,22.0,self-reported,module
+10.1002/adma.202514735,2025-11,1,26.23,certified,p-i-n
+10.1038/s41566-025-01791-1,2025-11,1,26.96,certified,p-i-n
+10.1126/science.adv4701,2025-04,6,26,self-reported,p-i-n
+10.1021/acsenergylett.5c00074,2025-03,0.045,26.22,self-reported,module
+10.1021/acsenergylett.5c02406,2025-10,1,20.6,self-reported,unspecified
+10.1021/acsenergylett.5c01711,2025-10,0.09,25.24,certified,module
+10.1038/s41467-025-64728-w,2025-11,0.09,26.4,certified,p-i-n
+10.1002/adma.202506291,2025-08,0.09,25.8,self-reported,unspecified
+10.1002/aenm.202500598,2025-04,100.15,18.73,certified,p-i-n
+10.1126/science.adx9650,2025-11,100,24.0,self-reported,module
+10.1038/s41467-025-66752-2,2025-11,12.83,20.95,certified,n-i-p
+10.1021/acsenergylett.4c03233,2025-01,0.0625,25.5,self-reported,unspecified
+10.1002/solr.202400750,2025-01,0.062,17.2,self-reported,unspecified
+10.1002/adfm.202527433,2025-12,0.09,21.1,self-reported,unspecified
+10.26434/chemrxiv-2025-1chx1,2025-11,0.12,22.2,self-reported,n-i-p

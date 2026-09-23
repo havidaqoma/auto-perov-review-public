@@ -1,0 +1,66 @@
+work_key,month,device_class,pce_certified_pct,pce_champion_pct,lens,illumination
+10.1002/anie.202504237,2025-07,tandem (2T),25.45,31.56,experimental,AM1.5G
+10.1002/adma.202412692,2025-01,tandem (4T),,28.34,experimental,AM1.5G
+10.1016/j.esci.2025.100471,2025-09,tandem (4T),,31.02,experimental,AM1.5G
+10.1002/aenm.202501556,2025-05,tandem (4T),,28.71,experimental,AM1.5G
+10.1002/anie.202518800,2025-11,tandem (2T),,28.74,experimental,AM1.5G
+10.1021/acsenergylett.4c03065,2025-01,tandem (2T),,23.4,experimental,AM1.5G
+10.1039/d5ee02650d,,tandem (2T),,30.05,experimental,AM1.5G
+10.1038/s41467-025-63673-y,2025-09,tandem (2T),28.9,28.9,experimental,AM1.5G
+10.1038/s41467-025-64274-5,2025-10,tandem (2T),28.9,29.6,experimental,AM1.5G
+10.1126/sciadv.adv4501,2025-09,unspecified,28.52,29.01,experimental,AM1.5G
+10.1021/acsenergylett.5c01010,2025-06,tandem (2T),,30.49,experimental,AM1.5G
+10.1007/s40820-025-01763-8,2025-04,p-i-n,,18.68,experimental,AM1.5G
+10.1039/d4ee02898h,,unspecified,,28.3,experimental,AM1.5G
+10.1039/d5ee02696b,,unspecified,,28.92,experimental,AM1.5G
+10.1002/adfm.202425979,2025-04,unspecified,,25.34,experimental,AM1.5G
+10.1021/acsenergylett.5c00163,2025-04,unspecified,,14.51,experimental,AM1.5G
+10.1002/aenm.202403682,2025-04,tandem (2T),,22.8,experimental,AM1.5G
+10.1002/aenm.202502222,2025-09,tandem (2T),,31.12,experimental,AM1.5G
+10.34734/fzj-2025-05790,,tandem (2T),,25.5,experimental,AM1.5G
+10.1038/s41467-024-55654-4,2025-01,tandem (2T),,26.0,experimental,AM1.5G
+10.1038/s41467-025-56549-8,2025-01,tandem (2T),28.11,29.33,experimental,AM1.5G
+10.1038/s41467-025-58810-6,2025-04,tandem (2T),28.31,28.55,experimental,AM1.5G
+10.1038/s41467-025-59515-6,2025-05,tandem (2T),,28.5,experimental,AM1.5G
+10.1038/s41467-025-62391-9,2025-08,tandem (2T),27.92,28.44,experimental,AM1.5G
+10.1038/s41467-025-62389-3,2025-08,tandem (2T),33.15,33.15,experimental,AM1.5G
+10.1038/s41467-025-67350-y,2025-12,tandem (2T),30.1,30.71,experimental,AM1.5G
+10.1038/s41467-025-66479-0,2025-12,tandem (2T),,25.4,scale_up,AM1.5G
+10.1038/s41467-025-66480-7,2025-12,tandem (2T),,33.5,experimental,AM1.5G
+10.1021/acsnano.5c04978,2025-09,tandem (2T),,28.9,experimental,AM1.5G
+10.1002/aenm.202502000,2025-07,module,,25.9,scale_up,AM1.5G
+10.1021/acsenergylett.4c03370,2025-02,tandem (2T),27.17,23.87,experimental,AM1.5G
+10.1021/acsenergylett.5c01995,2025-09,tandem (2T),,28.86,experimental,AM1.5G
+10.1021/acsenergylett.5c02738,2025-12,tandem (2T),,21.27,experimental,AM1.5G
+10.1038/s41467-024-55376-7,2025-01,tandem (2T),,25.34,experimental,AM1.5G
+10.1002/anie.202509782,2025-09,tandem (2T),31.47,32.33,experimental,AM1.5G
+10.1002/anie.202518169,2025-10,p-i-n,,19.08,experimental,AM1.5G
+10.1002/adfm.202423397,2025-03,module,18.83,19.32,experimental,AM1.5G
+10.1002/adfm.202502422,2025-04,tandem (2T),,25.06,experimental,AM1.5G
+10.1186/s40580-025-00492-3,2025-05,tandem (2T),,21.95,experimental,AM1.5G
+10.1039/d5ta04259c,,tandem (2T),,26.56,experimental,AM1.5G
+10.1002/inf2.12656,2025-01,tandem (2T),21.42,27.47,experimental,AM1.5G
+10.1021/acs.jpclett.5c00756,2025-05,tandem (4T),,23.69,experimental,AM1.5G
+10.1002/aenm.202502639,2025-08,module,,20.16,scale_up,AM1.5G
+10.1126/sciadv.ady3621,2025-08,tandem (4T),19.72,28.46,experimental,AM1.5G
+10.1038/s41467-025-58047-3,2025-03,tandem (2T),,26.05,experimental,AM1.5G
+10.1007/s40820-024-01631-x,2025-02,tandem (2T),,31.5,experimental,AM1.5G
+10.1002/aenm.202405675,2025-03,tandem (2T),,29.8,experimental,AM1.5G
+10.1038/s41467-025-57195-w,2025-02,tandem (2T),,28.81,experimental,AM1.5G
+10.1038/s41467-025-58111-y,2025-03,tandem (2T),28.78,28.94,scale_up,AM1.5G
+10.1038/s41467-025-62661-6,2025-08,unspecified,29.2,29.6,experimental,AM1.5G
+10.1038/s41467-025-64038-1,2025-10,module,,22.0,experimental,AM1.5G
+10.1021/acsnano.5c03542,2025-05,unspecified,,28.83,experimental,AM1.5G
+10.1002/adma.202505475,2025-07,module,25.2,25.8,scale_up,AM1.5G
+10.1002/adma.202513281,2025-10,tandem (2T),28.06,29.0,experimental,AM1.5G
+10.1021/acsenergylett.5c01244,2025-08,tandem (2T),31.4,31.4,experimental,AM1.5G
+10.1021/acsenergylett.5c02408,2025-11,tandem (2T),,32.39,experimental,AM1.5G
+10.1038/s41467-024-55377-6,2025-01,tandem (2T),30.26,30.78,experimental,AM1.5G
+10.1021/acsenergylett.5c00074,2025-03,module,,26.22,experimental,AM1.5G
+10.1021/acsenergylett.5c01711,2025-10,module,25.24,25.9,experimental,AM1.5G
+10.1021/jacs.5c13264,2025-09,tandem (2T),28,,experimental,AM1.5G
+10.1002/adma.202504520,2025-05,tandem (2T),,31.26,experimental,AM1.5G
+10.1002/adma.202419750,2025-03,module,22.06,,experimental,AM1.5G
+10.1002/adma.202504321,2025-06,tandem (2T),28.81,28.99,experimental,AM1.5G
+10.1126/science.adx9650,2025-11,module,,24.0,scale_up,AM1.5G
+10.48550/arxiv.2511.06059,2025-11,tandem (2T),,30.69,experimental,AM1.5G

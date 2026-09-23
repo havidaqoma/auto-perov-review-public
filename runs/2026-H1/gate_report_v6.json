@@ -1,0 +1,319 @@
+{
+  "G4": {
+    "status": "pass",
+    "detail": {
+      "em_dash": 0,
+      "banned": {},
+      "self_report_leak": []
+    }
+  },
+  "G1": {
+    "status": "pass",
+    "detail": {
+      "resolved": 184,
+      "unresolved": [],
+      "aliased": {}
+    }
+  },
+  "G2c-cite-count": {
+    "status": "pass",
+    "detail": {
+      "cited": 184,
+      "target_range": [
+        150,
+        250
+      ],
+      "words_per_citation": 49.8
+    }
+  },
+  "G2": {
+    "status": "pass",
+    "detail": {
+      "prose_words": 9158,
+      "ceiling": 11465,
+      "per_section_within_135pct": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true,
+        "7": true,
+        "8": true,
+        "9": true
+      },
+      "map_sha256": "62044c6bbcc31f39",
+      "input_freeze": {
+        "1": {
+          "words": 499,
+          "sha256": "c51d629c1fbdc98d"
+        },
+        "2": {
+          "words": 697,
+          "sha256": "cfa508522f83c4b7"
+        },
+        "3": {
+          "words": 1960,
+          "sha256": "97ffdb3bad9a7aab"
+        },
+        "4": {
+          "words": 1082,
+          "sha256": "aef4ef5ff3cabbc1"
+        },
+        "5": {
+          "words": 1364,
+          "sha256": "0f31cec79c037149"
+        },
+        "6": {
+          "words": 1060,
+          "sha256": "01b4e3b6f150c71a"
+        },
+        "7": {
+          "words": 897,
+          "sha256": "621123fc3f18454c"
+        },
+        "8": {
+          "words": 701,
+          "sha256": "7f3b8abbf52898fd"
+        },
+        "9": {
+          "words": 898,
+          "sha256": "8fb9df3328eca464"
+        }
+      }
+    }
+  },
+  "G2b-cite-order": {
+    "status": "pass",
+    "detail": {
+      "first_appearance_sequence": [],
+      "monotonic": true
+    }
+  },
+  "G6": {
+    "status": "pass",
+    "detail": {
+      "hits": []
+    }
+  },
+  "G3-abstract": {
+    "status": "pass",
+    "detail": {
+      "unverified": [],
+      "words": 444,
+      "placeholders_resolved": [
+        "A_MAX",
+        "H_T80_MAX",
+        "N_CERT",
+        "N_CORPUS",
+        "N_DEPTH",
+        "N_PROTO",
+        "N_T80",
+        "PCT_CERT",
+        "PCT_EFF",
+        "P_AREA_MAX",
+        "P_TOP_CERT",
+        "P_TOP_SJ",
+        "N_MONTHS"
+      ]
+    }
+  },
+  "G3c-abstract-physics": {
+    "status": "pass",
+    "detail": {
+      "implausible": [],
+      "sj_limit_pct": 29.4
+    }
+  },
+  "G3d-illumination": {
+    "status": "pass",
+    "detail": {
+      "non_one_sun_values": []
+    }
+  },
+  "G3b-abstract-form": {
+    "status": "pass",
+    "detail": {
+      "words": 444,
+      "band": [
+        380,
+        520
+      ],
+      "citation_markers": 0
+    }
+  },
+  "G7-abbrev": {
+    "status": "pass",
+    "detail": {
+      "expanded_automatically": [
+        "SAM",
+        "HTL",
+        "ISOS",
+        "SAM",
+        "ISOS",
+        "SAMs"
+      ],
+      "still_bare": []
+    }
+  },
+  "G8-novelty": {
+    "status": "pass",
+    "detail": {
+      "prior_issue": "2026-08_b086357d",
+      "worst_section_ratio": 0.038,
+      "worst_pair": [
+        "Research Gaps and Outlook",
+        "wide-bandgap absorbers and tandem integration"
+      ],
+      "body_max_ratio": 0.25,
+      "abstract_ratio": 0.006,
+      "abstract_max_ratio": 0.3,
+      "per_section": {
+        "1": {
+          "ratio": 0.035,
+          "title": "Introduction",
+          "closest_prior": "operational stability and degradation pathways"
+        },
+        "2": {
+          "ratio": 0.023,
+          "title": "What January-June 2026 Verified, by Device Family",
+          "closest_prior": "composition, phase control and crystallisation"
+        },
+        "3": {
+          "ratio": 0.015,
+          "title": "The Single-Junction Frontier and Its Remaining Losses",
+          "closest_prior": "defect tolerance, passivation and ion migration"
+        },
+        "4": {
+          "ratio": 0.026,
+          "title": "All-Perovskite Tandems: Narrow-Bandgap Stability as the Limit",
+          "closest_prior": "composition, phase control and crystallisation"
+        },
+        "5": {
+          "ratio": 0.018,
+          "title": "Hybrid Tandems: Silicon, CIGS and Organic Partners",
+          "closest_prior": "wide-bandgap absorbers and tandem integration"
+        },
+        "6": {
+          "ratio": 0.03,
+          "title": "Modules and the Cost of Area",
+          "closest_prior": "operational stability and degradation pathways"
+        },
+        "7": {
+          "ratio": 0.026,
+          "title": "Reading the Device Families Together",
+          "closest_prior": "buried interfaces and contact chemistry"
+        },
+        "8": {
+          "ratio": 0.036,
+          "title": "How Each Device Family Reports Itself",
+          "closest_prior": "wide-bandgap absorbers and tandem integration"
+        },
+        "9": {
+          "ratio": 0.038,
+          "title": "Research Gaps and Outlook",
+          "closest_prior": "wide-bandgap absorbers and tandem integration"
+        }
+      },
+      "shared_shingles": [],
+      "n_shared_shingles": 0
+    }
+  },
+  "G9a-notation": {
+    "status": "pass",
+    "detail": {
+      "residual_defects": {},
+      "ambiguous_for_human_review": {},
+      "substitutions_applied": 206
+    }
+  },
+  "G9b-cite-links": {
+    "status": "pass",
+    "detail": {
+      "hyperlinked_markers": 291,
+      "unlinked_markers": [],
+      "works_without_doi": 0
+    }
+  },
+  "G9c-figure-unique": {
+    "status": "pass",
+    "detail": {
+      "attached": [
+        "F1_certified_frontier.pdf",
+        "F4_stability_evidence.pdf",
+        "F3_effort_map.pdf",
+        "F2_area_penalty.pdf"
+      ],
+      "duplicates": [],
+      "n_attached": 4,
+      "n_distinct": 4
+    }
+  },
+  "G9d-model-names": {
+    "status": "pass",
+    "detail": {
+      "bare_slugs_found": [],
+      "declared": [
+        "qwen3.8-flash",
+        "gemini-3.8-flash-high",
+        "Opus 5"
+      ]
+    }
+  },
+  "G10-title-block": {
+    "status": "pass",
+    "detail": {
+      "gaps_pt": {
+        "author_to_affil": 14.42,
+        "affil_to_date": 22.52,
+        "date_to_abstract": 23.74,
+        "abstract_to_body": 10.17
+      },
+      "bands": {
+        "author_to_affil": [
+          8.0,
+          24.0
+        ],
+        "affil_to_date": [
+          14.0,
+          34.0
+        ],
+        "date_to_abstract": [
+          14.0,
+          40.0
+        ],
+        "abstract_to_body": [
+          5.0,
+          20.0
+        ]
+      },
+      "middle_ratio": 1.05,
+      "max_middle_ratio": 2.5,
+      "title_block_fraction_measured": 0.355,
+      "page_count": 34,
+      "status": "pass",
+      "failures": []
+    }
+  },
+  "G5": {
+    "status": "pass",
+    "detail": {
+      "pages_to_refs": 23,
+      "title_block_fraction": 0.4,
+      "content_pages": 22.6,
+      "total_pages": 34,
+      "reference_pages": 11,
+      "content_band": [
+        20,
+        30
+      ],
+      "total_band": [
+        30,
+        44
+      ],
+      "content_ok": true,
+      "total_ok": true,
+      "title_block_fraction_measured": 0.355
+    }
+  }
+}

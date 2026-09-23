@@ -1,0 +1,95 @@
+# Q45/Q50 numeric thresholds + page bands. Every G* threshold lives here.
+mode: paper                     # paper | bulletin (product.yaml switches)
+
+paper:
+  prose_word_ceiling: 5500
+  content_page_band: [6, 7]
+  total_page_band: [8, 10]
+  max_body_citations: 180
+bulletin:
+  prose_word_ceiling: 3000
+  content_page_band: [4, 5]
+  total_page_band: [6, 8]
+  max_body_citations: 90
+
+# v3 single-column format (2026-09-08). NOT a widening of the `paper` bands:
+# those were written for the v1 two-column layout and were never migrated when
+# v3 changed to single column, 11pt, ~80 references. G5 was absent from
+# s18c_build_v3.py, so nothing ever measured v3 against a band at all.
+#
+# Bracketed on the PROVEN July 2026 v3 artifact, measured not assumed:
+#   total_pages 14, pages_to_refs 10, content_pages 9.6
+# The handbook's stated v3 target is ~15 pages with 80 references. Bands allow
+# roughly +-2 pages of month-to-month drift around that measured point.
+# If August lands outside these, fix the manuscript -- do not touch these numbers.
+paper_v3:
+  content_page_band: [8, 11]
+  total_page_band: [12, 17]
+
+# ---- v4 writing gates (2026-09-08) ----
+# Havid reviewed the August issue and found it too close to July. Measured
+# July-vs-August section similarity on the v3 output:
+#   abstract 0.629 | intro 0.343 | frontier 0.272 | body 3-7 0.055-0.183
+# The writer was never the problem; repetition sat in the parts a script
+# authored. G8 turns "be more creative" from a prompt reminder into an
+# assertion, because a prompt reminder drifts back as soon as sampling changes.
+novelty:
+  # Bracketed on the measured data above: August's BODY already passes 0.25
+  # comfortably, while the v3 abstract at 0.629 would have failed and been
+  # caught automatically. Not tuned to make current output pass.
+  body_max_ratio: 0.25
+  abstract_max_ratio: 0.30
+  shingle_words: 12          # >=12-word verbatim reuse outside the whitelist
+
+abstract:
+  # v3 shipped a 326-word August abstract while abstract_word_max below said
+  # 250 and NO gate enforced it. An unenforced threshold is worse than none:
+  # it reads as a decision that was never made. Band set around the two real
+  # issues (July 295, August 326) and now gated by G3b.
+  word_band: [260, 340]
+
+citations:
+  total_band: [60, 85]       # was inline in s18c; per-section targets now
+                             # come from the generated section map
+
+# corpus gate
+count_band: [250, 1200]
+max_pages: 15
+
+# selection (5.8)
+depth_target: 200
+depth_band: [100, 300]
+axis_min_depth: 12
+venue_share_max_pct: 8
+institution_share_max_pct: 10
+preprint_share_min_pct: 10
+preprint_share_max_pct: 15
+sensitivity_draws: 200
+seed: 0
+
+# audit printability (6)
+printable_precision_min: 0.85
+
+# G1b entailment
+g1b_partial_max_pct: 3.0
+g1b_partial_pause_pct: 5.0
+
+# G2 title (Q50)
+max_title_words: 16
+title_colons: 1
+
+# abstract
+abstract_word_max: 250
+abstract_audit_numerals_min: 5
+
+# cards
+anchor_word_max: 25
+summary_word_max: 60          # G10
+
+# review
+max_review_rounds: 3
+accept_red_max: 0
+accept_orange_max: 3
+
+# cron (P-07 measured; placeholder until the 4th point)
+cron_day: 12

@@ -1,0 +1,5 @@
+device_class,label,n_papers,n_measured,n_simulation_or_review
+single_junction,Single-junction cells,332,278,54
+all_perovskite_tandem,All-perovskite tandems,28,24,4
+hybrid_tandem,Perovskite/silicon and other hybrid tandems,47,44,3
+module,Modules and large-area devices,43,41,2

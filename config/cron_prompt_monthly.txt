@@ -1,0 +1,37 @@
+Monthly perovskite PV review issue. Build the month that has just finished.
+
+WORKDIR: auto-perov-review
+
+1. Read MASTER_HANDBOOK.md first. It is the operating contract. If it and the
+   code disagree, stop and report that as a defect instead of guessing.
+2. Compute the target month = the calendar month BEFORE today (e.g. a run on
+   2026-10-12 builds 2026-09). Do not build the month in progress.
+3. Dry run first, via terminal:
+      python scripts/run_month.py --previous-month --dry-run
+   Report the run dir and which stages are already done.
+4. Then the real build, via terminal with timeout 10800:
+      python scripts/run_month.py --previous-month
+   This takes roughly 60-90 minutes (stage 09 ~35 min, stage 13d ~25 min).
+   Never run stages by hand in place of this script.
+5. run_month.py stops at the first failing stage and verifies the artifact
+   itself (gate report + PDF on disk). Trust its exit code and its printed
+   RESULT line, not your own impression of the logs.
+
+Report to Havid, in plain English, one message:
+  - month built, run hash, total wall time
+  - works harvested -> cards -> citations -> pages
+  - gate results: how many passed, and name any that failed
+  - the absolute path of manuscript/<month>_v4/manuscript_v4.pdf
+  - the absolute path of manuscript/<month>_v4/chemrxiv/SUBMISSION_CHECKLIST.md
+  - if run_month.py exited non-zero: name the stage that failed and its error,
+    state clearly that NO PDF was produced, and do not attempt a workaround.
+
+The preprint target is ChemRxiv (config/preprint.yaml), not arXiv. Stage 20
+builds a submission PACKAGE only: the PDF ChemRxiv wants as its main upload,
+paste-ready metadata, and a manual checklist. Do not submit anything anywhere
+-- there is no automated submission path and there must never be one. Note
+that arXiv is still a HARVEST SOURCE in stage 01; that is unrelated and must
+not be changed.
+
+Do not edit the handbook or any gate threshold to make output pass. A failed
+gate is a report to Havid, not a problem for you to fix by widening it.

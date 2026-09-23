@@ -1,0 +1,11 @@
+work_key,doi,device_class,t80_hours,stability_protocol,source_quotation
+10.1002/adma.74243,10.1002/adma.74243,single_junction,9800,,"with projected T 80 lifetimes of ∼9800 h under illumination and ∼11 000 h under thermal aging, among the most stable air‐processed perovskite solar cells"
+10.1021/acsaem.6c01637,10.1021/acsaem.6c01637,single_junction,720,,"The modified device preserved 80% of initial PCE after 720 h, compared to 58% for the control device."
+10.1126/sciadv.aee4175,10.1126/sciadv.aee4175,module,,ISOS-O-1,
+10.1021/acsnano.6c04084,10.1021/acsnano.6c04084,single_junction,,ISOS-L-1,
+10.1002/aenm.71317,10.1002/aenm.71317,perovskite_silicon_tandem,6785,,corresponding to a projected T 80 lifetime of approximately 6785 h under continuous 1‐sun illumination.
+10.1021/acsenergylett.6c01517,10.1021/acsenergylett.6c01517,single_junction,,ISOS-L-3,
+10.1002/smll.74531,10.1002/smll.74531,single_junction,200,,maintains 80% of initial efficiency over 200 h
+10.1021/jacs.6c06932,10.1021/jacs.6c06932,single_junction,,ISOS-L-1l,
+10.1126/sciadv.aeg1456,10.1126/sciadv.aeg1456,single_junction,,ISOS-L-1,
+10.26599/pom.2026.9140147,10.26599/pom.2026.9140147,single_junction,,continuous maximum power point tracking,

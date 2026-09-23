@@ -1,0 +1,22 @@
+{
+  "probe": "s09 JSON-shape probe, handbook 2.1",
+  "model": "opencode-go/glm-5.3-flash",
+  "date": "2026-09-13",
+  "result": "PASS",
+  "parsed": true,
+  "keys_returned": [
+    "i",
+    "architecture",
+    "absorber",
+    "pce_champion",
+    "pce_certified",
+    "pce_stabilised",
+    "active_area_cm2",
+    "stability_protocol",
+    "t80_h",
+    "claims"
+  ],
+  "anchors_verbatim": true,
+  "note": "The probe first reported work_key MISSING. That was the PROBE being wrong, not the model: s09_cards keys the reply on o[\"i\"] (line 240) and assigns work_key from the batch itself, so the extractor never emits it. Same class as handbook 7.3 -- a check disagreeing with the artifact is a suspect until you know which is wrong.",
+  "caveat": "A JSON-shape probe proves ONE object parses. It does not prove comparable recall over a full month (2.1). glm-5.3-flash has no measured track record here; qwen3.8-flash carries 3129 verified anchors across eight shipped months."
+}

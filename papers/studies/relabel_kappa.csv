@@ -1,0 +1,6 @@
+flag,n,agree,raw_agreement,kappa,kappa_ci95,pabak,prevalence_Y,degenerate
+states_pce,20,20,1.0,1.0,"[1.0, 1.0]",1.0,0.65,False
+states_certified,20,20,1.0,1.0,"[1.0, 1.0]",1.0,0.3,False
+states_area,20,19,0.95,0.8276,"[0.0, 1.0]",0.9,0.15,False
+states_t80,20,20,1.0,1.0,"[1.0, 1.0]",1.0,0.25,False
+isos_protocol,20,20,1.0,1.0,"[1.0, 1.0]",1.0,0.1,False

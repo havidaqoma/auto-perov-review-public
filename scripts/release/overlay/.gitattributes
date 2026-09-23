@@ -1,0 +1,15 @@
+# Preserve bytes exactly as committed.
+#
+# This is a reproducibility requirement, not a style choice. Gate reports and
+# the verification manifests record sha256 digests over file CONTENT. If git
+# normalises CRLF to LF on checkout, a file's bytes differ from the bytes its
+# digest was computed over, and `reproduce.py` reports drift that is really
+# just git rewriting the file. Disabling all text conversion keeps a clone
+# byte-identical to the tree that was verified.
+* -text
+
+# Binary artifacts, marked so git never attempts a textual diff or merge.
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.gz   binary

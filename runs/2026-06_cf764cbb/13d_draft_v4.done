@@ -1,0 +1,21 @@
+{
+  "stage": "13d_draft_v4",
+  "at": "2026-09-08T21:57:36",
+  "words": {
+    "1": 184,
+    "2": 235,
+    "3": 601,
+    "4": 594,
+    "5": 423,
+    "6": 330,
+    "7": 311,
+    "8": 309
+  },
+  "abstract_words_raw": 306,
+  "total_words": 2987,
+  "sections": 8,
+  "map_sha256": "0eb2c11a35305cac",
+  "angle_index": 2,
+  "trend_deltas": {},
+  "writer": "agy/gemini-3.8-flash-high"
+}

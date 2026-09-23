@@ -1,0 +1,1160 @@
+{
+  "meta": {
+    "source": "studies\\label_sheet\\r1_labels_filled.csv",
+    "n_labelled": 100,
+    "n_complete": 100,
+    "prereg_sha256": "2c1d3c5918b7abc7c803a12b6eaeb440c794919715e39d818e80af62b7f58f5b",
+    "result": {
+      "flags": {
+        "states_pce": {
+          "tp": 63,
+          "fp": 1,
+          "fn": 9,
+          "precision": 0.9844,
+          "precision_ci95": [
+            0.9167,
+            0.9972
+          ],
+          "recall": 0.875,
+          "recall_ci95": [
+            0.7792,
+            0.9328
+          ],
+          "weighted_population_rate": 0.5942,
+          "n_unclear": 0
+        },
+        "states_certified": {
+          "tp": 26,
+          "fp": 5,
+          "fn": 0,
+          "precision": 0.8387,
+          "precision_ci95": [
+            0.6737,
+            0.9291
+          ],
+          "recall": 1.0,
+          "recall_ci95": [
+            0.8713,
+            1.0
+          ],
+          "weighted_population_rate": 0.0731,
+          "n_unclear": 0
+        },
+        "states_area": {
+          "tp": 20,
+          "fp": 0,
+          "fn": 2,
+          "precision": 1.0,
+          "precision_ci95": [
+            0.8389,
+            1.0
+          ],
+          "recall": 0.9091,
+          "recall_ci95": [
+            0.7218,
+            0.9747
+          ],
+          "weighted_population_rate": 0.128,
+          "n_unclear": 0
+        },
+        "states_t80": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 24,
+          "precision": 1.0,
+          "precision_ci95": [
+            0.3424,
+            1.0
+          ],
+          "recall": 0.0769,
+          "recall_ci95": [
+            0.0214,
+            0.2414
+          ],
+          "weighted_population_rate": 0.3904,
+          "n_unclear": 0
+        },
+        "isos_protocol": {
+          "tp": 8,
+          "fp": 0,
+          "fn": 8,
+          "precision": 1.0,
+          "precision_ci95": [
+            0.6756,
+            1.0
+          ],
+          "recall": 0.5,
+          "recall_ci95": [
+            0.28,
+            0.72
+          ],
+          "weighted_population_rate": 0.0771,
+          "n_unclear": 0
+        }
+      },
+      "by_model": {
+        "states_pce": {
+          "none": {
+            "tp": 27,
+            "fp": 1,
+            "fn": 5,
+            "precision": 0.9643,
+            "precision_ci95": [
+              0.8229,
+              0.9937
+            ],
+            "recall": 0.8438,
+            "recall_ci95": [
+              0.6825,
+              0.9314
+            ]
+          },
+          "opencode-go/qwen3.8-flash": {
+            "tp": 36,
+            "fp": 0,
+            "fn": 4,
+            "precision": 1.0,
+            "precision_ci95": [
+              0.9036,
+              1.0
+            ],
+            "recall": 0.9,
+            "recall_ci95": [
+              0.7695,
+              0.9604
+            ]
+          }
+        },
+        "states_certified": {
+          "none": {
+            "tp": 8,
+            "fp": 3,
+            "fn": 0,
+            "precision": 0.7273,
+            "precision_ci95": [
+              0.4343,
+              0.9025
+            ],
+            "recall": 1.0,
+            "recall_ci95": [
+              0.6756,
+              1.0
+            ]
+          },
+          "opencode-go/qwen3.8-flash": {
+            "tp": 18,
+            "fp": 2,
+            "fn": 0,
+            "precision": 0.9,
+            "precision_ci95": [
+              0.699,
+              0.9721
+            ],
+            "recall": 1.0,
+            "recall_ci95": [
+              0.8241,
+              1.0
+            ]
+          }
+        },
+        "states_area": {
+          "none": {
+            "tp": 7,
+            "fp": 0,
+            "fn": 0,
+            "precision": 1.0,
+            "precision_ci95": [
+              0.6457,
+              1.0
+            ],
+            "recall": 1.0,
+            "recall_ci95": [
+              0.6457,
+              1.0
+            ]
+          },
+          "opencode-go/qwen3.8-flash": {
+            "tp": 13,
+            "fp": 0,
+            "fn": 2,
+            "precision": 1.0,
+            "precision_ci95": [
+              0.7719,
+              1.0
+            ],
+            "recall": 0.8667,
+            "recall_ci95": [
+              0.6212,
+              0.9626
+            ]
+          }
+        },
+        "states_t80": {
+          "opencode-go/qwen3.8-flash": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 24,
+            "precision": 1.0,
+            "precision_ci95": [
+              0.3424,
+              1.0
+            ],
+            "recall": 0.0769,
+            "recall_ci95": [
+              0.0214,
+              0.2414
+            ]
+          }
+        },
+        "isos_protocol": {
+          "none": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 3,
+            "precision": 1.0,
+            "precision_ci95": [
+              0.3424,
+              1.0
+            ],
+            "recall": 0.4,
+            "recall_ci95": [
+              0.1176,
+              0.7693
+            ]
+          },
+          "opencode-go/qwen3.8-flash": {
+            "tp": 6,
+            "fp": 0,
+            "fn": 5,
+            "precision": 1.0,
+            "precision_ci95": [
+              0.6097,
+              1.0
+            ],
+            "recall": 0.5455,
+            "recall_ci95": [
+              0.2801,
+              0.7873
+            ]
+          }
+        }
+      },
+      "unclear": {
+        "states_pce": 0,
+        "states_certified": 0,
+        "states_area": 0,
+        "states_t80": 0,
+        "isos_protocol": 0
+      },
+      "numeric": {
+        "n_compared": 0,
+        "exact": 0,
+        "wrong": 0,
+        "accuracy": null,
+        "accuracy_ci95": null
+      }
+    }
+  },
+  "rows": [
+    {
+      "work_key": "10.1002/adma.73679",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/anie.202519239",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/ente.202502206",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/anie.4221605",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/advs.76950",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "Y",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1038/s41467-026-70848-8",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/anie.5162616",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1126/sciadv.aec3238",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/anie.202513535",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adfm.76278",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/cnma.70339",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.54691/1zd8kt57",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/eem2.70366",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/pssr.70177",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1063/5.0304135",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acsnano.6c04084.s001",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adma.73024",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adma.74220",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/anie.3095986",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/smtd.70860",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/sus2.70073",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1088/2632-959x/ae6f36",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/ente.70574",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/ente.202502597",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1016/j.esci.2026.100601",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1016/j.rineng.2026.110377",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1016/j.joule.2026.102646",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adfm.77856",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1038/s41467-026-69687-4",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adpr.70226",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acsenergylett.5c03999",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1038/s41467-026-69685-6",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1038/s41467-025-68231-0",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adma.202521697",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acs.jpclett.5c03817",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.3390/ceramics9080087",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adma.202519339",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.37284/eaje.9.1.4347",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/cnl2.70174",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1038/s41467-026-71845-7",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/ange.8256065",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/ente.70607",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.3390/chemistry8040039",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1016/j.nxmate.2026.102127",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/ange.202519239",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.11868/j.issn.1001-4381.2024.000267",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "Y",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.26599/emd.2026.9370089",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1016/j.joule.2026.102396",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1016/j.rineng.2026.108976",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/eem2.70481",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/ente.70559",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/anie.9551164",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acsaem.6c01434",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acsami.6c06661.s001",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acs.accounts.5c00858",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acsami.6c08990",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1134/s1063783425602917",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adfm.76543",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adfm.74914",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/aenm.71282",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acsami.6c07524",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/aenm.70883",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1038/s41467-026-69264-9",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "Y",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acsami.5c25501",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adom.202503619",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adma.73995",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adfm.76167",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1038/s41467-026-72160-x",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acs.nanolett.6c03508",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1063/5.0313807",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1126/sciadv.aee4175",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adma.74758",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1088/1402-4896/ae5852",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1515/pac-2025-0657",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1016/j.revmat.2026.100244",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adma.72738",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/jacsau.6c00354",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/smll.73439",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.3390/ma19153341",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1016/j.nxmate.2026.102676",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.17863/cam.127502",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/advs.76653",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adma.73713",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acsami.6c11057",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acsenergylett.6c00476",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/jacs.6c06932",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/smll.202513162",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1016/j.mtcomm.2026.115918",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.36948/ijfmr.2026.v08i03.80802",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1038/s41467-026-71301-6",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acsami.6c00026",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/cey2.70260",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "Y",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1016/j.rio.2026.101118",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1088/2631-8695/ae8fa6",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1093/mam/ozag053.892",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/adma.202523338",
+      "states_pce": "Y",
+      "states_certified": "Y",
+      "states_area": "Y",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acsami.5c24570",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1021/acsaem.6c01764",
+      "states_pce": "Y",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.21608/ejmtc.2026.463653.1361",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "N",
+      "pce_value": ""
+    },
+    {
+      "work_key": "10.1002/solr.70421",
+      "states_pce": "N",
+      "states_certified": "N",
+      "states_area": "N",
+      "states_t80": "N",
+      "isos_protocol": "Y",
+      "pce_value": ""
+    }
+  ]
+}

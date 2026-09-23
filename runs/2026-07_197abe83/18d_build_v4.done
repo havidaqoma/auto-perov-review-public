@@ -1,0 +1,33 @@
+{
+  "stage": "18d_build_v4",
+  "at": "2026-09-09T13:36:32",
+  "pdf": "manuscript\\2026-07_v4\\manuscript_v4.pdf",
+  "bytes": 194680,
+  "pages": 15,
+  "title": "Perovskite Photovoltaics in July 2026: Trap density and ion migration, self-assembled monolayer contacts",
+  "prose_words": 3092,
+  "abstract_words": 299,
+  "cited": 79,
+  "figures": 4,
+  "sections": 8,
+  "map_sha256": "23cd8e1384f596c5",
+  "gates": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "pass",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9d-model-names": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+  }
+}

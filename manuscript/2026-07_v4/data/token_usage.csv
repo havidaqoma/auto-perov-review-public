@@ -1,0 +1,83 @@
+month,attempt,shipped,stage,process,role,cli,model,batch,n_papers,words_out,tokens_in,tokens_out,cache_read,est_tokens_out,token_source,at
+2026-07,1,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,0,12,,6,8210,7627,,reported,14:16:49
+2026-07,2,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,1,12,,6,13183,7627,,reported,14:18:48
+2026-07,3,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,2,12,,6,9357,7627,,reported,14:20:23
+2026-07,4,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,3,12,,6,14135,7627,,reported,14:22:35
+2026-07,5,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,4,12,,6,10558,7627,,reported,14:24:14
+2026-07,6,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,5,12,,6,17218,7627,,reported,14:26:50
+2026-07,7,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,6,12,,6,8908,7627,,reported,14:28:15
+2026-07,8,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,7,12,,6,11425,7627,,reported,14:30:05
+2026-07,9,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,8,12,,6,13144,7627,,reported,14:32:49
+2026-07,10,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,9,12,,6,10636,7627,,reported,14:34:26
+2026-07,11,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,10,12,,6,12018,7627,,reported,14:36:30
+2026-07,12,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,11,12,,6,11284,7627,,reported,14:38:26
+2026-07,13,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,12,12,,6,10057,7627,,reported,14:40:08
+2026-07,14,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,13,12,,6,8062,7627,,reported,14:41:35
+2026-07,15,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,14,12,,6,7806,7627,,reported,14:43:00
+2026-07,16,yes,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,15,1,,6,732,7627,,reported,14:43:15
+2026-07,1,yes,13_draft_s1,13_draft_s1,llm,,qwen3.8-flash,,,,6,376,,,reported,
+2026-07,1,yes,13_draft_s2,13_draft_s2,llm,,qwen3.8-flash,,,,6,2085,,,reported,
+2026-07,1,yes,13_draft_s3,13_draft_s3,llm,,qwen3.8-flash,,,,6,2529,,,reported,
+2026-07,1,yes,13_draft_s4,13_draft_s4,llm,,qwen3.8-flash,,,,6,3184,,,reported,
+2026-07,1,yes,13_draft_s5,13_draft_s5,llm,,qwen3.8-flash,,,,6,2335,,,reported,
+2026-07,1,yes,13_draft_s6,13_draft_s6,llm,,qwen3.8-flash,,,,6,4071,,,reported,
+2026-07,1,yes,13_draft_s7,13_draft_s7,llm,,qwen3.8-flash,,,,6,190,,,reported,
+2026-07,1,yes,13_draft_s8,13_draft_s8,llm,,qwen3.8-flash,,,,6,487,,,reported,
+2026-07,1,yes,13b_s1,13b_s1,llm,agy,gemini-3.8-flash-high,,,594,,,,790,estimated,
+2026-07,1,yes,13b_s2,13b_s2,llm,agy,gemini-3.8-flash-high,,,558,,,,742,estimated,
+2026-07,1,yes,13b_s3,13b_s3,llm,agy,gemini-3.8-flash-high,,,1324,,,,1761,estimated,
+2026-07,1,yes,13b_s4,13b_s4,llm,agy,gemini-3.8-flash-high,,,1146,,,,1524,estimated,
+2026-07,1,yes,13b_s5,13b_s5,llm,agy,gemini-3.8-flash-high,,,946,,,,1258,estimated,
+2026-07,1,yes,13b_s6,13b_s6,llm,agy,gemini-3.8-flash-high,,,899,,,,1196,estimated,
+2026-07,1,yes,13b_s7,13b_s7,llm,agy,gemini-3.8-flash-high,,,792,,,,1053,estimated,
+2026-07,1,yes,13b_s8,13b_s8,llm,agy,gemini-3.8-flash-high,,,738,,,,982,estimated,
+2026-07,1,no,13c_s1,13c_s1,llm,agy,gemini-3.8-flash-high,,,150,,,,200,estimated,
+2026-07,1,no,13c_s2,13c_s2,llm,agy,gemini-3.8-flash-high,,,228,,,,303,estimated,
+2026-07,1,no,13c_s3,13c_s3,llm,agy,gemini-3.8-flash-high,,,502,,,,668,estimated,
+2026-07,1,no,13c_s4,13c_s4,llm,agy,gemini-3.8-flash-high,,,536,,,,713,estimated,
+2026-07,1,no,13c_s5,13c_s5,llm,agy,gemini-3.8-flash-high,,,305,,,,406,estimated,
+2026-07,1,no,13c_s6,13c_s6,llm,agy,gemini-3.8-flash-high,,,375,,,,499,estimated,
+2026-07,1,no,13c_s7,13c_s7,llm,agy,gemini-3.8-flash-high,,,343,,,,456,estimated,
+2026-07,1,no,13c_s8,13c_s8,llm,agy,gemini-3.8-flash-high,,,305,,,,406,estimated,
+2026-07,2,yes,13c_s1,13c_s1,llm,agy,gemini-3.8-flash-high,,,194,,,,258,estimated,
+2026-07,2,yes,13c_s2,13c_s2,llm,agy,gemini-3.8-flash-high,,,242,,,,322,estimated,
+2026-07,2,yes,13c_s3,13c_s3,llm,agy,gemini-3.8-flash-high,,,501,,,,666,estimated,
+2026-07,2,yes,13c_s4,13c_s4,llm,agy,gemini-3.8-flash-high,,,551,,,,733,estimated,
+2026-07,2,yes,13c_s5,13c_s5,llm,agy,gemini-3.8-flash-high,,,325,,,,432,estimated,
+2026-07,2,yes,13c_s6,13c_s6,llm,agy,gemini-3.8-flash-high,,,440,,,,585,estimated,
+2026-07,2,yes,13c_s7,13c_s7,llm,agy,gemini-3.8-flash-high,,,359,,,,477,estimated,
+2026-07,2,yes,13c_s8,13c_s8,llm,agy,gemini-3.8-flash-high,,,491,,,,653,estimated,
+2026-07,1,yes,13d_s1,13d_s1,llm,agy,gemini-3.8-flash-high,,,183,,,,243,estimated,
+2026-07,1,no,13d_s2,13d_s2,llm,agy,gemini-3.8-flash-high,,,226,,,,301,estimated,
+2026-07,1,yes,13d_s3,13d_s3,llm,agy,gemini-3.8-flash-high,,,596,,,,793,estimated,
+2026-07,1,no,13d_s4,13d_s4,llm,agy,gemini-3.8-flash-high,,,553,,,,735,estimated,
+2026-07,1,yes,13d_s5,13d_s5,llm,agy,gemini-3.8-flash-high,,,518,,,,689,estimated,
+2026-07,1,yes,13d_s6,13d_s6,llm,agy,gemini-3.8-flash-high,,,345,,,,459,estimated,
+2026-07,1,yes,13d_s7,13d_s7,llm,agy,gemini-3.8-flash-high,,,310,,,,412,estimated,
+2026-07,1,no,13d_s8,13d_s8,llm,agy,gemini-3.8-flash-high,,,313,,,,416,estimated,
+2026-07,1,no,13d_abstract,13d_abstract,llm,agy,gemini-3.8-flash-high,,,283,,,,376,estimated,
+2026-07,2,no,13d_s8,13d_s8,llm,agy,gemini-3.8-flash-high,,,314,,,,418,estimated,
+2026-07,2,no,13d_abstract,13d_abstract,llm,agy,gemini-3.8-flash-high,,,284,,,,378,estimated,
+2026-07,2,yes,13d_s2,13d_s2,llm,agy,gemini-3.8-flash-high,,,257,,,,342,estimated,
+2026-07,2,yes,13d_s4,13d_s4,llm,agy,gemini-3.8-flash-high,,,511,,,,680,estimated,
+2026-07,3,yes,13d_s8,13d_s8,llm,agy,gemini-3.8-flash-high,,,372,,,,495,estimated,
+2026-07,3,yes,13d_abstract,13d_abstract,llm,agy,gemini-3.8-flash-high,,,297,,,,395,estimated,
+2026-07,1,yes,01_harvest,OpenAlex/S2/Crossref/arXiv harvest (no LLM),none,python,,,,,0,0,,0,deterministic,2026-09-07T13:19:26
+2026-07,1,yes,02_normalize,"DOI/title normalisation, language detect",none,python,,,,,0,0,,0,deterministic,2026-09-07T13:21:04
+2026-07,1,yes,04_venues,journal citation percentile,none,python,,,,,0,0,,0,deterministic,2026-09-07T13:25:45
+2026-07,1,yes,05_dedupe,work_key merge across sources,none,python,,,,,0,0,,0,deterministic,2026-09-07T13:21:04
+2026-07,1,yes,06_mechanism,mechanism axis + lens keyword scoring,none,python,,,,,0,0,,0,deterministic,2026-09-07T13:21:05
+2026-07,1,yes,08_subset,depth-tier selection + sensitivity draws,none,python,,,,,0,0,,0,deterministic,2026-09-07T13:25:45
+2026-07,1,yes,10_stats,every citable number,none,python,,,,,0,0,,0,deterministic,2026-09-07T13:25:45
+2026-07,1,yes,11_figures,figures plotted from stats/cards,none,python,,,,,0,0,,0,deterministic,2026-09-08T21:54:58
+2026-07,1,yes,12_brief,12_brief,none,python,,,,,0,0,,0,deterministic,2026-09-07T14:45:27
+2026-07,1,yes,13_draft,13_draft,none,python,,,,,0,0,,0,deterministic,2026-09-07T15:40:18
+2026-07,1,yes,13b_draft_v2,13b_draft_v2,none,python,,,,,0,0,,0,deterministic,2026-09-07T17:29:41
+2026-07,1,yes,13c_draft_v3,13c_draft_v3,none,python,,,,,0,0,,0,deterministic,2026-09-07T19:43:01
+2026-07,1,yes,18_build,18_build,none,python,,,,,0,0,,0,deterministic,2026-09-07T15:54:27
+2026-07,1,yes,18b_build_v2,18b_build_v2,none,python,,,,,0,0,,0,deterministic,2026-09-07T17:32:31
+2026-07,1,yes,18c_build_v3,18c_build_v3,none,python,,,,,0,0,,0,deterministic,2026-09-08T00:21:09
+2026-07,1,yes,18d_build_v4,format assembly + gates + PDF,none,python,,,,,0,0,,0,deterministic,2026-09-08T22:17:49
+2026-07,1,yes,19_si,supplementary information,none,python,,,,,0,0,,0,deterministic,2026-09-08T22:18:00
+2026-07,1,yes,20_arxiv,arXiv bundle + CSV data pack,none,python,,,,,0,0,,0,deterministic,2026-09-08T22:18:05
+2026-07,1,yes,21_tokens,21_tokens,none,python,,,,,0,0,,0,deterministic,2026-09-08T19:45:19

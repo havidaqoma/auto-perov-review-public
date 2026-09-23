@@ -1,0 +1,133 @@
+# v3 §C: post-filters reused from the daily cron (verified 2026-09-05), applied in PYTHON
+# after the canonical query - never in the query string (OpenAlex traps §B2.1-2).
+exclude:                # substring match on title+journal+abstract (daily list, verbatim)
+  - cancer
+  - tumor
+  - tumour
+  - clinical trial
+  - patient
+  - diagnosis
+  - disease
+  - therapy
+  - therapeutic
+  - drug
+  - biomarker
+  - genetic
+  - genome
+  - antibody
+  - vaccine
+  - virus
+  - infection
+  - bacterial
+  - surgery
+  - syndrome
+  - cell therapy
+  - immunotherapy
+  - metastasis
+  - apoptosis
+  - neuro
+  - brain
+  - cardiac
+  - cardiovascular
+  - coronary
+  - renal
+  - hepatic
+  - oncology
+  - psychiatric
+  - diabetes
+  - obesity
+  - inflammation
+  - autoimmune
+  - clinical
+  - biopsy
+  - hospital
+  - food safety
+  - wine
+  - cheese
+  - meat
+  - crop yield
+  - livestock
+  - fishery
+  - aquaculture
+  - pesticide
+  - election
+  - voting
+  - political
+  - social media
+  - misinformation
+  - crime
+  - immigration
+  - refugee
+  - housing
+  - archaeology
+  - linguistics
+  - philosophy
+  - poetry
+  - education
+  - curriculum
+  - pedagog
+  - classroom
+  - galaxy
+  - nebula
+  - exoplanet
+  - black hole
+  - supernova
+  - asteroid
+  - comet
+  - telescope
+  - gas sensor
+  - supercapacitor
+  - co2 capture
+  - carbon capture
+  - oxygen carrier
+  - scintillator
+  - radiotherapy
+  - point-of-care
+  - electrocatalyst
+  - water splitting
+  - liquid crystal
+  - ferroelectric
+  - multiferroic
+  - battery cathode
+  - solid oxide fuel cell
+  - catalytic oxidation
+  - hydrogen evolution
+  - photocatalytic degradation
+  - pollutant
+  - metal-air battery
+  - lithium-oxygen
+  - textile
+  - aptamer
+  - drug delivery
+  - superconducting
+  - thermoelectric
+  - sensor
+  - biological
+  - stem cell
+  - cell biology
+  - dna
+  - rna
+  - chromatin
+  - cytokine
+  - gene expression
+exclude_bound:          # word-boundary match (daily list, verbatim)
+  - liver
+  - magnet
+  - battery
+  - thermoelectric
+  - superconductor
+pv_exclude_bound:       # v3 §C PV-scope exclusions (word/phrase boundary; bare LED is code-side)
+  - photodetector
+  - photodiode
+  - phototransistor
+  - x-ray detector
+  - x-ray imaging
+  - lasing
+  - laser
+  - electroluminescen
+  - light-emitting diode
+  - light emitting diode
+  - cement
+  - organic light
+  - micro-led
+  - led array

@@ -1,0 +1,3150 @@
+{
+  "meta": {
+    "month": "2026-07",
+    "n_papers": 108,
+    "model": "opencode-go/qwen3.8-flash",
+    "design": "same model, same papers, guards are the only variable",
+    "arms": [
+      {
+        "arm": "ungated_baseline",
+        "n_values": 159,
+        "n_ungrounded": 2,
+        "ungrounded_rate": 0.0126,
+        "ungrounded_ci95": [
+          0.0035,
+          0.0447
+        ],
+        "n_cross_paper": 0,
+        "cross_paper_rate": 0.0,
+        "n_sq_violation": 0,
+        "sq_violation_rate": 0.0
+      },
+      {
+        "arm": "guarded_pipeline",
+        "n_values": 152,
+        "n_ungrounded": 0,
+        "ungrounded_rate": 0.0,
+        "ungrounded_ci95": [
+          0.0,
+          0.0247
+        ],
+        "n_cross_paper": 0,
+        "cross_paper_rate": 0.0,
+        "n_sq_violation": 0,
+        "sq_violation_rate": 0.0
+      }
+    ]
+  },
+  "rows": [
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.76731",
+      "field": "pce_champion",
+      "value": 16.16,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.76731",
+      "field": "t80_h",
+      "value": 1150,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.76848",
+      "field": "pce_champion",
+      "value": 25.67,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.76848",
+      "field": "t80_h",
+      "value": 2500,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.76878",
+      "field": "pce_champion",
+      "value": 25.75,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.76878",
+      "field": "t80_h",
+      "value": 1440,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.76974",
+      "field": "pce_champion",
+      "value": 25.73,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.77015",
+      "field": "pce_champion",
+      "value": 26.33,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.77015",
+      "field": "t80_h",
+      "value": 1200,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.77164",
+      "field": "pce_champion",
+      "value": 26.15,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.77164",
+      "field": "t80_h",
+      "value": 1000,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.77175",
+      "field": "pce_champion",
+      "value": 25.76,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.77175",
+      "field": "t80_h",
+      "value": 3000,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.77211",
+      "field": "pce_champion",
+      "value": 26.07,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.77373",
+      "field": "pce_champion",
+      "value": 26.32,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.77373",
+      "field": "t80_h",
+      "value": 2000,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.77378",
+      "field": "pce_champion",
+      "value": 26.13,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adfm.77378",
+      "field": "t80_h",
+      "value": 1000,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.73807",
+      "field": "pce_champion",
+      "value": 27.31,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.73807",
+      "field": "pce_certified",
+      "value": 27.31,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.73807",
+      "field": "t80_h",
+      "value": 3250,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.73886",
+      "field": "pce_champion",
+      "value": 26.33,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.73886",
+      "field": "t80_h",
+      "value": 1000,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.73950",
+      "field": "pce_champion",
+      "value": 26.7,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.74033",
+      "field": "pce_champion",
+      "value": 26.9,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.74033",
+      "field": "pce_certified",
+      "value": 26.14,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.74060",
+      "field": "pce_champion",
+      "value": 26.21,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.74078",
+      "field": "pce_champion",
+      "value": 30.13,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.74078",
+      "field": "pce_certified",
+      "value": 29.57,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.74183",
+      "field": "pce_champion",
+      "value": 25.92,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.74220",
+      "field": "pce_champion",
+      "value": 26.6,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.74243",
+      "field": "pce_champion",
+      "value": 26.54,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.74243",
+      "field": "t80_h",
+      "value": 9800,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.74247",
+      "field": "pce_champion",
+      "value": 26.61,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.74316",
+      "field": "pce_champion",
+      "value": 26.94,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.74316",
+      "field": "pce_certified",
+      "value": 26.94,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/adma.74416",
+      "field": "pce_champion",
+      "value": 26.78,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/advs.76463",
+      "field": "pce_champion",
+      "value": 28.0,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/advs.76508",
+      "field": "pce_champion",
+      "value": 26.32,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/advs.76508",
+      "field": "active_area_cm2",
+      "value": 0.072,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/aenm.202506753",
+      "field": "pce_champion",
+      "value": 30.0,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/aenm.71259",
+      "field": "pce_champion",
+      "value": 29.4,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/aenm.71267",
+      "field": "pce_champion",
+      "value": 26.4,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/aenm.71267",
+      "field": "pce_certified",
+      "value": 25.9,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/aenm.71282",
+      "field": "pce_champion",
+      "value": 26.67,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/aenm.71305",
+      "field": "pce_champion",
+      "value": 27.25,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/aenm.71305",
+      "field": "pce_certified",
+      "value": 26.84,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/aenm.71312",
+      "field": "pce_champion",
+      "value": 25.3,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/aenm.71317",
+      "field": "pce_champion",
+      "value": 31.66,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/aenm.71317",
+      "field": "t80_h",
+      "value": 6785,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/aenm.71336",
+      "field": "pce_champion",
+      "value": 27.84,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.1018855",
+      "field": "pce_champion",
+      "value": 26.87,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.1676645",
+      "field": "pce_champion",
+      "value": 33.21,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.1676645",
+      "field": "pce_certified",
+      "value": 32.13,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.1678852",
+      "field": "pce_champion",
+      "value": 26.76,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.1864800",
+      "field": "pce_champion",
+      "value": 26.85,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.2884874",
+      "field": "pce_champion",
+      "value": 25.8,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.2884874",
+      "field": "t80_h",
+      "value": 1000,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.2924886",
+      "field": "pce_champion",
+      "value": 26.81,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.4031162",
+      "field": "pce_champion",
+      "value": 26.2,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.4177367",
+      "field": "pce_champion",
+      "value": 25.24,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.4177367",
+      "field": "t80_h",
+      "value": 1430,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.5216345",
+      "field": "pce_champion",
+      "value": 26.12,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.5216345",
+      "field": "active_area_cm2",
+      "value": 0.09,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.5530609",
+      "field": "pce_champion",
+      "value": 32.03,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.5530609",
+      "field": "active_area_cm2",
+      "value": 1.05,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.5530609",
+      "field": "t80_h",
+      "value": 1200,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.7090517",
+      "field": "pce_champion",
+      "value": 26.82,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.7827890",
+      "field": "pce_champion",
+      "value": 15.56,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.7827890",
+      "field": "pce_certified",
+      "value": 14.67,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.7827890",
+      "field": "active_area_cm2",
+      "value": 0.049,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.8080769",
+      "field": "pce_champion",
+      "value": 27.06,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/anie.8080769",
+      "field": "pce_certified",
+      "value": 26.82,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/cnl2.70189",
+      "field": "pce_champion",
+      "value": 21.54,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/ece2.70102",
+      "field": "pce_champion",
+      "value": 22.68,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/ece2.70102",
+      "field": "t80_h",
+      "value": 1000,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/ente.70590",
+      "field": "pce_champion",
+      "value": 30.81,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/pip.70131",
+      "field": "pce_champion",
+      "value": 29.64,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74289",
+      "field": "pce_champion",
+      "value": 25.53,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74356",
+      "field": "pce_champion",
+      "value": 20.71,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74390",
+      "field": "pce_champion",
+      "value": 18.89,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74470",
+      "field": "pce_champion",
+      "value": 26.51,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74531",
+      "field": "pce_champion",
+      "value": 22.2,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74531",
+      "field": "t80_h",
+      "value": 200,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74604",
+      "field": "pce_champion",
+      "value": 25.15,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74604",
+      "field": "active_area_cm2",
+      "value": 0.04,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74604",
+      "field": "t80_h",
+      "value": 1500,
+      "architecture": "n-i-p",
+      "grounded": false,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74660",
+      "field": "pce_champion",
+      "value": 15.1,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74660",
+      "field": "t80_h",
+      "value": 1000,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74806",
+      "field": "pce_champion",
+      "value": 23.15,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74811",
+      "field": "pce_champion",
+      "value": 26.32,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74903",
+      "field": "pce_champion",
+      "value": 22.0,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/smll.74999",
+      "field": "pce_champion",
+      "value": 30.62,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/solr.70375",
+      "field": "active_area_cm2",
+      "value": 64,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/solr.70425",
+      "field": "pce_champion",
+      "value": 13.7,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/solr.70430",
+      "field": "pce_champion",
+      "value": 14.57,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/solr.70430",
+      "field": "active_area_cm2",
+      "value": 64,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/solr.70435",
+      "field": "pce_champion",
+      "value": 24.91,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/solr.70437",
+      "field": "pce_champion",
+      "value": 22.92,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1002/solr.70447",
+      "field": "pce_champion",
+      "value": 17.75,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1007/s40820-026-02291-9",
+      "field": "pce_champion",
+      "value": 32.5,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1007/s40820-026-02295-5",
+      "field": "pce_champion",
+      "value": 26.19,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1007/s42114-026-01958-6",
+      "field": "pce_champion",
+      "value": 22.16,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1016/j.hybadv.2026.100700",
+      "field": "pce_champion",
+      "value": 29.08,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1016/j.hybadv.2026.100721",
+      "field": "pce_champion",
+      "value": 29.1,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1016/j.hybadv.2026.100722",
+      "field": "pce_champion",
+      "value": 28.85,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1016/j.joule.2026.102575",
+      "field": "pce_champion",
+      "value": 27.3,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1016/j.nanoen.2026.112222",
+      "field": "pce_champion",
+      "value": 23.26,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1016/j.nanoen.2026.112222",
+      "field": "pce_certified",
+      "value": 23.26,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1016/j.nanoen.2026.112222",
+      "field": "active_area_cm2",
+      "value": 0.0405,
+      "architecture": "p-i-n",
+      "grounded": false,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsaem.6c01125",
+      "field": "pce_champion",
+      "value": 3.01,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsaem.6c01370",
+      "field": "pce_champion",
+      "value": 21.4,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsaem.6c01637",
+      "field": "pce_champion",
+      "value": 21.53,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsaem.6c01637",
+      "field": "t80_h",
+      "value": 720,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsaem.6c01764",
+      "field": "pce_champion",
+      "value": 22.2,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsami.6c05331",
+      "field": "pce_champion",
+      "value": 21.15,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsami.6c06005",
+      "field": "pce_champion",
+      "value": 9.9,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsami.6c07418",
+      "field": "pce_champion",
+      "value": 22.15,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsami.6c08440",
+      "field": "pce_champion",
+      "value": 19.38,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsami.6c09672",
+      "field": "pce_champion",
+      "value": 22.03,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsami.6c09922",
+      "field": "pce_champion",
+      "value": 24.2,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsami.6c09922",
+      "field": "active_area_cm2",
+      "value": 12.0,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsenergylett.6c00858",
+      "field": "pce_champion",
+      "value": 21.5,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsenergylett.6c00858",
+      "field": "active_area_cm2",
+      "value": 0.128,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsenergylett.6c01113",
+      "field": "pce_champion",
+      "value": 20.18,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsenergylett.6c01161",
+      "field": "pce_champion",
+      "value": 18.15,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsenergylett.6c01361",
+      "field": "pce_champion",
+      "value": 21.4,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsenergylett.6c01489",
+      "field": "pce_champion",
+      "value": 26.23,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsenergylett.6c01517",
+      "field": "pce_champion",
+      "value": 26.65,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsenergylett.6c01826",
+      "field": "pce_champion",
+      "value": 17.1,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsnano.5c21750",
+      "field": "pce_champion",
+      "value": 23.06,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/acsnano.6c04084",
+      "field": "pce_champion",
+      "value": 22.51,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/jacs.6c05502",
+      "field": "pce_champion",
+      "value": 22.99,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/jacs.6c06932",
+      "field": "pce_champion",
+      "value": 26.53,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1021/jacs.6c06932",
+      "field": "active_area_cm2",
+      "value": 818,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1038/s41467-026-74018-8",
+      "field": "pce_champion",
+      "value": 27.12,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1038/s41467-026-74018-8",
+      "field": "pce_certified",
+      "value": 27.12,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1038/s41467-026-74018-8",
+      "field": "active_area_cm2",
+      "value": 655.2,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1038/s41467-026-75053-1",
+      "field": "pce_champion",
+      "value": 26.14,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1038/s41467-026-75053-1",
+      "field": "pce_certified",
+      "value": 25.75,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1038/s41467-026-75305-0",
+      "field": "pce_certified",
+      "value": 26.18,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1038/s41467-026-75305-0",
+      "field": "active_area_cm2",
+      "value": 1.17,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1038/s41467-026-75629-x",
+      "field": "pce_champion",
+      "value": 26.47,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1038/s41467-026-75990-x",
+      "field": "pce_champion",
+      "value": 26.26,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/sciadv.aeb8790",
+      "field": "pce_champion",
+      "value": 29.44,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/sciadv.aeb8790",
+      "field": "pce_certified",
+      "value": 28.84,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/sciadv.aed6327",
+      "field": "pce_champion",
+      "value": 26.88,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/sciadv.aed6327",
+      "field": "pce_certified",
+      "value": 26.52,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/sciadv.aee4175",
+      "field": "pce_certified",
+      "value": 23.1,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/sciadv.aee4175",
+      "field": "active_area_cm2",
+      "value": 20.3,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/sciadv.aef6600",
+      "field": "pce_certified",
+      "value": 27.49,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/sciadv.aef6600",
+      "field": "active_area_cm2",
+      "value": 12.56,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/sciadv.aeg1456",
+      "field": "pce_certified",
+      "value": 27.31,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/sciadv.aei2945",
+      "field": "pce_champion",
+      "value": 33.3,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/sciadv.aei2945",
+      "field": "pce_certified",
+      "value": 33.1,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/science.aed8175",
+      "field": "pce_champion",
+      "value": 27.8,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/science.aed8175",
+      "field": "pce_certified",
+      "value": 27.3,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/science.aef1969",
+      "field": "pce_champion",
+      "value": 26.7,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "ungated_baseline",
+      "work_key": "10.1126/science.aef1969",
+      "field": "pce_certified",
+      "value": 26.1,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adfm.76731",
+      "field": "pce_champion",
+      "value": 16.16,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adfm.76848",
+      "field": "pce_champion",
+      "value": 25.67,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adfm.76878",
+      "field": "pce_champion",
+      "value": 25.75,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adfm.76878",
+      "field": "active_area_cm2",
+      "value": 1,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adfm.76974",
+      "field": "pce_champion",
+      "value": 25.73,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adfm.77015",
+      "field": "pce_champion",
+      "value": 26.33,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adfm.77164",
+      "field": "pce_champion",
+      "value": 26.15,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adfm.77164",
+      "field": "active_area_cm2",
+      "value": 93.1,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adfm.77175",
+      "field": "pce_champion",
+      "value": 25.76,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adfm.77211",
+      "field": "pce_champion",
+      "value": 26.07,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adfm.77373",
+      "field": "pce_champion",
+      "value": 26.32,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adfm.77378",
+      "field": "pce_champion",
+      "value": 26.13,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.73807",
+      "field": "pce_champion",
+      "value": 27.31,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.73807",
+      "field": "pce_certified",
+      "value": 27.31,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.73807",
+      "field": "active_area_cm2",
+      "value": 684.75,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.73886",
+      "field": "pce_champion",
+      "value": 26.33,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.73950",
+      "field": "pce_champion",
+      "value": 26.7,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.74033",
+      "field": "pce_champion",
+      "value": 26.9,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.74033",
+      "field": "pce_certified",
+      "value": 26.14,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.74060",
+      "field": "pce_champion",
+      "value": 26.21,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.74078",
+      "field": "pce_champion",
+      "value": 30.13,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.74078",
+      "field": "pce_certified",
+      "value": 29.57,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.74183",
+      "field": "pce_champion",
+      "value": 25.92,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.74220",
+      "field": "pce_champion",
+      "value": 26.6,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.74243",
+      "field": "pce_champion",
+      "value": 26.54,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.74243",
+      "field": "t80_h",
+      "value": 9800,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.74247",
+      "field": "pce_champion",
+      "value": 26.61,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.74316",
+      "field": "pce_certified",
+      "value": 26.94,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.74316",
+      "field": "active_area_cm2",
+      "value": 25,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/adma.74416",
+      "field": "pce_champion",
+      "value": 26.78,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/advs.76463",
+      "field": "pce_champion",
+      "value": 28,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/advs.76508",
+      "field": "pce_champion",
+      "value": 26.32,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/advs.76508",
+      "field": "active_area_cm2",
+      "value": 0.072,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/aenm.202506753",
+      "field": "pce_champion",
+      "value": 30,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/aenm.71259",
+      "field": "pce_champion",
+      "value": 23.38,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/aenm.71267",
+      "field": "pce_champion",
+      "value": 26.4,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/aenm.71267",
+      "field": "pce_certified",
+      "value": 25.9,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/aenm.71282",
+      "field": "pce_champion",
+      "value": 26.67,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/aenm.71305",
+      "field": "pce_champion",
+      "value": 27.25,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/aenm.71305",
+      "field": "pce_certified",
+      "value": 26.84,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/aenm.71312",
+      "field": "pce_champion",
+      "value": 25.3,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/aenm.71317",
+      "field": "pce_champion",
+      "value": 31.66,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/aenm.71317",
+      "field": "t80_h",
+      "value": 6785,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/aenm.71336",
+      "field": "pce_champion",
+      "value": 27.84,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.1018855",
+      "field": "pce_champion",
+      "value": 26.87,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.1676645",
+      "field": "pce_champion",
+      "value": 33.21,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.1676645",
+      "field": "pce_certified",
+      "value": 32.13,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.1678852",
+      "field": "pce_champion",
+      "value": 26.76,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.1864800",
+      "field": "pce_champion",
+      "value": 26.85,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.2884874",
+      "field": "pce_champion",
+      "value": 25.8,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.2924886",
+      "field": "pce_champion",
+      "value": 26.81,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.4031162",
+      "field": "pce_champion",
+      "value": 26.2,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.4177367",
+      "field": "pce_champion",
+      "value": 25.24,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.5216345",
+      "field": "pce_champion",
+      "value": 26.12,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.5216345",
+      "field": "active_area_cm2",
+      "value": 0.09,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.5530609",
+      "field": "pce_champion",
+      "value": 32.03,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.5530609",
+      "field": "active_area_cm2",
+      "value": 1.05,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.7090517",
+      "field": "pce_champion",
+      "value": 26.82,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.7827890",
+      "field": "pce_champion",
+      "value": 15.56,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.7827890",
+      "field": "pce_certified",
+      "value": 14.67,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.7827890",
+      "field": "active_area_cm2",
+      "value": 0.049,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.8080769",
+      "field": "pce_champion",
+      "value": 27.06,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.8080769",
+      "field": "pce_certified",
+      "value": 26.82,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/anie.8080769",
+      "field": "active_area_cm2",
+      "value": 21.54,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/cnl2.70189",
+      "field": "pce_champion",
+      "value": 21.54,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/ece2.70102",
+      "field": "pce_champion",
+      "value": 22.68,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/ece2.70102",
+      "field": "active_area_cm2",
+      "value": 63.7,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/ente.70590",
+      "field": "pce_champion",
+      "value": 30.81,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/pip.70131",
+      "field": "pce_champion",
+      "value": 29.64,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/smll.74289",
+      "field": "pce_champion",
+      "value": 25.53,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/smll.74356",
+      "field": "pce_champion",
+      "value": 20.71,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/smll.74390",
+      "field": "pce_champion",
+      "value": 18.89,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/smll.74470",
+      "field": "pce_champion",
+      "value": 26.51,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/smll.74531",
+      "field": "pce_champion",
+      "value": 22.2,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/smll.74531",
+      "field": "t80_h",
+      "value": 200,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/smll.74604",
+      "field": "pce_champion",
+      "value": 25.15,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/smll.74604",
+      "field": "active_area_cm2",
+      "value": 0.04,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/smll.74660",
+      "field": "pce_champion",
+      "value": 15.1,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/smll.74806",
+      "field": "pce_champion",
+      "value": 23.15,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/smll.74811",
+      "field": "pce_champion",
+      "value": 26.32,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/smll.74903",
+      "field": "pce_champion",
+      "value": 22.0,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/smll.74999",
+      "field": "pce_champion",
+      "value": 30.62,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/solr.70375",
+      "field": "active_area_cm2",
+      "value": 64,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/solr.70425",
+      "field": "pce_champion",
+      "value": 13.7,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/solr.70430",
+      "field": "pce_champion",
+      "value": 14.57,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/solr.70430",
+      "field": "active_area_cm2",
+      "value": 64,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/solr.70435",
+      "field": "pce_champion",
+      "value": 24.91,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/solr.70437",
+      "field": "pce_champion",
+      "value": 22.92,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1002/solr.70447",
+      "field": "pce_champion",
+      "value": 17.75,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1007/s40820-026-02291-9",
+      "field": "pce_champion",
+      "value": 32.5,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1007/s40820-026-02295-5",
+      "field": "pce_champion",
+      "value": 26.19,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1007/s42114-026-01958-6",
+      "field": "pce_champion",
+      "value": 22.16,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1016/j.hybadv.2026.100700",
+      "field": "pce_champion",
+      "value": 29.08,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1016/j.hybadv.2026.100721",
+      "field": "pce_champion",
+      "value": 29.1,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1016/j.hybadv.2026.100722",
+      "field": "pce_champion",
+      "value": 28.85,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1016/j.joule.2026.102575",
+      "field": "pce_champion",
+      "value": 27.3,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1016/j.nanoen.2026.112222",
+      "field": "pce_certified",
+      "value": 23.26,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsaem.6c01125",
+      "field": "pce_champion",
+      "value": 3.01,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsaem.6c01370",
+      "field": "pce_champion",
+      "value": 21.4,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsaem.6c01637",
+      "field": "pce_champion",
+      "value": 21.53,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsaem.6c01637",
+      "field": "t80_h",
+      "value": 720,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsaem.6c01764",
+      "field": "pce_champion",
+      "value": 22.2,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsami.6c05331",
+      "field": "pce_champion",
+      "value": 21.15,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsami.6c06005",
+      "field": "pce_champion",
+      "value": 9.9,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsami.6c07418",
+      "field": "pce_champion",
+      "value": 22.15,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsami.6c08440",
+      "field": "pce_champion",
+      "value": 19.38,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsami.6c09672",
+      "field": "pce_champion",
+      "value": 22.03,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsami.6c09922",
+      "field": "pce_champion",
+      "value": 24.2,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsami.6c09922",
+      "field": "active_area_cm2",
+      "value": 12,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsenergylett.6c00858",
+      "field": "pce_champion",
+      "value": 21.5,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsenergylett.6c00858",
+      "field": "active_area_cm2",
+      "value": 0.128,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsenergylett.6c01113",
+      "field": "pce_champion",
+      "value": 20.18,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsenergylett.6c01161",
+      "field": "pce_champion",
+      "value": 18.15,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsenergylett.6c01361",
+      "field": "pce_champion",
+      "value": 27.7,
+      "architecture": "tandem_4T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsenergylett.6c01489",
+      "field": "pce_champion",
+      "value": 26.23,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsenergylett.6c01517",
+      "field": "pce_champion",
+      "value": 26.65,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsenergylett.6c01826",
+      "field": "pce_champion",
+      "value": 17.1,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsnano.5c21750",
+      "field": "pce_champion",
+      "value": 23.06,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/acsnano.6c04084",
+      "field": "pce_champion",
+      "value": 22.51,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/jacs.6c05502",
+      "field": "pce_champion",
+      "value": 22.99,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/jacs.6c06932",
+      "field": "pce_champion",
+      "value": 26.53,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1021/jacs.6c06932",
+      "field": "active_area_cm2",
+      "value": 818,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1038/s41467-026-74018-8",
+      "field": "pce_certified",
+      "value": 27.12,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1038/s41467-026-74018-8",
+      "field": "active_area_cm2",
+      "value": 655.2,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1038/s41467-026-75053-1",
+      "field": "pce_champion",
+      "value": 26.14,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1038/s41467-026-75053-1",
+      "field": "pce_certified",
+      "value": 25.75,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1038/s41467-026-75305-0",
+      "field": "pce_champion",
+      "value": 26.18,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1038/s41467-026-75305-0",
+      "field": "pce_certified",
+      "value": 26.18,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1038/s41467-026-75305-0",
+      "field": "active_area_cm2",
+      "value": 1.17,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1038/s41467-026-75629-x",
+      "field": "pce_champion",
+      "value": 26.47,
+      "architecture": "n-i-p",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1038/s41467-026-75990-x",
+      "field": "pce_champion",
+      "value": 26.26,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1038/s41467-026-75990-x",
+      "field": "active_area_cm2",
+      "value": 14,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aeb8790",
+      "field": "pce_champion",
+      "value": 29.44,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aeb8790",
+      "field": "pce_certified",
+      "value": 28.84,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aed6327",
+      "field": "pce_champion",
+      "value": 26.88,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aed6327",
+      "field": "pce_certified",
+      "value": 26.52,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aee4175",
+      "field": "pce_certified",
+      "value": 23.1,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aee4175",
+      "field": "active_area_cm2",
+      "value": 20.3,
+      "architecture": "module",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aef6600",
+      "field": "pce_champion",
+      "value": 27.49,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aef6600",
+      "field": "pce_certified",
+      "value": 27.49,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aef6600",
+      "field": "active_area_cm2",
+      "value": 12.56,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aeg1456",
+      "field": "pce_champion",
+      "value": 27.31,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aeg1456",
+      "field": "pce_certified",
+      "value": 27.31,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aeg1456",
+      "field": "active_area_cm2",
+      "value": 766,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aei2945",
+      "field": "pce_champion",
+      "value": 33.3,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/sciadv.aei2945",
+      "field": "pce_certified",
+      "value": 33.1,
+      "architecture": "tandem_2T",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/science.aed8175",
+      "field": "pce_champion",
+      "value": 27.8,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/science.aed8175",
+      "field": "pce_certified",
+      "value": 27.3,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/science.aed8175",
+      "field": "active_area_cm2",
+      "value": 625,
+      "architecture": "p-i-n",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/science.aef1969",
+      "field": "pce_champion",
+      "value": 26.7,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/science.aef1969",
+      "field": "pce_certified",
+      "value": 26.1,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    },
+    {
+      "arm": "guarded_pipeline",
+      "work_key": "10.1126/science.aef1969",
+      "field": "active_area_cm2",
+      "value": 100,
+      "architecture": "unknown",
+      "grounded": true,
+      "cross_paper": false,
+      "sq_violation": false
+    }
+  ]
+}

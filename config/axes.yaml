@@ -1,0 +1,21 @@
+# v3 §E.4: six mechanism axes driving 04_mechanism regex scoring. The LLM
+# adjudicates only multi-axis titles and must cite the winning keywords.
+axes:
+  composition:
+    name: Composition and phase stability
+    keywords: [cation, FA, MA, Cs, A-site, halide segregation, phase stability, Ruddlesden-Popper, 2D perovskite, 3D perovskite, lead-free, tin perovskite, mixed-halide, alloying, dopant, additive]
+  defects:
+    name: Defects, ion migration, passivation chemistry
+    keywords: [defect, vacancy, interstitial, ion migration, passivation, passivate, trap, grain boundary, antisite]
+  interfaces:
+    name: Interfaces and charge extraction
+    keywords: [interface, SAM, self-assembled monolayer, ETL, electron transport, HTL, hole transport, buried interface, band alignment, surface modification, contact layer]
+  architecture:
+    name: Device architecture and tandems
+    keywords: [tandem, all-perovskite, perovskite-silicon, perovskite-on-silicon, 2-terminal, 4-terminal, current matching, recombination layer, p-i-n, n-i-p, device architecture, interconnection]
+  stability:
+    name: Stability and degradation pathways
+    keywords: [ISOS, damp heat, light soaking, thermal stability, operational stability, degradation, encapsulation, reverse bias, MPPT, maximum power point, T80, T90, moisture, ultraviolet]
+  scale_up:
+    name: Scale-up, coating and modules
+    keywords: [module, mini-module, blade coating, slot-die, inkjet, roll-to-roll, spin-coating, scalable, area scaling, upscal, techno-economic, TEA, LCA, life cycle, manufacturing cost, carbon footprint]

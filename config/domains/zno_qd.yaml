@@ -1,0 +1,410 @@
+# ZnO nanoparticles and quantum dots. SECOND TYPE-D INSTANCE.
+#
+# WHY TYPE-D AND NOT TYPE-P
+# -------------------------
+# This is the highest-stakes field in the registry (GENERAL 3.3) and the
+# decision cannot be fixed later without re-extraction, so the reasoning is
+# recorded here rather than left implicit.
+#
+# The request was "ZnO nanoparticle / quantum dots", not "ZnO quantum-dot
+# LEDs". That scope spans synthesis, optics, defect chemistry, photocatalysis,
+# sensing, bioimaging, electron-transport layers and composites. There is no
+# single scalar figure of merit across those literatures:
+#
+#   - PLQY is the most tempting candidate and it is the wrong one. A 94%
+#     PLQY in a dilute colloid is not comparable to a 12% PLQY in a working
+#     film, and the film is usually the harder result. Ranking on PLQY
+#     across sample classes is the category error of GENERAL 3.3 exactly:
+#     a real number, traceable, describing the wrong thing.
+#   - emission peak and particle size are SCOPE, not merit. A 3 nm dot is
+#     not better than a 6 nm dot; it is a different material.
+#   - synthesis yield is a property of a RUN, not of a method, for the same
+#     reason it is in molecular_synthesis.yaml.
+#
+# GENERAL 3.1 requires a Type-P domain to declare frontier + penalty_x +
+# durability, because the monthly argument is "the frontier is thin, it does
+# not survive scale, and it does not survive operation". ZnO nanomaterials
+# cannot make that argument, because there is no agreed frontier to be thin.
+#
+# WHEN TYPE-P WOULD BE CORRECT INSTEAD
+# ------------------------------------
+# Narrow the scope to a device class -- e.g. "ZnO-electron-transport-layer
+# QLEDs" -- and a real frontier appears (device EQE), with a real penalty
+# axis (luminance) and a real durability axis (T50). That is a DIFFERENT
+# domain slug, declared before extraction, never a topic_type edit after it.
+
+domain:
+  name: ZnO nanoparticle and quantum-dot materials
+  slug: zno_qd
+  topic_type: D
+  scope_note: >
+    Colloidal ZnO nanoparticles, ZnO quantum dots and nanocrystals, core/shell
+    and doped ZnO nanocrystals, and their surface chemistry, defect structure,
+    optical behaviour and demonstrated applications. Bulk and single-crystal
+    ZnO, ZnO nanowire arrays grown in place, and studies where ZnO appears
+    only as an inert substrate or a comparison material are out of scope even
+    when nanoscale.
+
+harvest:
+  # Inclusion only. A '-term' in an OpenAlex query returns count 0 rather
+  # than a filtered set (GENERAL 6), and zero looks exactly like a
+  # legitimately empty month. Wildcards are rejected outright.
+  query_terms:
+    - [ZnO quantum dot, zinc oxide quantum dot, ZnO nanoparticle,
+       zinc oxide nanoparticle, ZnO nanocrystal, zinc oxide nanocrystal,
+       ZnO colloidal, zinc oxide colloid]
+    - [photoluminescence, quantum yield, synthesis, passivation, defect,
+       nanocrystal, optical, surface ligand, application]
+  count_band: [300, 1600]
+  # ZnO nanomaterials work is published in chemistry and materials journals,
+  # not on arXiv. cond-mat.mtrl-sci carries some, so it is not empty like
+  # molecular_synthesis, but it must not be relied on for coverage.
+  arxiv_categories: [cond-mat.mtrl-sci]
+
+exclude:
+  substring: [nanowire array, nanorod array, hydrothermal film growth,
+              single crystal substrate, bulk ZnO ceramic, varistor,
+              perovskite solar cell, clinical trial, patient,
+              crop yield, waste water plant]
+  word_bound: [perovskite, varistor, piezotronic]
+
+axes:
+  surface_chemistry:
+    name: Surface chemistry and ligand design
+    keywords: [ligand, surface ligand, capping agent, passivation,
+               surface trap, oleate, acetate, thiol, amine, zeta potential,
+               functionalization, functionalisation, ligand exchange,
+               core-shell, core/shell, shell growth, surface hydroxyl]
+    fold_into: optical_quality
+  defect_chemistry:
+    name: Defect chemistry and recombination pathways
+    keywords: [oxygen vacancy, zinc interstitial, zinc vacancy,
+               defect state, deep level, trap state, EPR, XPS,
+               green emission, visible emission, trap emission,
+               non-radiative recombination, trap density, doping]
+    fold_into: optical_quality
+  optical_quality:
+    name: Emission quality and quantum confinement
+    keywords: [photoluminescence, quantum yield, PLQY, emission peak,
+               band edge emission, FWHM, full width at half maximum,
+               quantum confinement, exciton, absorption onset,
+               Stokes shift, TRPL, lifetime, radiative]
+    fold_into: defect_chemistry
+  size_morphology:
+    name: Size, morphology and dispersion control
+    keywords: [nanocrystal size, particle size, diameter, monodisperse,
+               size distribution, polydispersity, morphology, faceting,
+               shape control, aggregation, dispersion, colloidal stability,
+               DLS, TEM]
+    fold_into: synthesis_route
+  synthesis_route:
+    name: Synthesis route, scalability and reproducibility
+    keywords: [sol-gel, solvothermal, hydrothermal, precipitation,
+               green synthesis, aqueous synthesis, continuous flow,
+               gram scale, scalable, low temperature, one-pot,
+               reproducible, precursor, nucleation, growth kinetics]
+    fold_into: size_morphology
+  stability_application:
+    name: Environmental stability and demonstrated application
+    keywords: [photostability, photodegradation, ageing, aging,
+               shelf life, electron transport layer, photodetector,
+               light-emitting, sensor, photocatalysis, degradation,
+               antibacterial, bioimaging, encapsulation, operational]
+    fold_into: surface_chemistry
+
+# ---------------------------------------------------------------- metrics
+# NOTE the roles: there is no `frontier`. Every metric is `scope`, `quality`
+# or `secondary`, because none of them ranks a paper on its own. The
+# significance section argues; nothing here scores.
+metrics:
+  - key: plqy_pct
+    label: photoluminescence quantum yield
+    unit: "%"
+    direction: higher_better
+    role: quality
+    plausibility: {min: 0.0, max: 100.0}
+    plausibility_note: >
+      PLQY is a normalised photon ratio; above 100% is impossible for a
+      single-photon process and indicates either a reference-standard error
+      or, far more often, that the extracted number is not a PLQY at all
+      (absorbance, transmittance, or a degradation percentage). Fails closed.
+    # higher_better is honest at fixed sample class -- a brighter dot in the
+    # same medium IS better. It is role `quality`, never `frontier`, so the
+    # pipeline can never build a champion curve across sample classes.
+    direction_note: >
+      Comparable only within one sample class. A colloid PLQY and a film
+      PLQY are different quantities; never order papers across the two.
+    device_binding: true
+    binding_note: >
+      This is the GENERAL 2.4 trap in its ZnO form, and it is the single
+      most likely defect this domain will ship. One abstract routinely
+      reports the authors' colloid PLQY and a device or film value in
+      adjacent sentences, and a label taken from the PAPER will attach to
+      the wrong number. The label comes from the value's own anchor.
+    requires_condition: sample_class
+  - key: emission_peak_nm
+    label: photoluminescence emission peak
+    unit: nm
+    direction: none
+    role: scope
+    plausibility: {min: 300.0, max: 900.0}
+    plausibility_note: >
+      ZnO band-edge emission sits near 370 nm and its defect emission near
+      500-600 nm. A value outside 300-900 nm is not a ZnO PL peak; it is an
+      absorption edge, an excitation wavelength, or a different material.
+    direction_note: >
+      A wavelength is not better or worse. Confined ZnO dots blue-shift with
+      decreasing size; that is a description, not an achievement.
+    device_binding: false
+  - key: fwhm_nm
+    label: emission linewidth
+    unit: nm
+    direction: lower_better
+    role: quality
+    plausibility: {min: 1.0, max: 400.0}
+    plausibility_note: >
+      Below 1 nm is an instrument-resolution artefact for a colloidal
+      ensemble; above 400 nm spans the whole visible range and is a
+      broad defect band reported as a linewidth.
+    device_binding: true
+    requires_condition: sample_class
+  - key: particle_size_nm
+    label: mean nanocrystal diameter
+    unit: nm
+    direction: none
+    role: scope
+    plausibility: {min: 0.5, max: 500.0}
+    plausibility_note: >
+      Below 0.5 nm is smaller than a ZnO unit cell. Above 500 nm the object
+      is not a quantum dot or a nanoparticle in this domain's sense.
+    device_binding: false
+  - key: size_dispersion_pct
+    label: relative size dispersion
+    unit: "%"
+    direction: lower_better
+    role: quality
+    plausibility: {min: 0.0, max: 100.0}
+    device_binding: false
+  - key: bandgap_ev
+    label: optical band gap
+    unit: eV
+    direction: none
+    role: secondary
+    plausibility: {min: 2.8, max: 5.0}
+    plausibility_note: >
+      Bulk ZnO is 3.37 eV; quantum confinement raises it, and heavy alloying
+      can lower it modestly. Below 2.8 eV or above 5.0 eV the value is not a
+      ZnO optical gap.
+    device_binding: false
+  - key: pl_lifetime_ns
+    label: photoluminescence lifetime
+    unit: ns
+    direction: none
+    role: secondary
+    plausibility: {min: 0.01, max: 100000.0}
+    plausibility_note: >
+      ZnO band-edge decay is sub-nanosecond to nanoseconds; defect emission
+      reaches microseconds. The wide band is deliberate and honest: this
+      metric spans two physically distinct processes.
+    device_binding: true
+    requires_condition: sample_class
+  - key: photostability_retention_pct
+    label: emission retained after the stated stress
+    unit: "%"
+    direction: higher_better
+    role: quality
+    plausibility: {min: 0.0, max: 100.0}
+    plausibility_note: >
+      A retained fraction cannot exceed 100%. Values above it are almost
+      always photobrightening reported against a drifting baseline, which is
+      a different claim and must not be recorded as retention.
+    device_binding: true
+    binding_note: >
+      Retention without its stress condition is not a fact about a material.
+      Continuous illumination for one hour and twelve months on a shelf are
+      both "stability" and differ by orders of magnitude.
+    requires_condition: stress_condition
+  - key: synthesis_yield_pct
+    label: isolated synthesis yield
+    unit: "%"
+    direction: none
+    role: scope
+    plausibility: {min: 0.0, max: 100.0}
+    # direction: none is load-bearing and lint-enforced for any yield* key in
+    # a Type-D domain. Declaring higher_better would license a champion curve
+    # over yields, which is the category error this file exists to prevent.
+    direction_note: >
+      Yield is a property of a run, not of a method. A low yield from a
+      route that needs no glovebox can be the better contribution.
+    device_binding: false
+  - key: scale_g
+    label: largest demonstrated synthesis scale
+    unit: g
+    direction: higher_better
+    role: scope
+    plausibility: {min: 0.0, max: 100000.0}
+    # Evidence breadth, not chemical merit: a route shown at 20 g is better
+    # EVIDENCED than one shown at 20 mg. It is not a better material.
+    device_binding: false
+
+# ----------------------------------------------------- advance taxonomy
+# Type-D's replacement for a champion metric. A contribution is CLASSIFIED,
+# never scored. The significance section argues from this distribution.
+advance_taxonomy:
+  field: advance_class
+  values:
+    - new_synthesis_route       # a preparation not previously available
+    - improved_optical_quality  # higher PLQY / narrower line, same class
+    - surface_defect_control    # ligand or shell chemistry that changes physics
+    - improved_stability        # survives a stress the prior art did not
+    - mechanistic_insight       # explains rather than enables
+    - broadened_application     # ZnO QDs moved into a new use case
+    - practical_scale           # makes an existing route actually usable
+    - unknown
+  # Comparative claims by construction. Each demands the prior art's number
+  # in the SAME anchor or the claim is demoted -- guard discipline applied to
+  # a claim type that has no number of its own.
+  requires_comparator: [improved_optical_quality, improved_stability,
+                        practical_scale]
+
+sample_taxonomy:
+  field: sample_class
+  # The closed vocabulary that makes plqy_pct meaningful. This list is the
+  # whole reason PLQY is role `quality` and not `frontier`.
+  field_note: >
+    A number is bound to the class named in its OWN anchor. Never coerce an
+    unlisted label silently; flag it.
+  values: [colloid, powder, thin_film, composite, device, aqueous_suspension,
+           biological_medium, unknown]
+  bound_overrides: {}
+
+lens:
+  values: [experimental, computational, review]
+  # A DFT-computed vacancy formation energy or a simulated emission spectrum
+  # must never sit on a plot of measured outcomes. This is GENERAL 5.2, and
+  # ZnO defect chemistry has an unusually large computational literature, so
+  # the exclusion is doing more work here than in the PV instance.
+  measured_lenses: [experimental]
+  exclude_from_measured_figures: [computational, review]
+
+# --------------------------------------------------------------- figures
+# No certified-frontier bar and no penalty scatter: this is Type-D. Each
+# figure is attached by ROLE or AXIS, never by section number.
+figure_roles:
+  - id: F1
+    argument: >
+      what KIND of advance the month contained, which a PLQY histogram
+      cannot show and would actively misrepresent
+    kind: class_bar
+    class_field: advance_class
+    attach_role: significance
+    lens_filter: all
+  - id: F2
+    argument: >
+      emission quality against the sample class it was measured on, so a
+      colloid value is never read as a film value
+    kind: scope_map
+    y_metric: plqy_pct
+    colour_metric: fwhm_nm
+    attach_axis: [optical_quality, surface_chemistry]
+    lens_filter: measured
+  - id: F3
+    argument: >
+      where confinement actually sits: nanocrystal diameter against optical
+      gap, which shows whether the month's "quantum dots" are confined at all
+    kind: scatter_log_x
+    x_metric: particle_size_nm
+    y_metric: bandgap_ev
+    attach_axis: [size_morphology, defect_chemistry]
+    lens_filter: measured
+  - id: F4
+    argument: >
+      how completely the month's materials are characterised: which papers
+      report a size, a PLQY, a linewidth and a stability stress at all, with
+      the unreported fraction shown rather than hidden
+    kind: strip
+    y_metric: photostability_retention_pct
+    attach_axis: stability_application
+    lens_filter: measured
+
+# ------------------------------------------------- abstract placeholders
+# Digit-free abstract; the build substitutes these. NOTE there is no
+# P_TOP_* champion token: a Type-D abstract has no champion value to state,
+# and adding one would invite the ranking error the type split prevents.
+abstract_tokens:
+  - {token: N_CORPUS, source: "stats:corpus.n"}
+  - {token: N_DEPTH, source: "stats:selection.n_depth"}
+  - {token: N_NEW_ROUTE, source: "cards:count_class:new_synthesis_route",
+     computed: true}
+  - {token: N_PLQY, source: "cards:count:plqy_pct", computed: true}
+  - {token: PLQY_TOP, source: "cards:max:plqy_pct", suffix: "%"}
+  - {token: NM_FWHM_MIN, source: "cards:min:fwhm_nm", suffix: " nm"}
+  - {token: NM_SIZE_MIN, source: "cards:min:particle_size_nm", suffix: " nm"}
+  - {token: G_SCALE_MAX, source: "cards:max:scale_g", suffix: " g"}
+  - {token: PCT_WITH_PLQY, source: "stats:audit.corpus.plqy_stated.pct"}
+  - {token: PCT_WITH_SIZE, source: "stats:audit.corpus.size_stated.pct"}
+  - {token: PCT_WITH_STABILITY,
+     source: "stats:audit.corpus.stability_stated.pct"}
+
+title_terms:
+  frame: ZnO nanocrystals
+  max_words: 16
+  neutral_slot: a monthly survey of ZnO nanoparticle and quantum-dot research
+  axis_phrases:
+    surface_chemistry: ["surface and ligand chemistry", "shell architecture",
+                        "surface passivation strategies"]
+    defect_chemistry: ["defect chemistry", "vacancy and trap states",
+                       "recombination pathways"]
+    optical_quality: ["emission quality", "quantum confinement and emission",
+                      "photoluminescence behaviour"]
+    size_morphology: ["size and morphology control", "dispersion control",
+                      "nanocrystal size distribution"]
+    synthesis_route: ["synthesis routes", "scalable preparation",
+                      "aqueous and low-temperature synthesis"]
+    stability_application: ["stability under operation",
+                            "demonstrated applications",
+                            "photostability and ageing"]
+  banned: [comprehensive, novel, unprecedented, breakthrough, cutting-edge,
+           state-of-the-art, enhanced, improved, superior, remarkable,
+           pivotal, delve, unlock, showcase, realm, update,
+           # Added for this domain. Nanomaterials titles abuse these, and
+           # each is the comparative claim that requires_comparator polices.
+           facile, green, multifunctional, highly efficient, tunable,
+           promising, versatile]
+
+section_spine:
+  # NOT `frontier`. domain_lint.py rejects a Type-D domain declaring one.
+  lead_role: significance
+  lead_title_template: "Most Significant Advances in {month}"
+  spine_words: {intro: 300, lead: 340, gaps: 400}
+  spine_cites: {intro: 0, lead: 10, gaps: 4}
+  lead_note: >
+    State the job, never the wording (GENERAL 4.4). The job: identify which
+    of the month's advances changed what is achievable with ZnO
+    nanocrystals, and justify each in terms of what became possible. Do not
+    rank by PLQY, and do not compare a value measured in one sample class
+    against a value measured in another.
+
+notation:
+  extra_units:
+    "nm": "\\nano\\metre"
+    "eV": "\\electronvolt"
+    "ns": "\\nano\\second"
+    "ps": "\\pico\\second"
+    "us": "\\micro\\second"
+    "mL": "\\milli\\litre"
+    "g": "\\gram"
+    "mg": "\\milli\\gram"
+    "mmol": "\\milli\\mole"
+    "M": "\\molar"
+    "mM": "\\milli\\molar"
+    "wt%": "\\wt\\percent"
+    "mol%": "\\mol\\percent"
+    "mW cm-2": "\\milli\\watt\\per\\square\\centi\\metre"
+    "cd m-2": "\\candela\\per\\square\\metre"
+  # Masked before substitution, or a formula rule chews them. GENERAL 5.3:
+  # a MISSING unit does not degrade gracefully -- one unknown token leaves
+  # every unit beside it in the run flat, and the gate reports the neighbour.
+  defined_terms: [PLQY, FWHM, TRPL, PL, UV-Vis, XRD, TEM, HRTEM, SEM, AFM,
+                  XPS, EPR, DLS, FTIR, ZnO, EQE, ETL, QD, QDs, NC, NCs,
+                  ISOS, Zn-O, sol-gel]

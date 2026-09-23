@@ -1,0 +1,141 @@
+{
+  "month": "2026-06",
+  "month_name": "June 2026",
+  "sections": [
+    {
+      "id": "1",
+      "role": "intro",
+      "axis": null,
+      "axes": [],
+      "title": "Introduction",
+      "ceiling": 300,
+      "cite_target": 0
+    },
+    {
+      "id": "2",
+      "role": "frontier",
+      "axis": null,
+      "axes": [],
+      "title": "The Certified Frontier in June 2026",
+      "ceiling": 290,
+      "cite_target": 8
+    },
+    {
+      "id": "3",
+      "role": "mechanism",
+      "axis": "defects",
+      "axes": [
+        "defects"
+      ],
+      "title": "Non-Radiative Recombination and Defect Control",
+      "ceiling": 620,
+      "cite_target": 15,
+      "n_depth": 46
+    },
+    {
+      "id": "4",
+      "role": "mechanism",
+      "axis": "composition",
+      "axes": [
+        "composition"
+      ],
+      "title": "Crystallisation Pathways and Phase Stability",
+      "ceiling": 620,
+      "cite_target": 15,
+      "n_depth": 41
+    },
+    {
+      "id": "5",
+      "role": "mechanism",
+      "axis": "interfaces",
+      "axes": [
+        "interfaces"
+      ],
+      "title": "Interfacial Energetics and Contact Design",
+      "ceiling": 460,
+      "cite_target": 11,
+      "n_depth": 30
+    },
+    {
+      "id": "6",
+      "role": "mechanism",
+      "axis": "stability",
+      "axes": [
+        "stability"
+      ],
+      "title": "Operational Lifetime and Failure Pathways",
+      "ceiling": 340,
+      "cite_target": 8,
+      "n_depth": 22
+    },
+    {
+      "id": "7",
+      "role": "mechanism",
+      "axis": "architecture",
+      "axes": [
+        "architecture",
+        "scale_up"
+      ],
+      "title": "Subcell Design and Tandem Interconnection",
+      "ceiling": 320,
+      "cite_target": 8,
+      "n_depth": 16
+    },
+    {
+      "id": "8",
+      "role": "gaps",
+      "axis": null,
+      "axes": [],
+      "title": "Research Gaps and Outlook",
+      "ceiling": 400,
+      "cite_target": 4
+    }
+  ],
+  "depth_distribution": {
+    "interfaces": 30,
+    "defects": 46,
+    "composition": 41,
+    "architecture": 16,
+    "stability": 22,
+    "scale_up": 12
+  },
+  "chosen_axes": [
+    "defects",
+    "composition",
+    "interfaces",
+    "stability",
+    "architecture"
+  ],
+  "folded": {
+    "defects": [
+      "defects"
+    ],
+    "composition": [
+      "composition"
+    ],
+    "interfaces": [
+      "interfaces"
+    ],
+    "stability": [
+      "stability"
+    ],
+    "architecture": [
+      "architecture",
+      "scale_up"
+    ]
+  },
+  "total_ceiling": 3350,
+  "params": {
+    "MIN_MECH": 4,
+    "MAX_MECH": 5,
+    "MIN_DEPTH": 10,
+    "BODY_WORDS": 2400,
+    "WORDS_PER_CITE": 42,
+    "CITE_CLAMP": [
+      5,
+      15
+    ]
+  },
+  "cite_target_sum": 69,
+  "sha256": "0eb2c11a35305cac"
+}

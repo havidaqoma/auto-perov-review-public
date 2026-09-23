@@ -1,0 +1,18 @@
+{
+ "month": "2025",
+ "run": "2025_6cb0e6ed",
+ "cards": 450,
+ "anchors": 1655,
+ "verbatim": 1655,
+ "not_verbatim": 0,
+ "over_word_max": 0,
+ "number_missing_from_own_anchor": 0,
+ "cards_without_source_abstract": 0,
+ "status": "pass",
+ "samples": {
+  "not_verbatim": [],
+  "over_word_max": [],
+  "number_missing": [],
+  "no_abstract": []
+ }
+}

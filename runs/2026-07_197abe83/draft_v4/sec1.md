@@ -1,0 +1,7 @@
+Perovskite photovoltaics has reached a juncture where incremental gains in laboratory power conversion efficiency (PCE) no longer mark material progress. The defining frontier has shifted to independent verification, scalability across module-relevant area, and operating lifetime under operational conditions. Peak metrics obtained from uncertified, sub-millimetre devices under transient voltage sweeps frequently obscure mobile ionic defects and non-radiative interfacial recombination that manifest only over extended timescales.
+
+Within this landscape, 648 indexed works met the scope gate in July 2026 and 181 were read closely.
+
+The mechanistic threads followed in this issue encompass passivation chemistry and ion migration under bias, self-assembled contacts and interfacial dipoles, precursor chemistry and phase purity, stability under load, heat and illumination, and wide-bandgap subcells and recombination layers. Together, these processes govern whether energetic band alignment and chemical defect suppression survive the coupled electrochemical gradients of field operation.
+
+To evaluate these developments, this review distinguishes what the month's literature verified from what it asserted. Filtering out artifacts of fast scan rates, uncalibrated spectral illumination, and negligible active areas isolates the specific chemical and structural interventions that provide authentic stability under working conditions.

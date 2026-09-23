@@ -1,0 +1,25 @@
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 0, "n_papers": 12, "tokens_in": 6, "tokens_out": 7091, "cache_read": 0, "token_source": "reported", "at": "18:11:23"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 1, "n_papers": 12, "tokens_in": 6, "tokens_out": 7798, "cache_read": 7627, "token_source": "reported", "at": "18:12:42"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 2, "n_papers": 12, "tokens_in": 6, "tokens_out": 14520, "cache_read": 7627, "token_source": "reported", "at": "18:16:07"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 3, "n_papers": 12, "tokens_in": 6, "tokens_out": 14862, "cache_read": 7627, "token_source": "reported", "at": "18:18:41"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 4, "n_papers": 12, "tokens_in": 6, "tokens_out": 11546, "cache_read": 7627, "token_source": "reported", "at": "18:20:37"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 5, "n_papers": 12, "tokens_in": 6, "tokens_out": 14784, "cache_read": 7627, "token_source": "reported", "at": "18:23:55"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 6, "n_papers": 12, "tokens_in": 6, "tokens_out": 20099, "cache_read": 7627, "token_source": "reported", "at": "18:27:58"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 7, "n_papers": 12, "tokens_in": 6, "tokens_out": 10701, "cache_read": 7627, "token_source": "reported", "at": "18:29:42"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 8, "n_papers": 12, "tokens_in": 6, "tokens_out": 13569, "cache_read": 7627, "token_source": "reported", "at": "18:31:51"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 9, "n_papers": 12, "tokens_in": 6, "tokens_out": 13369, "cache_read": 7627, "token_source": "reported", "at": "18:34:01"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 10, "n_papers": 12, "tokens_in": 6, "tokens_out": 11555, "cache_read": 7627, "token_source": "reported", "at": "18:35:59"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 11, "n_papers": 12, "tokens_in": 6, "tokens_out": 12279, "cache_read": 7627, "token_source": "reported", "at": "18:38:00"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 12, "n_papers": 12, "tokens_in": 6, "tokens_out": 7849, "cache_read": 7627, "token_source": "reported", "at": "18:39:17"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 13, "n_papers": 11, "tokens_in": 6, "tokens_out": 3882, "cache_read": 7627, "token_source": "reported", "at": "18:39:59"}
+{"stage": "13d_s1", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 184}
+{"stage": "13d_s2", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 194}
+{"stage": "13d_s3", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 601}
+{"stage": "13d_s4", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 594}
+{"stage": "13d_s5", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 423}
+{"stage": "13d_s6", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 330}
+{"stage": "13d_s7", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 311}
+{"stage": "13d_s8", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 309}
+{"stage": "13d_abstract", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 295}
+{"stage": "13d_s2", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 235}
+{"stage": "13d_abstract", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 306}

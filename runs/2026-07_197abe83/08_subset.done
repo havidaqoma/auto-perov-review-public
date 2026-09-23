@@ -1,0 +1,19 @@
+{
+  "stage": "08_subset",
+  "at": "2026-09-07T13:25:45",
+  "n_eligible": 453,
+  "n_depth": 181,
+  "n_target": 181,
+  "small_pool": false,
+  "jaccard_median": 1.0,
+  "core_n": 172,
+  "marginal_n": 0,
+  "axis_depth": {
+    "interfaces": 39,
+    "defects": 45,
+    "composition": 38,
+    "architecture": 22,
+    "scale_up": 12,
+    "stability": 25
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "stage": "05_dedupe",
+  "at": "2026-09-09T13:35:11",
+  "n_corpus": 571,
+  "dropped_wrong_month": 0,
+  "n_preprint": 19,
+  "n_review": 1,
+  "n_retracted": 1
+}

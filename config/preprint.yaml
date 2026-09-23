@@ -1,0 +1,68 @@
+# Preprint platform contract. ONE definition, read by stage 20, the SI, the
+# handbook test and the migration gate.
+#
+# Why this file exists
+# --------------------
+# The submission target was arXiv from IDEA.md onwards and the string "arxiv"
+# had spread into a stage filename, an output directory, a tarball stem, a
+# `.done` marker key, a metadata schema and six documents. Changing the target
+# to ChemRxiv (Havid, 2026-09-09) then meant a 9-file edit with no single place
+# that says what the target IS -- exactly the shape of defect that comes back
+# the moment someone adds a stage.
+#
+# CRITICAL DISTINCTION, do not collapse these two meanings of "arxiv":
+#   * arXiv as a HARVEST SOURCE is untouched and stays forever. Stage 01 queries
+#     the arXiv API, stage 05 dedupes arXiv IDs, the ledger has an `arxiv_id`
+#     column, and cited works legitimately carry arXiv DOIs. None of that is
+#     about where WE submit.
+#   * arXiv as the SUBMISSION TARGET is what moved to ChemRxiv. Only that
+#     meaning is defined here.
+#
+# ChemRxiv facts that shaped the package format (verified 2026-09-09):
+#   * the portal takes the main content as a PDF or .docx upload, NOT a LaTeX
+#     tarball. arXiv's whole tex+bbl+relative-figures dance is therefore not
+#     the deliverable any more; the PDF is. The tex tarball is still emitted,
+#     but as an archival artifact, not as the thing being uploaded.
+#   * it is chemistry-scoped and run by ACS/RSC/GDCh, so it has SUBJECT
+#     CATEGORIES, not arXiv's `physics.app-ph` style archive codes.
+#   * every posted preprint gets a DOI under prefix 10.26434. We never write a
+#     DOI before posting; the field stays null and the checklist asks for it.
+
+platform: ChemRxiv
+platform_slug: chemrxiv
+platform_url: https://chemrxiv.org
+
+# Portal upload, never scripted. There is no automated-submission code path in
+# this repo for ChemRxiv, exactly as there never was for arXiv (PLAN Q17=b).
+submission_route: manual_portal
+
+# The main upload is the rendered PDF. Keep this key honest: it is what a human
+# drags into the portal, and the checklist is generated from it.
+main_content: pdf
+main_content_alternatives: [pdf, docx]
+
+# ChemRxiv subject categories, not arXiv archive codes.
+#
+# Havid chose these on 2026-09-09: Energy primary, Materials Chemistry
+# secondary. Perovskite PV is energy-device work and the review's spine is
+# certified efficiency, stability and scale-up, so Energy leads. Materials
+# Chemistry carries the mechanism sections (defect passivation, buried
+# interfaces, composition), which are chemistry rather than general materials
+# science -- ChemRxiv lists BOTH "Materials Chemistry" and "Materials Science"
+# and these are not interchangeable labels. Primary decides where the preprint
+# is listed first.
+subject_category_primary: Energy
+subject_categories_secondary:
+  - Materials Chemistry
+
+license: CC BY 4.0
+
+# Assigned by ChemRxiv ON POSTING. Never fill this in from a script, and never
+# guess it: a fabricated DOI is a fabricated citation.
+doi_prefix: "10.26434"
+preprint_doi: null
+
+# Deliberately no API endpoint, no token, no submit() anywhere. If a future
+# ChemRxiv API is adopted it gets its own probe and its own decision record
+# first; until then the hard stop before submission is the design.
+api_submission_supported: false

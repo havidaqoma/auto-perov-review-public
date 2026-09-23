@@ -1,0 +1,252 @@
+{
+  "G4": {
+    "status": "pass",
+    "detail": {
+      "em_dash": 0,
+      "banned": {},
+      "self_report_leak": []
+    }
+  },
+  "G1": {
+    "status": "pass",
+    "detail": {
+      "resolved": 76,
+      "unresolved": [],
+      "aliased": {
+        "10.1016/joule.2026.102538": "10.1016/j.joule.2026.102538"
+      }
+    }
+  },
+  "G2c-cite-count": {
+    "status": "pass",
+    "detail": {
+      "cited": 76,
+      "target_range": [
+        60,
+        85
+      ],
+      "words_per_citation": 39.3
+    }
+  },
+  "G2": {
+    "status": "pass",
+    "detail": {
+      "prose_words": 2987,
+      "ceiling": 3852,
+      "per_section_within_135pct": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true,
+        "7": true,
+        "8": true
+      },
+      "map_sha256": "0eb2c11a35305cac",
+      "input_freeze": {
+        "1": {
+          "words": 184,
+          "sha256": "66cb3150f7c8db8f"
+        },
+        "2": {
+          "words": 235,
+          "sha256": "2725cdf0e30f78e6"
+        },
+        "3": {
+          "words": 601,
+          "sha256": "1e7b3e808a9e1d42"
+        },
+        "4": {
+          "words": 594,
+          "sha256": "c6bc4097f7c1788a"
+        },
+        "5": {
+          "words": 423,
+          "sha256": "f1edd6932bbda39e"
+        },
+        "6": {
+          "words": 330,
+          "sha256": "dda960229cfbeff8"
+        },
+        "7": {
+          "words": 311,
+          "sha256": "6a8014e187e97fc0"
+        },
+        "8": {
+          "words": 309,
+          "sha256": "e0d7ca401cc7970f"
+        }
+      }
+    }
+  },
+  "G2b-cite-order": {
+    "status": "pass",
+    "detail": {
+      "first_appearance_sequence": [],
+      "monotonic": true
+    }
+  },
+  "G6": {
+    "status": "pass",
+    "detail": {
+      "hits": []
+    }
+  },
+  "G3-abstract": {
+    "status": "pass",
+    "detail": {
+      "unverified": [],
+      "words": 306,
+      "placeholders_resolved": [
+        "A_MAX",
+        "H_T80_MAX",
+        "N_CERT",
+        "N_CORPUS",
+        "N_DEPTH",
+        "N_PROTO",
+        "N_T80",
+        "PCT_CERT",
+        "PCT_EFF",
+        "P_AREA_MAX",
+        "P_TOP_CERT",
+        "P_TOP_SJ"
+      ]
+    }
+  },
+  "G3c-abstract-physics": {
+    "status": "pass",
+    "detail": {
+      "implausible": [],
+      "sj_limit_pct": 29.4
+    }
+  },
+  "G3b-abstract-form": {
+    "status": "pass",
+    "detail": {
+      "words": 306,
+      "band": [
+        260,
+        340
+      ],
+      "citation_markers": 0
+    }
+  },
+  "G7-abbrev": {
+    "status": "pass",
+    "detail": {
+      "expanded_automatically": [
+        "PCE",
+        "HTL",
+        "ETL",
+        "HTL",
+        "MPPT",
+        "HTL"
+      ],
+      "still_bare": []
+    }
+  },
+  "G8-novelty": {
+    "status": "skip",
+    "detail": {
+      "reason": "no prior issue on record (cold start)"
+    }
+  },
+  "G9a-notation": {
+    "status": "pass",
+    "detail": {
+      "residual_defects": {},
+      "ambiguous_for_human_review": {},
+      "substitutions_applied": 52
+    }
+  },
+  "G9b-cite-links": {
+    "status": "pass",
+    "detail": {
+      "hyperlinked_markers": 112,
+      "unlinked_markers": [],
+      "works_without_doi": 0
+    }
+  },
+  "G9c-figure-unique": {
+    "status": "pass",
+    "detail": {
+      "attached": [
+        "F1_certified_frontier.pdf",
+        "F4_stability_evidence.pdf",
+        "F2_area_penalty.pdf",
+        "F3_effort_map.pdf"
+      ],
+      "duplicates": [],
+      "n_attached": 4,
+      "n_distinct": 4
+    }
+  },
+  "G9d-model-names": {
+    "status": "pass",
+    "detail": {
+      "bare_slugs_found": [],
+      "declared": [
+        "qwen3.8-flash",
+        "gemini-3.8-flash-high",
+        "Opus 5"
+      ]
+    }
+  },
+  "G10-title-block": {
+    "status": "pass",
+    "detail": {
+      "gaps_pt": {
+        "author_to_affil": 14.42,
+        "affil_to_date": 22.52,
+        "date_to_abstract": 23.74,
+        "abstract_to_body": 10.17
+      },
+      "bands": {
+        "author_to_affil": [
+          8.0,
+          24.0
+        ],
+        "affil_to_date": [
+          14.0,
+          34.0
+        ],
+        "date_to_abstract": [
+          14.0,
+          40.0
+        ],
+        "abstract_to_body": [
+          5.0,
+          20.0
+        ]
+      },
+      "middle_ratio": 1.05,
+      "max_middle_ratio": 2.5,
+      "title_block_fraction_measured": 0.355,
+      "page_count": 15,
+      "status": "pass",
+      "failures": []
+    }
+  },
+  "G5": {
+    "status": "pass",
+    "detail": {
+      "pages_to_refs": 10,
+      "title_block_fraction": 0.4,
+      "content_pages": 9.6,
+      "total_pages": 15,
+      "reference_pages": 5,
+      "content_band": [
+        8,
+        11
+      ],
+      "total_band": [
+        12,
+        17
+      ],
+      "content_ok": true,
+      "total_ok": true,
+      "title_block_fraction_measured": 0.355
+    }
+  }
+}

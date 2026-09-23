@@ -1,0 +1,28 @@
+{
+  "seed": 20260913,
+  "n": 20,
+  "drawn_from": "studies/label_sheet/sampling_frame.json",
+  "purpose": "intra-rater reliability (kappa); NEVER pooled into precision/recall",
+  "work_keys": [
+    "10.1002/adma.74220",
+    "10.1002/adpr.70226",
+    "10.1002/anie.3095986",
+    "10.1002/anie.5162616",
+    "10.1002/anie.9551164",
+    "10.1002/eem2.70366",
+    "10.1002/ente.70559",
+    "10.1002/sus2.70073",
+    "10.1016/j.esci.2026.100601",
+    "10.1016/j.joule.2026.102396",
+    "10.1016/j.joule.2026.102646",
+    "10.1016/j.nxmate.2026.102676",
+    "10.1016/j.rineng.2026.108976",
+    "10.1021/acsami.5c25501",
+    "10.1021/acsami.6c06661.s001",
+    "10.1063/5.0313807",
+    "10.1126/sciadv.aec3238",
+    "10.26599/emd.2026.9370089",
+    "10.3390/chemistry8040039",
+    "10.36948/ijfmr.2026.v08i03.80802"
+  ]
+}

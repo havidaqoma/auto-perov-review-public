@@ -1,0 +1,7 @@
+quantity,pooled_pct,month_min_pct,month_max_pct,n_detected,denominator
+efficiency_stated,51.6,47.8,54.0,2439,4730
+certified,5.8,3.4,7.6,272,4730
+stabilised,8.8,6.2,12.0,418,4730
+area_stated,7.3,5.2,9.3,347,4730
+isos_label,1.1,0.2,3.2,54,4730
+hysteresis,3.1,1.6,4.3,147,4730

@@ -1,0 +1,66 @@
+{
+  "G4": {
+    "status": "pass",
+    "detail": {
+      "em_dash": 0,
+      "banned": {},
+      "self_report_leak": []
+    }
+  },
+  "G1": {
+    "status": "pass",
+    "detail": {
+      "resolved": 110,
+      "unresolved": []
+    }
+  },
+  "G2": {
+    "status": "pass",
+    "detail": {
+      "prose_words": 6997,
+      "ceiling": 8000,
+      "cited": 110,
+      "figures": 4,
+      "input_freeze": {
+        "1": {
+          "words": 594,
+          "sha256": "d734cf40d2c0f6fc"
+        },
+        "2": {
+          "words": 558,
+          "sha256": "f0e16ac868ede5aa"
+        },
+        "3": {
+          "words": 1324,
+          "sha256": "2f0f9d18aaa0c890"
+        },
+        "4": {
+          "words": 1146,
+          "sha256": "77f1b3fba3186fcf"
+        },
+        "5": {
+          "words": 946,
+          "sha256": "6223c0fb5e4b816f"
+        },
+        "6": {
+          "words": 899,
+          "sha256": "aabbc789bbdb2b31"
+        },
+        "7": {
+          "words": 792,
+          "sha256": "38ec966c94b359ac"
+        },
+        "8": {
+          "words": 738,
+          "sha256": "1ec863780457f7b9"
+        }
+      }
+    }
+  },
+  "G6": {
+    "status": "pass",
+    "detail": {
+      "hits": []
+    }
+  }
+}

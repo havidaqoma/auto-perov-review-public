@@ -1,0 +1,17 @@
+{
+  "n_cards": 151,
+  "n_claims": 398,
+  "nulled_anchor": 11,
+  "nulled_number": 0,
+  "dropped_papers": 1,
+  "n_depth_papers": 152,
+  "coverage_pct": 99.3,
+  "batches": 13,
+  "batches_short": 0,
+  "median_claims": 3,
+  "with_pce": 94,
+  "with_certified": 9,
+  "tokens_in": 78,
+  "tokens_in_credible": false,
+  "tokens_out": 139960
+}

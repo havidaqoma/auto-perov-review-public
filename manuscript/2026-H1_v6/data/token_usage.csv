@@ -1,0 +1,32 @@
+month,attempt,shipped,stage,process,role,cli,model,batch,n_papers,words_out,tokens_in,tokens_out,cache_read,est_tokens_out,token_source,at
+2026-H1,1,no,13d_s1,13d_s1,llm,agy,gemini-3.8-flash-high,,,447,,,,595,estimated,
+2026-H1,1,no,13d_s2,13d_s2,llm,agy,gemini-3.8-flash-high,,,718,,,,955,estimated,
+2026-H1,1,no,13d_s3,13d_s3,llm,agy,gemini-3.8-flash-high,,,1607,,,,2137,estimated,
+2026-H1,1,no,13d_s4,13d_s4,llm,agy,gemini-3.8-flash-high,,,1527,,,,2031,estimated,
+2026-H1,1,no,13d_s5,13d_s5,llm,agy,gemini-3.8-flash-high,,,1222,,,,1625,estimated,
+2026-H1,1,no,13d_s6,13d_s6,llm,agy,gemini-3.8-flash-high,,,887,,,,1180,estimated,
+2026-H1,1,no,13d_s7,13d_s7,llm,agy,gemini-3.8-flash-high,,,845,,,,1124,estimated,
+2026-H1,1,no,13d_s8,13d_s8,llm,agy,gemini-3.8-flash-high,,,652,,,,867,estimated,
+2026-H1,1,no,13d_s9,13d_s9,llm,agy,gemini-3.8-flash-high,,,838,,,,1115,estimated,
+2026-H1,1,yes,13d_s10,13d_s10,llm,agy,gemini-3.8-flash-high,,,668,,,,888,estimated,
+2026-H1,1,yes,13d_s11,13d_s11,llm,agy,gemini-3.8-flash-high,,,881,,,,1172,estimated,
+2026-H1,1,no,h1_13_abstract,h1_13_abstract,llm,agy,gemini-3.8-flash-high,,,462,,,,614,estimated,
+2026-H1,2,no,13d_s3,13d_s3,llm,agy,gemini-3.8-flash-high,,,1646,,,,2189,estimated,
+2026-H1,2,yes,h1_13_abstract,h1_13_abstract,llm,agy,gemini-3.8-flash-high,,,462,,,,614,estimated,
+2026-H1,2,yes,13d_s1,13d_s1,llm,agy,gemini-3.8-flash-high,,,477,,,,634,estimated,
+2026-H1,2,yes,13d_s2,13d_s2,llm,agy,gemini-3.8-flash-high,,,697,,,,927,estimated,
+2026-H1,3,no,13d_s3,13d_s3,llm,agy,gemini-3.8-flash-high,,,1687,,,,2244,estimated,
+2026-H1,2,yes,13d_s4,13d_s4,llm,agy,gemini-3.8-flash-high,,,1082,,,,1439,estimated,
+2026-H1,2,yes,13d_s5,13d_s5,llm,agy,gemini-3.8-flash-high,,,1358,,,,1806,estimated,
+2026-H1,2,no,13d_s6,13d_s6,llm,agy,gemini-3.8-flash-high,,,1139,,,,1515,estimated,
+2026-H1,2,yes,13d_s7,13d_s7,llm,agy,gemini-3.8-flash-high,,,884,,,,1176,estimated,
+2026-H1,2,yes,13d_s8,13d_s8,llm,agy,gemini-3.8-flash-high,,,691,,,,919,estimated,
+2026-H1,2,yes,13d_s9,13d_s9,llm,agy,gemini-3.8-flash-high,,,884,,,,1176,estimated,
+2026-H1,1,no,h1v2_abstract,h1v2_abstract,llm,agy,gemini-3.8-flash-high,,,460,,,,612,estimated,
+2026-H1,4,yes,13d_s3,13d_s3,llm,agy,gemini-3.8-flash-high,,,1944,,,,2586,estimated,
+2026-H1,3,yes,13d_s6,13d_s6,llm,agy,gemini-3.8-flash-high,,,1063,,,,1414,estimated,
+2026-H1,2,yes,h1v2_abstract,h1v2_abstract,llm,agy,gemini-3.8-flash-high,,,448,,,,596,estimated,
+2026-H1,1,yes,18d_build_v4,format assembly + gates + PDF,none,python,,,,,0,0,,0,deterministic,2026-09-14T22:15:39
+2026-H1,1,yes,19_si,supplementary information,none,python,,,,,0,0,,0,deterministic,2026-09-14T22:15:43
+2026-H1,1,yes,20_chemrxiv,ChemRxiv package + CSV data pack,none,python,,,,,0,0,,0,deterministic,2026-09-14T22:15:49
+2026-H1,1,yes,21_tokens,21_tokens,none,python,,,,,0,0,,0,deterministic,2026-09-14T21:13:27

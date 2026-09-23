@@ -1,0 +1,993 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  11pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{setspace}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% v3 header: single column, tight reference list, clickable links.
+% Loaded via pandoc -H. Fixes for the six issues Havid found in the v2 PDF are
+% mostly in the markdown generator; this file only carries LaTeX-side settings.
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+
+% Figure captions: LaTeX owns the "Figure N." label. The v2 PDF rendered
+% "Figure 4: Figure 4." because the caption text ALSO began with "Figure 4.",
+% written into the markdown by the generator. v3 passes a bare caption and lets
+% LaTeX number it, so the label appears exactly once.
+\captionsetup[figure]{labelfont=bf, labelsep=period, font=small,
+                      justification=justified, singlelinecheck=false,
+                      skip=6pt}
+
+% Tighten the numbered reference list produced by pandoc's default
+% CSLReferences environment.
+\usepackage{etoolbox}
+\AtBeginEnvironment{CSLReferences}{%
+  \small
+  \setlength{\parskip}{0pt}%
+  \setlength{\itemsep}{0pt}%
+  \setlength{\topsep}{2pt}%
+}
+
+% No section numbering from LaTeX: the generator already writes "1. Introduction",
+% "2. The Certified Frontier ...", so LaTeX numbering would double it.
+\setcounter{secnumdepth}{0}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
+\hypersetup{
+  colorlinks=true,
+  linkcolor={[HTML]{1A4E8A}},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={[HTML]{1A4E8A}},
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\setstretch{1.05}
+\begin{center}
+{\LARGE\bfseries Perovskite Photovoltaics in July 2026: Buried-Interface Chemistry, Defect Tolerance and the Certified Efficiency Frontier\par}
+\vspace{1.1em}
+{\large Havid Aqoma\textsuperscript{1,2,3,4}\par}
+\vspace{0.7em}
+\begin{minipage}{\textwidth}\centering\small
+\textsuperscript{1}School of Energy and Chemical Engineering, Xiamen University Malaysia, Selangor Darul Ehsan 43900, Malaysia\\[0.25em]
+\textsuperscript{2}Kelip-kelip! Center of Excellence for Light Enabling Technologies, School of Energy and Chemical Engineering, Xiamen University Malaysia, Selangor Darul Ehsan 43900, Malaysia\\[0.25em]
+\textsuperscript{3}Centre of Excellence for Green and Advanced Technologies in Efficient Separations (GATES), School of Energy and Chemical Engineering, Xiamen University Malaysia, Selangor Darul Ehsan 43900, Malaysia\\[0.25em]
+\textsuperscript{4}Gulei Innovation Institute, Xiamen University, Zhangzhou 363200, China\\[0.25em]
+\end{minipage}
+\vspace{2.2em}
+{\small September 8, 2026\par}
+\end{center}
+\vspace{1.0em}
+
+\subsection{Abstract}\label{abstract}
+
+Perovskite photovoltaics published 648 indexed works in July 2026, of
+which 181 were read closely and 80 are cited here. This review is
+organised mechanistically rather than chronologically, and separates
+what the month's literature verified from what it claimed. The certified
+frontier advanced on three fronts, each through interfacial rather than
+bulk chemistry. Noncoplanar multidentate contacts reinforcing the buried
+interface delivered a 33.1\% certified perovskite/silicon tandem
+{[}1{]}; hydrogen-bonding-regulated crystallisation of the wide-bandgap
+subcell reached 32.13\% certified {[}2{]}; and homogenisation of the
+tin-lead distribution through A-site methylammonium cations gave 29.57\%
+certified in an all-perovskite tandem {[}3{]}. Single-junction
+certification clustered near 27.31\%, with a soft supermolecule
+stabilising the buried interface at 27.12\% certified and carrying the
+same chemistry to a 655.2 cm\(^2\) aperture module {[}4{]}, the largest
+certified area in the month. Only 22 of 169 closely read papers reported
+an independently certified power conversion efficiency at all.
+Operational-stability evidence was the weakest link: 4 papers reported a
+time to 80\% of initial performance (T80), the longest at 9800 h
+{[}5{]}, and 6 named a protocol from the International Summit on Organic
+Photovoltaic Stability (ISOS), so most lifetime claims this month cannot
+be compared against each other. Across the corpus an efficiency value
+was detected in at least 50.4\% of abstracts, independent certification
+in at least 8.3\%, and a complete open-circuit voltage, short-circuit
+current density and fill factor triplet in at least 2.9\%. Three
+mechanistic conclusions follow. Buried-interface chemistry, not absorber
+composition, now sets the achievable open-circuit voltage. Defect
+tolerance has overtaken defect elimination as the practical design
+strategy. Halide homogenisation in wide-bandgap absorbers is the
+rate-limiting step for tandem integration, and it is the subcell least
+often optimised in the month's work.
+
+\textbf{Keywords:} perovskite photovoltaics; buried interface; defect
+passivation; wide-bandgap perovskite; tandem solar cells; operational
+stability
+
+\subsection{1. Introduction}\label{introduction}
+
+Perovskite single junctions are now certified above 27\% power
+conversion efficiency (PCE) and perovskite/silicon tandems above 33\%,
+so the field's open problems have moved from raw efficiency to whether a
+claimed efficiency is verifiable, whether it survives at module area,
+and whether it survives operation. High peak efficiencies on small-area
+cells increasingly diverge from the operational demands of modules,
+where non-radiative recombination losses at defect sites, interfacial
+delamination, and volatile species desorption dictate practical
+viability.
+
+In July 2026, 648 indexed works met the scope gate and 181 were read
+closely. This review follows four mechanistic threads: buried-interface
+and contact chemistry, defect tolerance and ion migration, wide-bandgap
+absorbers for tandems, and operational stability, with scale-up as the
+constraint coupling them. Interfacial chemical interactions govern
+carrier extraction and charge accumulation, defect landscapes dictate
+electric-field-driven ion migration and halide segregation, and
+wide-bandgap absorbers remain vulnerable to photoinduced phase
+separation, with all these processes subject to the physical boundaries
+of scalable deposition.
+
+The month's headline numbers are strong, the evidence behind them is
+unevenly reported, and this review separates the two. Critical
+evaluation distinguishes verifiable physical mechanisms from uncertified
+champion values, non-standardized aging procedures, and uncharacterized
+degradation modes.
+
+\subsection{2. The Certified Frontier in July
+2026}\label{the-certified-frontier-in-july-2026}
+
+Only 22 of 169 closely read papers reported an independently certified
+power conversion efficiency (PCE), revealing that most literature relies
+on unverified laboratory metrics. Certified performance ceilings diverge
+across device architectures. For perovskite/silicon tandems, verified
+efficiency reached 33.1\% in an inverted p-type-intrinsic-n-type (p-i-n)
+structure {[}1{]} alongside 32.13\% in two-terminal (2T) devices
+{[}2{]}. In all-perovskite 2T tandems, narrow-bandgap subcell
+limitations and non-radiative recombination constrained the certified
+ceiling to 29.57\% {[}3{]}, with lower certified tiers at 28.84\%
+{[}6{]} and 27.49\% {[}7{]}. Single-junction p-i-n perovskite solar
+cells (PSCs) converged between 27.3\% and 27.31\% {[}8,9,10{]}.
+
+Device area exposes a fundamental evidentiary divide: a self-reported
+champion on a sub-0.1 cm2 cell and a certified value on a module
+represent distinct classes of physical evidence. Uncertified champion
+micro-cells suppress lateral series resistance and avoid macroscopic
+defects, allowing self-reported efficiencies to run ahead of certified
+limits. Conversely, large-area modules must overcome interconnect
+resistance, transparent conductor sheet resistance, and non-uniform film
+crystallization. Demonstrating scalable transport, certified p-i-n
+modules verified 27.31\% across both 766 cm2 {[}9{]} and 684.75 cm2
+{[}8{]}.
+
+Beyond these verified benchmarks, uncertified claims overstate
+large-area performance. Uncertified reports claimed 27.12\% on 655.2 cm2
+{[}4{]} and 26.53\% on 818 cm2 {[}11{]}, while self-reported in-lab
+testing on a 625 cm2 module claimed 27.8\% despite achieving an
+independent certification of only 27.3\% {[}10{]}. This discrepancy
+highlights how uncertified testing masks transient capacitive currents
+and aperture misalignment, confirming that unverified claims on sub-0.1
+cm2 cells distort the true technological frontier.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig/F1_certified_frontier.pdf}
+\caption{The certified frontier in July 2026. Filled markers are independently certified efficiencies, open markers are self-reported champion values, grouped by device family. Horizontal bars mark the highest certified value in each family.}
+\end{figure}
+
+\subsection{3. Buried Interfaces and Contact
+Chemistry}\label{buried-interfaces-and-contact-chemistry}
+
+The buried interface between the hole-transport layer (HTL) and
+perovskite absorber dictates carrier extraction kinetics and mechanical
+reliability in inverted perovskite solar cells (PSCs) {[}12{]}. Weak
+chemisorption and disordered self-assembled monolayer (SAM) packing on
+metal oxides encourage molecular desorption and interfacial
+delamination; removing loosely bound molecules increases the interfacial
+fracture energy from 0.94 to 4.82 J m-2 {[}13{]}. To prevent interfacial
+detachment, multidentate chelating architectures substitute weak
+monodentate anchoring {[}8,14,15{]}. Tetraphosphonic acid iron(III)
+porphyrins establish tetradentate chelation to oxide substrates,
+yielding a certified power conversion efficiency (PCE) of 26.82\%
+(27.06\% champion) {[}14{]}. Bisphosphonate head groups similarly
+reconstruct nickel oxide (NiOx) interfaces by coordinating
+undercoordinated lead (Pb2+) to achieve a certified 27.31\% PCE {[}8{]},
+or reinforce anchoring via hydrogen bonding to retain over 90\% of
+initial performance after 200 h of maximum power point tracking (MPPT)
+{[}15{]}. Tetraphosphorylated phthalocyanines lock interfacial packing
+to secure a certified 23.1\% PCE (22.9\% stabilised) on a 20.3 cm2
+module with zero degradation across 61 days of outdoor testing under
+International Summit on Organic Photovoltaic Stability (ISOS) ISOS-O-1
+protocols {[}16{]}. Beyond anchoring strength, self-aggregation via
+pi-pi stacking creates pinholes that expose bare transparent conductive
+oxides. Introducing noncoplanar geometry suppresses aggregation to
+achieve a certified 33.1\% tandem PCE (33.3\% champion; 23.7\%
+single-junction) {[}1{]}. Alternatively, co-adsorbing Lindqvist
+polyoxometalates increases the SAM anchoring ratio from 29.93\% to
+53.98\% while reducing the desorption rate from 30.7\% to 5.6\% during
+continuous MPPT {[}17{]}. Interfacial aggregation is also counteracted
+using ionic liquid lubricants that preserve 92.3\% initial efficiency
+after 800 h at 85 °C under air mass 1.5 global (AM 1.5G) illumination
+{[}18{]}, proton-transfer complexes resisting 75 °C degradation for 1368
+h {[}19{]}, or thermally activated in situ polymerization networks that
+achieve an uncertified 26.87\% PCE {[}20{]}.
+
+At the absorber contact, asymmetric nucleation generates buried
+microvoids, tensile lattice strain, and deep defect states that induce
+non-radiative recombination {[}21,22{]}. Bidentate phenanthroline
+molecules chelate Pb2+ and facilitate dimethyl sulfoxide (DMSO) solvent
+evaporation to eliminate interfacial voids, delivering a 25.15\% PCE,
+but this evidence is constrained to an uncertified 0.04 cm2 aperture
+area {[}22{]}. Supramolecular calixarenes mitigate defect propagation
+via host-guest interactions, yielding a certified 27.12\% cell PCE
+alongside a certified 22.25\% on a 655.2 cm2 module {[}4{]}.
+Electrostatic alignment and defect passivation proceed concurrently
+through molecular dipoles: sulfonate-anchored dipotassium salts
+coordinate undercoordinated tin (Sn4+) sites on tin oxide (SnO2)
+electron-transport layers (ETLs) to passivate oxygen vacancies {[}23{]},
+while fluorinated carbazole self-assembled monolayers (SAMs) passivate
+halide vacancies, scaling to 1 cm2 with 25.06\% PCE and 3.11\% relative
+loss {[}24{]}. Polycyclic aromatic SAMs with tailored electrostatic
+potentials (26.20\% PCE) {[}25{]}, multifunctional modifiers (26.67\%
+PCE) {[}26{]}, ternary phosphine bridges stabilizing formamidinium
+cations {[}27{]}, and preburied two-dimensional (2D) perovskite inducers
+that invert tensile to compressive strain {[}21{]} similarly regulate
+the heterojunction. Nevertheless, theoretical one-dimensional Solar Cell
+Capacitance Simulator (SCAPS-1D) simulations predict ideal efficiencies
+exceeding 30\%, including 30.81\% at 300 K {[}28{]} and 29.1\% in
+HTL-free bilayer ETLs {[}29{]}, yet these drift-diffusion calculations
+omit the spatial heterogeneity of SAM desorption, localized pinholes,
+and void formation that dominate physical devices.
+
+\subsection{4. Defect Tolerance, Passivation and Ion
+Migration}\label{defect-tolerance-passivation-and-ion-migration}
+
+Non-radiative recombination at carrier-selective contacts in perovskite
+solar cells (PSCs) is driven by undercoordinated lead(II) (Pb2+)
+cations, dangling bonds, and halide vacancies that require Lewis
+acid-base coordination {[}30,31,32,33,34{]}. At hole-transport layer
+(HTL) contacts, carbazole-based self-assembled monolayers (SAMs)
+coordinate Pb2+ to reach 26.85\% power conversion efficiency (PCE)
+{[}30{]}, while carboxyl-sulfur molecules coordinate dangling bonds and
+free lead(II) iodide (PbI2) for an uncertified 26.7\% PCE {[}32{]}. At
+electron-transport layer (ETL) contacts,
+1-(4'-sulfophenyl)-3-carboxyl-5-pyrazolone sodium salt (SCP) yields a
+certified 26.84\% PCE (champion 27.25\%, stabilised 26.84\%) with 90\%
+retention after 1485 h of maximum power point tracking (MPPT) {[}31{]}.
+Amphoteric ionic liquids passivate both acidic and basic sites for
+26.13\% champion PCE (20.06\% PCE and 85.74\% fill factor (FF) in 1.84
+eV cells) {[}33{]}, while Pb-N coordination and vacancy filling
+preserves 88.67\% efficiency after 1000 h MPPT at 65 °C (uncertified
+25.06\% PCE) {[}34{]}. Passivating tin(IV) oxide (SnO2) oxygen vacancies
+with conjugated sorbate anions yields an uncertified 22.16\% PCE
+(open-circuit voltage (Voc) 1.183 V, FF 84.30\%) {[}35{]}. Plasma
+surface engineering passivates laser scribes, securing a certified
+23.5\% PCE on a 65.05 cm2 module and 27.2\% small-cell champion PCE
+(98.1\% retained after 2000 h MPPT at 85 °C) {[}36{]}.
+
+Electric-field- and heat-induced migration of halides and A-site cations
+accelerates phase segregation, requiring chemical trapping and
+dimensional barriers {[}37,38,39,40{]}. Dual iodide-trapping molecules
+immobilize mobile halides at the HTL interface for 26.81\% champion PCE
+and a T93 lifetime over 1140 h at 85 °C {[}37{]}, while
+acetylthiocholine chloride (ATC) coordinates Pb2+ and fills vacancies to
+suppress segregation, yielding 22.68\% champion PCE on a 63.7 cm2 module
+{[}40{]}. Two-dimensional/three-dimensional (2D/3D) heterojunctions
+formed by halide imidazolium cations block ion pathways, retaining 92\%
+efficiency after 1200 h at 85 °C (26.33\% champion PCE) {[}39{]}. In
+situ two-dimensional (2D) capping via hydrogen bonds with formamidinium
+(FA+) retains 90\% efficiency after 800 h at 85 °C in N2, yet evaluation
+on a 0.072 cm2 aperture (26.32\% champion PCE) leaves scalability
+unproven {[}41{]}. Molten salt dissolution of 2D phases suppresses
+random nucleation and eliminates interfacial PbI2, boosting PCE from
+23.43\% to 25.73\% {[}42{]}. Unified ligand-dimensional designs halt
+cation migration, achieving certified 26.52\% PCE (26.88\% champion) on
+small cells and certified 17.75\% PCE (20.25\% uncertified) on 900 cm2
+modules, retaining over 91\% efficiency after 1000 h at 85 °C and 85\%
+relative humidity (RH) {[}38{]}.
+
+Residual tensile strain accelerates defect nucleation and ion transport,
+coupling mechanical stress to electronic loss {[}43,44,45,46,47{]}.
+Coordinating adjacent Pb2+ with dithiopyr relieves lattice strain and
+directs preferential (100) orientation, yielding certified 26.14\% PCE
+(26.9\% champion) and 21.28\% on 30 × 30 cm2 modules {[}43{]}.
+Cross-linked 2-amino-3-hydroxybutanoic acid (AHBA) networks relax buried
+SnO2 interface strain and accelerate electron extraction to 3.5 ps for
+26.32\% champion PCE {[}44{]}. Low-temperature liquid-assisted
+vibrational stress-relief (LTL-VSR) relieves macroscopic stress without
+additives, yielding 26.47\% rigid and 24.64\% flexible cell
+efficiencies, alongside 23.59\% (16.8 cm2) and 20.55\% (600 cm2) module
+efficiencies {[}46{]}. Photoresponsive fullerene C60-azo generates
+compressive stress under ultraviolet (UV) light via trans-to-cis
+isomerization, retaining 92.7\% performance after 488 h UV exposure with
+26.6\% champion PCE {[}45{]}. Finally, phenethylammonium iodide (PEAI)
+paired with cerium oxide (CeOx) provides redox-buffering passivation,
+retaining 95\% efficiency after 100 thermal shock cycles between 80 °C
+and -80 °C (at 16 °C/min) with 25.3\% champion PCE in poly(triarylamine)
+(PTAA)-based devices {[}47{]}.
+
+\subsection{5. Wide-Bandgap Absorbers and Tandem
+Integration}\label{wide-bandgap-absorbers-and-tandem-integration}
+
+Monolithic tandems can surpass the \textasciitilde29.4\% crystalline
+silicon (c-Si) efficiency limit {[}48{]}, yet two-terminal (2T)
+integration remains constrained by halide phase segregation in
+wide-bandgap (WBG) top absorbers and interfacial non-radiative
+recombination. In-operando thermal cycling between -100 and +100 °C
+under air mass 0 (AM0) illumination reveals that WBG subcells segregate
+rapidly above 50 °C with only partial recovery during dark cooling,
+accelerating non-radiative voltage loss {[}49{]}. Suppressing this
+demixing requires reinforcing octahedral framework integrity and
+passivating grain boundaries {[}50,51,52{]}. B-site strontium (Sr2+)
+alloying strengthens metal-halide bonding and weakens electron-phonon
+coupling, yielding uncertified 31.66\% power conversion efficiency (PCE)
+in fully-textured perovskite/silicon tandems with an operational T80
+lifetime (time to 80\% initial efficiency) of 6,785 hours {[}50{]}. At
+grain boundaries, TPB-Br molecular extrusion drives halogen
+homogenization to deliver 23.63\% PCE in 1.68 electronvolt (eV) subcells
+and an uncertified 32.03\% on 1.05 cm2 tandems {[}51{]}, while
+conductive ionic-liquid/polyurethane polymer bridges passivate defect
+states to yield uncertified 20.85\% WBG and 25.92\% flexible tandem PCEs
+{[}52{]}. Ionic-liquid additives similarly confer radiation resilience,
+yielding certified 27.49\% monolithic tandems over 12.56 cm2 that
+maintain 93\% efficiency under proton irradiation {[}7{]}.
+
+Defective buried contacts and unguided nucleation introduce large
+open-circuit voltage (Voc) deficits. Retarding nucleation via
+coordinating solvents directs micrometer-scale grain growth {[}53,54{]}:
+gamma-valerolactone (GVL) coordination with formamidinium (FA+) cations
+achieves uncertified 32.5\% champion tandem PCEs {[}53{]}, while
+GVL-dimethyl sulfoxide (DMSO) inks yield printed cells exceeding 17\%
+and 28\% tandems {[}54{]}. Regulating crystallization and passivating
+defects at hole-transport layers (HTLs) further limits interface
+recombination {[}2,55,56{]}. Inserting a 3-TMA interlayer on
+self-assembled monolayers (SAMs) regulates crystallization through
+hydrogen bonding, achieving 23.17\% (1.67 eV) and 19.61\% (1.84 eV)
+subcells and a certified 32.13\% (33.21\% champion) silicon tandem
+{[}2{]}. Bilayer graphene oxide/self-assembled monolayer (SAM) HTLs
+similarly stabilize triple-junction devices at 27.0\% stabilized PCE
+(27.3\% champion) {[}55{]}, whereas omitting nickel oxide (NiOx) HTLs
+via hybrid deposition yields flexible perovskite/copper indium gallium
+selenide (CIGS) tandems with certified 25.9\% PCE (26.4\% champion, 1.85
+V Voc) {[}56{]}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig/F3_effort_map.pdf}
+\caption{Where the month's mechanistic effort was directed. Depth-tier papers by mechanism axis, stacked by device family.}
+\end{figure}
+
+\subsection{6. Operational Stability and Degradation
+Pathways}\label{operational-stability-and-degradation-pathways}
+
+Depth-resolved profiling reveals that operational photo-degradation
+initiates at both buried and top interfaces before propagating into bulk
+perovskite absorbers {[}57{]}. At buried hole-transport layer (HTL)
+contacts in inverted perovskite solar cells (PSCs), molecular disorder
+accelerates non-radiative recombination. Rigidifying molecular
+orientation by coassembling carbazole self-assembled monolayers (SAMs)
+suppresses interfacial defects, yielding a certified power conversion
+efficiency (PCE) of 27.31\% for single cells and 21.54\% for a 766 cm2
+module under International Summit on Organic Photovoltaic Stability
+(ISOS) protocol ISOS-L-1 {[}9{]}. Tailoring asymmetric benzothienoindole
+SAMs with electron-withdrawing substituents similarly improves packing
+and energetics, delivering 25.38\% on 1 cm2 and 20.59\% on a 655.2 cm2
+module {[}58{]}. At the top contact, multidentate fullerenes anchor
+phenethylammonium bromide capping layers against thermal loss, retaining
+98.7\% initial PCE after 2100 h of maximum power point tracking (MPPT)
+under continuous illumination and 95.8\% after 1800 h at 85 °C under
+ISOS-L-3 {[}59{]}, while phase-pure two-dimensional (2D) perovskite
+reconstruction passivates surfaces {[}60,61{]}. Extrinsic ion migration
+also accelerates failure: lithium bis(trifluoromethanesulfonyl)imide
+(Li-TFSI) dopants in HTLs release mobile lithium ions that drift under
+bias, whereas volatile dopants eliminate ionic residues {[}62{]}.
+Surface passivation via aromatic carbonyl molecules yields 26.12\% PCE,
+but only on an uncertified, sub-0.1 cm2 area (0.09 cm2) {[}63{]}.
+
+In wide-bandgap (WBG) mixed-halide absorbers, operational instability
+stems from electric-field-induced halide segregation driven by
+trapped-charge accumulation {[}64{]}. Operating cells under maximum
+stability point tracking (MSPT) instead of MPPT alleviates trapped
+carriers, retaining approximately 90\% initial power after 700 h
+{[}64{]}. Chemical stabilization targets the same thermodynamic
+vulnerability: incorporating 1,4-phenylenediamine dihydriodide into
+1.93-eV absorbers raises the ion migration activation barrier to
+suppress phase segregation, achieving a certified PCE of 26.18\% with an
+open-circuit voltage (Voc) of 3.148 V on 1.17 cm2 triple-junction cells
+{[}65{]}. Rubidium incorporation similarly homogenizes vertical cesium
+distribution in 1.67-eV pure-iodide perovskites to prevent demixing,
+reaching an uncertified 22.51\% PCE under ISOS-L-1 {[}66{]}.
+
+Under thermal and light fluctuations, dynamic lattice strain drives
+degradation {[}67{]}: residual tensile stress relaxes via
+diffusion-mediated inelastic deformation, accelerating moisture uptake
+by an order of magnitude {[}68{]}. Interfacial networks and printed
+silicon oxynitride barrier films counter moisture penetration, the
+latter retaining 93\% ± 5\% PCE after 1000 h at 25 °C and 60\% relative
+humidity (RH) under ISOS-D-1 {[}69,70,71{]}. Yet a methodological gap
+obscures durability: only 4 of 169 closely read studies reported the
+time to 80\% initial efficiency (T80), spanning 200 h, 720 h, 6785 h,
+and 9800 h {[}5,50,72,73{]}, and only 6 specified an ISOS protocol
+{[}9,11,16,17,59,66{]}. Prevailing tests apply constant 1-sun
+illumination at mild temperatures, probing photocarrier collection while
+failing to evaluate thermomechanical fatigue, reverse bias, or
+dark-light cycles.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig/F4_stability_evidence.pdf}
+\caption{The month's operational-stability evidence in full. Left, every reported time to 80\% of initial performance. Right, the stability protocol labels used.}
+\end{figure}
+
+\subsection{7. Scale-Up and the Area
+Penalty}\label{scale-up-and-the-area-penalty}
+
+The area penalty during module scale-up stems from three coupled
+physical bottlenecks: series-resistance losses across monolithic
+interconnects, non-uniform crystallization in scalable coating, and
+localized interfacial recombination {[}10,74,75{]}. Extrinsic
+integration and resistive interconnect losses rival intrinsic material
+recombination in driving the efficiency drop from discrete cells to
+series-connected modules {[}74,75{]}. Hyperspectral luminescence imaging
+attributes this deficit to resistive transport across interconnections
+in 64 cm2 modules {[}74{]}, while electrostatic templating with
+indol-3-ylethylammonium iodide spacer cations leaves a certified power
+conversion efficiency (PCE) gap between 26.94\% on small-area cells and
+23.21\% on a 25 cm2 monolithic module {[}75{]}. Aperture scaling
+demonstrates that modules can maintain high efficiencies: a certified
+27.3\% PCE (champion 27.8\%) across 625 cm2 with nonfullerene
+electron-transport layers (ETLs) {[}10{]}, alongside uncertified
+champion outputs of 27.12\% on 655.2 cm2 {[}4{]}, 27.31\% on 684.75 cm2
+{[}8{]}, 27.31\% on 766 cm2 {[}9{]}, and 26.53\% on 818 cm2 {[}11{]}.
+
+Transitioning from spin-coating to scalable meniscus blade coating or
+vapor methods induces drying gradients and phase degradation
+{[}76,77,78,79{]}. Incorporating Lewis base and zwitterion dual
+additives into blade-coated tin-lead perovskite solar cells (PSCs)
+yields grains over 800 nm and elevates open-circuit voltage (Voc) from
+0.797 to 0.850 V, achieving 21.02\% single-junction PCE and a
+two-terminal (2T) tandem champion PCE of 27.84\% (27.33\% stabilised)
+{[}76{]}. For ambient fabrication, surface-confined protection
+stabilizes pre-annealing crystallization, enabling air-processed
+blade-coated methylammonium (MA)-free PSCs to achieve 26.14\% champion
+and 25.75\% certified PCE, with 93.11\% retention after 1300 h of
+continuous 1-sun maximum power point tracking (MPPT) {[}77{]}.
+Vapor-phase annealing (VPA) establishes uniform thermal-humidity fields
+to direct bottom-up crystallization, yielding an additive-free champion
+PCE of 22.15\% {[}78{]}, whereas stabilizing precursor solutions against
+aging via anion-pi interactions preserves 25.76\% efficiency after 7
+days and 23.88\% after 3 months {[}79{]}. High-throughput quantification
+of microstructural homogeneity is assisted by deep segmentation
+frameworks such as PerovSegNet, which reaches 87.25\% mean average
+precision (mAP) in scanning electron microscopy (SEM) image analysis at
+25.22\% lower computational cost {[}80{]}. Replacing fullerene ETLs with
+the nonfullerene conjugated polymer 2PB-T also addresses contact
+degradation, retaining over 98.6\% of initial PCE after 1752 h of
+continuous MPPT at 85 °C in air on small-area cells {[}10{]}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig/F2_area_penalty.pdf}
+\caption{Efficiency against reported active or aperture area. The shaded band marks the sub-0.3 cm$^2$ laboratory-cell regime in which most champion values are measured.}
+\end{figure}
+
+\subsection{8. Research Gaps and
+Outlook}\label{research-gaps-and-outlook}
+
+The performance divergence between single junctions and tandems defines
+the first gap: the best certified perovskite/silicon tandem this month
+was 33.1\% power conversion efficiency (PCE) {[}1{]}, while certified
+single junctions clustered near 27\%, showing that the wide-bandgap
+(WBG) subcell limiting the tandem is not the one most papers optimise.
+Chemical treatments claimed to homogenize mixed halides in pristine WBG
+absorbers leave unresolved whether halide homogenisation suppresses
+phase segregation under operating bias, as carrier gradients trigger
+iodide clustering {[}49,64{]}. Operando nanoscale photoluminescence
+spectroscopy during continuous maximum power point tracking (MPPT) load
+under elevated operating temperatures would establish whether
+compositional uniformity survives operational electric fields.
+
+A second gap concerns buried-interface chemistry that survives thermal
+cycling rather than only lifting initial efficiency. Molecules and
+self-assembled monolayers (SAMs) passivate buried defects to lift
+open-circuit voltage (Voc) on pristine substrates, but thermal expansion
+mismatches induce cyclic shear stresses that cause delamination
+{[}1,19{]}. In situ grazing-incidence wide-angle X-ray scattering with
+operando transient photovoltage measurements during temperature cycling
+across thermal extremes would quantify strain relaxation and resolve
+whether interfacial bonding withstands thermal fatigue.
+
+A third gap lies in ion-migration timescales measured under load rather
+than in the dark. Only 4 of 169 closely read papers reported a time to
+80\% of initial performance (T80) lifetime, the longest 9800 h {[}5{]},
+short against a 25-year module warranty. Extracting kinetics from dark
+impedance ignores how photogenerated carriers screen fields and alter
+vacancy formation enthalpies under illumination {[}64,65{]}.
+Intensity-modulated photovoltage spectroscopy under bias illumination
+would capture true ionic drift velocities and accumulation rates under
+load.
+
+The fourth gap is whether passivation that lifts Voc on a 0.1 cm2 cell
+survives slot-die coating at module area. Only 27 of 648 works addressed
+scale-up at all, and the largest reported aperture was 818 cm2 {[}11{]},
+orders of magnitude below a commercial module. Meniscus coating promotes
+passivator aggregation, forming pinholes across large areas {[}75{]}.
+Operando photoluminescence imaging synchronized with optical
+reflectometry during slot-die deposition would track drying kinetics and
+isolate spatial Voc losses across modules. Next month's literature would
+gain immediate utility if studies paired small-cell efficiencies with
+operando stability under load and reported spatial coating uniformity.
+
+\subsection{Acknowledgements}\label{acknowledgements}
+
+The authors would like to acknowledge the financial support from Xiamen
+University Malaysia through the Xiamen University Malaysia Research Fund
+(XMUMRF/2022-C10/IENG/0046), and from National Natural Science
+Foundation of China (Ref. No.: 52503390).
+
+\subsection{Declaration of Competing
+Interest}\label{declaration-of-competing-interest}
+
+The authors declare no conflict of interest.
+
+\subsection{Data Availability
+Statement}\label{data-availability-statement}
+
+The corpus table for the month, the per-paper extraction records with
+their verbatim source quotations, the statistics file underlying every
+number in the text, and the gate report are provided as Supplementary
+Information. Abstract text and full texts are not redistributed.
+
+\subsection{AI Usage Declaration}\label{ai-usage-declaration}
+
+This manuscript was prepared as part of our Research Project for making
+a reliable Autonomous Researcher Agent. The agent executed the monthly
+review pipeline without human intervention: it harvested the indexed
+literature for the month through the OpenAlex, Semantic Scholar,
+Crossref and arXiv interfaces, applied a deterministic topical filter,
+ranked and selected the papers read closely, extracted every
+quantitative claim into a structured record binding each number to a
+verbatim quotation from that paper's own abstract, computed the
+statistics and figures from those records, and drafted this text from
+the resulting evidence briefs. Literature harvesting, selection,
+statistics, figures and gate checking are deterministic scripts rather
+than model output. Structured extraction used qwen3.8-flash through the
+opencode interface; the prose was written by gemini-3.8-flash-high
+through the agy interface; independent review used opus at high
+reasoning effort. No figure is a model-generated image: every panel is
+plotted directly from the extracted records. Every quantitative
+statement in the main text resolves to the machine-generated statistics
+file shipped as Supplementary Information, and every citation resolves
+to a record carrying its source quotation. The author reviewed and
+edited the content, verified the selection, and takes full
+responsibility for the content of the published article.
+
+\subsection{References}\label{references}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Xu, X. et al.~Noncoplanar multidentate contacts reinforce buried
+  interface for perovskite/silicon tandem solar cells. \emph{Science
+  Advances} (2026). \url{https://doi.org/10.1126/sciadv.aei2945}
+\item
+  Wang, F. et al.~Beyond Self‐Assembled Molecules:
+  Hydrogen‐Bonding‐Regulated Crystallization of Wide‐Bandgap Perovskite
+  for High‐Performance Perovskite‐Silicon Tandem Photovoltaics.
+  \emph{Angewandte Chemie International Edition} (2026).
+  \url{https://doi.org/10.1002/anie.1676645}
+\item
+  Liu, Z. et al.~Homogenizing Sn--Pb Distribution Through A‐Site MA
+  Cations for Efficient All‐Perovskite Tandem Solar Cells.
+  \emph{Advanced Materials} (2026).
+  \url{https://doi.org/10.1002/adma.74078}
+\item
+  Yang, R. et al.~Soft supermolecule stabilized buried interface for
+  high-performance inverted perovskite solar cells and modules.
+  \emph{Nature Communications} (2026).
+  \url{https://doi.org/10.1038/s41467-026-74018-8}
+\item
+  Zheng, W. et al.~Intermediate‐Site Anchoring Ligands Enable Robust
+  Nonlayered Interfacial Passivation for Efficient and Stable
+  Air‐Processed Perovskite Solar Cells. \emph{Advanced Materials}
+  (2026). \url{https://doi.org/10.1002/adma.74243}
+\item
+  Lp, H. et al.~Enhancing Sn-Pb perovskite homogeneity via thioether
+  coordination for efficient and stable all-perovskite tandem solar
+  cells. \emph{Science Advances} (2026).
+  \url{https://doi.org/10.1126/sciadv.aeb8790}
+\item
+  Xiong, Y. et al.~Radiation-resilient monolithic wide-bandgap
+  perovskite/p-type heterojunction silicon tandem solar cells for space
+  photovoltaics. \emph{Science Advances} (2026).
+  \url{https://doi.org/10.1126/sciadv.aef6600}
+\item
+  Li, B.E. et al.~Unlocking 27.3\% Perovskite Solar Cells and
+  Ultra‐Stable Flexible Modules via Multidentate Molecular‐Mediated
+  Buried‐Interface Reconstruction. \emph{Advanced Materials} (2026).
+  \url{https://doi.org/10.1002/adma.73807}
+\item
+  Zhang, Z.Y. et al.~Unlocking 27.3\% perovskite photovoltaics by
+  interface-locked dual-molecule contact. \emph{Science Advances}
+  (2026). \url{https://doi.org/10.1126/sciadv.aeg1456}
+\item
+  Gao, D. et al.~n-Type polymer layers enable efficient, scalable, and
+  thermally stable perovskite solar modules. \emph{Science} (2026).
+  \url{https://doi.org/10.1126/science.aed8175}
+\item
+  Qian, C. et al.~Bidirectional Chemo-Mechanical Interface Stabilization
+  in Perovskite Solar Cells. \emph{Journal of the American Chemical
+  Society} (2026). \url{https://doi.org/10.1021/jacs.6c06932}
+\item
+  Li, R. et al.~Recent Advancing Progress of Inverted Perovskite Solar
+  Cells Through Functional Buried Interface Engineering. \emph{Advanced
+  Functional Materials} (2026). \url{https://doi.org/10.1002/adfm.77486}
+\item
+  Li, M. et al.~Improved Mechanical Adhesion Enabled by Bilayer Hole
+  Transport Layers in Perovskite Solar Cells. \emph{ACS Materials
+  Letters} (2026).
+  \url{https://doi.org/10.1021/acsmaterialslett.6c00479}
+\item
+  Wu, H. et al.~A Multidentate Coordination Complex‐Based Self‐Assembled
+  Monolayer Stabilizes Perovskite Interface. \emph{Angewandte Chemie
+  International Edition} (2026).
+  \url{https://doi.org/10.1002/anie.8080769}
+\item
+  Duan, Y. et al.~Bisphosphonate Self‐Assembled Molecules Enhance
+  Anchoring Strength and Perovskite Passivation Toward High‐Efficiency
+  Perovskite/Silicon Tandem Solar Cells. \emph{Small} (2026).
+  \url{https://doi.org/10.1002/smll.74999}
+\item
+  Qin, Z. et al.~Tetraphosphorylated phthalocyanine--based
+  self-assembled monolayer stabilizes perovskite photovoltaics.
+  \emph{Science Advances} (2026).
+  \url{https://doi.org/10.1126/sciadv.aee4175}
+\item
+  Wang, J. et al.~Suppression of SAM desorption by engineering
+  polyoxometalate interface for inverted perovskite solar cells.
+  \emph{Polyoxometalates} (2026).
+  \url{https://doi.org/10.26599/pom.2026.9140147}
+\item
+  Chen, X. et al.~Molecular Lubricant Mitigates Self‐Assembled Monolayer
+  Aggregation in Perovskite Photovoltaics. \emph{Angewandte Chemie
+  International Edition} (2026).
+  \url{https://doi.org/10.1002/anie.7090517}
+\item
+  Zhou, B. et al.~Proton Transfer Complex-Confined Self-Assembled
+  Monolayer for Thermally Stable Inverted Perovskite Solar Cells.
+  \emph{ACS Energy Letters} (2026).
+  \url{https://doi.org/10.1021/acsenergylett.6c01489}
+\item
+  Wan, X. et al.~Strengthened Charge‐Selective Perovskite/SAM
+  Heterocontact for Efficient and Durable Perovskite Solar Cells via
+  Interfacial Reconfiguration. \emph{Angewandte Chemie International
+  Edition} (2026). \url{https://doi.org/10.1002/anie.1018855}
+\item
+  Ling, X. et al.~In situ Induced 2D Perovskite Enhances Buried
+  Interface Passivation for Ambient‐Processed Efficient Perovskite Solar
+  Cells. \emph{Advanced Functional Materials} (2026).
+  \url{https://doi.org/10.1002/adfm.76848}
+\item
+  Xu, Y. et al.~Eliminating Buried Interface Voids for High‐Efficiency
+  and Stable Perovskite Solar Cells. \emph{Small} (2026).
+  \url{https://doi.org/10.1002/smll.74604}
+\item
+  Wang, X.F. et al.~Interfacial Ionic Redistribution Induced by
+  Sulfonate‐Anchored Dipotassium Salts Enables Efficient Buried
+  Interface Engineering in Perovskite Solar Cells. \emph{Advanced
+  Functional Materials} (2026). \url{https://doi.org/10.1002/adfm.77175}
+\item
+  Su, H. et al.~Synergistic Interface Modulation of Hole Transport for
+  Efficient, Stable Inverted Perovskite Solar Cells. \emph{Advanced
+  Functional Materials} (2026). \url{https://doi.org/10.1002/adfm.76878}
+\item
+  Chen, X. et al.~Perylenocarbazole‐Based Polycyclic Aromatic
+  Self‐Assembled Monolayers with Tailored Electrostatic Potentials for
+  High‐Performance Organic and Perovskite Solar Cells. \emph{Angewandte
+  Chemie International Edition} (2026).
+  \url{https://doi.org/10.1002/anie.4031162}
+\item
+  Ye, Y. et al.~Interfacial Regulation by a Multifunctional
+  Self‐Assembled Material for High‐Performance Inverted Perovskite Solar
+  Cells. \emph{Advanced Energy Materials} (2026).
+  \url{https://doi.org/10.1002/aenm.71282}
+\item
+  Ma, P. et al.~Ternary Cooperative Interface With Electronegative
+  Phosphine Bridges Enables Efficient and Stable Inverted Perovskite
+  Solar Cells. \emph{Advanced Materials} (2026).
+  \url{https://doi.org/10.1002/adma.74416}
+\item
+  Dutta, R. et al.~Temperature‐Dependent Performance Analysis of
+  Formamidinium‐Based Perovskite Solar Cells: A Theoretical Study.
+  \emph{Energy Technology} (2026).
+  \url{https://doi.org/10.1002/ente.70590}
+\item
+  Jubu, P.R. et al.~Interface-engineered HTL-free mixed-cation
+  perovskite solar cells with ZnO/BaSnO3 bilayer electron transport
+  architecture: A SCAPS-1D investigation toward near-ideal photovoltaic
+  performance. \emph{Hybrid Advances} (2026).
+  \url{https://doi.org/10.1016/j.hybadv.2026.100721}
+\item
+  Wong, C. et al.~Rational Tailoring of Hole‐Selective Self‐Assembly
+  Monolayers Based on Sulfur‐Containing Heterocycles for
+  High‐Performance Perovskite Solar Cells. \emph{Angewandte Chemie
+  International Edition} (2026).
+  \url{https://doi.org/10.1002/anie.1864800}
+\item
+  Shang, X. et al.~A Multisite Molecular Salt Enables Surface
+  Passivation and Energetics Management for Efficient Inverted
+  Perovskite Solar Cells. \emph{Advanced Energy Materials} (2026).
+  \url{https://doi.org/10.1002/aenm.71305}
+\item
+  Tan, Y. et al.~Synergistic Interfacial Dangling‐Bond Passivation for
+  Enhanced Moisture Resistance in Perovskite Photovoltaics.
+  \emph{Advanced Materials} (2026).
+  \url{https://doi.org/10.1002/adma.73950}
+\item
+  Saeed, A. et al.~Amphoteric Anion‐Mediated Crystallization and
+  Universal Defect Passivation for High‐Efficiency and Stable Perovskite
+  Solar Cells. \emph{Advanced Functional Materials} (2026).
+  \url{https://doi.org/10.1002/adfm.77378}
+\item
+  Chen, R. et al.~Reconstructing the perovskite surface with a
+  homogeneous electric potential by reducing localized charge for
+  efficient and durable perovskite solar cells. \emph{Energy Materials}
+  (2026). \url{https://doi.org/10.20517/energymater.2026.102}
+\item
+  Jang, W.J. et al.~Conjugated anion modulation for extended defect
+  passivation at buried interfaces in perovskite solar cells.
+  \emph{Advanced Composites and Hybrid Materials} (2026).
+  \url{https://doi.org/10.1007/s42114-026-01958-6}
+\item
+  Fan, R. et al.~Plasma surface engineering for efficient and stable
+  perovskite solar cells and modules. \emph{Science} (2026).
+  \url{https://doi.org/10.1126/science.aeg1730}
+\item
+  Deng, Z. et al.~Precise Iodide‐Trap Strategy for Photothermally Stable
+  Spiro‐OMeTAD‐Based Perovskite Solar Cells. \emph{Angewandte Chemie
+  International Edition} (2026).
+  \url{https://doi.org/10.1002/anie.2924886}
+\item
+  Miao, Z. et al.~A unified ligand-dimensional design to halt cation
+  migration in perovskite photovoltaics. \emph{Science Advances} (2026).
+  \url{https://doi.org/10.1126/sciadv.aed6327}
+\item
+  Du, X. et al.~Enhancing Interfacial Stability of FAPbI 3 Perovskite
+  Solar Cells by Introducing 2D/3D Heterojunction Based on Functional
+  Imidazolium Cations. \emph{Advanced Functional Materials} (2026).
+  \url{https://doi.org/10.1002/adfm.77015}
+\item
+  Cheng, J. et al.~Modulating Growth Kinetics and Defect Passivation in
+  Ambient‐Air Evaporation‐Spray Deposition Enables Efficient and Stable
+  Rigid/Flexible Perovskite Solar Cells. \emph{EcoEnergy} (2026).
+  \url{https://doi.org/10.1002/ece2.70102}
+\item
+  LIU, M. et al.~In‐Situ Constructed Cations for 2D/3D Perovskite
+  Heterostructure for Stable and Efficient Photovoltaics. \emph{Advanced
+  Science} (2026). \url{https://doi.org/10.1002/advs.76508}
+\item
+  Zhu, W. et al.~Thermodynamically Matched Molten‐Salt‐Assisted Phase
+  Engineering of 2D/3D Perovskite Heterostructures for Efficient and
+  Stable Solar Cells. \emph{Advanced Functional Materials} (2026).
+  \url{https://doi.org/10.1002/adfm.76974}
+\item
+  Lv, D. et al.~Dual‐Site‐Binding Ligand‐Driven (100) Orientation for
+  Efficient and Stable Perovskite Solar Cells. \emph{Advanced Materials}
+  (2026). \url{https://doi.org/10.1002/adma.74033}
+\item
+  Wang, D. et al.~Multi‐Bonding Molecular Interface Bridges Enable
+  Synergistic Defect Passivation, Strain Relaxation, and Accelerated
+  Electron Extraction in Perovskite Solar Cells. \emph{Advanced
+  Functional Materials} (2026). \url{https://doi.org/10.1002/adfm.77373}
+\item
+  Yang, J. et al.~Dynamic Strain Regulation Via Photoresponsive
+  Fullerenes Enables High‐Performance and UV‐Robust Perovskite Solar
+  Cells. \emph{Advanced Materials} (2026).
+  \url{https://doi.org/10.1002/adma.74220}
+\item
+  Yang, S. et al.~Low-temperature liquid-assisted vibrational
+  stress-relief strategy enables stable and efficient perovskite solar
+  cells. \emph{Nature Communications} (2026).
+  \url{https://doi.org/10.1038/s41467-026-75629-x}
+\item
+  Asare, G.K. et al.~Redox‐Buffering PEAI‐CeO x Passivation Suppresses
+  Thermo‐Mechanical Degradation in Perovskite Solar Cells Under Rapid
+  Thermal Cycling. \emph{Advanced Energy Materials} (2026).
+  \url{https://doi.org/10.1002/aenm.71312}
+\item
+  Mardegan, L. et al.~Materials and Device Engineering for Efficient,
+  Stable, and Scalable Monolithic Perovskite/Silicon Tandem
+  Photovoltaics. \emph{Chemical Reviews} (2026).
+  \url{https://doi.org/10.1021/acs.chemrev.5c01014}
+\item
+  Durant, B.K. et al.~In-Operando Thermal Cycling of All-Perovskite
+  Tandem Solar Cells. \emph{ACS Energy Letters} (2026).
+  \url{https://doi.org/10.1021/acsenergylett.6c00992}
+\item
+  Liu, P. et al.~Sr/Pb Alloying Stabilizes Wide‐Bandgap Perovskites for
+  Durable Fully‐Textured Perovskite/Silicon Tandem Solar Cells.
+  \emph{Advanced Energy Materials} (2026).
+  \url{https://doi.org/10.1002/aenm.71317}
+\item
+  Chen, Y. et al.~Molecular‐Extrusion‐Driven Halogen Homogenization for
+  Efficient Perovskite‐Silicon Tandem Solar Cells. \emph{Angewandte
+  Chemie International Edition} (2026).
+  \url{https://doi.org/10.1002/anie.5530609}
+\item
+  Zhou, Y. et al.~Conductive Polymer Bridges Mediate High‐Performance
+  Flexible Perovskite--Organic Tandem Solar Cells. \emph{Advanced
+  Materials} (2026). \url{https://doi.org/10.1002/adma.74183}
+\item
+  Liu, L. et al.~Artificial Intelligence-Guided Cosolvent Design for
+  High-Performance Perovskite/Silicon Tandem Solar Cells.
+  \emph{Nano-Micro Letters} (2026).
+  \url{https://doi.org/10.1007/s40820-026-02291-9}
+\item
+  Dangudubiyyam, U.K. et al.~Eco‐Friendly Solvent System for Inkjet
+  Deposition of Wide Bandgap Perovskite Solar Cells Enabling Tandem
+  Integration. \emph{Advanced Science} (2026).
+  \url{https://doi.org/10.1002/advs.76463}
+\item
+  Yun, Y. et al.~Triple-junction all-perovskite solar cells with
+  self-assembling hole contacts in all subcells. \emph{Joule} (2026).
+  \url{https://doi.org/10.1016/j.joule.2026.102575}
+\item
+  Rehan, M. et al.~Efficient Flexible Monolithic Perovskite/CIGS Tandem
+  Solar Cell by Using Two‐Step Hybrid Deposition Approach.
+  \emph{Advanced Energy Materials} (2026).
+  \url{https://doi.org/10.1002/aenm.71267}
+\item
+  Chalkias, D.A. et al.~Depth‐Resolved Photo‐Degradation of Perovskite
+  Layer in Solar Cells Stressed Under ISOS Light‐Aging Protocol
+  Conditions: The Role of Substrate, Electron‐Transport‐Layer and
+  Perovskite Deposition Method. \emph{Solar RRL} (2026).
+  \url{https://doi.org/10.1002/solr.70421}
+\item
+  Zhong, S. et al.~Molecular Tailoring of Self‐Assembled Monolayers
+  Derived From Asymmetric Benzothienoindole for Efficient and Stable
+  Inverted Perovskite Solar Cells and Modules. \emph{Angewandte Chemie
+  International Edition} (2026).
+  \url{https://doi.org/10.1002/anie.1678852}
+\item
+  Huang, J. et al.~Multidentate Fullerene Boosts the Thermal Stability
+  of Perovskite Solar Cells. \emph{ACS Energy Letters} (2026).
+  \url{https://doi.org/10.1021/acsenergylett.6c01517}
+\item
+  Dai, K. et al.~Thermally Independent Interfacial Reconstruction for
+  Phase‐Pure n = 1 2D Perovskites With Mixed‐Orientation Surface
+  Architecture. \emph{Advanced Materials} (2026).
+  \url{https://doi.org/10.1002/adma.74247}
+\item
+  You, S. et al.~Boosting Carrier Transport in Carbon‐Based
+  Hole‐Transport‐Layer‐Free Perovskite Solar Cells via 2D/3D Interfacial
+  Structural Configuration. \emph{Solar RRL} (2026).
+  \url{https://doi.org/10.1002/solr.70447}
+\item
+  Zhao, J. et al.~Eliminating Residue‐Induced Degradation: A Volatile
+  Dopant Strategy for High Performance Perovskite Photovoltaics.
+  \emph{Small} (2026). \url{https://doi.org/10.1002/smll.74289}
+\item
+  Yang, G. et al.~Central Core Engineering of Aromatic Carbonyl
+  Molecules Enables Highly Efficient and Stable Perovskite Solar Cells.
+  \emph{Angewandte Chemie International Edition} (2026).
+  \url{https://doi.org/10.1002/anie.5216345}
+\item
+  Kim, S. et al.~Maximum Stability Point Tracking Stabilizes
+  Wide‐Bandgap Mixed‐Halide Perovskite Solar Cells. \emph{Advanced
+  Energy Materials} (2026). \url{https://doi.org/10.1002/aenm.71358}
+\item
+  Kong, W. et al.~Stabilizing 1.93-eV ultrawide-bandgap perovskites for
+  efficient triple-junction solar cells. \emph{Nature Communications}
+  (2026). \url{https://doi.org/10.1038/s41467-026-75305-0}
+\item
+  Zhou, X. et al.~Homogenizing Cesium Distribution via Rubidium
+  Incorporation Enables Pure-Iodide 1.67 eV Bandgap Perovskite Solar
+  Cells with Efficiency Exceeding 22\%. \emph{ACS Nano} (2026).
+  \url{https://doi.org/10.1021/acsnano.6c04084}
+\item
+  Fasti, R. et al.~Dynamic Stress and Strain Evolution and Engineering
+  Strategies to Enhance Operational Durability in Perovskite Solar
+  Cells. \emph{ACS Energy Letters} (2026).
+  \url{https://doi.org/10.1021/acsenergylett.6c01837}
+\item
+  Guo, B. et al.~A Composition-Dependent Stress--Diffusion Framework
+  Identifies Humidity-Tolerant Processing Windows in Hybrid Perovskite
+  Solar Cells. \emph{ChemRxiv} (2026).
+  \url{https://doi.org/10.26434/chemrxiv-2025-128tn/v2}
+\item
+  Li, B. et al.~Inkjet‐Printed SiO x N y Barrier Film for Encapsulation
+  of Perovskite Solar Cells. \emph{Small} (2026).
+  \url{https://doi.org/10.1002/smll.74816}
+\item
+  Albab, M.F. et al.~Air-Processed and Water-Stable Perovskite Solar
+  Cells Enabled by a Fishing-Net-Inspired Interfacial Network.
+  \emph{Nano-Micro Letters} (2026).
+  \url{https://doi.org/10.1007/s40820-026-02295-5}
+\item
+  Gao, B. et al.~Spatiotemporally homogeneous crystallization for
+  ambient scalable perovskite photovoltaics. \emph{Science} (2026).
+  \url{https://doi.org/10.1126/science.aef1969}
+\item
+  Ahmad, N. et al.~Synergistic Interface and Band Engineering for Sn‐Pb
+  Perovskites. \emph{Small} (2026).
+  \url{https://doi.org/10.1002/smll.74531}
+\item
+  Ni, Q. et al.~Protonated Cyclohexylamine as an Effective Passivation
+  Layer for High-Performance Perovskite Solar Cells. \emph{ACS Applied
+  Energy Materials} (2026). \url{https://doi.org/10.1021/acsaem.6c01637}
+\item
+  Harada, N. et al.~Quantitative Hyperspectral Luminescence Imaging
+  Reveals Upscaling Losses in Perovskite Solar Modules. \emph{Solar RRL}
+  (2026). \url{https://doi.org/10.1002/solr.70375}
+\item
+  Ki, T. et al.~Asymmetric Lamellar Templating of the Perovskite/C 60
+  Interface for Scalable Inverted Perovskite Photovoltaics.
+  \emph{Advanced Materials} (2026).
+  \url{https://doi.org/10.1002/adma.74316}
+\item
+  Wu, Y. et al.~Lewis Base--Zwitterion Dual Additives Enable Efficient
+  Blade‐Coated Tin‐lead Perovskite Solar Cells and Tandems.
+  \emph{Advanced Energy Materials} (2026).
+  \url{https://doi.org/10.1002/aenm.71336}
+\item
+  Duan, L. et al.~Surface-confined protection stabilizes pre-annealing
+  crystallization for ambient blade-coated perovskites. \emph{Nature
+  Communications} (2026).
+  \url{https://doi.org/10.1038/s41467-026-75053-1}
+\item
+  Xu, C. et al.~Vapor-phase Annealing toward Homogeneous Bottom-Up
+  Crystallization in Perovskite Solar Cells. \emph{ACS Applied Materials
+  \& Interfaces} (2026). \url{https://doi.org/10.1021/acsami.6c07418}
+\item
+  Sun, T. et al.~Stabilizing Precursor Solutions via Anion‐π Interaction
+  for Robust Production of Perovskite Solar Cells. \emph{Advanced
+  Functional Materials} (2026). \url{https://doi.org/10.1002/adfm.77211}
+\item
+  Wang, L. et al.~Automated and Scalable SEM Image Analysis of
+  Perovskite Solar Cell Materials via a Deep Segmentation Framework.
+  \emph{npj Computational Materials} (2026).
+  \url{https://doi.org/10.1038/s41524-026-02211-w}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,141 @@
+{
+  "month": "2026-07",
+  "month_name": "July 2026",
+  "sections": [
+    {
+      "id": "1",
+      "role": "intro",
+      "axis": null,
+      "axes": [],
+      "title": "Introduction",
+      "ceiling": 300,
+      "cite_target": 0
+    },
+    {
+      "id": "2",
+      "role": "frontier",
+      "axis": null,
+      "axes": [],
+      "title": "The Certified Frontier in July 2026",
+      "ceiling": 290,
+      "cite_target": 8
+    },
+    {
+      "id": "3",
+      "role": "mechanism",
+      "axis": "defects",
+      "axes": [
+        "defects"
+      ],
+      "title": "Passivation Chemistry and Ion Migration Under Bias",
+      "ceiling": 620,
+      "cite_target": 15,
+      "n_depth": 45
+    },
+    {
+      "id": "4",
+      "role": "mechanism",
+      "axis": "interfaces",
+      "axes": [
+        "interfaces"
+      ],
+      "title": "Self-Assembled Contacts and Interfacial Dipoles",
+      "ceiling": 550,
+      "cite_target": 13,
+      "n_depth": 39
+    },
+    {
+      "id": "5",
+      "role": "mechanism",
+      "axis": "composition",
+      "axes": [
+        "composition"
+      ],
+      "title": "Precursor Chemistry and Phase Purity",
+      "ceiling": 540,
+      "cite_target": 13,
+      "n_depth": 38
+    },
+    {
+      "id": "6",
+      "role": "mechanism",
+      "axis": "stability",
+      "axes": [
+        "stability"
+      ],
+      "title": "Stability Under Load, Heat and Illumination",
+      "ceiling": 360,
+      "cite_target": 9,
+      "n_depth": 25
+    },
+    {
+      "id": "7",
+      "role": "mechanism",
+      "axis": "architecture",
+      "axes": [
+        "architecture",
+        "scale_up"
+      ],
+      "title": "Wide-Bandgap Subcells and Recombination Layers",
+      "ceiling": 320,
+      "cite_target": 8,
+      "n_depth": 22
+    },
+    {
+      "id": "8",
+      "role": "gaps",
+      "axis": null,
+      "axes": [],
+      "title": "Research Gaps and Outlook",
+      "ceiling": 400,
+      "cite_target": 4
+    }
+  ],
+  "depth_distribution": {
+    "interfaces": 39,
+    "defects": 45,
+    "composition": 38,
+    "architecture": 22,
+    "stability": 25,
+    "scale_up": 12
+  },
+  "chosen_axes": [
+    "defects",
+    "interfaces",
+    "composition",
+    "stability",
+    "architecture"
+  ],
+  "folded": {
+    "defects": [
+      "defects"
+    ],
+    "interfaces": [
+      "interfaces"
+    ],
+    "composition": [
+      "composition"
+    ],
+    "stability": [
+      "stability"
+    ],
+    "architecture": [
+      "architecture",
+      "scale_up"
+    ]
+  },
+  "total_ceiling": 3380,
+  "params": {
+    "MIN_MECH": 4,
+    "MAX_MECH": 5,
+    "MIN_DEPTH": 10,
+    "BODY_WORDS": 2400,
+    "WORDS_PER_CITE": 42,
+    "CITE_CLAMP": [
+      5,
+      15
+    ]
+  },
+  "cite_target_sum": 70,
+  "sha256": "23cd8e1384f596c5"
+}

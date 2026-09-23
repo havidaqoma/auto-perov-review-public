@@ -1,0 +1,77 @@
+# Q50 title grammar. frame is fixed; slot is drafted from stats keys.
+frame: "Perovskite photovoltaics"
+max_title_words: 16
+slot_words: [6, 14]
+neutral_slot: "a monthly mechanism and reporting audit"
+
+# slot_axis must be one of these six (plan 5.6) or `audit`
+axis_phrases:
+  composition:
+    - "composition and phase control"
+    - "A-site and halide composition"
+    - "phase segregation control"
+  defects:
+    - "defect passivation"
+    - "trap density and ion migration"
+    - "non-radiative recombination control"
+  interfaces:
+    - "interface and contact engineering"
+    - "self-assembled monolayer contacts"
+    - "buried-interface treatment"
+  architecture:
+    - "tandem architecture"
+    - "device architecture and current matching"
+    - "two-terminal tandem design"
+  stability:
+    - "operational stability"
+    - "damp-heat and light-soak stability"
+    - "degradation pathways"
+  scale_up:
+    - "module scale-up"
+    - "large-area coating"
+    - "slot-die and roll-to-roll processing"
+  audit:
+    - "reporting completeness"
+    - "certification reporting"
+    - "stability-protocol reporting"
+
+# Banned in the title with NO exceptions (superset of hygiene banned list;
+# the "state-of-the-art on a cited line" allowance does NOT reach titles).
+banned_in_title:
+  - progress in perovskite photovoltaics   # mimics Progress in Photovoltaics (Wiley)
+  - comprehensive
+  - novel
+  - unprecedented
+  - breakthrough
+  - cutting-edge
+  - state-of-the-art
+  - enhanced
+  - improved
+  - superior
+  - remarkable
+  - pivotal
+  - delve
+  - unlock
+  - showcase
+  - realm
+  - update
+
+# comparatives that REQUIRE title.slot_basis_key (Q50 rule 5)
+comparative_markers:
+  - rises
+  - rise
+  - lifts
+  - lift
+  - climbs
+  - falls
+  - lags
+  - stalls
+  - outpaces
+  - highest
+  - lowest
+  - record
+  - first
+  - more
+  - fewer
+  - better
+  - worse

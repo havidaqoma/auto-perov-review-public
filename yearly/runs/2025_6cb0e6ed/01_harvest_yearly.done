@@ -1,0 +1,18 @@
+{
+  "stage": "01_harvest_yearly",
+  "at": "2026-09-09T17:16:27",
+  "period": "2025",
+  "mode": "yearly_backfill",
+  "filter": "title_and_abstract.search:perovskite AND (\"solar cell\" OR photovoltaic)",
+  "sources": {
+    "openalex": 7931,
+    "s2": 0
+  },
+  "openalex_count": 7931,
+  "pages": 40,
+  "imprecise_dated": 1089,
+  "imprecise_pct": 13.7,
+  "with_abstract": 5062,
+  "with_abstract_pct": 63.8,
+  "s2_status": "unavailable"
+}

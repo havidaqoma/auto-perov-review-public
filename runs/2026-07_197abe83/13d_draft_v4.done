@@ -1,0 +1,42 @@
+{
+  "stage": "13d_draft_v4",
+  "at": "2026-09-08T22:14:22",
+  "words": {
+    "1": 183,
+    "2": 257,
+    "3": 596,
+    "4": 511,
+    "5": 518,
+    "6": 345,
+    "7": 310,
+    "8": 372
+  },
+  "abstract_words_raw": 297,
+  "total_words": 3092,
+  "sections": 8,
+  "map_sha256": "23cd8e1384f596c5",
+  "angle_index": 3,
+  "trend_deltas": {
+    "audit.corpus.certified.pct": {
+      "prev": 5.9,
+      "now": 8.3,
+      "prev_month": "2026-06"
+    },
+    "audit.corpus.efficiency_stated.pct": {
+      "prev": 48.1,
+      "now": 50.4,
+      "prev_month": "2026-06"
+    },
+    "corpus.n": {
+      "prev": 623,
+      "now": 648,
+      "prev_month": "2026-06"
+    },
+    "selection.n_depth": {
+      "prev": 167,
+      "now": 181,
+      "prev_month": "2026-06"
+    }
+  },
+  "writer": "agy/gemini-3.8-flash-high"
+}

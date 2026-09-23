@@ -1,0 +1,8 @@
+work_key,doi,device_class,t80_hours,stability_protocol,source_quotation
+10.1002/aenm.71514,10.1002/aenm.71514,single_junction,900,,retaining >80% of their initial efficiency after 900 h of continuous operation
+10.1002/anie.4221605,10.1002/anie.4221605,single_junction,,ISOS-L-2,
+10.1002/adfm.77805,10.1002/adfm.77805,all_perovskite_tandem,864,,"robust stability (T 80 = 864 h at 85°C, T 92 = 1000 h under maximum power point tracking (MPPT) at 30°C)"
+10.1002/anie.6548693,10.1002/anie.6548693,all_perovskite_tandem,1400,,an extrapolated T 80 lifetime exceeding 1400 h
+10.1038/s41467-026-76848-y,10.1038/s41467-026-76848-y,single_junction,,ISOS-L-1,
+10.1002/anie.2425823,10.1002/anie.2425823,single_junction,800,,maintained 80% after 800 h continuous illumination
+10.1002/solr.70454,10.1002/solr.70454,single_junction,720,,the optimized devices retain 80% of their initial efficiency after 720 h

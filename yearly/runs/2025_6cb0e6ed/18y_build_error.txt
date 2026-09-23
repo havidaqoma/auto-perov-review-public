@@ -1,0 +1,98 @@
+
+warning: accessing absolute path `perovskite_pv_yearly/runs/2025_6cb0e6ed/fig/F3a_effort_single_junction.pdf`; build may not be reproducible in other environments
+warning: texput.tex:451: Overfull \hbox (15.22725pt too wide) in paragraph at lines 451--451
+warning: accessing absolute path `perovskite_pv_yearly/runs/2025_6cb0e6ed/fig/F1a_frontier_single_junction.pdf`; build may not be reproducible in other environments
+warning: accessing absolute path `perovskite_pv_yearly/runs/2025_6cb0e6ed/fig/F4_stability_evidence.pdf`; build may not be reproducible in other environments
+warning: accessing absolute path `perovskite_pv_yearly/runs/2025_6cb0e6ed/fig/F1b_frontier_tandem.pdf`; build may not be reproducible in other environments
+warning: texput.tex:1046: 
+Missing character: There is no �� (U+03BC) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "μ" (0x3bc) in font "[lmroman10-regular]:mapping=tex-text;"
+warning:   you may need to load the `fontspec` package and use (e.g.) \setmainfont to
+warning:   choose a different font that covers the unrepresentable character(s)
+warning: accessing absolute path `perovskite_pv_yearly/runs/2025_6cb0e6ed/fig/F3b_effort_tandem.pdf`; build may not be reproducible in other environments
+warning: accessing absolute path `perovskite_pv_yearly/runs/2025_6cb0e6ed/fig/F2_area_penalty.pdf`; build may not be reproducible in other environments
+warning: texput.tex:1588: Overfull \hbox (15.22725pt too wide) in paragraph at lines 1588--1588
+warning: accessing absolute path `perovskite_pv_yearly/runs/2025_6cb0e6ed/fig/F5_frontier_trajectory.pdf`; build may not be reproducible in other environments
+warning: texput.tex:1726: Overfull \hbox (15.22725pt too wide) in paragraph at lines 1726--1726
+warning: accessing absolute path `perovskite_pv_yearly/runs/2025_6cb0e6ed/fig/F6_audit_trajectory.pdf`; build may not be reproducible in other environments
+warning: texput.tex:2115: 
+Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2120: Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2120: Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2156: Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2156: Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2156: Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2259: 
+Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2290: Missing character: There is no ��� (U+2082) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "₂" (0x2082) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2294: Missing character: There is no ��� (U+2082) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "₂" (0x2082) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2294: Missing character: There is no ��� (U+2086) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "₆" (0x2086) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2413: 
+Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2619: Underfull \hbox (badness 3250) in paragraph at lines 2614--2619
+warning: texput.tex:2619: Underfull \hbox (badness 1264) in paragraph at lines 2614--2619
+warning: texput.tex:2650: 
+Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2681: Missing character: There is no ��� (U+2083) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "₃" (0x2083) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:451: Overfull \hbox (15.22725pt too wide) in paragraph at lines 451--451
+warning: texput.tex:1046: 
+Missing character: There is no �� (U+03BC) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "μ" (0x3bc) in font "[lmroman10-regular]:mapping=tex-text;"
+warning:   you may need to load the `fontspec` package and use (e.g.) \setmainfont to
+warning:   choose a different font that covers the unrepresentable character(s)
+warning: texput.tex:1588: Overfull \hbox (15.22725pt too wide) in paragraph at lines 1588--1588
+warning: texput.tex:1726: Overfull \hbox (15.22725pt too wide) in paragraph at lines 1726--1726
+warning: texput.tex:2115: 
+Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2120: Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2120: Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2156: Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2156: Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2156: Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2259: 
+Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2290: Missing character: There is no ��� (U+2082) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "₂" (0x2082) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2294: Missing character: There is no ��� (U+2082) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "₂" (0x2082) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2294: Missing character: There is no ��� (U+2086) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "₆" (0x2086) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2413: 
+Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2619: Underfull \hbox (badness 3250) in paragraph at lines 2614--2619
+warning: texput.tex:2619: Underfull \hbox (badness 1264) in paragraph at lines 2614--2619
+warning: texput.tex:2650: 
+Missing character: There is no �� (U+03C0) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "π" (0x3c0) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: texput.tex:2681: Missing character: There is no ��� (U+2083) in font [lmroman10-regular]:mapping=tex-text;!
+warning: could not represent character "₃" (0x2083) in font "[lmroman10-regular]:mapping=tex-text;"
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+pandoc.EXE: perovskite_pv_yearly\manuscript\2025_yearly\manuscript_yearly.pdf: withBinaryFile: permission denied (Permission denied)
+HasCallStack backtrace:
+  collectBacktraces, called at libraries\ghc-internal\src\GHC\Internal\Exception.hs:169:13 in ghc-internal:GHC.Internal.Exception
+  toExceptionWithBacktrace, called at libraries\ghc-internal\src\GHC\Internal\IO.hs:260:11 in ghc-internal:GHC.Internal.IO
+  throwIO, called at libraries\ghc-internal\src\GHC\Internal\IO\Exception.hs:315:19 in ghc-internal:GHC.Internal.IO.Exception
+  ioException, called at libraries\ghc-internal\src\GHC\Internal\IO\Exception.hs:319:20 in ghc-internal:GHC.Internal.IO.Exception
+
+

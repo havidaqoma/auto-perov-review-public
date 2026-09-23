@@ -1,0 +1,30 @@
+{
+  "stage": "11y_figures_yearly",
+  "at": "2026-09-11T00:21:27",
+  "year": "2025",
+  "made": [
+    [
+      "F1a_frontier_single_junction.pdf",
+      "F1b_frontier_tandem.pdf"
+    ],
+    "F2_area_penalty.pdf",
+    [
+      "F3a_effort_single_junction.pdf",
+      "F3b_effort_tandem.pdf"
+    ],
+    "F4_stability_evidence.pdf",
+    "F5_frontier_trajectory.pdf",
+    "F6_audit_trajectory.pdf"
+  ],
+  "skipped": [],
+  "n_figures": 6,
+  "csv": [
+    "figure1a_frontier_single_junction.csv",
+    "figure1b_frontier_tandem.csv",
+    "figure2_area_penalty.csv",
+    "figure3_effort_map.csv",
+    "figure4_stability_evidence.csv",
+    "figure5_frontier_trajectory.csv",
+    "figure6_audit_trajectory.csv"
+  ]
+}

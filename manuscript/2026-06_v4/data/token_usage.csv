@@ -1,0 +1,38 @@
+month,attempt,shipped,stage,process,role,cli,model,batch,n_papers,words_out,tokens_in,tokens_out,cache_read,est_tokens_out,token_source,at
+2026-06,1,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,0,12,,6,7091,0,,reported,18:11:23
+2026-06,2,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,1,12,,6,7798,7627,,reported,18:12:42
+2026-06,3,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,2,12,,6,14520,7627,,reported,18:16:07
+2026-06,4,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,3,12,,6,14862,7627,,reported,18:18:41
+2026-06,5,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,4,12,,6,11546,7627,,reported,18:20:37
+2026-06,6,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,5,12,,6,14784,7627,,reported,18:23:55
+2026-06,7,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,6,12,,6,20099,7627,,reported,18:27:58
+2026-06,8,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,7,12,,6,10701,7627,,reported,18:29:42
+2026-06,9,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,8,12,,6,13569,7627,,reported,18:31:51
+2026-06,10,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,9,12,,6,13369,7627,,reported,18:34:01
+2026-06,11,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,10,12,,6,11555,7627,,reported,18:35:59
+2026-06,12,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,11,12,,6,12279,7627,,reported,18:38:00
+2026-06,13,no,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,12,12,,6,7849,7627,,reported,18:39:17
+2026-06,14,yes,09_cards,"structured claim extraction, anchor-bound",extractor,opencode,opencode-go/qwen3.8-flash,13,11,,6,3882,7627,,reported,18:39:59
+2026-06,1,yes,13d_s1,13d_s1,llm,agy,gemini-3.8-flash-high,,,184,,,,245,estimated,
+2026-06,1,no,13d_s2,13d_s2,llm,agy,gemini-3.8-flash-high,,,194,,,,258,estimated,
+2026-06,1,yes,13d_s3,13d_s3,llm,agy,gemini-3.8-flash-high,,,601,,,,799,estimated,
+2026-06,1,yes,13d_s4,13d_s4,llm,agy,gemini-3.8-flash-high,,,594,,,,790,estimated,
+2026-06,1,yes,13d_s5,13d_s5,llm,agy,gemini-3.8-flash-high,,,423,,,,563,estimated,
+2026-06,1,yes,13d_s6,13d_s6,llm,agy,gemini-3.8-flash-high,,,330,,,,439,estimated,
+2026-06,1,yes,13d_s7,13d_s7,llm,agy,gemini-3.8-flash-high,,,311,,,,414,estimated,
+2026-06,1,yes,13d_s8,13d_s8,llm,agy,gemini-3.8-flash-high,,,309,,,,411,estimated,
+2026-06,1,no,13d_abstract,13d_abstract,llm,agy,gemini-3.8-flash-high,,,295,,,,392,estimated,
+2026-06,2,yes,13d_s2,13d_s2,llm,agy,gemini-3.8-flash-high,,,235,,,,313,estimated,
+2026-06,2,yes,13d_abstract,13d_abstract,llm,agy,gemini-3.8-flash-high,,,306,,,,407,estimated,
+2026-06,1,yes,01_harvest,OpenAlex/S2/Crossref/arXiv harvest (no LLM),none,python,,,,,0,0,,0,deterministic,2026-09-08T18:05:08
+2026-06,1,yes,02_normalize,"DOI/title normalisation, language detect",none,python,,,,,0,0,,0,deterministic,2026-09-08T18:09:03
+2026-06,1,yes,04_venues,journal citation percentile,none,python,,,,,0,0,,0,deterministic,2026-09-08T18:09:39
+2026-06,1,yes,05_dedupe,work_key merge across sources,none,python,,,,,0,0,,0,deterministic,2026-09-08T18:09:03
+2026-06,1,yes,06_mechanism,mechanism axis + lens keyword scoring,none,python,,,,,0,0,,0,deterministic,2026-09-08T18:09:04
+2026-06,1,yes,08_subset,depth-tier selection + sensitivity draws,none,python,,,,,0,0,,0,deterministic,2026-09-08T18:09:39
+2026-06,1,yes,10_stats,every citable number,none,python,,,,,0,0,,0,deterministic,2026-09-08T18:09:39
+2026-06,1,yes,11_figures,figures plotted from stats/cards,none,python,,,,,0,0,,0,deterministic,2026-09-08T21:54:54
+2026-06,1,yes,18d_build_v4,format assembly + gates + PDF,none,python,,,,,0,0,,0,deterministic,2026-09-08T22:00:59
+2026-06,1,yes,19_si,supplementary information,none,python,,,,,0,0,,0,deterministic,2026-09-08T22:01:22
+2026-06,1,yes,20_arxiv,arXiv bundle + CSV data pack,none,python,,,,,0,0,,0,deterministic,2026-09-08T22:01:27
+2026-06,1,yes,21_tokens,21_tokens,none,python,,,,,0,0,,0,deterministic,2026-09-08T19:46:15

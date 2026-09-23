@@ -1,0 +1,25 @@
+{
+  "stage": "13y_draft_yearly",
+  "at": "2026-09-11T00:41:38",
+  "year": "2025",
+  "words": {
+    "1": 389,
+    "2": 772,
+    "3": 2042,
+    "4": 1263,
+    "5": 1377,
+    "6": 1297,
+    "7": 786,
+    "8": 571,
+    "9": 701
+  },
+  "abstract_words_raw": 485,
+  "total_words": 9198,
+  "sections": 9,
+  "map_sha256": "2382b7c2c99a0970",
+  "angle_index": 1,
+  "writer": "agy/gemini-3.8-flash-high",
+  "yoy": null,
+  "prior_yearly_issue": false,
+  "todo_next_issue": "port prior_closing_block() from the monthly project once a prior yearly issue exists"
+}

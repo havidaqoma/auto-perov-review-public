@@ -1,0 +1,30 @@
+{
+  "period": "2025",
+  "mode": "yearly_backfill",
+  "filter": "title_and_abstract.search:perovskite AND (\"solar cell\" OR photovoltaic)",
+  "sources": {
+    "openalex": 7931,
+    "s2": 0
+  },
+  "openalex_count": 7931,
+  "pages": 40,
+  "imprecise_dated": 1089,
+  "imprecise_pct": 13.7,
+  "by_month_day_precision": {
+    "2025-01": 480,
+    "2025-02": 478,
+    "2025-03": 544,
+    "2025-04": 614,
+    "2025-05": 607,
+    "2025-06": 567,
+    "2025-07": 576,
+    "2025-08": 555,
+    "2025-09": 550,
+    "2025-10": 621,
+    "2025-11": 600,
+    "2025-12": 650
+  },
+  "with_abstract": 5062,
+  "with_abstract_pct": 63.8,
+  "s2_status": "unavailable"
+}

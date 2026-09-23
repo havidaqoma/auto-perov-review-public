@@ -1,0 +1,14 @@
+{
+  "stage": "09_cards",
+  "at": "2026-09-09T20:20:12",
+  "n_cards": 164,
+  "n_claims": 428,
+  "nulled_anchor": 10,
+  "nulled_number": 0,
+  "dropped_papers": 0,
+  "median_claims": 3,
+  "with_pce": 105,
+  "with_certified": 21,
+  "tokens_in": 84,
+  "tokens_out": 157276
+}

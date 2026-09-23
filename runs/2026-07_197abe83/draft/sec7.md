@@ -1,0 +1,9 @@
+The reporting audit above shows that this month's abstracts state headline results far more often than the details needed to check them. Four gaps follow, and each admits a concrete change in reporting or research practice.
+
+The complete Voc, Jsc and FF triplet appears in 2.9% of abstracts, and device area in 9.2%. Without the triplet an efficiency cannot be decomposed or checked against device physics, and without the area a current cannot be told apart from a current density. The fix is a minimum record: journals and databases should require the triplet, the active area with its definition, and the scan conditions as machine-readable fields for every reported device, so that pooled analyses receive parameters rather than percentages alone.
+
+Independent certification is mentioned in 8.3% of abstracts, so almost every efficiency in the corpus is a self-report. A workable rule is that at least one champion device per paper be measured by an independent laboratory, that the laboratory be named, and that certified and uncertified values be printed as separate numbers instead of merged into one headline figure.
+
+An ISOS protocol label appears in 1.3% of abstracts. Stability claims therefore circulate without a shared testing frame, and lifetimes measured in different laboratories cannot be compared. The field already owns the ISOS vocabulary, so requiring a protocol code beside every stability number, in the abstract as well as in the experimental section, would turn degradation data into a cumulative record.
+
+Finally, the scale-up axis holds only 27 of 648 works, so the corpus is dominated by small laboratory cells and module-level behaviour stays unresolved. Funding calls and journal scopes that explicitly ask for larger-area validation, together with routine reporting of champion-device area, would let the community track efficiency against area instead of inferring scalability from the smallest cells on record.

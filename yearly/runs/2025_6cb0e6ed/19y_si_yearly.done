@@ -1,0 +1,32 @@
+{
+  "stage": "19y_si_yearly",
+  "at": "2026-09-14T21:10:52",
+  "year": "2025",
+  "pdf": "yearly\\manuscript\\2025_yearly\\supplementary_yearly.pdf",
+  "bytes": 127668,
+  "pages": 12,
+  "notes": 13,
+  "csv_files": [
+    "corpus_metadata.csv",
+    "extracted_claims.csv",
+    "monthly_series.csv",
+    "frontier_trajectory.csv",
+    "reporting_audit.csv",
+    "device_class_distribution.csv",
+    "axis_distribution.csv",
+    "figure1a_frontier_single_junction.csv",
+    "figure1b_frontier_tandem.csv",
+    "figure2_area_penalty.csv",
+    "figure3_effort_map.csv",
+    "figure4_stability_evidence.csv",
+    "figure5_frontier_trajectory.csv",
+    "figure6_audit_trajectory.csv",
+    "figureS1_corpus_funnel.csv",
+    "figureS2_reporting_audit.csv",
+    "table1_champions.csv",
+    "table2_reporting.csv",
+    "table3_evidence.csv"
+  ],
+  "cited_in_main_text": 170,
+  "references_listed": 170
+}

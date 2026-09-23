@@ -1,0 +1,57 @@
+{
+  "edition": "2026-H1",
+  "period": "January-June 2026",
+  "months": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06"
+  ],
+  "sources": {
+    "openalex": 3418,
+    "arxiv": 59,
+    "crossref": 1200,
+    "s2": 1417
+  },
+  "openalex_count": 3418,
+  "per_month_sources": {
+    "2026-01": {
+      "openalex": 488,
+      "arxiv": 8,
+      "crossref": 200,
+      "s2": 0
+    },
+    "2026-02": {
+      "openalex": 511,
+      "arxiv": 9,
+      "crossref": 200,
+      "s2": 392
+    },
+    "2026-03": {
+      "openalex": 569,
+      "arxiv": 9,
+      "crossref": 200,
+      "s2": 532
+    },
+    "2026-04": {
+      "openalex": 611,
+      "arxiv": 13,
+      "crossref": 200,
+      "s2": 493
+    },
+    "2026-05": {
+      "openalex": 595,
+      "arxiv": 9,
+      "crossref": 200,
+      "s2": 0
+    },
+    "2026-06": {
+      "openalex": 644,
+      "arxiv": 11,
+      "crossref": 200,
+      "s2": 0
+    }
+  }
+}

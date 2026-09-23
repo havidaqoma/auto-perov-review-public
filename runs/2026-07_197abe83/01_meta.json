@@ -1,0 +1,11 @@
+{
+  "month": "2026-07",
+  "sources": {
+    "openalex": 657,
+    "arxiv": 6,
+    "crossref": 200,
+    "s2": 549
+  },
+  "openalex_count": 657,
+  "pages": 7
+}

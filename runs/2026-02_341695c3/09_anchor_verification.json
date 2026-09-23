@@ -1,0 +1,18 @@
+{
+  "month": "2026-02",
+  "run": "2026-02_341695c3",
+  "cards": 131,
+  "anchors": 475,
+  "verbatim": 475,
+  "not_verbatim": 0,
+  "over_word_max": 0,
+  "number_missing_from_own_anchor": 0,
+  "cards_without_source_abstract": 0,
+  "status": "pass",
+  "samples": {
+    "not_verbatim": [],
+    "over_word_max": [],
+    "number_missing": [],
+    "no_abstract": []
+  }
+}

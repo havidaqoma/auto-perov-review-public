@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "study": "R1b intra-rater reliability",
+    "design": "same labeller, same instrument, 20 papers re-labelled",
+    "measures": "kappa is reported WITH PABAK and prevalence: under skew the kappa paradox drives kappa down while agreement stays high",
+    "limitation": "intra-rater reliability shows labels are STABLE, not CORRECT. A consistently mistaken labeller scores 1.0.",
+    "n_papers": 20,
+    "n_judgements": 100,
+    "n_agree": 99,
+    "overall_raw_agreement": 0.99,
+    "overall_kappa": 0.976,
+    "overall_kappa_ci95": [
+      0.919,
+      1.0
+    ],
+    "overall_pabak": 0.98,
+    "n_disagreements": 1,
+    "disagreements": [
+      {
+        "work_key": "10.1002/anie.3095986",
+        "flag": "states_area",
+        "first": "N",
+        "second": "Y"
+      }
+    ],
+    "per_flag": [
+      {
+        "flag": "states_pce",
+        "n": 20,
+        "agree": 20,
+        "raw_agreement": 1.0,
+        "kappa": 1.0,
+        "kappa_ci95": [
+          1.0,
+          1.0
+        ],
+        "pabak": 1.0,
+        "prevalence_Y": 0.65,
+        "degenerate": false
+      },
+      {
+        "flag": "states_certified",
+        "n": 20,
+        "agree": 20,
+        "raw_agreement": 1.0,
+        "kappa": 1.0,
+        "kappa_ci95": [
+          1.0,
+          1.0
+        ],
+        "pabak": 1.0,
+        "prevalence_Y": 0.3,
+        "degenerate": false
+      },
+      {
+        "flag": "states_area",
+        "n": 20,
+        "agree": 19,
+        "raw_agreement": 0.95,
+        "kappa": 0.8276,
+        "kappa_ci95": [
+          0.0,
+          1.0
+        ],
+        "pabak": 0.9,
+        "prevalence_Y": 0.15,
+        "degenerate": false
+      },
+      {
+        "flag": "states_t80",
+        "n": 20,
+        "agree": 20,
+        "raw_agreement": 1.0,
+        "kappa": 1.0,
+        "kappa_ci95": [
+          1.0,
+          1.0
+        ],
+        "pabak": 1.0,
+        "prevalence_Y": 0.25,
+        "degenerate": false
+      },
+      {
+        "flag": "isos_protocol",
+        "n": 20,
+        "agree": 20,
+        "raw_agreement": 1.0,
+        "kappa": 1.0,
+        "kappa_ci95": [
+          1.0,
+          1.0
+        ],
+        "pabak": 1.0,
+        "prevalence_Y": 0.1,
+        "degenerate": false
+      }
+    ]
+  },
+  "rows": [
+    {
+      "flag": "states_pce",
+      "n": 20,
+      "agree": 20,
+      "raw_agreement": 1.0,
+      "kappa": 1.0,
+      "kappa_ci95": [
+        1.0,
+        1.0
+      ],
+      "pabak": 1.0,
+      "prevalence_Y": 0.65,
+      "degenerate": false
+    },
+    {
+      "flag": "states_certified",
+      "n": 20,
+      "agree": 20,
+      "raw_agreement": 1.0,
+      "kappa": 1.0,
+      "kappa_ci95": [
+        1.0,
+        1.0
+      ],
+      "pabak": 1.0,
+      "prevalence_Y": 0.3,
+      "degenerate": false
+    },
+    {
+      "flag": "states_area",
+      "n": 20,
+      "agree": 19,
+      "raw_agreement": 0.95,
+      "kappa": 0.8276,
+      "kappa_ci95": [
+        0.0,
+        1.0
+      ],
+      "pabak": 0.9,
+      "prevalence_Y": 0.15,
+      "degenerate": false
+    },
+    {
+      "flag": "states_t80",
+      "n": 20,
+      "agree": 20,
+      "raw_agreement": 1.0,
+      "kappa": 1.0,
+      "kappa_ci95": [
+        1.0,
+        1.0
+      ],
+      "pabak": 1.0,
+      "prevalence_Y": 0.25,
+      "degenerate": false
+    },
+    {
+      "flag": "isos_protocol",
+      "n": 20,
+      "agree": 20,
+      "raw_agreement": 1.0,
+      "kappa": 1.0,
+      "kappa_ci95": [
+        1.0,
+        1.0
+      ],
+      "pabak": 1.0,
+      "prevalence_Y": 0.1,
+      "degenerate": false
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+# Q55 model reassignment (Havid 2026-09-07): agy WRITES, claude+opencode REVIEW.
+# The value is "option_a", not "A": tests/test_common.py asserts the long form,
+# and a hand-shortened value broke it silently at the v3->v4 cutover. Fixed the
+# config rather than the assertion (handbook 6.1).
+allocation: option_a
+writer_rule: strict            # Q40 survives: exactly one model writes prose
+
+# ---- generator / writer: agy (Gemini 3.8 Flash, high) ----
+generator:
+  cli: agy
+  model: gemini-3.8-flash-high
+  thinking: high
+  flags: "--dangerously-skip-permissions --print-timeout 900s"
+  fallback: null                # Q40/Q41: no fallback model, ever
+  fallback_policy: fail_closed
+  retries: 3                    # same model only
+
+# ---- extractor stays on the cheap high-volume model ----
+extractor:
+  cli: opencode
+  provider: opencode-go
+  model: qwen3.8-flash          # Havid 2026-09-08: reverted from
+                                # muse-spark-1.3-contributor to the model that
+                                # actually extracted July and August. The swap
+                                # had only ever passed a JSON-shape probe, never
+                                # a real 144-abstract run, so September would
+                                # have been its first live test on a shipping
+                                # issue. Reverting also clears the provenance
+                                # mismatch, since every card on record says
+                                # qwen3.8-flash.
+  variant: high                 # P-08: --variant high
+  passes: 1                     # Q53: abstracts are one chunk
+  temperature: 0
+
+# ---- reviewers / evaluators: BOTH are read-only ----
+reviewer_science:               # deep scientific review
+  cli: claude
+  model: opus                   # CLI SLUG. Bare "opus-5" 404s; do not "fix" this
+  display_name: Opus 5          # human-facing name, used in the AI declaration
+  effort: high                  # Q55: raised from medium, reviewer-only load
+  allowed_tools: "Read,Grep,Glob"
+  max_turns: 10
+reviewer_structure:             # format, gates, structure
+  cli: opencode
+  provider: opencode-go
+  model: qwen3.8-flash
+  variant: high
+
+adjudicator: {cli: opencode, provider: opencode-go, model: qwen3.8-flash, variant: high}
+entailment:  {cli: opencode, provider: opencode-go, model: qwen3.8-flash, variant: high, temperature: 0}
+
+orchestrator: hermes            # dispatch, gates, aggregation. Writes no prose.
+
+opus_stages: [17_review]        # opus now ONLY reviews; briefs move to agy
+max_opus_calls: 45
+opus_path: subscription
+max_review_rounds: 3
+min_rounds_sections: {"3": 2, "4": 2, "5": 2, "6": 2}

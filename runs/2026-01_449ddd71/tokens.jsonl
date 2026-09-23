@@ -1,0 +1,11 @@
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 0, "n_papers": 12, "tokens_in": 6, "tokens_out": 9894, "cache_read": 7627, "token_source": "reported", "at": "19:06:00"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 1, "n_papers": 12, "tokens_in": 6, "tokens_out": 15322, "cache_read": 7627, "token_source": "reported", "at": "19:09:36"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 2, "n_papers": 12, "tokens_in": 6, "tokens_out": 20907, "cache_read": 7627, "token_source": "reported", "at": "19:14:16"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 3, "n_papers": 12, "tokens_in": 6, "tokens_out": 12522, "cache_read": 7627, "token_source": "reported", "at": "19:16:55"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 4, "n_papers": 12, "tokens_in": 6, "tokens_out": 12614, "cache_read": 7627, "token_source": "reported", "at": "19:19:35"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 5, "n_papers": 12, "tokens_in": 6, "tokens_out": 14549, "cache_read": 7627, "token_source": "reported", "at": "19:22:33"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 6, "n_papers": 12, "tokens_in": 6, "tokens_out": 9732, "cache_read": 7627, "token_source": "reported", "at": "19:24:43"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 7, "n_papers": 12, "tokens_in": 6, "tokens_out": 11633, "cache_read": 7627, "token_source": "reported", "at": "19:27:16"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 8, "n_papers": 12, "tokens_in": 6, "tokens_out": 11843, "cache_read": 7627, "token_source": "reported", "at": "19:29:47"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 9, "n_papers": 12, "tokens_in": 6, "tokens_out": 9842, "cache_read": 7627, "token_source": "reported", "at": "19:31:55"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 10, "n_papers": 2, "tokens_in": 6, "tokens_out": 3062, "cache_read": 7627, "token_source": "reported", "at": "19:32:46"}

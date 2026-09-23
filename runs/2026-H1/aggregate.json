@@ -1,0 +1,112 @@
+{
+  "edition": "2026-H1",
+  "months": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06"
+  ],
+  "n_months": 6,
+  "corpus_n": 3328,
+  "cards_n": 872,
+  "cross_month_duplicates": 0,
+  "per_month": {
+    "2026-01": {
+      "corpus_n": 475,
+      "depth_n": 122,
+      "cards_n": 110,
+      "anchors_n": 396,
+      "axis_depth": {
+        "composition": 17,
+        "defects": 34,
+        "interfaces": 24,
+        "architecture": 17,
+        "stability": 17,
+        "scale_up": 13
+      }
+    },
+    "2026-02": {
+      "corpus_n": 499,
+      "depth_n": 131,
+      "cards_n": 131,
+      "anchors_n": 475,
+      "axis_depth": {
+        "composition": 26,
+        "defects": 28,
+        "interfaces": 28,
+        "architecture": 17,
+        "stability": 20,
+        "scale_up": 12
+      }
+    },
+    "2026-03": {
+      "corpus_n": 559,
+      "depth_n": 146,
+      "cards_n": 146,
+      "anchors_n": 535,
+      "axis_depth": {
+        "composition": 24,
+        "defects": 37,
+        "interfaces": 37,
+        "architecture": 19,
+        "stability": 17,
+        "scale_up": 12
+      }
+    },
+    "2026-04": {
+      "corpus_n": 589,
+      "depth_n": 164,
+      "cards_n": 164,
+      "anchors_n": 581,
+      "axis_depth": {
+        "composition": 16,
+        "defects": 42,
+        "interfaces": 47,
+        "architecture": 24,
+        "stability": 23,
+        "scale_up": 12
+      }
+    },
+    "2026-05": {
+      "corpus_n": 583,
+      "depth_n": 154,
+      "cards_n": 154,
+      "anchors_n": 560,
+      "axis_depth": {
+        "composition": 28,
+        "defects": 37,
+        "interfaces": 41,
+        "architecture": 19,
+        "stability": 17,
+        "scale_up": 12
+      }
+    },
+    "2026-06": {
+      "corpus_n": 623,
+      "depth_n": 167,
+      "cards_n": 167,
+      "anchors_n": 582,
+      "axis_depth": {
+        "composition": 41,
+        "defects": 46,
+        "interfaces": 30,
+        "architecture": 16,
+        "stability": 22,
+        "scale_up": 12
+      }
+    }
+  },
+  "extractors": {
+    "opencode-go/qwen3.8-flash": 872
+  },
+  "axis_mass": {
+    "defects": 223,
+    "interfaces": 206,
+    "composition": 151,
+    "architecture": 110,
+    "stability": 109,
+    "scale_up": 73
+  }
+}

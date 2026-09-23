@@ -1,0 +1,18 @@
+# Pinned execution environment for the reproducibility tiers.
+#
+# These are the versions that produced every artifact in this repository,
+# read from the interpreter that built them (2026-09-22) rather than typed
+# from memory. `python tools/check_env.py` compares the live interpreter
+# against this file and names every mismatch.
+#
+# Tier 0 (offline re-verification) needs only pyyaml + pytest + pymupdf.
+# numpy and matplotlib are needed to regenerate figures (tier 1).
+# requests is needed to re-harvest from the scholarly APIs (tier 2).
+
+pyyaml==6.0.3
+requests==2.33.0
+numpy==2.4.3
+matplotlib==3.11.1
+pymupdf==1.28.2
+pytest==9.1.1
+pydantic==2.13.4

@@ -1,0 +1,2853 @@
+{
+ "note": "Abstract TEXT is not redistributed (publisher copyright). Re-fetch with tools/rehydrate_abstracts.py, which rebuilds it from the OpenAlex inverted index and checks every row against abstract_sha256 below.",
+ "source_file": "01_abstracts.jsonl",
+ "rows": 569,
+ "total_chars": 541738,
+ "digest": [
+  {
+   "work_key": "10.1002/adsu.202600008",
+   "abstract_sha256": "bdd6912fe38c3522d2884c519f57c11ffda77e92d8131cd4bbe49b9354b905a7",
+   "abstract_chars": 1680
+  },
+  {
+   "work_key": "10.1016/j.joule.2025.102310",
+   "abstract_sha256": "f27e8aab42617d9ffcbdd5474bafd7c2f616d614c7d6088d9bb67d80b22be69a",
+   "abstract_chars": 1193
+  },
+  {
+   "work_key": "10.1016/j.mtcomm.2026.114968",
+   "abstract_sha256": "909b98679491d060e5d83ad6ce3d1f7d9de4044b46aecbd46c3e4dad2701c876",
+   "abstract_chars": 2513
+  },
+  {
+   "work_key": "10.1002/adom.202503660",
+   "abstract_sha256": "72927660df8e5aa0197937f4810c0d628341aaa16e75c0622f21bdfb1c307765",
+   "abstract_chars": 1646
+  },
+  {
+   "work_key": "10.1016/j.chempr.2026.102965",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/pssr.202500439",
+   "abstract_sha256": "29fec8b1bfa69c55e33f1bfca895673fd453fe9fcd2f446297ca22f5c1e56d52",
+   "abstract_chars": 1518
+  },
+  {
+   "work_key": "10.26599/emd.2026.9370089",
+   "abstract_sha256": "4927b8eb0f3198ec5762ac6b50081c5686e94c7ff008d312b33750157316558b",
+   "abstract_chars": 1552
+  },
+  {
+   "work_key": "10.1002/flm2.70045",
+   "abstract_sha256": "615665f9bcd3e315b1c96858e24068594f5143ea58ba8a000beb968c77632015",
+   "abstract_chars": 1308
+  },
+  {
+   "work_key": "10.1002/adts.202501547",
+   "abstract_sha256": "0cc8e2205aaa081486c9f75f83a3523ec6a02dd153f7f1a08a5c548e4b76544e",
+   "abstract_chars": 1512
+  },
+  {
+   "work_key": "10.1002/pssb.202500536",
+   "abstract_sha256": "c4ec48f8cf90f5351c4c2507de5ae03aa8a5009b0ebcd4cc6b61f946aa636bd3",
+   "abstract_chars": 1217
+  },
+  {
+   "work_key": "10.1002/smsc.202500603",
+   "abstract_sha256": "e769eb81195915806abdfa95df83608a8c8c85c3e2117e7821b602134ee46b31",
+   "abstract_chars": 1420
+  },
+  {
+   "work_key": "10.1002/adts.202501992",
+   "abstract_sha256": "901e81b6240ffb1d1f77b00239fceb21c5991bcd8e2e95ee132ba26b53bcf108",
+   "abstract_chars": 1543
+  },
+  {
+   "work_key": "10.1007/s42247-026-01351-5",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.3390/applnano7010008",
+   "abstract_sha256": "311b1b626f7547196480c41e434f01b9d2444b0ba3c38df729afb8437c1c3920",
+   "abstract_chars": 1650
+  },
+  {
+   "work_key": "10.1002/adom.202503615",
+   "abstract_sha256": "81a84b4ecdb53b341eacb4a62300d4d690f0aa528b4f1773b8482bce84e85a6d",
+   "abstract_chars": 1455
+  },
+  {
+   "work_key": "10.1002/aesr.202500489",
+   "abstract_sha256": "6a42eda196762ad54fc1e917a6636d7ca6efa8f1fb59c82efb6b44046eee56b3",
+   "abstract_chars": 1153
+  },
+  {
+   "work_key": "10.1002/ente.202501989",
+   "abstract_sha256": "defdcb7a90ba88b367e500700ddcf70101485470a28c3155ebef24f18db9c972",
+   "abstract_chars": 563
+  },
+  {
+   "work_key": "10.1016/j.mtcomm.2026.115046",
+   "abstract_sha256": "b40cbc8d3c85a7c79471998646a1bf736178fc37b3e49cd12b961b6a1df96f7b",
+   "abstract_chars": 974
+  },
+  {
+   "work_key": "10.1063/5.0319232",
+   "abstract_sha256": "a4faf32090727cf21ab864d440f6dc6c4de10eb8f5060a16e26e685826731ce0",
+   "abstract_chars": 899
+  },
+  {
+   "work_key": "10.1063/5.0282489",
+   "abstract_sha256": "5ff7206409ace1bc35ac4d29e354a15c3e5418174b8c52481b76f595b55c64f4",
+   "abstract_chars": 1176
+  },
+  {
+   "work_key": "10.1016/j.chempr.2026.102964",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/ente.202502149",
+   "abstract_sha256": "3202aed0e6410e82e7050cf3b240eb41612caf2b3136638de51b007ced9231cf",
+   "abstract_chars": 1147
+  },
+  {
+   "work_key": "10.1016/j.rio.2026.101031",
+   "abstract_sha256": "08193050de081cf9c4861c10e8790777c5da7104b0751607ebc3adb55ec121c5",
+   "abstract_chars": 2272
+  },
+  {
+   "work_key": "10.1002/cssc.202502574",
+   "abstract_sha256": "4a149c95b7afd355754971aa2a745605700a759d4c1d3ea1c8dcfc2bb2a1cc0e",
+   "abstract_chars": 920
+  },
+  {
+   "work_key": "10.1002/cssc.202502722",
+   "abstract_sha256": "31398f9b3e5d04413bc4ee56ab667b8f54f4921453d8ccb97333b464e5bbaa0d",
+   "abstract_chars": 1505
+  },
+  {
+   "work_key": "10.1016/j.rineng.2026.109889",
+   "abstract_sha256": "32a85223af86f539e5f446f5c4f649ea6477ecc6819c2c632269a0d768010f7f",
+   "abstract_chars": 2080
+  },
+  {
+   "work_key": "10.1016/j.actphy.2026.100278",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1134/s1990793125701611",
+   "abstract_sha256": "b8270c73ead10e58b83d098543870c0de35685c7a0fd606e52d4d74f07211878",
+   "abstract_chars": 997
+  },
+  {
+   "work_key": "10.1038/s41566-026-01871-w",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/adom.202503859",
+   "abstract_sha256": "3871ad02d59f7b696b4a88bb034958749fd51e6cfbc36b3434638b4a96cc6546",
+   "abstract_chars": 1425
+  },
+  {
+   "work_key": "10.1002/ente.202502035",
+   "abstract_sha256": "235a39155cf17549d446224f800fe7d509d4c97f76dcbf7bea9ad63d3a7f0122",
+   "abstract_chars": 1619
+  },
+  {
+   "work_key": "10.1002/adfm.74365",
+   "abstract_sha256": "0b4fda25a77fa1cd24c24a5444f37ce4a53f473c726457e8be949163689bf099",
+   "abstract_chars": 525
+  },
+  {
+   "work_key": "10.1002/ifm2.70013",
+   "abstract_sha256": "d3645ef1208995563e5ccc9d8221860c2ec211d6d85d43776240059d277aecc7",
+   "abstract_chars": 899
+  },
+  {
+   "work_key": "10.1007/s10854-026-16770-7",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1177/17475198261428588",
+   "abstract_sha256": "df2c9ef3de9092a298b3717a687f5f1853f3a6341efea3f778b536bce370d138",
+   "abstract_chars": 1545
+  },
+  {
+   "work_key": "10.1063/5.0303744",
+   "abstract_sha256": "6886e69483f5d12f9317ffd3ef55361f0fd08b92eb8e0dcbfd10a23773b8096f",
+   "abstract_chars": 1638
+  },
+  {
+   "work_key": "10.1002/adma.72616",
+   "abstract_sha256": "11772058b64b69a6da45043c551eac762ecf3dfc8623cdb068931b6f6dc03f54",
+   "abstract_chars": 642
+  },
+  {
+   "work_key": "10.1134/s1063782625600780",
+   "abstract_sha256": "1bc7a5a7ea6057f5b3bfe5aa7b27da541273c07d06511c0398fe1d66c05f982d",
+   "abstract_chars": 674
+  },
+  {
+   "work_key": "10.1002/slct.202505959",
+   "abstract_sha256": "cb909547c73db6b9b471fc4fba843d3ee17bfe1e8d86b2398c0ca169511a1599",
+   "abstract_chars": 981
+  },
+  {
+   "work_key": "10.33889/pmsl.2026.5.1.011",
+   "abstract_sha256": "e10657004896f4e0083b2e3a339d7bcfb8aa2da8e5df4df541093130edf7783a",
+   "abstract_chars": 989
+  },
+  {
+   "work_key": "10.1063/5.0306380",
+   "abstract_sha256": "985199ea740c898e2cf5451419967651a63ae67f35ea1ba8dd89e90af586ea0c",
+   "abstract_chars": 1169
+  },
+  {
+   "work_key": "10.1007/s42247-026-01391-x",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.3724/j.0253-3219.2026.hjs.49.250094",
+   "abstract_sha256": "e10faeffedc3f8f23b5585f5e0827183bb1b4180079e203f7c9a929e76e1d78c",
+   "abstract_chars": 2242
+  },
+  {
+   "work_key": "10.5755/j02.ms.42966",
+   "abstract_sha256": "51cd3221743bc288a1f3468f040fa703fd30b2c156070b9cea2f8deba2311af6",
+   "abstract_chars": 1357
+  },
+  {
+   "work_key": "10.1002/slct.202506653",
+   "abstract_sha256": "eed752001e70eaf9bf9c8bd17f8fe6fe1adeb2a32162b6edb504fcf4320dd1a2",
+   "abstract_chars": 988
+  },
+  {
+   "work_key": "10.1002/ente.202501926",
+   "abstract_sha256": "0018626cbd73cc6681048530c77922cb8251f1962fbddfcb011342f4d00dbdbd",
+   "abstract_chars": 2018
+  },
+  {
+   "work_key": "10.1002/flm2.70061",
+   "abstract_sha256": "d49bef02f3c8c2e9ef510de92cdf79b731128aa7034e2b6f29efe59f32953e8f",
+   "abstract_chars": 144
+  },
+  {
+   "work_key": "10.1002/csc3.70015",
+   "abstract_sha256": "8be80c3b1df2175389508074c7efedadfe6733b4ad4cb374749f1f563e1ad7b2",
+   "abstract_chars": 15890
+  },
+  {
+   "work_key": "10.59467/ijhc.2026.36.171",
+   "abstract_sha256": "0caeb0ec356d97d17e96fb8efe8e4b6f1a42de63ee079c4b06e212c59fb84fe8",
+   "abstract_chars": 1637
+  },
+  {
+   "work_key": "10.13044/j.sdnarema.d1.0662",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.17863/cam.129235",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1360/csb-2026-0277",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.17983/301702",
+   "abstract_sha256": "4e5ded0a8b985680324ea160ef1a400dbeae785b02b70296c32286b89c491bfa",
+   "abstract_chars": 84
+  },
+  {
+   "work_key": "10.1016/j.rio.2026.101118",
+   "abstract_sha256": "b45cc7e8e373a1374fb1f8bc1b732e39c10b45d43d5b45bdf4980c2f748fa74c",
+   "abstract_chars": 1924
+  },
+  {
+   "work_key": "10.1002/solr.70284",
+   "abstract_sha256": "eb35f090bda1c89621e8fb4c22496c7a77fe2854c11c85a1ce7fdb1b392e112a",
+   "abstract_chars": 1210
+  },
+  {
+   "work_key": "10.1016/j.scenem.2026.100036",
+   "abstract_sha256": "98112cf85fb44869fe9689d1433315852fb278fe7e6ad1d1c10439294657f821",
+   "abstract_chars": 1105
+  },
+  {
+   "work_key": "10.1016/j.mtchem.2026.103480",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s11426-025-3191-0",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.apsusc.2026.166497",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.5281/zenodo.18832812",
+   "abstract_sha256": "98cc21e9bf4dccfa2649977cc75bc4b01805e0c57049c44c65ea6fc8aac2c232",
+   "abstract_chars": 985
+  },
+  {
+   "work_key": "10.1038/s41598-026-42017-w",
+   "abstract_sha256": "9c0cba816e4a7e2babec870f90726245194b2c50146c23fdb372512bbe8e55f1",
+   "abstract_chars": 1516
+  },
+  {
+   "work_key": "10.5281/zenodo.18832813",
+   "abstract_sha256": "98cc21e9bf4dccfa2649977cc75bc4b01805e0c57049c44c65ea6fc8aac2c232",
+   "abstract_chars": 985
+  },
+  {
+   "work_key": "10.1007/s11814-026-00674-7",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s12596-026-03078-2",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acs.jpcc.5c07914",
+   "abstract_sha256": "cd41d414e344c1216e3a0f8f499fdbd56f2039f427a2a05ba02479d36a51f1e2",
+   "abstract_chars": 1542
+  },
+  {
+   "work_key": "10.1021/acs.jpcc.5c07914.s001",
+   "abstract_sha256": "5373ca8134efd18bd0a62b53b9b0d6d9ea19fd9bcbcccebf77969f3bdc619efc",
+   "abstract_chars": 1523
+  },
+  {
+   "work_key": "10.1016/j.jpcs.2026.113639",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.joule.2025.102314",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/adfm.202600017",
+   "abstract_sha256": "90400358eefc8a0d47595d5dab70efe53d5b156df1bbf07bbf0347aa40b5c2f1",
+   "abstract_chars": 1366
+  },
+  {
+   "work_key": "10.1016/j.cej.2026.174795",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1038/s41467-026-69687-4",
+   "abstract_sha256": "28bc89d69278c2eafbcfac4ac16f94d118ac44bf8bae35c146013f5c4c8c786c",
+   "abstract_chars": 1367
+  },
+  {
+   "work_key": "10.1021/acs.jpclett.6c00402",
+   "abstract_sha256": "faa246c06a65deefb3a21f56b263244376ba491fa0f95d46e2e2ffc143ca7c64",
+   "abstract_chars": 1009
+  },
+  {
+   "work_key": "10.1021/acsanm.5c04991",
+   "abstract_sha256": "f8337b6eb6a9633b7f061cf3009b154dbbd84ce147974882be4cd7c64ee3c238",
+   "abstract_chars": 892
+  },
+  {
+   "work_key": "10.1016/j.jechem.2026.02.033",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.actamat.2026.122070",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsaem.5c04004",
+   "abstract_sha256": "5bfec4fbfea5c979ca0f3f7b49e8eb1a7403bdc87a05210a5173eb37d827cca8",
+   "abstract_chars": 1771
+  },
+  {
+   "work_key": "10.58692/jotcsb.1890076",
+   "abstract_sha256": "4ad35c31e5d351215af66177c9595b355a97e654ee00953a826004a9e29248a3",
+   "abstract_chars": 1811
+  },
+  {
+   "work_key": "10.1021/acsaem.5c04080",
+   "abstract_sha256": "1f24c092430b524965e4b5b93b427b5760f93038de36063f9b7d915f20e4fb7a",
+   "abstract_chars": 1538
+  },
+  {
+   "work_key": "10.1021/acsaem.6c00321",
+   "abstract_sha256": "2bb4b82a27f3a26a38a2f205f8016ac00146787b8684d32be2806cb606eeb121",
+   "abstract_chars": 1441
+  },
+  {
+   "work_key": "10.1088/1402-4896/ae4cd3",
+   "abstract_sha256": "4b99bcb30344c615bf23d7db040720a334bc9157472e9e5c9bc5710906b807bc",
+   "abstract_chars": 2476
+  },
+  {
+   "work_key": "10.1016/j.jechem.2026.02.032",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.48550/arxiv.2603.02717",
+   "abstract_sha256": "9bea08a1444c96dab0f3a3d0f4baae47fe340c31fed093af85f9173381a06d09",
+   "abstract_chars": 1299
+  },
+  {
+   "work_key": "https://openalex.org/w7133570905",
+   "abstract_sha256": "9bea08a1444c96dab0f3a3d0f4baae47fe340c31fed093af85f9173381a06d09",
+   "abstract_chars": 1299
+  },
+  {
+   "work_key": "10.1021/acs.jpclett.6c00402.s001",
+   "abstract_sha256": "de668ce33dda909cd125b29f721713650260ad2bee40ae00404e0740f1b36ade",
+   "abstract_chars": 1005
+  },
+  {
+   "work_key": "10.69626/mse.2026.0054",
+   "abstract_sha256": "8518762707c3281310831405655be27710f56a8c1e1f62d71cd4d39f39507f8b",
+   "abstract_chars": 1306
+  },
+  {
+   "work_key": "10.1002/anie.5319815",
+   "abstract_sha256": "7a147b1a38cb648bd95e452fdb2b3056d41d44fcf2032fa09cddaad9123d2fa3",
+   "abstract_chars": 1467
+  },
+  {
+   "work_key": "10.1016/j.joule.2025.102315",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.joule.2025.102316",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s40820-026-02087-x",
+   "abstract_sha256": "3271568d764ea13d59e8519b7fcb87f82b511689aff5b744439a2e9cd564ab5b",
+   "abstract_chars": 1752
+  },
+  {
+   "work_key": "10.1002/solr.202500942",
+   "abstract_sha256": "7aa87332600205e1542adf6bc346bb052d2d84795d81ed043aa65b8713170a6d",
+   "abstract_chars": 1340
+  },
+  {
+   "work_key": "10.3390/cryst16030174",
+   "abstract_sha256": "855a0d66bc7073bd2802990773c00397a3b56ed017daaf8457ac8b9f48bab7dc",
+   "abstract_chars": 1183
+  },
+  {
+   "work_key": "10.1088/1402-4896/ae4dd0",
+   "abstract_sha256": "a8dd79805ae60f29920bc51256cf87b869c3472355720561b8e7f004af908630",
+   "abstract_chars": 1511
+  },
+  {
+   "work_key": "10.1016/j.physb.2026.418488",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1088/1402-4896/ae4dc6",
+   "abstract_sha256": "99217147ec1a6661bac8e86aff995845bb445df21ae719fb084dbf8e6d631a8d",
+   "abstract_chars": 1713
+  },
+  {
+   "work_key": "10.1002/adma.202522768",
+   "abstract_sha256": "9767e70f46ac030a58296ad205bd0dd569ed19ffcb38c0b2181c7a2eadedf5b8",
+   "abstract_chars": 1262
+  },
+  {
+   "work_key": "10.1002/adfm.74668",
+   "abstract_sha256": "edadfd1346b05f5048fa6ebcff18b7ea92a4fc0e470654f5196134257073a644",
+   "abstract_chars": 1591
+  },
+  {
+   "work_key": "10.1016/j.mattod.2026.103264",
+   "abstract_sha256": "39565c5d96d439b8870802c12b9e2ee161a8842681a0d8c44baa1e81e20eae37",
+   "abstract_chars": 1000
+  },
+  {
+   "work_key": "10.5281/zenodo.18859927",
+   "abstract_sha256": "95adea55632acdbe058bee21906581d6920416a3dde8762600fbb1a93a574e63",
+   "abstract_chars": 1635
+  },
+  {
+   "work_key": "10.5281/zenodo.18859926",
+   "abstract_sha256": "95adea55632acdbe058bee21906581d6920416a3dde8762600fbb1a93a574e63",
+   "abstract_chars": 1635
+  },
+  {
+   "work_key": "10.21203/rs.3.rs-8749975/v1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s40820-026-02105-y",
+   "abstract_sha256": "4820eae0b69b4e4fc7b5302a46b6de46e748a1bf2cb87c161d05959cef2e64cb",
+   "abstract_chars": 1589
+  },
+  {
+   "work_key": "10.1038/s44160-026-00996-8",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.inoche.2026.116367",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.25073/2588-1124/vnumap.5056",
+   "abstract_sha256": "d0096c5e47da8008463986709974b7752bc9e180199d8c14c606b34e6ab19c53",
+   "abstract_chars": 728
+  },
+  {
+   "work_key": "10.1016/j.cej.2026.174722",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/aenm.202506762",
+   "abstract_sha256": "8610406e09db4b3cbd08f9b542365dcdfb0992f4a929d32b59b9e60cb6c8354b",
+   "abstract_chars": 1409
+  },
+  {
+   "work_key": "10.1021/acsenergylett.5c03999",
+   "abstract_sha256": "1fb72172d0a4b30ac0bef2f2678fb0ec394daff1f4b39a49d9a4b58e567fa55b",
+   "abstract_chars": 1069
+  },
+  {
+   "work_key": "10.1016/j.joule.2026.102319",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s10825-026-02527-2",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/ange.5319815",
+   "abstract_sha256": "487123caaf47b947d0e4aa0f5d1e7a981f569cd2e75a4baa8e75f1b1967c189b",
+   "abstract_chars": 1476
+  },
+  {
+   "work_key": "10.1016/j.chempr.2026.102941",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.mser.2026.101202",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.optlastec.2026.115032",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/adfm.202531734",
+   "abstract_sha256": "3ed8032b6b50fe89117176215f099c01a951019651fb6f2af2e8d208f7023343",
+   "abstract_chars": 1378
+  },
+  {
+   "work_key": "10.1016/j.mssp.2026.110577",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.20944/preprints202603.0421.v1",
+   "abstract_sha256": "a1acc571200703ef2dd9655093a51098d7d38eed79e8c86555007e440c686314",
+   "abstract_chars": 1298
+  },
+  {
+   "work_key": "10.1016/j.cej.2026.174910",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.5281/zenodo.18877356",
+   "abstract_sha256": "d867ec6e390ce8d76fea31f6515e0d5301a2c5f8d0d36fc863868f08463072ff",
+   "abstract_chars": 1275
+  },
+  {
+   "work_key": "10.1016/j.surfin.2026.108919",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.nxmate.2026.101834",
+   "abstract_sha256": "323f2d0652342c8d096ebadd877f0de26fad678645893d0e6b9ecd30d51b3b98",
+   "abstract_chars": 2118
+  },
+  {
+   "work_key": "10.1021/acsami.5c24125",
+   "abstract_sha256": "9dce846ff0007bb4f4aa51574977e1f4a50940cbca50c554cf41fb06530732cd",
+   "abstract_chars": 1375
+  },
+  {
+   "work_key": "10.12688/f1000research.163955.1",
+   "abstract_sha256": "7d5f9377945313d0c018ab868af8209974761a1c7c566c0c5ad4b0bab32c284d",
+   "abstract_chars": 2219
+  },
+  {
+   "work_key": "10.5281/zenodo.18877355",
+   "abstract_sha256": "d867ec6e390ce8d76fea31f6515e0d5301a2c5f8d0d36fc863868f08463072ff",
+   "abstract_chars": 1275
+  },
+  {
+   "work_key": "10.65582/rrs.2026.007",
+   "abstract_sha256": "a962940b25124c3a205080a9d64b9938211d34bd9adfb8c17d09d28844f33241",
+   "abstract_chars": 1933
+  },
+  {
+   "work_key": "10.1002/pip.70077",
+   "abstract_sha256": "6c6b7c7e3871061b92f89516afbaa63afb68f8db786c87dc605a89cc423e4ca9",
+   "abstract_chars": 1238
+  },
+  {
+   "work_key": "10.1051/epjconf/202635601005/pdf",
+   "abstract_sha256": "799af3cd09066a22af7f66059909ea99c8dc347a09bf2fb0daed3b5592a3945f",
+   "abstract_chars": 1402
+  },
+  {
+   "work_key": "10.1021/acs.jpclett.6c00119",
+   "abstract_sha256": "4b1196c376cf9ee4dee7d10a40226bf2b6853295abbb76eb4a64b09f2059e7b9",
+   "abstract_chars": 1953
+  },
+  {
+   "work_key": "10.1038/s41467-026-70002-4",
+   "abstract_sha256": "d699d3905edbed84aa4b079fea1563bf2c3f435b8a263d97a8e19a2ee9a663cf",
+   "abstract_chars": 1178
+  },
+  {
+   "work_key": "10.1021/acsenergylett.5c04161",
+   "abstract_sha256": "d296f92dc95523ef7109ed6e84b5e2fa31e823eb305dae83a03bfb846f175933",
+   "abstract_chars": 1135
+  },
+  {
+   "work_key": "10.1021/acsenergylett.5c04172",
+   "abstract_sha256": "0314f9f96ee206dffed083b5dd2a4a63afe2d2c730605bf527bed9e4ec89e933",
+   "abstract_chars": 927
+  },
+  {
+   "work_key": "10.1002/anie.202520159",
+   "abstract_sha256": "9b6e317ba5f734741778526edfb58b77c4b04f73d9239993322cfe0fca689fd7",
+   "abstract_chars": 1626
+  },
+  {
+   "work_key": "10.1021/acsenergylett.5c04243",
+   "abstract_sha256": "e7792aafeb28fe07c011a678ede761a55646f776f2efc6cbe80ded456883c232",
+   "abstract_chars": 1174
+  },
+  {
+   "work_key": "10.1002/adfm.74689",
+   "abstract_sha256": "ef10b125fedebe8717f4700238b2891cdd607f838884840ce1cc8ca41de540f0",
+   "abstract_chars": 1496
+  },
+  {
+   "work_key": "10.1142/s0217979226501250",
+   "abstract_sha256": "51a743ea3a24c5c9a7778c184b2064340e0e9c944ac760f4832e37d627b1d3b1",
+   "abstract_chars": 1244
+  },
+  {
+   "work_key": "10.3390/coatings16030322",
+   "abstract_sha256": "55d02011e43d1b69fd2c0bfc71b9cca32daf460315bac95ce27a85d469492d71",
+   "abstract_chars": 1243
+  },
+  {
+   "work_key": "10.1016/j.jcis.2026.140227",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/smll.202514519",
+   "abstract_sha256": "66e94b06444bf7614c40a60d88107e91f385cbd980e080d69526b1a4f088a2e4",
+   "abstract_chars": 1276
+  },
+  {
+   "work_key": "10.1021/acs.nanolett.5c06029",
+   "abstract_sha256": "a7701347543ca3496a2fc3c932ab039986bef51d074dc41cfde5427caaf1cc62",
+   "abstract_chars": 1150
+  },
+  {
+   "work_key": "10.1002/solr.70293",
+   "abstract_sha256": "863585e31517a6583703007a3d17a136384908a3e3991c0eedac7ec6f0f8812c",
+   "abstract_chars": 1476
+  },
+  {
+   "work_key": "10.1016/j.cej.2026.174948",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.esci.2026.100563",
+   "abstract_sha256": "20b0c103059ade698fbbd32ae8fa78bd8f0430fe21156fb95e3231b419ab9ff1",
+   "abstract_chars": 1518
+  },
+  {
+   "work_key": "10.1016/j.solmat.2026.114254",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.nxmate.2026.101828",
+   "abstract_sha256": "6e3608594a0948082f3c5d4d05b7889923de7b9f7dfa398b9bb12c5382437bd2",
+   "abstract_chars": 1999
+  },
+  {
+   "work_key": "10.1016/j.inoche.2026.116439",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.rinp.2026.108618",
+   "abstract_sha256": "856cd790a064feb7ef6961ef1af10bb02fcc3a3d15c85a96dcb35be2f2556083",
+   "abstract_chars": 1977
+  },
+  {
+   "work_key": "10.1016/j.physb.2026.418462",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/aenm.70814",
+   "abstract_sha256": "b8a1d3310b6a5e6b37517cd2e052cf8b162833aae3dfe089daac37a9b0ed0688",
+   "abstract_chars": 1353
+  },
+  {
+   "work_key": "10.1016/j.rser.2026.116884",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.22399/ijcesen.5020",
+   "abstract_sha256": "926f4abf40d82a811b4faf2ba7cd6533c611c4da56845a9099dc53b0c8793cf2",
+   "abstract_chars": 1061
+  },
+  {
+   "work_key": "10.48550/arxiv.2603.07829",
+   "abstract_sha256": "1eab76213ceb017080fdb91905b146754b32f4b412be04224086cce283d47cbc",
+   "abstract_chars": 1303
+  },
+  {
+   "work_key": "https://openalex.org/w7134860679",
+   "abstract_sha256": "1eab76213ceb017080fdb91905b146754b32f4b412be04224086cce283d47cbc",
+   "abstract_chars": 1303
+  },
+  {
+   "work_key": "10.1002/adma.72738",
+   "abstract_sha256": "e09df3e2c5716f87de5c6105e2a387ef9c37229d1273d18161f5a45c678aaa92",
+   "abstract_chars": 1219
+  },
+  {
+   "work_key": "10.1038/s41560-026-01969-z",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1038/s41467-026-70293-7",
+   "abstract_sha256": "a15eaed59507ebdb976bd018ada7241548ad8e0bb4cf63a64c248ad787c895a7",
+   "abstract_chars": 1122
+  },
+  {
+   "work_key": "10.1007/s44291-026-00182-2",
+   "abstract_sha256": "84316cb9e578d3a00e3659c25e80e518698c88e99d786ae77eb89ee821db3420",
+   "abstract_chars": 1235
+  },
+  {
+   "work_key": "10.1002/adma.202523630",
+   "abstract_sha256": "506393993768f3d80aaae6e8c7be6baa088e9c7171c11f8aaf4da7d3d78e041a",
+   "abstract_chars": 1405
+  },
+  {
+   "work_key": "10.1002/adma.72756",
+   "abstract_sha256": "dc81fb886715c1cc6d3074bd7157f89990ed32c5f52bdcb9930a2923f6c42319",
+   "abstract_chars": 1462
+  },
+  {
+   "work_key": "10.3390/ma19051040",
+   "abstract_sha256": "0effb3521f35bfe35c57a14322a33476230951c76f5a31b42b540c1f1a9122fe",
+   "abstract_chars": 1539
+  },
+  {
+   "work_key": "10.1002/smll.202514249",
+   "abstract_sha256": "f8d516596f3523d57c1fd3c80481f004748292ca1d949bb18caf6dfb8e8f192d",
+   "abstract_chars": 1109
+  },
+  {
+   "work_key": "10.1016/j.matdes.2026.115812",
+   "abstract_sha256": "3f9dd0274020ba288af48b10140ea605b94b4b5b4573b07254f5f94becc0f69f",
+   "abstract_chars": 1906
+  },
+  {
+   "work_key": "10.5281/zenodo.18919485",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/ange.202520159",
+   "abstract_sha256": "9b6e317ba5f734741778526edfb58b77c4b04f73d9239993322cfe0fca689fd7",
+   "abstract_chars": 1626
+  },
+  {
+   "work_key": "10.5281/zenodo.18919486",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1063/5.0297564",
+   "abstract_sha256": "ad1788a3961f37a49ec6ef636d8d537496a7fd6673afb44476e4e6e7911749a6",
+   "abstract_chars": 1509
+  },
+  {
+   "work_key": "10.1002/eem2.70327",
+   "abstract_sha256": "4c00b764ac29e5bfcb9ee97e8be39820c114d1e97624881e5a010a180e545768",
+   "abstract_chars": 1382
+  },
+  {
+   "work_key": "10.1016/j.nanoen.2026.111863",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s11082-026-08753-z",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.solmat.2026.114270",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsaem.5c04098",
+   "abstract_sha256": "642773931a3f67233335f1782993fc8f7c7bff6e04afed0aebdd95b58e5c098d",
+   "abstract_chars": 1232
+  },
+  {
+   "work_key": "10.31349/revmexfis.72.021602",
+   "abstract_sha256": "af91d973721a57c10d28f1586cfe044b0099d2ca4fc8fa27c369a6c672a3c7c1",
+   "abstract_chars": 1372
+  },
+  {
+   "work_key": "10.1063/5.0315803",
+   "abstract_sha256": "1c4cae7bcc5859b9ddf1207cb7b009978fc9132f8b541e4696b044069604f8c5",
+   "abstract_chars": 976
+  },
+  {
+   "work_key": "10.53941/mm.2026.100002",
+   "abstract_sha256": "b0550fbd0fd6847ab0e3436e3898111bac0fab7cee478b217965ce30de23fff1",
+   "abstract_chars": 1562
+  },
+  {
+   "work_key": "10.1007/s00894-026-06669-9",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.nxener.2026.100554",
+   "abstract_sha256": "a368417d94dfb7ec39c3031af72ca4563a75620171d14f1c2f6c961c712a44ac",
+   "abstract_chars": 2206
+  },
+  {
+   "work_key": "10.1016/j.nanoen.2026.111867",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1186/s40712-026-00426-9",
+   "abstract_sha256": "3e06936d3eb56da20db98a5cfc2e4b0822d682e41f82221d87b3b3c927ec4730",
+   "abstract_chars": 1425
+  },
+  {
+   "work_key": "10.1016/j.jechem.2026.02.050",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/advs.202524311",
+   "abstract_sha256": "05b7bef02afd10d7cc05ca72add34cd58c6c037a71272da773ee561389b05a2b",
+   "abstract_chars": 1496
+  },
+  {
+   "work_key": "10.1002/adfm.74817",
+   "abstract_sha256": "511945c8ac8666547b2cedba4ceb3713076af9770dd77aafac316eed792fa713",
+   "abstract_chars": 1495
+  },
+  {
+   "work_key": "10.5281/zenodo.18692025",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsami.6c01551",
+   "abstract_sha256": "72a882f5726d2197516788f174e3016921b75a5f2cd3055760b86432ad5db406",
+   "abstract_chars": 1675
+  },
+  {
+   "work_key": "10.1016/j.jechem.2026.02.049",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1088/1361-6528/ae4fc6",
+   "abstract_sha256": "3107ebdc4a20869d8d6cfa3626937f8be2f761d1f7a587a2fd770a9b0811655c",
+   "abstract_chars": 1501
+  },
+  {
+   "work_key": "10.1002/lpor.202501531",
+   "abstract_sha256": "c9f727c07216285ba85fc4047b2e51dae5917d91ba2d0c30d0227d63d771592f",
+   "abstract_chars": 1635
+  },
+  {
+   "work_key": "10.1002/solr.202500870",
+   "abstract_sha256": "300c804cc63b8b030080bf02699c0e79f62a6ef40dca169ec5e3972875dee8b6",
+   "abstract_chars": 1132
+  },
+  {
+   "work_key": "10.1149/1945-7111/ae502e",
+   "abstract_sha256": "77fbdb707f42ab4db3123c4c90aae109f11587363b8d81408bd3f77f5e3021bc",
+   "abstract_chars": 1447
+  },
+  {
+   "work_key": "10.5281/zenodo.18950490",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.48550/arxiv.2603.09063",
+   "abstract_sha256": "0c84d1d726036865c3530a08de5bda00eddefb7e8aa80ef14b7e9eceb459983d",
+   "abstract_chars": 1092
+  },
+  {
+   "work_key": "10.5281/zenodo.18950492",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.70382/ajsede.v11i5.028",
+   "abstract_sha256": "8ce2ca42b83817b95415cf077ed02cba9fb21f3ae5dd8cbb316e4d9ef62a6513",
+   "abstract_chars": 2275
+  },
+  {
+   "work_key": "10.21203/rs.3.rs-8839542/v1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.nanoen.2026.111878",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "https://openalex.org/w7134991964",
+   "abstract_sha256": "0c84d1d726036865c3530a08de5bda00eddefb7e8aa80ef14b7e9eceb459983d",
+   "abstract_chars": 1092
+  },
+  {
+   "work_key": "10.5281/zenodo.18995292",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.5281/zenodo.20958297",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.3390/ijms27062561",
+   "abstract_sha256": "f1f258d5de21d60fadf0b65f0ec63ff1085be1a38eb25395c5662089238d8328",
+   "abstract_chars": 1510
+  },
+  {
+   "work_key": "10.1038/s41560-026-02007-8",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/adfm.202532048",
+   "abstract_sha256": "378da6095c9c2fb37586b38cc58350918ede24c6b0ffde638470041a4cea3b5d",
+   "abstract_chars": 1005
+  },
+  {
+   "work_key": "10.1002/aenm.202504811",
+   "abstract_sha256": "1e29c6b1cd056dedd3e483ae852a65664083c5fd0f72a648f592d5c3d80fc260",
+   "abstract_chars": 1517
+  },
+  {
+   "work_key": "10.1021/acsenergylett.5c04082",
+   "abstract_sha256": "e14650ed4a0675566ca9da420319fa29c5097383abb2f502888b23d6f5455cf9",
+   "abstract_chars": 1051
+  },
+  {
+   "work_key": "10.1002/adfm.202531060",
+   "abstract_sha256": "34fcbd0fee8a05b16a24fc1a7a6a2c7879f44015b7e9fcae9a975927b91a2a1b",
+   "abstract_chars": 1360
+  },
+  {
+   "work_key": "10.1016/j.cej.2026.175135",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acs.jpclett.6c00054",
+   "abstract_sha256": "a31276e4de4df5210e57f398e24d4cad4d7b6801862c24c460f536849eacf6e8",
+   "abstract_chars": 1129
+  },
+  {
+   "work_key": "10.3390/coatings16030351",
+   "abstract_sha256": "cd3226348debd20a7ae5d96c053c41fca1777e7288e6f00b6b80122f6614a4f0",
+   "abstract_chars": 860
+  },
+  {
+   "work_key": "10.1016/j.cej.2026.175142",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsomega.5c12243",
+   "abstract_sha256": "48f1eb8302b1d43a99ef68d289ab424f107406552bea91de5650db99f9dbb622",
+   "abstract_chars": 1744
+  },
+  {
+   "work_key": "10.6084/m9.figshare.31659529.v1",
+   "abstract_sha256": "9a9e8db9af1db749a4d15348170ad2ac71e281cab115cfcf77fdb3419258c789",
+   "abstract_chars": 1224
+  },
+  {
+   "work_key": "10.1002/adfm.202532205",
+   "abstract_sha256": "d123a732cb64ba5c6085c3a91369269368cdb1342798ac0bcc62d115be0bab5c",
+   "abstract_chars": 1480
+  },
+  {
+   "work_key": "10.1016/j.jphotochem.2026.117193",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.6084/m9.figshare.31659529",
+   "abstract_sha256": "9a9e8db9af1db749a4d15348170ad2ac71e281cab115cfcf77fdb3419258c789",
+   "abstract_chars": 1224
+  },
+  {
+   "work_key": "10.26434/chemrxiv.15000819/v1",
+   "abstract_sha256": "69659ceaf49ec0f5a5cc78f35d2d0ff5a13def53d0374d126102e86c2b4ce690",
+   "abstract_chars": 1278
+  },
+  {
+   "work_key": "10.21203/rs.3.rs-8951219/v1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsaem.6c00049",
+   "abstract_sha256": "70c1d6476059301510a05119935d981faa447e52222c2591d90c71bf23998dc6",
+   "abstract_chars": 1527
+  },
+  {
+   "work_key": "10.1088/1402-4896/ae5096",
+   "abstract_sha256": "caffc48b3c9a06a0aad66a97f8b1114507ad80eaa44c9f0abb797d9924c94b8b",
+   "abstract_chars": 2426
+  },
+  {
+   "work_key": "10.1360/sspma-2025-0488",
+   "abstract_sha256": "8ac54193a6c0e909a37f456ed53b9d237e762f1b6801204e20c875aa04c353da",
+   "abstract_chars": 2114
+  },
+  {
+   "work_key": "10.1016/j.physb.2026.418517",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/inf2.70132",
+   "abstract_sha256": "873e7fbedafd4a2d4e72163ed0a30d32e400b02daf40e8e99d87f718d7fa2171",
+   "abstract_chars": 1439
+  },
+  {
+   "work_key": "10.1007/s11664-026-12774-5",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsami.6c00026",
+   "abstract_sha256": "b7853181caae657c8ddd2efc64cd21c572f8d0354c6dac0beeaafb454a13a8d5",
+   "abstract_chars": 1345
+  },
+  {
+   "work_key": "10.3390/su18062796",
+   "abstract_sha256": "13d1b6bd7081099f6c27cc46bb226ac03c00e714d95d6462817567c97eaabbc4",
+   "abstract_chars": 1674
+  },
+  {
+   "work_key": "10.3390/en19061432",
+   "abstract_sha256": "d9b009c8f2ed5842961cf84753b9701fe28855ee16c8b40616eafdf198695503",
+   "abstract_chars": 1436
+  },
+  {
+   "work_key": "10.1016/j.scib.2026.03.022",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/aenm.202506423",
+   "abstract_sha256": "0d1f3a7e856d3cfaf6305244287e0ba08c0d99fdeedb8f4088e1ae8509aae558",
+   "abstract_chars": 1862
+  },
+  {
+   "work_key": "10.1038/s41467-026-70022-0",
+   "abstract_sha256": "b23849cefa82c319c59a5c7bf6c22b667a87d1d8d324347aebd9475f54043575",
+   "abstract_chars": 1503
+  },
+  {
+   "work_key": "10.1016/j.mtener.2026.102254",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1038/s41699-026-00684-3",
+   "abstract_sha256": "4fa04c5b25b8898b576d3428dd678aeb093a15bfe6e8f5baa8097ba8cff82a06",
+   "abstract_chars": 1572
+  },
+  {
+   "work_key": "10.1364/oe.588400",
+   "abstract_sha256": "7efdb2fa408a48ad02a4102fc5e47dde21e53ae4f38c5c96e23a76eb52ff41dd",
+   "abstract_chars": 1668
+  },
+  {
+   "work_key": "10.3390/nano16060350",
+   "abstract_sha256": "ee66399127af3ace970b98a8a378d6d0a6c729f2fb0e5db6690db9a257fd3649",
+   "abstract_chars": 751
+  },
+  {
+   "work_key": "10.1016/j.solener.2026.114517",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.cej.2026.175163",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsami.5c25764",
+   "abstract_sha256": "bfb8f2f76ad92fa8a99b2573d515d7147ee7df8dd4a4ddc2cb44f4be8304ca4a",
+   "abstract_chars": 1660
+  },
+  {
+   "work_key": "10.1088/1402-4896/ae515a",
+   "abstract_sha256": "7d4a7c9490b7bb9d169a47b1a47a3bca8d70bb416a21c17de1f195daf9a6c0a9",
+   "abstract_chars": 1395
+  },
+  {
+   "work_key": "10.1007/s11664-026-12751-y",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1038/s41560-026-01965-3",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/anie.2660254",
+   "abstract_sha256": "af6ed9e7bef2e43ea8beb1cc18ed7fa46c47019437eb950e70b2db56f22e5b94",
+   "abstract_chars": 1543
+  },
+  {
+   "work_key": "10.1002/aenm.70806",
+   "abstract_sha256": "2809c414bab3037d97191739c97587bbbf7bb650f5c458135cccc1bca78319b7",
+   "abstract_chars": 1612
+  },
+  {
+   "work_key": "10.1016/j.egyai.2026.100716",
+   "abstract_sha256": "7f118746e892f35783a3403d6a876df7bc53c59a2d95065ffa7e2f69bfffd4f7",
+   "abstract_chars": 1675
+  },
+  {
+   "work_key": "10.1021/acsanm.5c05470",
+   "abstract_sha256": "a55b28e056163f46e03678d0cd0fa5a3bd8ce1838561f5abf16892b224df4f10",
+   "abstract_chars": 1359
+  },
+  {
+   "work_key": "10.1021/acsenergylett.6c00156",
+   "abstract_sha256": "84e5ce9561f9e3d22e7be0f0c494fdaa92e5415ddc56595e22b93084ef798d23",
+   "abstract_chars": 298
+  },
+  {
+   "work_key": "10.1002/adfm.74893",
+   "abstract_sha256": "2292b3894510f86b2847a9465b28f3a5c4f9d0e8b9e5cd61154f32c5a4a070c2",
+   "abstract_chars": 1802
+  },
+  {
+   "work_key": "10.1021/acsami.5c21155",
+   "abstract_sha256": "d5e5f40b156e69ff1df48b5791ce60a32600ef7859fd5785f5eb9b44dfb6eebc",
+   "abstract_chars": 1323
+  },
+  {
+   "work_key": "10.1088/1402-4896/ae51cb",
+   "abstract_sha256": "845a8f8ed3edefa2be9e26fa8ca3e60f55abab5262a661ef6365611dfc1af284",
+   "abstract_chars": 1731
+  },
+  {
+   "work_key": "10.1002/adfm.74903",
+   "abstract_sha256": "aa6bba58a8acf634a89f7b5a6429925f179c9f2c78761d187d35968163595147",
+   "abstract_chars": 1383
+  },
+  {
+   "work_key": "10.1002/aenm.202506760",
+   "abstract_sha256": "95aa31cbe37db7b2091fd5d9b37d16a6fe9af994549c3ed7f940a4b62f51be99",
+   "abstract_chars": 1623
+  },
+  {
+   "work_key": "10.20517/ss.2025.128",
+   "abstract_sha256": "a47fafd18b75f2429c91300abb45cca723d45d9d484535bb7188f80ed9566aa6",
+   "abstract_chars": 1123
+  },
+  {
+   "work_key": "10.1002/adfm.74916",
+   "abstract_sha256": "b50cd85f1ae5f109bf029f1855be6f03d218b83502dcaaab6ab4142c96d76b5a",
+   "abstract_chars": 1156
+  },
+  {
+   "work_key": "10.1016/j.jpcs.2026.113630",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsami.5c23764",
+   "abstract_sha256": "7174da16db8d3bc98babffed504283c4cb2310d088c1bb3a764fd28afad723af",
+   "abstract_chars": 1734
+  },
+  {
+   "work_key": "10.1007/s11664-026-12759-4",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/ange.2660254",
+   "abstract_sha256": "69deb94916a891ca98c661e361deaf407110afc1e72eeb3d7438f3f8460b222e",
+   "abstract_chars": 1557
+  },
+  {
+   "work_key": "10.1016/j.nxmate.2026.101878",
+   "abstract_sha256": "70a23499d8e2a765754ae9e16e7cdb35732846263a3c49c7112d19c356cedfe9",
+   "abstract_chars": 1022
+  },
+  {
+   "work_key": "10.26434/chemrxiv.15000872/v1",
+   "abstract_sha256": "2c36f96e70109938dad546a080af56c3e922f0e0af14cebc2d45918ef19bff72",
+   "abstract_chars": 1002
+  },
+  {
+   "work_key": "10.5281/zenodo.18993622",
+   "abstract_sha256": "792e09fdf2d8788a6e69a4d2edd1685012821d8dc6546752e7d74e5ec50816bb",
+   "abstract_chars": 2553
+  },
+  {
+   "work_key": "10.5281/zenodo.18993621",
+   "abstract_sha256": "792e09fdf2d8788a6e69a4d2edd1685012821d8dc6546752e7d74e5ec50816bb",
+   "abstract_chars": 2553
+  },
+  {
+   "work_key": "10.1021/acsami.5c20743",
+   "abstract_sha256": "15cbf4f81c0d321927703bc1246ed7fddca0c888533c61e09c91f4a7646a6790",
+   "abstract_chars": 1682
+  },
+  {
+   "work_key": "10.1080/30652669.2026.2643181",
+   "abstract_sha256": "a641bfbc861a25daa6b348a8d40f2ee474c0386fe6cb2397a68bceb265befeb5",
+   "abstract_chars": 1231
+  },
+  {
+   "work_key": "10.48550/arxiv.2603.12857",
+   "abstract_sha256": "19959efc606cd3ced605b82578abda02d2d8da05397a5f5746c7e9b9d15b365b",
+   "abstract_chars": 1547
+  },
+  {
+   "work_key": "https://openalex.org/w7138824988",
+   "abstract_sha256": "19959efc606cd3ced605b82578abda02d2d8da05397a5f5746c7e9b9d15b365b",
+   "abstract_chars": 1547
+  },
+  {
+   "work_key": "10.1002/adfm.74964",
+   "abstract_sha256": "06197e80324a4cb98aabff20769209ba447abd3b6413bdae4371ab628d901e41",
+   "abstract_chars": 1213
+  },
+  {
+   "work_key": "10.1002/adma.72755",
+   "abstract_sha256": "11df1f0e38466648784d12e34e14a4c0b9bea06b910fb74ee75b7a46a8e4c1aa",
+   "abstract_chars": 1410
+  },
+  {
+   "work_key": "10.1002/lpor.202503159",
+   "abstract_sha256": "f1ef1acc86340d6123771f24cc4eddfa7b8447468d1aca0d956aa69ec2014311",
+   "abstract_chars": 1022
+  },
+  {
+   "work_key": "10.1007/s11664-026-12786-1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.3390/ijms27062668",
+   "abstract_sha256": "ffe0eb5c1cf3fa0d4235eb1088be11123b7ea8c28ee4d0496df390d32b393b9a",
+   "abstract_chars": 1386
+  },
+  {
+   "work_key": "10.1002/adfm.74914",
+   "abstract_sha256": "ccad3146fe22856cbdab6e89955098255f241f17f0a3297138964bc57429bef7",
+   "abstract_chars": 1600
+  },
+  {
+   "work_key": "10.1016/j.mtener.2026.102255",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/adma.202520432",
+   "abstract_sha256": "4665ef9796aa73cbf1538a37104b8eb0c979be8b325d0daa812e0a8384304711",
+   "abstract_chars": 1238
+  },
+  {
+   "work_key": "10.1002/bkcs.70129",
+   "abstract_sha256": "04aa4641235a92da013c0aaa5cede8848e8a840c20a41678939708e90112227c",
+   "abstract_chars": 1587
+  },
+  {
+   "work_key": "10.1007/s11664-026-12783-4",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.mtchem.2026.103525",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsaem.6c00375",
+   "abstract_sha256": "b6bba75092fd4304677091434bf0bf84e8ee184d40953af78c9faf09f82861c3",
+   "abstract_chars": 1389
+  },
+  {
+   "work_key": "10.26565/2312-4334-2026-1-43",
+   "abstract_sha256": "7d23eaa53e85de8b38cfd500db5accb7a735a3eec8a0d606b7643e0ab342a3a7",
+   "abstract_chars": 1125
+  },
+  {
+   "work_key": "10.1002/anie.3450174",
+   "abstract_sha256": "89e7db1312d3929bc59f8fabda9105518e67b04f0ea02c51008993d9bcb23c73",
+   "abstract_chars": 1186
+  },
+  {
+   "work_key": "10.1002/smll.202512864",
+   "abstract_sha256": "df597f94d077da518076dc14652b2baa620ab31d263e4e4cc9299a60f809a59e",
+   "abstract_chars": 1293
+  },
+  {
+   "work_key": "10.1016/j.ssc.2026.116398",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s44291-026-00194-y",
+   "abstract_sha256": "890beb9139eb387e90110813cad55da8204ba72735b4f0a92cd5498bd13629e0",
+   "abstract_chars": 1223
+  },
+  {
+   "work_key": "10.1002/anie.8473744",
+   "abstract_sha256": "5b03a98c44c45866430269b8fb82955c3e8d505599247d089ba8885ea55ace34",
+   "abstract_chars": 1407
+  },
+  {
+   "work_key": "10.1002/smll.202514478",
+   "abstract_sha256": "aa1aa2fa025ce5cbd8ad415e955f4e5e49f8ee4d1743a9184b2228e32236f3f0",
+   "abstract_chars": 1484
+  },
+  {
+   "work_key": "10.1038/s41560-026-02010-z",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1038/s44460-026-00041-3",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsenergylett.6c00419",
+   "abstract_sha256": "203ccd84945130007645629a894338bf09923ee2ca45858a16a9f39e49b2cea1",
+   "abstract_chars": 956
+  },
+  {
+   "work_key": "10.1002/adma.72823",
+   "abstract_sha256": "d658b5cc968906169756182ef172246c398b2bbd7885588a8adc938c3b11743e",
+   "abstract_chars": 1535
+  },
+  {
+   "work_key": "10.1002/adfm.202526009",
+   "abstract_sha256": "a969a5a8b4fd3744aa91a813459bcc4f885345a4cb3c48094fb4eac39970f702",
+   "abstract_chars": 1051
+  },
+  {
+   "work_key": "10.1021/acsenergylett.6c00210",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.cocom.2026.e01278",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/adom.202503619",
+   "abstract_sha256": "257ed76f6c82f9b4b459655229db9891fbf01089a2bc8d3d7c1529fe3cc3b38f",
+   "abstract_chars": 1059
+  },
+  {
+   "work_key": "10.1021/acsaem.6c00017",
+   "abstract_sha256": "c971f0951a952d0b44942c40938b57ef503833ad0595ca050da72239a0517349",
+   "abstract_chars": 634
+  },
+  {
+   "work_key": "10.1016/j.cej.2026.175296",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsomega.6c01620",
+   "abstract_sha256": "8a108e82f0ae980397ceb6b3c059013b560171057daa4d2b79346c56e253187d",
+   "abstract_chars": 1944
+  },
+  {
+   "work_key": "10.1088/2515-7655/ae52b5",
+   "abstract_sha256": "c338753c139011b5cdc61ab145421ca307e3684eb8fa8262db6034294ca942d3",
+   "abstract_chars": 1477
+  },
+  {
+   "work_key": "10.1002/ange.3450174",
+   "abstract_sha256": "89e7db1312d3929bc59f8fabda9105518e67b04f0ea02c51008993d9bcb23c73",
+   "abstract_chars": 1186
+  },
+  {
+   "work_key": "10.1007/s40243-026-00358-6",
+   "abstract_sha256": "b7ebcb0c86226bc7b9a1b48842827eaf4830693b7412ef40260e4a05aab22308",
+   "abstract_chars": 1392
+  },
+  {
+   "work_key": "10.21203/rs.3.rs-8888531/v1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1680/jemmr.25.00157",
+   "abstract_sha256": "876f93cde17a50a6c25f90f837baef4be0457316c2b257554926266da8e36ad6",
+   "abstract_chars": 1468
+  },
+  {
+   "work_key": "10.1002/ange.8473744",
+   "abstract_sha256": "5b03a98c44c45866430269b8fb82955c3e8d505599247d089ba8885ea55ace34",
+   "abstract_chars": 1407
+  },
+  {
+   "work_key": "10.1063/5.0309863",
+   "abstract_sha256": "cc7358eb7e4a32c1962a5f3e1d4bed01cc92c6780f3131b71edd3e8534b08fbd",
+   "abstract_chars": 1293
+  },
+  {
+   "work_key": "10.1063/5.0313475",
+   "abstract_sha256": "85be7903684dabc93a27b8d8396eebaeda2be98779bcfddc83a63c602ddda582",
+   "abstract_chars": 1142
+  },
+  {
+   "work_key": "10.1051/e3sconf/202669802001/pdf",
+   "abstract_sha256": "c537c89690c18dd685fc30c4a43e10b3bcd8bd8673d4692c9e996fb919296ce9",
+   "abstract_chars": 1074
+  },
+  {
+   "work_key": "10.1038/s41586-026-10385-y",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/aenm.202506494",
+   "abstract_sha256": "6f0c778c776c0c124ea0dcbf30553187be81d81843d6523ed9a9c4c6e8bb657b",
+   "abstract_chars": 1644
+  },
+  {
+   "work_key": "10.1016/j.physb.2026.418544",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/jacs.6c02548",
+   "abstract_sha256": "388ac76d12d48485f9e23f6a3714c9da60f643c7701b0ed0fdd45c82956b3655",
+   "abstract_chars": 1588
+  },
+  {
+   "work_key": "10.1016/j.ctta.2026.100295",
+   "abstract_sha256": "0644d09de5994374f2be8846d83be077e2817fdb8b03b1d4e6901ad323e11e7c",
+   "abstract_chars": 2115
+  },
+  {
+   "work_key": "10.1002/adma.202518808",
+   "abstract_sha256": "9dca09345d75333cda6d525fba74d6cd74e62a4204cf56a3ed80641d44961050",
+   "abstract_chars": 1451
+  },
+  {
+   "work_key": "10.1016/j.nanoen.2026.111897",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s11814-026-00680-9",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.inoche.2026.116530",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1038/s41467-026-70697-5",
+   "abstract_sha256": "69eb80703816ad2f7c44175ec9a82459a107af6fd02088c081c45b996c6d2984",
+   "abstract_chars": 1333
+  },
+  {
+   "work_key": "10.1038/s43246-026-01123-y",
+   "abstract_sha256": "85df14a8b50707f8f49b75c9123340ef6c30695a8294764cb9fcf14bb5d79983",
+   "abstract_chars": 1818
+  },
+  {
+   "work_key": "10.1088/1361-651x/ae531c",
+   "abstract_sha256": "0504e83ca123ced5a58a323d53b7f1ec3d1195398f66da1e75ed2c1b3b7918d5",
+   "abstract_chars": 2017
+  },
+  {
+   "work_key": "10.1002/aenm.70834",
+   "abstract_sha256": "980c38ab2fc4a2f263fe61efd89ad1ccba4cce0f09242bc069231919ea3200c5",
+   "abstract_chars": 1399
+  },
+  {
+   "work_key": "10.1016/j.jelechem.2026.120050",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsami.6c00384",
+   "abstract_sha256": "263128543df02f9f1bdb3d945418dfe4bd4eb65f3bd537b0a800faab13ed5bcb",
+   "abstract_chars": 1502
+  },
+  {
+   "work_key": "10.21203/rs.3.rs-9069861/v1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.17615/w5ae-rj67",
+   "abstract_sha256": "d9dde3c37a26fa51e1405fe4d61d3a7b0c2459dc0209811b527f885ececfa02b",
+   "abstract_chars": 1384
+  },
+  {
+   "work_key": "10.1002/adfm.74954",
+   "abstract_sha256": "78f8e0d12275e51e5719cd3cd947f7e2f98a1ba404cae54af74811ee3b455cb3",
+   "abstract_chars": 1273
+  },
+  {
+   "work_key": "10.62823/exre/2026/03/01.172",
+   "abstract_sha256": "2c3b6f70d7e794e10760bbbb8308165788aa5d1c2eaf49e385ff0d4f16d98894",
+   "abstract_chars": 1388
+  },
+  {
+   "work_key": "10.21203/rs.3.rs-9089829/v1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1088/1361-6463/ae5304",
+   "abstract_sha256": "36167da3dfdcb11c16508693719a73ae7ea3765549987f1cdb0778f0628aa911",
+   "abstract_chars": 1700
+  },
+  {
+   "work_key": "10.1016/j.esr.2026.102180",
+   "abstract_sha256": "5a28183229b3f9a4d9ef8bbc7f6bdfd8de0b5c2143ce636ca792ced55b9392eb",
+   "abstract_chars": 2006
+  },
+  {
+   "work_key": "10.1021/acs.jpclett.6c00034",
+   "abstract_sha256": "6fa943218538e50ec159d4fcc01e2e473245e66e586f8ffc122222129f9694df",
+   "abstract_chars": 1027
+  },
+  {
+   "work_key": "10.1038/s41586-026-10275-3",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s40820-026-02150-7",
+   "abstract_sha256": "a329731de40d851f92aada43654daab3eaacc3dee5a335f8229af970963e00a3",
+   "abstract_chars": 1487
+  },
+  {
+   "work_key": "10.1002/smll.202600050",
+   "abstract_sha256": "cde4578634e6ebdca6f78c65a3d3812dc74f91d8f56172e9d302957fbef5a0b2",
+   "abstract_chars": 1470
+  },
+  {
+   "work_key": "10.1021/acsami.5c24183",
+   "abstract_sha256": "392513c8463e5d60921795d5d0723fd5462a4f9f22e0210f87eb2e95bfc372fc",
+   "abstract_chars": 1235
+  },
+  {
+   "work_key": "10.1002/advs.202524338",
+   "abstract_sha256": "7892ff887998659d659a4cabd3f9594c54c15c7b27ef5f8dbe9ad8747c9e6046",
+   "abstract_chars": 1109
+  },
+  {
+   "work_key": "10.1002/adfm.202532203",
+   "abstract_sha256": "95f99f19675f1f17bb658c1aa6d741f4313513978342c8b497b14086409aa6d8",
+   "abstract_chars": 1499
+  },
+  {
+   "work_key": "10.1002/smll.202513845",
+   "abstract_sha256": "526a5a13c1a98b2c6018e0e471e886273fc644edbc6150cb3742c26d6e0a625e",
+   "abstract_chars": 1325
+  },
+  {
+   "work_key": "10.1016/j.electacta.2026.148699",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.chphma.2026.03.003",
+   "abstract_sha256": "4ebcd541547c3d096cc51d6e39e146e7aa88144ed349df458a92d328d6ebaf53",
+   "abstract_chars": 1796
+  },
+  {
+   "work_key": "10.1016/j.synthmet.2026.118138",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.solener.2026.114528",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/bkcs.70136",
+   "abstract_sha256": "c1004e5649098147008d3b8dfa7390bc913f6ad300747dc87eaee1369dd3fe7e",
+   "abstract_chars": 1247
+  },
+  {
+   "work_key": "10.1007/s10904-026-04247-3",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s11696-026-04761-1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s40820-026-02145-4",
+   "abstract_sha256": "682fd33179284ddec584793c42e57517e5fd351636147c03b8f92a7f167c744d",
+   "abstract_chars": 1535
+  },
+  {
+   "work_key": "10.1021/acsenergylett.5c04210",
+   "abstract_sha256": "d7817c1dc251c52c34a05f0d747e0821e2e63fa74c0b6b6c7d54a050220ae59b",
+   "abstract_chars": 1130
+  },
+  {
+   "work_key": "10.1016/j.jcis.2026.140331",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/aenm.202506804",
+   "abstract_sha256": "4e362b70aba8afbf9c70649c53e2b29441788cc756893c18fb920244cdd07247",
+   "abstract_chars": 1441
+  },
+  {
+   "work_key": "10.1002/smll.202511830",
+   "abstract_sha256": "999dbff07fddfd4a7d098cf21a86e1c8f38b9ce521e1469b48971761fae894cf",
+   "abstract_chars": 1342
+  },
+  {
+   "work_key": "10.1016/j.comptc.2026.115775",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.21256/zhaw-36561",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsenergylett.5c04238",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.jechem.2026.03.019",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/adom.202503341",
+   "abstract_sha256": "88c94d9c2f75a6bd8d62d11710e2a26900143ecff8e58f773611c7caf962f740",
+   "abstract_chars": 1203
+  },
+  {
+   "work_key": "10.1016/j.mtsust.2026.101347",
+   "abstract_sha256": "c1c3bbde5cc1da44ee202c34b6cd2e45fe71a9bd2e23ac7a5bc45f2ad9af0f94",
+   "abstract_chars": 1411
+  },
+  {
+   "work_key": "10.1016/j.matlet.2026.140494",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsnano.5c19968",
+   "abstract_sha256": "c1bb62b82218256f67eb9e13114a6edac207581c2e33275f19e3f4ef08e6f9cc",
+   "abstract_chars": 1145
+  },
+  {
+   "work_key": "10.1016/j.resenv.2026.100328",
+   "abstract_sha256": "70aa91a59cb9e827bb9185a8f741a18de5e2aad7c83141800b4d3a4cf97a0831",
+   "abstract_chars": 1698
+  },
+  {
+   "work_key": "10.1088/2040-8986/ae54aa",
+   "abstract_sha256": "32fb995ca47fd9b1d104b00d63080fd15a14d1ebcd3ed2955edb5eeaa6ca92b4",
+   "abstract_chars": 1404
+  },
+  {
+   "work_key": "10.1016/j.jechem.2026.03.020",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acs.nanolett.6c00270",
+   "abstract_sha256": "325dbcb0b4066e31a900360377433cf8db350778aa28723a0885cf8370e2a008",
+   "abstract_chars": 1112
+  },
+  {
+   "work_key": "10.1016/j.surfin.2026.109055",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.calphad.2026.102941",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsaem.5c03696",
+   "abstract_sha256": "7c5cc1e57af9e15d0eb636122236639e9a07b7d02ff0d3db27aafaf2604622fd",
+   "abstract_chars": 1895
+  },
+  {
+   "work_key": "10.1016/j.cej.2026.175374",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acs.inorgchem.6c00191",
+   "abstract_sha256": "2d8909af979d57d1da8a71d2b81eaf4ac78bae592863c89ceffe86c524b006e0",
+   "abstract_chars": 958
+  },
+  {
+   "work_key": "10.1002/solr.202500946",
+   "abstract_sha256": "9933e3be8fcae63c5bbaf86d7fdcd37ffba8d8118673948c2d8344192c9a36c3",
+   "abstract_chars": 1424
+  },
+  {
+   "work_key": "10.1021/acsenergylett.6c00115",
+   "abstract_sha256": "ec25650e903b557b6621ada7cb7e2da1b8e377e8d87951552ed0aa6f9dd0bacc",
+   "abstract_chars": 856
+  },
+  {
+   "work_key": "10.1002/adfm.75014",
+   "abstract_sha256": "c7762ebac57bdd084ac06154888323317b35ef873493395c0a4460f5256e496f",
+   "abstract_chars": 1483
+  },
+  {
+   "work_key": "10.1002/anie.202519239",
+   "abstract_sha256": "e86acbbe4cc630f97067ddc2d00b143b2e72b53de53c614ca3f296f95babb2a8",
+   "abstract_chars": 1220
+  },
+  {
+   "work_key": "10.1016/j.matchemphys.2026.132413",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/adma.72859",
+   "abstract_sha256": "cdce132d76c6e93099abb2d0c1adfcc44acf8dcb0bec4978155662d10d51b80f",
+   "abstract_chars": 1455
+  },
+  {
+   "work_key": "10.1002/adfm.202529943",
+   "abstract_sha256": "02644fb4f946f69b3dab987f66af9ac3e6e5600168d0c59e32d3c5c26a6150ea",
+   "abstract_chars": 1333
+  },
+  {
+   "work_key": "10.1038/s41560-026-02015-8",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsami.5c25402",
+   "abstract_sha256": "96c0bc3087eea6543be8529cfb4b83278f64fa62da7abae686192ec2b69bf402",
+   "abstract_chars": 1511
+  },
+  {
+   "work_key": "10.1021/acs.jpclett.6c00286",
+   "abstract_sha256": "b93f24ed02b32a9150467ff7a47852b26b37478b06f6002243bb9495beecaac5",
+   "abstract_chars": 1449
+  },
+  {
+   "work_key": "10.1002/adfm.75040",
+   "abstract_sha256": "67ace280aca802e75d5272472022476f9604fcc02b92bbd312a5f723c760f7da",
+   "abstract_chars": 1537
+  },
+  {
+   "work_key": "10.1021/acs.nanolett.5c06420",
+   "abstract_sha256": "8d2ddf58bd2af6ba0ac1db69918a03038e2be3a6716a459f61ad6e9d554e958c",
+   "abstract_chars": 1125
+  },
+  {
+   "work_key": "10.21203/rs.3.rs-9091945/v1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.21203/rs.3.rs-9095062/v1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.surfin.2026.109064",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/ange.202519239",
+   "abstract_sha256": "e86acbbe4cc630f97067ddc2d00b143b2e72b53de53c614ca3f296f95babb2a8",
+   "abstract_chars": 1220
+  },
+  {
+   "work_key": "10.1016/j.solener.2026.114536",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1038/s41598-026-41097-y",
+   "abstract_sha256": "1e435c980f3976325e8b53175aef155c64e28e3a5a66366838140d47540a153e",
+   "abstract_chars": 2063
+  },
+  {
+   "work_key": "10.48550/arxiv.2603.20516",
+   "abstract_sha256": "f5c0fe2ce1b857195db77f7e50761bf5fd26a0c8a3cbd6047262ed022eb94b4b",
+   "abstract_chars": 1308
+  },
+  {
+   "work_key": "https://openalex.org/w7140346043",
+   "abstract_sha256": "f5c0fe2ce1b857195db77f7e50761bf5fd26a0c8a3cbd6047262ed022eb94b4b",
+   "abstract_chars": 1308
+  },
+  {
+   "work_key": "10.32628/ijsrst2613116",
+   "abstract_sha256": "e5f22872cb3d0f0def744c438bc7a6a433e0fa616701008bcec68649990ce279",
+   "abstract_chars": 2238
+  },
+  {
+   "work_key": "10.5281/zenodo.21514170",
+   "abstract_sha256": "b8155ece2f9b35a622cda9d69ecfb3a838c8254b10e9b94fd3d9e2bac442e3cf",
+   "abstract_chars": 1978
+  },
+  {
+   "work_key": "10.5281/zenodo.21514169",
+   "abstract_sha256": "b8155ece2f9b35a622cda9d69ecfb3a838c8254b10e9b94fd3d9e2bac442e3cf",
+   "abstract_chars": 1978
+  },
+  {
+   "work_key": "10.1007/s10765-026-03744-4",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/adfm.75071",
+   "abstract_sha256": "f766f44b35b0b9b642f391d03c80e288605be5fdada4d4d13842b992c1e74b3c",
+   "abstract_chars": 1520
+  },
+  {
+   "work_key": "10.1002/adfm.202531732",
+   "abstract_sha256": "5d41ebd91190612d0b86f382ae37e007f547673646b9b8ae298c08470e80b3bd",
+   "abstract_chars": 1583
+  },
+  {
+   "work_key": "10.1002/tcr.202500352",
+   "abstract_sha256": "85b9619ab8f550c8a1dc94e40786c4b5c5d234a805eca9fe77879fcedd364e6a",
+   "abstract_chars": 1069
+  },
+  {
+   "work_key": "10.1007/s10853-026-12595-1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.nanoen.2026.111896",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.solmat.2026.114307",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/adfm.74890",
+   "abstract_sha256": "d66fd8b3458a795ec1b1da8407f785b3cec6e8b4cc06c7ddaff1847cd0c7429e",
+   "abstract_chars": 1276
+  },
+  {
+   "work_key": "10.1016/j.nanoen.2026.111907",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.nanoen.2026.111906",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.24425/amm.2026.157778",
+   "abstract_sha256": "2be895ce71170065f45520d51c8da8ef4a24f4b430765059b03b1d7c1f74bc5e",
+   "abstract_chars": 1368
+  },
+  {
+   "work_key": "10.1002/solr.70310",
+   "abstract_sha256": "26dac83cdd080ef7cec91f760a16d8c5b7f636c07f8580f21a3cde9e033f43e5",
+   "abstract_chars": 1035
+  },
+  {
+   "work_key": "10.1016/j.ssc.2026.116406",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/solr.202600005",
+   "abstract_sha256": "eae8d37b5e359800a71d5af118708a087a3d42d77fb21a55deec1cb0219f77ec",
+   "abstract_chars": 896
+  },
+  {
+   "work_key": "10.65204/djes.v3i1.468",
+   "abstract_sha256": "91ca8bbb9970ea9dca16bc92d9dc63806d8d2a32f919ad6f569ac2aa9fbcc4c2",
+   "abstract_chars": 1023
+  },
+  {
+   "work_key": "10.1002/adma.202523249",
+   "abstract_sha256": "4d63ce8d4bc7008b3b5b3e0a10010c8df5d9b359cabf367461aee302d2d77f72",
+   "abstract_chars": 1620
+  },
+  {
+   "work_key": "10.1038/s41563-026-02541-6",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1038/s41560-026-02025-6",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsenergylett.6c00031",
+   "abstract_sha256": "3402595ee03ad03874925f7ce7366d6bb5f6f9e57dae5ff4dbb39398f98cb2aa",
+   "abstract_chars": 1074
+  },
+  {
+   "work_key": "10.1002/adfm.202530037",
+   "abstract_sha256": "e70d582e56c4e2c34d9cc98f08973fc5e58c827305e079e9fde8c1d35c96c9da",
+   "abstract_chars": 1552
+  },
+  {
+   "work_key": "10.1002/adfm.202532139",
+   "abstract_sha256": "1d271bdd766ee3afcef1898555da06c4b91b17683391add1c2c641543a6df81f",
+   "abstract_chars": 1477
+  },
+  {
+   "work_key": "10.1016/j.ssc.2026.116404",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1038/s41560-026-02011-y",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsami.5c24915",
+   "abstract_sha256": "5fedfb666d22c52b0a38d212be0f8a70192bfb3de00c85bd2167d2e4d72418f8",
+   "abstract_chars": 1469
+  },
+  {
+   "work_key": "10.1016/j.optlastec.2026.115153",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.4028/p-cjlz8h",
+   "abstract_sha256": "340b2f145f8f5196ecc046287cbe1be89dfb7842ac9099bfdba2e682d6e7633a",
+   "abstract_chars": 1221
+  },
+  {
+   "work_key": "10.1021/acsenergylett.6c00075",
+   "abstract_sha256": "5ee458fc66293f86cb616e4ef4ddb4fc0125349c6606f1bd0225e1afc0b4f4f5",
+   "abstract_chars": 1219
+  },
+  {
+   "work_key": "10.5281/zenodo.19184691",
+   "abstract_sha256": "824c93e0d203a14d17e56d5aea2d84a6194d90ca9eb3a04a3ae399d990996981",
+   "abstract_chars": 1894
+  },
+  {
+   "work_key": "10.5281/zenodo.19184690",
+   "abstract_sha256": "824c93e0d203a14d17e56d5aea2d84a6194d90ca9eb3a04a3ae399d990996981",
+   "abstract_chars": 1894
+  },
+  {
+   "work_key": "10.21203/rs.3.rs-9068209/v1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acs.jpclett.6c00410",
+   "abstract_sha256": "6369ae02d1cec1bc0ac5218c433185eb3d90f47a628fe32fc3cd201fe02f096d",
+   "abstract_chars": 1386
+  },
+  {
+   "work_key": "10.48550/arxiv.2603.21657",
+   "abstract_sha256": "9c27d60de230d99a72b2985f6aec8ed22558d274628d172b4477ebda262072ee",
+   "abstract_chars": 1886
+  },
+  {
+   "work_key": "10.48550/arxiv.2603.22520",
+   "abstract_sha256": "5e2ed576dd459d65ef8d640532bb143a345174e2ebd5c4ed4d550949ce92253c",
+   "abstract_chars": 768
+  },
+  {
+   "work_key": "https://openalex.org/w7140953981",
+   "abstract_sha256": "5e2ed576dd459d65ef8d640532bb143a345174e2ebd5c4ed4d550949ce92253c",
+   "abstract_chars": 768
+  },
+  {
+   "work_key": "10.1016/j.cej.2026.175529",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsnano.5c18895",
+   "abstract_sha256": "549fea2922176a6c2a3cd0fa43d6ce7e8507440f753d1671d7949820bf8dce80",
+   "abstract_chars": 1271
+  },
+  {
+   "work_key": "10.1002/adfm.202531620",
+   "abstract_sha256": "9fbfba4ab26bdffd5d21a2d6ae084c95842c546d2f9327b842afed3277431b22",
+   "abstract_chars": 1510
+  },
+  {
+   "work_key": "10.1021/acsenergylett.5c04174",
+   "abstract_sha256": "b6cae3c9f608d02e83933a3eeef1b35ccd40aa1788f4eedb823c76907cb36b4c",
+   "abstract_chars": 1124
+  },
+  {
+   "work_key": "10.1007/s10971-025-07099-4",
+   "abstract_sha256": "63c1058cd972260f6451f255c7a204e242ce39a178302803c386d071792e75b0",
+   "abstract_chars": 1827
+  },
+  {
+   "work_key": "10.1007/s44291-026-00195-x",
+   "abstract_sha256": "e5f1e6f1bebab40108d2ddeab66839b5f5b119d151786c213634a8665521d922",
+   "abstract_chars": 1333
+  },
+  {
+   "work_key": "10.1002/adfm.202529991",
+   "abstract_sha256": "fdd9bdb93e21994b1bc278cee082012dfb539d2560e022e112e3fa2738a33e9c",
+   "abstract_chars": 1367
+  },
+  {
+   "work_key": "10.1021/acs.jpcc.5c08577",
+   "abstract_sha256": "648e3ba9be5a5d409bc329f9c201a11ef0d881fd28ec4b83b9b6dc9f63fc8dcf",
+   "abstract_chars": 1611
+  },
+  {
+   "work_key": "10.1002/eem2.70329",
+   "abstract_sha256": "b4345ee6f3be849337300cc9b246cbb30ce6cf14ad1bf85d6f180ff7f7844a4d",
+   "abstract_chars": 1358
+  },
+  {
+   "work_key": "10.1016/j.joule.2026.102391",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.solmat.2026.114321",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.cap.2026.03.014",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsaem.6c00562",
+   "abstract_sha256": "5e9d64b5d8717c987f4b96a22f53a912dfd8c9fc28956048b6b777ca2ee108a2",
+   "abstract_chars": 1571
+  },
+  {
+   "work_key": "10.1021/acs.jpclett.6c00645",
+   "abstract_sha256": "c1fb87ffd69f17472181d1a93f265e1d055d5ae4e20638c3b2c77b991e5b3d21",
+   "abstract_chars": 876
+  },
+  {
+   "work_key": "10.1002/masy.70336",
+   "abstract_sha256": "88f104452ce582eb7da66769f16ebd29e3e646d05de3e4766becb64cbdb7f2b1",
+   "abstract_chars": 1393
+  },
+  {
+   "work_key": "10.17615/y669-rk70",
+   "abstract_sha256": "b6f020a1436eb54e64ec88ec74247b26bad65c33ac39edd82a8b7fffb0d72ffa",
+   "abstract_chars": 1138
+  },
+  {
+   "work_key": "10.1016/j.jpowsour.2026.239905",
+   "abstract_sha256": "1f05d5762f1f512861e17f99397ea94e855c8d253ac7c328d4f20183e0ee7c4f",
+   "abstract_chars": 1116
+  },
+  {
+   "work_key": "10.1021/acsami.6c02288",
+   "abstract_sha256": "1fa45ede68f2a3ecc0ac38733a5c511a66f14ab002241fceacbb03b4816f5836",
+   "abstract_chars": 866
+  },
+  {
+   "work_key": "10.1002/ifm2.70015",
+   "abstract_sha256": "fc6382d570e00281b6263d242fc030d4e492ddea0fc0f40deed51714dbd144ef",
+   "abstract_chars": 1072
+  },
+  {
+   "work_key": "10.1007/s12648-026-04010-x",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acs.jpclett.6c00065",
+   "abstract_sha256": "27b4bb565e1e6835c8bf1770221b892312a336efff7a7e285127cac68f1950a0",
+   "abstract_chars": 1079
+  },
+  {
+   "work_key": "10.35848/1347-4065/ae56a5",
+   "abstract_sha256": "96e2f2e6aaaf6e2f5fdce52e62acd342d2db27befed93398fd533442bc424d1d",
+   "abstract_chars": 990
+  },
+  {
+   "work_key": "10.1021/acsenergylett.5c04253",
+   "abstract_sha256": "ba90e84e50fd5ee3ffa38613b31c4347d89651eec1f2a1128c13d06fd62f7386",
+   "abstract_chars": 1198
+  },
+  {
+   "work_key": "10.1016/j.matchemphys.2026.132423",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.xcrp.2026.103207",
+   "abstract_sha256": "d409aeb54d8e5aaacf5260e95a8564b3bf6d77c24c36d23c4e129ee2dd1a3b33",
+   "abstract_chars": 986
+  },
+  {
+   "work_key": "10.1016/j.physb.2026.418571",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.jallcom.2026.187586",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/inf2.70140",
+   "abstract_sha256": "39710b599006f1a4c6e557f2703e27017e8c92e787958f0ecf765875d2553998",
+   "abstract_chars": 1415
+  },
+  {
+   "work_key": "10.1038/s41560-026-02027-4",
+   "abstract_sha256": "e19b54849dce827f1bd6a12960dcc1652b58f9fa6ba0ce8e3c5df51c84d3283a",
+   "abstract_chars": 1460
+  },
+  {
+   "work_key": "10.1016/j.synthmet.2026.118145",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acs.jpclett.6c00329",
+   "abstract_sha256": "8c7cad8027816c9ee29d911bb4d019c2695512c7ece502683507120635a4c86a",
+   "abstract_chars": 1000
+  },
+  {
+   "work_key": "10.1088/1361-6641/ae573a",
+   "abstract_sha256": "a488f5aee63cffd495c098d6441dafa5caab66ced3aebfd917992cb94c6b4068",
+   "abstract_chars": 1538
+  },
+  {
+   "work_key": "10.1002/solr.70317",
+   "abstract_sha256": "d2533cfc0dfd56293fdb493bd1e1d954161d9170de82ff8aa5968280c31f5ddf",
+   "abstract_chars": 1494
+  },
+  {
+   "work_key": "10.1002/adfm.75104",
+   "abstract_sha256": "1b08dba2014ad3e2c4ca01a9c7e4431a475049acd657dba01954aa712df57bc9",
+   "abstract_chars": 1473
+  },
+  {
+   "work_key": "10.1002/smtd.70628",
+   "abstract_sha256": "3b2fc2f4a76b1e3530c398285298f833138384221a1d7954bb52846e59daecae",
+   "abstract_chars": 1548
+  },
+  {
+   "work_key": "10.1088/1402-4896/ae5772",
+   "abstract_sha256": "e04d616574f90023e3b3513ff2a7cc03756cbf5e9d41b13682ca50ded63771f5",
+   "abstract_chars": 1148
+  },
+  {
+   "work_key": "10.1007/s40843-025-3931-6",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsenergylett.5c04261",
+   "abstract_sha256": "91cae05dab8a63bf549f4b5774e9d2b18b7417f1b3e281e2b18b59df7ef67f36",
+   "abstract_chars": 1183
+  },
+  {
+   "work_key": "10.53941/mi.2026.100004",
+   "abstract_sha256": "5539252634dee18e24d70c6e368a498e2456a812f48dfcffddafc712d0c42483",
+   "abstract_chars": 1043
+  },
+  {
+   "work_key": "10.1016/j.matchemphys.2026.132444",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.mtphys.2026.102078",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/pip.70101",
+   "abstract_sha256": "7efecc20e8b55da49d2a075632f2b1570fe1279c88991b15ff0f862a72d8927d",
+   "abstract_chars": 1001
+  },
+  {
+   "work_key": "10.1038/s41467-026-70848-8",
+   "abstract_sha256": "771df9d60f0b7fe9e8e8381f04b544afc5a27bce85af8b85a03ed243e21c3f9b",
+   "abstract_chars": 1251
+  },
+  {
+   "work_key": "10.1038/d41586-026-00921-1",
+   "abstract_sha256": "7d36402f252976568deb8dff4efe5ae1ff5b42ed2cc56161bc7477ac40adbd48",
+   "abstract_chars": 358
+  },
+  {
+   "work_key": "10.1002/anie.5296449",
+   "abstract_sha256": "ba97f57bf5a3297d0e236fb18909b8fc7aebbd083afd5fc0b02e047ae3fc3caa",
+   "abstract_chars": 1414
+  },
+  {
+   "work_key": "10.1002/ange.5296449",
+   "abstract_sha256": "ba97f57bf5a3297d0e236fb18909b8fc7aebbd083afd5fc0b02e047ae3fc3caa",
+   "abstract_chars": 1414
+  },
+  {
+   "work_key": "10.15407/spqeo29.01.105",
+   "abstract_sha256": "43c4cfbe2f82d5011d1f04b6f4f20d964b7a27f204948788202fa5ce07627f0e",
+   "abstract_chars": 374
+  },
+  {
+   "work_key": "10.1016/j.joule.2026.102380",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s11696-026-04797-3",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1038/s41578-026-00909-3",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/adma.72936",
+   "abstract_sha256": "dc99d676c2c891afd06d0b5fbaa485241fec403c5e7c62525458edfdbea6b9c9",
+   "abstract_chars": 1515
+  },
+  {
+   "work_key": "10.1016/j.jpcs.2026.113681",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.solmat.2026.114326",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.5281/zenodo.18600851",
+   "abstract_sha256": "7766194621a67eb7768424b908c241a7e324cbec041b4df8bf3e6bfa56fb81e0",
+   "abstract_chars": 58
+  },
+  {
+   "work_key": "10.5281/zenodo.18600852",
+   "abstract_sha256": "7766194621a67eb7768424b908c241a7e324cbec041b4df8bf3e6bfa56fb81e0",
+   "abstract_chars": 58
+  },
+  {
+   "work_key": "10.1007/s00339-026-09427-z",
+   "abstract_sha256": "c0dca5f993d413a9f024351512a1809e30e6e675a47f8f2b6a97b17bf42b9df3",
+   "abstract_chars": 1113
+  },
+  {
+   "work_key": "10.1002/aenm.202506352",
+   "abstract_sha256": "ef4da125973d1fa921e413e18488ae86dc04d242f9d68418aff315ea77cd5f8e",
+   "abstract_chars": 1471
+  },
+  {
+   "work_key": "10.1002/solr.70318",
+   "abstract_sha256": "ccf6e7468ec9e776b1ede0ce5b46d2171aa4468d2f56f0c6c976fefb02a4160a",
+   "abstract_chars": 1174
+  },
+  {
+   "work_key": "10.1021/acs.jpcc.5c08380",
+   "abstract_sha256": "a17ffcf6ad6d3b3558b7c53d371f581768706cbdff0acb2ea471196127fbb0b2",
+   "abstract_chars": 933
+  },
+  {
+   "work_key": "10.3390/cryst16040222",
+   "abstract_sha256": "4699b8d723e7a36de7cccbc1d118204a50e64798df2e02ae448228225d092e5c",
+   "abstract_chars": 1256
+  },
+  {
+   "work_key": "10.36922/ijamd025480051",
+   "abstract_sha256": "b670da5ed5a8d7cccd51bb0bd2d68cbde8cd0dd2a1531aa4e9b5cb46194f4db3",
+   "abstract_chars": 1461
+  },
+  {
+   "work_key": "10.1016/j.decarb.2026.100161",
+   "abstract_sha256": "9d7ffdb6998de81c9aeedee6f3527491ef94d924e2f8d870ae4f8937430ff8ec",
+   "abstract_chars": 781
+  },
+  {
+   "work_key": "10.1016/j.solener.2026.114545",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.5281/zenodo.19376070",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.5281/zenodo.19376071",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.18452/37448",
+   "abstract_sha256": "a1ae39fcb837da15b5b151d10044c52d35ae9915f635dd359930cd728c39a9b9",
+   "abstract_chars": 1540
+  },
+  {
+   "work_key": "10.5281/zenodo.22053939",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.5281/zenodo.22053938",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.joule.2026.102390",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.nxener.2026.100594",
+   "abstract_sha256": "080c3898c5cbb575bb7ba3357e9e3f37bb7344a33b1a03644591a49176b0a015",
+   "abstract_chars": 929
+  },
+  {
+   "work_key": "10.1038/s41560-026-02024-7",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.joule.2026.102396",
+   "abstract_sha256": "6a333c0afa940757a1075e2357bb1c78cf64b1a16f3c9d13bc20d6e5e0e702cf",
+   "abstract_chars": 1849
+  },
+  {
+   "work_key": "10.1038/s41560-026-02016-7",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.joule.2026.102381",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.joule.2026.102389",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/aenm.202506803",
+   "abstract_sha256": "82b04a41a8c4a341248df7e64f652cc01ae6359e143ecfecf7253c84c8defc3a",
+   "abstract_chars": 1549
+  },
+  {
+   "work_key": "10.1002/anie.8890696",
+   "abstract_sha256": "b63649f5fce2643f7a8f11abcd03c5c593da91f8d0d528406dc93246fe7cdc5e",
+   "abstract_chars": 1102
+  },
+  {
+   "work_key": "10.1016/j.synthmet.2026.118149",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.solener.2026.114574",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.3390/chemistry8040039",
+   "abstract_sha256": "889a3ba28b488325beaee1d2cee3b1ada3dcd8e4fa9128f6879066e569aecd51",
+   "abstract_chars": 1578
+  },
+  {
+   "work_key": "10.21203/rs.3.rs-9205857/v1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/ange.8890696",
+   "abstract_sha256": "b63649f5fce2643f7a8f11abcd03c5c593da91f8d0d528406dc93246fe7cdc5e",
+   "abstract_chars": 1102
+  },
+  {
+   "work_key": "10.1002/bkcs.70159",
+   "abstract_sha256": "a6b186402fd86a908311b1765e7bbfa6be6525f6deed7270fc78ba3ad45f1f68",
+   "abstract_chars": 1678
+  },
+  {
+   "work_key": "10.56919/usci.2651.029",
+   "abstract_sha256": "d76bf3290be7e3659fc6d574e8eae14ba93d12efe199a0690b4a824465090cb1",
+   "abstract_chars": 2097
+  },
+  {
+   "work_key": "10.1007/s40820-026-02134-7",
+   "abstract_sha256": "87d875b6bfbb8a0f619716b1a8caa45a81b1df4549359443324f0c50053457b7",
+   "abstract_chars": 1763
+  },
+  {
+   "work_key": "10.1002/adma.202521898",
+   "abstract_sha256": "4ca0ebe6645766dd44823aec488bbb9d5bad17bbaa48ceaa341bdd588ac11ad6",
+   "abstract_chars": 1144
+  },
+  {
+   "work_key": "10.1016/j.matchemphys.2026.132401",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/anie.4012708",
+   "abstract_sha256": "5a87a7b6cf340ebf7c90a5f11be4d2af01cb92416336272e2173326aeaf12110",
+   "abstract_chars": 1480
+  },
+  {
+   "work_key": "https://openalex.org/w7131740227",
+   "abstract_sha256": "137f13a26cfa6dc769c84303dbaef34cf8d9190a4cab7b3d16a04e81c0152b5e",
+   "abstract_chars": 1485
+  },
+  {
+   "work_key": "10.1021/acsaelm.5c02693",
+   "abstract_sha256": "888d7c877fc903a443a4394ea0185dcc6ea967d9e2d584a813388b2ecd743e0f",
+   "abstract_chars": 1868
+  },
+  {
+   "work_key": "10.1016/j.xinn.2026.101356",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.cocom.2026.e01291",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/ange.4012708",
+   "abstract_sha256": "5a87a7b6cf340ebf7c90a5f11be4d2af01cb92416336272e2173326aeaf12110",
+   "abstract_chars": 1480
+  },
+  {
+   "work_key": "10.1007/s11664-026-12807-z",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s40243-026-00366-6",
+   "abstract_sha256": "660ef35ec92ade2dcc0dd38a854fd3c6129c3f4dd413bb6117f92c349f0dc634",
+   "abstract_chars": 1801
+  },
+  {
+   "work_key": "10.1007/s11224-026-02768-8",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/solr.202600009",
+   "abstract_sha256": "de3cb9ff34557997fc45367c9ded3dc0bc4d3ebd4efa22665851eece4adbc201",
+   "abstract_chars": 1372
+  },
+  {
+   "work_key": "10.1002/adfm.75154",
+   "abstract_sha256": "33dd6d0895eacfebeb4d4a18bb7a92409f47702f71d58aa9ba60c4c08a1dd6d8",
+   "abstract_chars": 1255
+  },
+  {
+   "work_key": "10.1016/j.solmat.2026.114334",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/solr.70324",
+   "abstract_sha256": "cab749e091d99d9d5072c0c28f7784f821bc9aefe0fbe42c85759a2a329a4dec",
+   "abstract_chars": 1326
+  },
+  {
+   "work_key": "10.1002/solr.70328",
+   "abstract_sha256": "22f1326f6171548760f665b8857f3b1059f47e2e53702c73c124ee213a6d6cae",
+   "abstract_chars": 1531
+  },
+  {
+   "work_key": "10.1002/aenm.70897",
+   "abstract_sha256": "47108dd68b1f518141863b2afc442bc3bbe96b1f856fa900abb409fbcdbd2fc6",
+   "abstract_chars": 1427
+  },
+  {
+   "work_key": "10.1002/solr.202600003",
+   "abstract_sha256": "ebb3e7a71e082443784e6f599e7106e183292a6f5fa3dd11da40cbf805f4e05d",
+   "abstract_chars": 1482
+  },
+  {
+   "work_key": "10.1002/solr.70322",
+   "abstract_sha256": "f791082877c9a40308ff93c73ae6b27a56c3c7c4c20df467fc6b19915cf6dcb0",
+   "abstract_chars": 1181
+  },
+  {
+   "work_key": "10.1002/solr.202500779",
+   "abstract_sha256": "5088dd13247907b03f4537443d0963e5f26daba0026fd9c9515f056142a7636b",
+   "abstract_chars": 1366
+  },
+  {
+   "work_key": "10.5281/zenodo.22234699",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.5281/zenodo.22234698",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1142/s0217984926501228",
+   "abstract_sha256": "502bd776fed8d18f8e42ec13c1469989e7629f9cc818e51689c16f268e7bd8ed",
+   "abstract_chars": 1702
+  },
+  {
+   "work_key": "10.1021/acsenergylett.6c00328",
+   "abstract_sha256": "5e4e8584cc7e806996321825b3f90d85f9fe3a66140d4c79344a6dfadb015c9f",
+   "abstract_chars": 1210
+  },
+  {
+   "work_key": "10.1021/acsami.6c00054",
+   "abstract_sha256": "d2e941a6361e9efa0b120770d49ca17d284dbc713c92c1237c70a48ee62511f6",
+   "abstract_chars": 1707
+  },
+  {
+   "work_key": "10.1002/adfm.75080",
+   "abstract_sha256": "1331da8fdc1372a6960fa5c83af6832f9501eaeaec9de8511a6782f255086919",
+   "abstract_chars": 1385
+  },
+  {
+   "work_key": "10.1016/j.jallcom.2026.187686",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.nexres.2026.101692",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.joule.2026.102388",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsaem.6c00059",
+   "abstract_sha256": "584ae97ac87324eede77e70c8b29338a2a778d42809e1c9a45df857801a10ac9",
+   "abstract_chars": 2150
+  },
+  {
+   "work_key": "10.1007/s40430-026-06312-x",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1038/s44460-026-00051-1",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.matlet.2026.140575",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/adfm.75159",
+   "abstract_sha256": "db5acf24ec18ad39ec46b5fa550b4304da28affcf78c47c5c69e32d0dc7b3e0b",
+   "abstract_chars": 1272
+  },
+  {
+   "work_key": "10.1007/s12034-026-03561-3",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.5281/zenodo.19333001",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/pssa.202500826",
+   "abstract_sha256": "e61ba603bf1a8e012b3715fe8b2ec05e170f6c850c2ced717318fd016da16692",
+   "abstract_chars": 1529
+  },
+  {
+   "work_key": "10.1002/adma.202522790",
+   "abstract_sha256": "97e1d764d2905195c17b96d0bb8c39fd26afbf10ed346071d017273c9515ff12",
+   "abstract_chars": 1202
+  },
+  {
+   "work_key": "10.54097/f65m8b92",
+   "abstract_sha256": "e82500a1008dd5696a2c0f5fa47945426ecccfbd11ebf8f549bb870e4b2c370a",
+   "abstract_chars": 1279
+  },
+  {
+   "work_key": "10.48550/arxiv.2603.28289",
+   "abstract_sha256": "0581dca69fa7b5e6a639f29842925b20ac763fdeeb3f88452989eb4879be51a2",
+   "abstract_chars": 1011
+  },
+  {
+   "work_key": "https://openalex.org/w7148176042",
+   "abstract_sha256": "0581dca69fa7b5e6a639f29842925b20ac763fdeeb3f88452989eb4879be51a2",
+   "abstract_chars": 1011
+  },
+  {
+   "work_key": "10.1063/5.0337228",
+   "abstract_sha256": "15a82b9aaf2370d7038a3b25ba91e22cfde954d5a380dbd43b74f4531a595991",
+   "abstract_chars": 1434
+  },
+  {
+   "work_key": "10.69923/p6eapa26",
+   "abstract_sha256": "90d9ab5b5c8f337305856f0c3921bd0ac1aa919be1936b236fc43f4232630b86",
+   "abstract_chars": 1600
+  },
+  {
+   "work_key": "10.5281/zenodo.19326898",
+   "abstract_sha256": "3b982a440765eb500b43904577da515f7c6f5d32b9d1b152ba3123433b23add2",
+   "abstract_chars": 1513
+  },
+  {
+   "work_key": "10.5281/zenodo.19326899",
+   "abstract_sha256": "3b982a440765eb500b43904577da515f7c6f5d32b9d1b152ba3123433b23add2",
+   "abstract_chars": 1513
+  },
+  {
+   "work_key": "10.1016/j.matt.2026.102758",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.cej.2026.175735",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.solmat.2026.114333",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsami.5c25501",
+   "abstract_sha256": "d11dd248c513c3b19a3e6f28cccfd2fbc6cdd9ceb606749cf52d15d1c036f031",
+   "abstract_chars": 1688
+  },
+  {
+   "work_key": "10.1016/j.solmat.2026.114349",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.3390/mi17040431",
+   "abstract_sha256": "7b6110aea35fe76620b0ae3e72f05cb94f53aa76e708912525be5a8c230f2196",
+   "abstract_chars": 1926
+  },
+  {
+   "work_key": "10.1007/s40820-026-02141-8",
+   "abstract_sha256": "712ba3e9a4233c0c3b3665cccdf1d9f93bac4a4c2d62d542942802d34c4fc955",
+   "abstract_chars": 1739
+  },
+  {
+   "work_key": "10.1021/acsenergylett.6c00385",
+   "abstract_sha256": "332cd39a2abfeb8791567b8b5dc5cbb813a586d504250f0a4e252f6a735af739",
+   "abstract_chars": 1222
+  },
+  {
+   "work_key": "10.53941/ac.2026.100002",
+   "abstract_sha256": "18cf95c894d4ee3df35ca33723bc361627fab3d8408d64f39f08681f969fc374",
+   "abstract_chars": 1943
+  },
+  {
+   "work_key": "10.1002/ese3.70520",
+   "abstract_sha256": "d0638db14761f3c175562a60582abed266a1ddfb685ea8a000e6e0ab995e8dfa",
+   "abstract_chars": 1386
+  },
+  {
+   "work_key": "10.1016/j.matt.2026.102763",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.cej.2026.175717",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acs.jchemed.5c01851",
+   "abstract_sha256": "0c8e30a0f46b26cc893fba611bd49997cefaabe8ae6214d0edf32d8676bf792d",
+   "abstract_chars": 1736
+  },
+  {
+   "work_key": "10.1016/j.commatsci.2026.114657",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1038/s41560-026-02012-x",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s11082-026-08773-9",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1038/s41560-026-02017-6",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsnano.6c00728",
+   "abstract_sha256": "92bdc6a543dfc46652c9a2ecfee866686be44f5c6f805c055021bc75cfc9c539",
+   "abstract_chars": 1150
+  },
+  {
+   "work_key": "10.1016/j.solmat.2026.114332",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1021/acsaom.6c00093",
+   "abstract_sha256": "83efd27679eea132caad170d5ccdada747838bf49eb0b394b8711714e0701412",
+   "abstract_chars": 1542
+  },
+  {
+   "work_key": "10.1016/j.nxmate.2026.101991",
+   "abstract_sha256": "97fed0e1dc5f94a047866360c59ffcac9c64d294615453457f909d09d5f3a09e",
+   "abstract_chars": 1508
+  },
+  {
+   "work_key": "10.1016/j.solmat.2026.114322",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1007/s11082-026-08766-8",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1002/cssc.202600007",
+   "abstract_sha256": "53b6d70484353a73bfe2d53b273b9ee375b50679b7ca99ad6024f60cff25a530",
+   "abstract_chars": 1694
+  },
+  {
+   "work_key": "10.1016/j.surfin.2026.109156",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  },
+  {
+   "work_key": "10.1016/j.mseb.2026.119431",
+   "abstract_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "abstract_chars": 0
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+junction_class,axis,device_class,n_depth_papers
+single_junction,defects,p-i-n,30
+single_junction,defects,n-i-p,20
+single_junction,defects,tandem (2T),0
+single_junction,defects,tandem (4T),0
+single_junction,defects,module,0
+single_junction,defects,unspecified,82
+single_junction,interfaces,p-i-n,58
+single_junction,interfaces,n-i-p,27
+single_junction,interfaces,tandem (2T),0
+single_junction,interfaces,tandem (4T),0
+single_junction,interfaces,module,0
+single_junction,interfaces,unspecified,28
+single_junction,composition,p-i-n,2
+single_junction,composition,n-i-p,0
+single_junction,composition,tandem (2T),0
+single_junction,composition,tandem (4T),0
+single_junction,composition,module,0
+single_junction,composition,unspecified,20
+single_junction,scale_up,p-i-n,4
+single_junction,scale_up,n-i-p,3
+single_junction,scale_up,tandem (2T),0
+single_junction,scale_up,tandem (4T),0
+single_junction,scale_up,module,0
+single_junction,scale_up,unspecified,12
+single_junction,stability,p-i-n,7
+single_junction,stability,n-i-p,2
+single_junction,stability,tandem (2T),0
+single_junction,stability,tandem (4T),0
+single_junction,stability,module,0
+single_junction,stability,unspecified,9
+single_junction,architecture,p-i-n,1
+single_junction,architecture,n-i-p,0
+single_junction,architecture,tandem (2T),0
+single_junction,architecture,tandem (4T),0
+single_junction,architecture,module,0
+single_junction,architecture,unspecified,1
+tandem,architecture,p-i-n,0
+tandem,architecture,n-i-p,0
+tandem,architecture,tandem (2T),26
+tandem,architecture,tandem (4T),1
+tandem,architecture,module,1
+tandem,architecture,unspecified,8
+tandem,defects,p-i-n,3
+tandem,defects,n-i-p,0
+tandem,defects,tandem (2T),5
+tandem,defects,tandem (4T),0
+tandem,defects,module,3
+tandem,defects,unspecified,4
+tandem,interfaces,p-i-n,1
+tandem,interfaces,n-i-p,0
+tandem,interfaces,tandem (2T),8
+tandem,interfaces,tandem (4T),4
+tandem,interfaces,module,1
+tandem,interfaces,unspecified,1
+tandem,stability,p-i-n,0
+tandem,stability,n-i-p,0
+tandem,stability,tandem (2T),6
+tandem,stability,tandem (4T),0
+tandem,stability,module,1
+tandem,stability,unspecified,0
+tandem,scale_up,p-i-n,0
+tandem,scale_up,n-i-p,0
+tandem,scale_up,tandem (2T),0
+tandem,scale_up,tandem (4T),0
+tandem,scale_up,module,4
+tandem,scale_up,unspecified,1
+tandem,composition,p-i-n,0
+tandem,composition,n-i-p,0
+tandem,composition,tandem (2T),1
+tandem,composition,tandem (4T),0
+tandem,composition,module,1
+tandem,composition,unspecified,1

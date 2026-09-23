@@ -1,0 +1,49 @@
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 0, "n_papers": 12, "tokens_in": 6, "tokens_out": 15163, "cache_read": 0, "token_source": "reported", "at": "01:41:36"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 1, "n_papers": 12, "tokens_in": 6, "tokens_out": 10980, "cache_read": 7627, "token_source": "reported", "at": "01:44:21"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 2, "n_papers": 12, "tokens_in": 6, "tokens_out": 18457, "cache_read": 7627, "token_source": "reported", "at": "01:48:31"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 3, "n_papers": 12, "tokens_in": 6, "tokens_out": 13560, "cache_read": 7627, "token_source": "reported", "at": "01:50:15"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 4, "n_papers": 12, "tokens_in": 6, "tokens_out": 9668, "cache_read": 7627, "token_source": "reported", "at": "01:51:31"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 5, "n_papers": 12, "tokens_in": 6, "tokens_out": 7940, "cache_read": 7627, "token_source": "reported", "at": "01:52:33"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 6, "n_papers": 12, "tokens_in": 6, "tokens_out": 10961, "cache_read": 7627, "token_source": "reported", "at": "01:53:51"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 7, "n_papers": 12, "tokens_in": 6, "tokens_out": 8485, "cache_read": 7627, "token_source": "reported", "at": "01:54:59"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 8, "n_papers": 12, "tokens_in": 6, "tokens_out": 12509, "cache_read": 7627, "token_source": "reported", "at": "01:56:28"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 9, "n_papers": 12, "tokens_in": 6, "tokens_out": 10275, "cache_read": 7627, "token_source": "reported", "at": "01:57:46"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 10, "n_papers": 12, "tokens_in": 6, "tokens_out": 5647, "cache_read": 7627, "token_source": "reported", "at": "01:59:07"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 11, "n_papers": 12, "tokens_in": 6, "tokens_out": 10827, "cache_read": 7627, "token_source": "reported", "at": "02:00:27"}
+{"stage": "13c_s1", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 155}
+{"stage": "13c_s2", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 205}
+{"stage": "13c_s3", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 565}
+{"stage": "13c_s4", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 529}
+{"stage": "13c_s5", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 455}
+{"stage": "13c_s6", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 340}
+{"stage": "13c_s7", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 362}
+{"stage": "13c_s8", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 369}
+{"stage": "13d_s1", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 160}
+{"stage": "13d_s2", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 252}
+{"stage": "13d_s3", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 609}
+{"stage": "13d_s4", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 498}
+{"stage": "13d_s5", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 436}
+{"stage": "13d_s6", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 271}
+{"stage": "13d_s7", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 288}
+{"stage": "13d_s8", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 393}
+{"stage": "13d_abstract", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 283}
+{"stage": "13d_s1", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 229}
+{"stage": "13d_s2", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 229}
+{"stage": "13d_s3", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 620}
+{"stage": "13d_s4", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 517}
+{"stage": "13d_s5", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 410}
+{"stage": "13d_s6", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 312}
+{"stage": "13d_s7", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 286}
+{"stage": "13d_s8", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 341}
+{"stage": "13d_abstract", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 299}
+{"stage": "13d_s1", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 186}
+{"stage": "13d_s2", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 249}
+{"stage": "13d_s3", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 609}
+{"stage": "13d_s4", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 555}
+{"stage": "13d_s5", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 433}
+{"stage": "13d_s6", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 290}
+{"stage": "13d_s7", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 277}
+{"stage": "13d_s8", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 363}
+{"stage": "13d_abstract", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 307}
+{"stage": "13d_s8", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 350}
+{"stage": "13d_abstract", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 289}

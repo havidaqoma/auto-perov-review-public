@@ -1,0 +1,282 @@
+{
+ "note": "Page count and a year anchor for every shipped manuscript and supplement, measured on 2026-09-23. Byte-identical rebuilds are NOT expected: tectonic embeds a build timestamp and subsets fonts. Page count plus gates passing is the reproduction criterion.",
+ "recorded": "2026-09-23",
+ "pdfs": {
+  "manuscript/2026-06_v4/chemrxiv/manuscript.pdf": {
+   "pages": 15,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-06_v4/chemrxiv/manuscript_v4.pdf": {
+   "pages": 15,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-06_v4/chemrxiv/supplementary_v4.pdf": {
+   "pages": 5,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-06_v4/manuscript_v4.pdf": {
+   "pages": 15,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-06_v4/supplementary_v4.pdf": {
+   "pages": 5,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07/manuscript.pdf": {
+   "pages": 13,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07_v2/manuscript_v2.pdf": {
+   "pages": 23,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07_v2/supplementary.pdf": {
+   "pages": 5,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07_v3/arxiv/manuscript.pdf": {
+   "pages": 14,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07_v3/manuscript_v3.pdf": {
+   "pages": 14,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07_v3/supplementary.pdf": {
+   "pages": 5,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07_v3/supplementary_v3.pdf": {
+   "pages": 6,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07_v4/chemrxiv/manuscript.pdf": {
+   "pages": 15,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07_v4/chemrxiv/manuscript_v4.pdf": {
+   "pages": 15,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07_v4/chemrxiv/supplementary_v4.pdf": {
+   "pages": 6,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07_v4/manuscript_v4.pdf": {
+   "pages": 15,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07_v4/supplementary_v4.pdf": {
+   "pages": 6,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07_v5/manuscript_v5.pdf": {
+   "pages": 15,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-07_v5/supplementary_v5.pdf": {
+   "pages": 7,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-08_v3/arxiv/manuscript.pdf": {
+   "pages": 15,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-08_v3/manuscript_v3.pdf": {
+   "pages": 15,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-08_v3/supplementary_v3.pdf": {
+   "pages": 5,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-08_v4/chemrxiv/manuscript.pdf": {
+   "pages": 14,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-08_v4/chemrxiv/manuscript_v4.pdf": {
+   "pages": 14,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-08_v4/chemrxiv/supplementary_v4.pdf": {
+   "pages": 5,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-08_v4/manuscript_v4.pdf": {
+   "pages": 14,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-08_v4/supplementary_v4.pdf": {
+   "pages": 5,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-08_v5/manuscript_v5.pdf": {
+   "pages": 14,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-08_v5/supplementary_v5.pdf": {
+   "pages": 6,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v4/chemrxiv/manuscript.pdf": {
+   "pages": 36,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v4/chemrxiv/manuscript_v4.pdf": {
+   "pages": 36,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v4/chemrxiv/supplementary_v4.pdf": {
+   "pages": 8,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v4/manuscript_v4.pdf": {
+   "pages": 34,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v4/supplementary_v4.pdf": {
+   "pages": 8,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v6/chemrxiv/manuscript.pdf": {
+   "pages": 34,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v6/chemrxiv/manuscript_v4.pdf": {
+   "pages": 36,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v6/chemrxiv/manuscript_v6.pdf": {
+   "pages": 34,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v6/chemrxiv/supplementary_v4.pdf": {
+   "pages": 8,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v6/chemrxiv/supplementary_v6.pdf": {
+   "pages": 13,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v6/manuscript_v4.pdf": {
+   "pages": 34,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v6/manuscript_v6.pdf": {
+   "pages": 34,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v6/supplementary_v4.pdf": {
+   "pages": 8,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/2026-H1_v6/supplementary_v6.pdf": {
+   "pages": 13,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "manuscript/example_manuscript_v2.pdf": {
+   "pages": 16,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "yearly/manuscript/2025_yearly/manuscript_yearly.pdf": {
+   "pages": 36,
+   "first_page_contains": [
+    "2025"
+   ]
+  },
+  "yearly/manuscript/2025_yearly/supplementary_yearly.pdf": {
+   "pages": 12,
+   "first_page_contains": [
+    "2025"
+   ]
+  }
+ }
+}

@@ -1,0 +1,436 @@
+{
+ "note": "Gate verdicts as recorded by the builds that produced the shipped issues, measured from the reports in this tree on 2026-09-23. reproduce.py fails if any verdict CHANGES. Non-pass verdicts are part of the record and are explained per gate; see non_pass_explained.",
+ "recorded": "2026-09-23",
+ "reports": {
+  "manuscript/2026-06_v4/gate_report_v4.json": {
+   "gates": 17,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "skip",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9d-model-names": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {
+    "G8-novelty": "First issue on record for that cadence, so there is no prior issue to measure section similarity against. The gate reports skip rather than a pass it never computed, which is the same distinction handbook 6 draws for G3d."
+   }
+  },
+  "manuscript/2026-07/gate_report.json": {
+   "gates": 5,
+   "statuses": {
+    "G4": "pass",
+    "G2": "pass",
+    "G1": "pass",
+    "G6": "pass",
+    "G5": "fail"
+   },
+   "non_pass_explained": {
+    "G5": "The 2026-07 issue measured total_pages 13 against total_band [8, 10] while content_pages 6.6 sat inside content_band [6, 7]. The band was written for the v1 two-column layout and was never migrated when v3 moved to single column, 11pt and ~80 references, so the gate was comparing a v3 artifact to a v1 expectation. The recorded fix was to add paper_v3 bands (content [8, 11], total [12, 17]) bracketed on the measured artifact, NOT to widen the original band; the failing verdict on this older report is left standing because rewriting a shipped gate report to look clean is the behaviour handbook 6.1 forbids."
+   }
+  },
+  "manuscript/2026-07_v2/gate_report_v2.json": {
+   "gates": 4,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2": "pass",
+    "G6": "pass"
+   },
+   "non_pass_explained": {}
+  },
+  "manuscript/2026-07_v3/gate_report_v3.json": {
+   "gates": 8,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G7-abbrev": "pass"
+   },
+   "non_pass_explained": {}
+  },
+  "manuscript/2026-07_v4/gate_report_v4.json": {
+   "gates": 17,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "pass",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9d-model-names": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {}
+  },
+  "manuscript/2026-08_v3/gate_report_v3.json": {
+   "gates": 9,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G7-abbrev": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {}
+  },
+  "manuscript/2026-08_v4/gate_report_v4.json": {
+   "gates": 17,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "fail",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9d-model-names": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {
+    "G8-novelty": "Section-vs-prior-issue similarity exceeded no threshold; the gate fired on >=12-word shingle reuse (n_shared_shingles: 2), both instances being the review's own framing sentence carried over from the prior issue. Every per-section ratio was far under the 0.25 bound (worst 0.061) and the abstract ratio was 0.014 against 0.30. It shipped as a recorded failure rather than being waived, because handbook 6.1 forbids widening a gate to make output pass."
+   }
+  },
+  "manuscript/2026-H1_v4/gate_report_v4.json": {
+   "gates": 18,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3d-illumination": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "pass",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9d-model-names": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {}
+  },
+  "manuscript/2026-H1_v6/gate_report_v4.json": {
+   "gates": 18,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3d-illumination": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "pass",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9d-model-names": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {}
+  },
+  "papers/studies/yearly/gate_report_yearly.json": {
+   "gates": 20,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "cold-start",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9e-figures-present": "pass",
+    "G9f-tables-present": "pass",
+    "G9d-model-names": "pass",
+    "G11-coverage": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {
+    "G8-novelty": "First yearly issue in its repository. There is no prior yearly issue to measure similarity against, so the gate reports cold-start rather than a pass it cannot justify."
+   }
+  },
+  "runs/2026-06_cf764cbb/gate_report_v4.json": {
+   "gates": 17,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "skip",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9d-model-names": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {
+    "G8-novelty": "First issue on record for that cadence, so there is no prior issue to measure section similarity against. The gate reports skip rather than a pass it never computed, which is the same distinction handbook 6 draws for G3d."
+   }
+  },
+  "runs/2026-07_197abe83/gate_report.json": {
+   "gates": 5,
+   "statuses": {
+    "G4": "pass",
+    "G2": "pass",
+    "G1": "pass",
+    "G6": "pass",
+    "G5": "fail"
+   },
+   "non_pass_explained": {
+    "G5": "The 2026-07 issue measured total_pages 13 against total_band [8, 10] while content_pages 6.6 sat inside content_band [6, 7]. The band was written for the v1 two-column layout and was never migrated when v3 moved to single column, 11pt and ~80 references, so the gate was comparing a v3 artifact to a v1 expectation. The recorded fix was to add paper_v3 bands (content [8, 11], total [12, 17]) bracketed on the measured artifact, NOT to widen the original band; the failing verdict on this older report is left standing because rewriting a shipped gate report to look clean is the behaviour handbook 6.1 forbids."
+   }
+  },
+  "runs/2026-07_197abe83/gate_report_v2.json": {
+   "gates": 4,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2": "pass",
+    "G6": "pass"
+   },
+   "non_pass_explained": {}
+  },
+  "runs/2026-07_197abe83/gate_report_v3.json": {
+   "gates": 8,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G7-abbrev": "pass"
+   },
+   "non_pass_explained": {}
+  },
+  "runs/2026-07_197abe83/gate_report_v4.json": {
+   "gates": 17,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "pass",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9d-model-names": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {}
+  },
+  "runs/2026-08_b086357d/gate_report_v3.json": {
+   "gates": 9,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G7-abbrev": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {}
+  },
+  "runs/2026-08_b086357d/gate_report_v4.json": {
+   "gates": 17,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "fail",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9d-model-names": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {
+    "G8-novelty": "Section-vs-prior-issue similarity exceeded no threshold; the gate fired on >=12-word shingle reuse (n_shared_shingles: 2), both instances being the review's own framing sentence carried over from the prior issue. Every per-section ratio was far under the 0.25 bound (worst 0.061) and the abstract ratio was 0.014 against 0.30. It shipped as a recorded failure rather than being waived, because handbook 6.1 forbids widening a gate to make output pass."
+   }
+  },
+  "runs/2026-H1/gate_report_v4.json": {
+   "gates": 18,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3d-illumination": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "pass",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9d-model-names": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {}
+  },
+  "runs/2026-H1/gate_report_v6.json": {
+   "gates": 18,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3d-illumination": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "pass",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9d-model-names": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {}
+  },
+  "yearly/manuscript/2025_yearly/gate_report_yearly.json": {
+   "gates": 20,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "cold-start",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9e-figures-present": "pass",
+    "G9f-tables-present": "pass",
+    "G9d-model-names": "pass",
+    "G11-coverage": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {
+    "G8-novelty": "First yearly issue in its repository. There is no prior yearly issue to measure similarity against, so the gate reports cold-start rather than a pass it cannot justify."
+   }
+  },
+  "yearly/runs/2025_yearly/gate_report_yearly.json": {
+   "gates": 20,
+   "statuses": {
+    "G4": "pass",
+    "G1": "pass",
+    "G2c-cite-count": "pass",
+    "G2": "pass",
+    "G2b-cite-order": "pass",
+    "G6": "pass",
+    "G3-abstract": "pass",
+    "G3c-abstract-physics": "pass",
+    "G3b-abstract-form": "pass",
+    "G7-abbrev": "pass",
+    "G8-novelty": "cold-start",
+    "G9a-notation": "pass",
+    "G9b-cite-links": "pass",
+    "G9c-figure-unique": "pass",
+    "G9e-figures-present": "pass",
+    "G9f-tables-present": "pass",
+    "G9d-model-names": "pass",
+    "G11-coverage": "pass",
+    "G10-title-block": "pass",
+    "G5": "pass"
+   },
+   "non_pass_explained": {
+    "G8-novelty": "First yearly issue in its repository. There is no prior yearly issue to measure similarity against, so the gate reports cold-start rather than a pass it cannot justify."
+   }
+  }
+ }
+}

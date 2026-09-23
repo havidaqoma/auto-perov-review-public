@@ -1,0 +1,150 @@
+{
+  "year": "2025",
+  "n_months": 12,
+  "spine": "device_class",
+  "class_mass": {
+    "single_junction": 332,
+    "all_perovskite_tandem": 28,
+    "hybrid_tandem": 47,
+    "module": 43
+  },
+  "class_mass_after_fold": {
+    "single_junction": 332,
+    "all_perovskite_tandem": 28,
+    "hybrid_tandem": 47,
+    "module": 43
+  },
+  "folded": {},
+  "sections": [
+    {
+      "id": "1",
+      "role": "intro",
+      "title": "Introduction",
+      "ceiling": 700,
+      "cite_target": 0,
+      "n_depth": 0,
+      "axis": "intro",
+      "axes": [
+        "intro"
+      ]
+    },
+    {
+      "id": "2",
+      "role": "trajectory",
+      "title": "The Certified Frontier Across 2025",
+      "ceiling": 900,
+      "cite_target": 18,
+      "n_depth": 0,
+      "axis": "trajectory",
+      "axes": [
+        "trajectory"
+      ]
+    },
+    {
+      "id": "3",
+      "role": "device",
+      "title": "Single-Junction Devices: Where the Remaining Losses Sit",
+      "ceiling": 2200,
+      "cite_target": 49,
+      "n_depth": 332,
+      "device_class": "single_junction",
+      "pce_limit_pct": 29.4,
+      "folded_in": [],
+      "axis": "single_junction",
+      "axes": [
+        "single_junction"
+      ]
+    },
+    {
+      "id": "4",
+      "role": "device",
+      "title": "All-Perovskite Tandems: Sn-Pb Stability and Subcell Matching",
+      "ceiling": 1330,
+      "cite_target": 16,
+      "n_depth": 28,
+      "device_class": "all_perovskite_tandem",
+      "pce_limit_pct": 47.6,
+      "folded_in": [],
+      "axis": "all_perovskite_tandem",
+      "axes": [
+        "all_perovskite_tandem"
+      ]
+    },
+    {
+      "id": "5",
+      "role": "device",
+      "title": "Hybrid Tandems: Coupling Perovskite to Silicon, CIGS and Organic Subcells",
+      "ceiling": 1330,
+      "cite_target": 28,
+      "n_depth": 47,
+      "device_class": "hybrid_tandem",
+      "pce_limit_pct": 47.6,
+      "folded_in": [],
+      "axis": "hybrid_tandem",
+      "axes": [
+        "hybrid_tandem"
+      ]
+    },
+    {
+      "id": "6",
+      "role": "device",
+      "title": "Modules and Large-Area Devices: Scaling the Deposited Film",
+      "ceiling": 1330,
+      "cite_target": 25,
+      "n_depth": 43,
+      "device_class": "module",
+      "pce_limit_pct": 47.6,
+      "folded_in": [],
+      "axis": "module",
+      "axes": [
+        "module"
+      ]
+    },
+    {
+      "id": "7",
+      "role": "synthesis",
+      "title": "Reading the Device Classes Together",
+      "ceiling": 900,
+      "cite_target": 10,
+      "n_depth": 0,
+      "axis": "synthesis",
+      "axes": [
+        "synthesis"
+      ]
+    },
+    {
+      "id": "8",
+      "role": "audit",
+      "title": "Reporting Practice Across 2025",
+      "ceiling": 700,
+      "cite_target": 7,
+      "n_depth": 0,
+      "axis": "audit",
+      "axes": [
+        "audit"
+      ]
+    },
+    {
+      "id": "9",
+      "role": "gaps",
+      "title": "Research Gaps and Outlook",
+      "ceiling": 900,
+      "cite_target": 9,
+      "n_depth": 0,
+      "axis": "gaps",
+      "axes": [
+        "gaps"
+      ]
+    }
+  ],
+  "total_ceiling": 10290,
+  "cite_target_sum": 162,
+  "params": {
+    "DEVICE_MIN_WORDS": 900,
+    "DEVICE_MAX_WORDS": 2200,
+    "WORDS_PER_CITE": 45,
+    "MIN_CLASS_CARDS": 25,
+    "body_budget": 6200
+  },
+  "sha256": "2382b7c2c99a0970"
+}

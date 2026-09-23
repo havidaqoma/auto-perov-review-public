@@ -1,0 +1,13 @@
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 0, "n_papers": 12, "tokens_in": 6, "tokens_out": 15937, "cache_read": 7627, "token_source": "reported", "at": "19:15:17"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 1, "n_papers": 12, "tokens_in": 6, "tokens_out": 12846, "cache_read": 7627, "token_source": "reported", "at": "19:18:04"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 2, "n_papers": 12, "tokens_in": 6, "tokens_out": 18322, "cache_read": 7627, "token_source": "reported", "at": "19:21:45"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 3, "n_papers": 12, "tokens_in": 6, "tokens_out": 13904, "cache_read": 7627, "token_source": "reported", "at": "19:24:42"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 4, "n_papers": 12, "tokens_in": 6, "tokens_out": 9475, "cache_read": 7627, "token_source": "reported", "at": "19:26:53"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 5, "n_papers": 12, "tokens_in": 6, "tokens_out": 9988, "cache_read": 7627, "token_source": "reported", "at": "19:29:02"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 6, "n_papers": 12, "tokens_in": 6, "tokens_out": 12932, "cache_read": 7627, "token_source": "reported", "at": "19:32:11"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 7, "n_papers": 12, "tokens_in": 6, "tokens_out": 11484, "cache_read": 7627, "token_source": "reported", "at": "19:34:24"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 8, "n_papers": 12, "tokens_in": 6, "tokens_out": 9923, "cache_read": 7627, "token_source": "reported", "at": "19:36:34"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 9, "n_papers": 12, "tokens_in": 6, "tokens_out": 10008, "cache_read": 7627, "token_source": "reported", "at": "19:38:44"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 10, "n_papers": 12, "tokens_in": 6, "tokens_out": 11286, "cache_read": 7627, "token_source": "reported", "at": "19:41:12"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 11, "n_papers": 12, "tokens_in": 6, "tokens_out": 10036, "cache_read": 7627, "token_source": "reported", "at": "19:43:30"}
+{"stage": "09_cards", "model": "opencode-go/qwen3.8-flash", "cli": "opencode", "batch": 12, "n_papers": 2, "tokens_in": 6, "tokens_out": 1989, "cache_read": 7627, "token_source": "reported", "at": "19:44:04"}
