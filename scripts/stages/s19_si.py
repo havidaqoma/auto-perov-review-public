@@ -441,10 +441,18 @@ def render_pdf(f: pathlib.Path, pdf: pathlib.Path, rd: pathlib.Path) -> None:
                 pandoc = str(c)
                 break
     tectonic = shutil.which("tectonic") or "tectonic"
+    head = ROOT / "config" / "tex" / "si_head.tex"
+    if not head.exists():
+        raise SystemExit(f"FAIL-CLOSED SI build: missing preamble {head}")
     p = subprocess.run(
         [pandoc, str(f), "-V", "geometry:margin=2.4cm", "-V", "fontsize=10pt",
          "-V", "colorlinks=true", "-V", "linkcolor=[HTML]{1A4E8A}",
          "-V", "urlcolor=[HTML]{1A4E8A}",
+         # The SI preamble the H1 edition proved: it drops pandoc's automatic
+         # "Figure 1:" label in front of the manual "Figure S1." and keeps
+         # each float near its text. Without it, the June and August SIs lost
+         # Figure S2 off the page end.
+         "-H", str(head),
          f"--pdf-engine={tectonic}", "-o", str(pdf)],
         capture_output=True, text=True, timeout=900, cwd=ROOT)
     if p.returncode != 0 or not pdf.exists():

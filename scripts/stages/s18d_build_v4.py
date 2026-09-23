@@ -263,8 +263,13 @@ def novelty_gate(month: str, secs: dict, ab: str, smap: dict,
     abs_max = gcfg["novelty"]["abstract_max_ratio"]
     shingle_n = gcfg["novelty"]["shingle_words"]
 
-    prior = sorted((p for p in (ROOT / "runs").glob("*/manuscript_v*.md")
-                    if p.parent.name.split("_")[0] < month),
+    # manuscript_vN.md is the name this build writes; manuscript.md is the
+    # same file in the public release, which drops version tokens from output
+    # names. Sorting by name keeps the newest vN last when a run holds both
+    # (the private July run also carries its unversioned v1 manuscript.md).
+    prior = sorted((p for p in (ROOT / "runs").glob("*/manuscript*.md")
+                    if re.fullmatch(r"manuscript(_v\d+)?\.md", p.name)
+                    and p.parent.name.split("_")[0] < month),
                    key=lambda p: (p.parent.name, p.name))
     if prior_path is not None:
         # Only a self-test pins the comparison. A test that asserts a
@@ -471,6 +476,326 @@ def provenance(rd: pathlib.Path, cards: list, models: dict) -> dict:
     }
 
 
+def text_gates(*, month: str, ab: str, secs: dict, order: list,
+               unresolved: list, aliased: dict, body_words: int,
+               smap: dict, frozen: dict, seq: list, S: dict, cl: list,
+               abs_vals: dict, abs_tokens: list, expanded: list, G: dict,
+               notation_counts: dict, doi_of: dict, fig_for: dict,
+               md: list, prior_path: pathlib.Path | None = None) -> dict:
+    """Every gate that reads the manuscript SOURCE, in report order.
+
+    Lifted verbatim out of build() so one body of code serves both the
+    build and scripts/regate_edition.py. A regate that re-typed these
+    checks would be a second implementation free to drift from the first,
+    and its report would claim gates ran that never did.
+
+    G10-title-block is returned as a placeholder warn: it is measured on
+    the rendered page by the caller, like G5.
+    """
+    monotonic = seq == sorted(seq)
+    BANNED = ["delve", "harness", "pivotal", "seamless", "leverage", "moreover",
+              "furthermore", "it is worth noting", "noteworthy", "comprehensive",
+              "cutting-edge", "tapestry", "unlock", "showcase", "underscore",
+              "realm", "ever-evolving", "a myriad of", "state-of-the-art"]
+    prose = ab + "\n" + "\n".join(secs.values())
+    low = prose.lower()
+    gate: dict = {}
+
+    bad = {b: len(re.findall(rf"\b{re.escape(b)}\b", low)) for b in BANNED}
+    bad = {k: v for k, v in bad.items() if v}
+    # Narration detection uses stages.hygiene, the single canonical filter.
+    # The old private LEAK_RX here was NARROWER than the draft-stage copy, so a
+    # line that slipped clean() also passed G4 and shipped. G4 is the last line
+    # of defence and is FAIL-CLOSED: the draft stage strips per line, so any
+    # narration still present at build time means the strip was bypassed
+    # (hand-edited draft, stale cache, divergent filter) and the build must
+    # stop rather than emit a PDF a human has to catch.
+    leak = find_narration(prose)
+    gate["G4"] = {"status": "pass" if not bad and not prose.count("\u2014") and not leak
+                  else "fail",
+                  "detail": {"em_dash": prose.count("\u2014"), "banned": bad,
+                             "self_report_leak": leak[:5]}}
+    gate["G1"] = {"status": "pass" if not unresolved else "fail",
+                  "detail": {"resolved": len(order),
+                             "unresolved": unresolved[:8],
+                             "aliased": aliased}}
+
+    lo, hi = G["citations"]["total_band"]
+    gate["G2c-cite-count"] = {
+        "status": "pass" if lo <= len(order) <= hi else "fail",
+        "detail": {"cited": len(order), "target_range": [lo, hi],
+                   "words_per_citation": round(body_words / max(len(order), 1), 1)}}
+
+    ceil_total = int(smap["total_ceiling"] * 1.15)
+    per_sec_ok = {s["id"]: len(secs[s["id"]].split()) <= int(s["ceiling"] * 1.35)
+                  for s in smap["sections"]}
+    gate["G2"] = {"status": "pass" if body_words <= ceil_total and all(per_sec_ok.values())
+                  else "fail",
+                  "detail": {"prose_words": body_words, "ceiling": ceil_total,
+                             "per_section_within_135pct": per_sec_ok,
+                             "map_sha256": smap["sha256"],
+                             "input_freeze": frozen}}
+    gate["G2b-cite-order"] = {"status": "pass" if monotonic else "fail",
+                              "detail": {"first_appearance_sequence": seq[:20],
+                                         "monotonic": monotonic}}
+    g6 = re.findall(r"\bwe (?:measured|fabricated|synthesi[sz]ed|simulated)\b", low)
+    gate["G6"] = {"status": "pass" if not g6 else "fail", "detail": {"hits": g6}}
+
+    # G3: every abstract numeral must trace to stats or a card. With
+    # substitution this should be automatic, so a failure means the writer
+    # smuggled a digit past the no-digit contract.
+    stat_nums = {str(v) for v in S.values() if isinstance(v, (int, float))}
+    stat_nums |= {_fmt(v) for v in S.values() if isinstance(v, (int, float))}
+    card_nums = set()
+    for c in cl:
+        for grp in ("performance", "stability"):
+            for f in (c.get(grp) or {}).values():
+                if isinstance(f, dict) and f.get("value") is not None:
+                    card_nums.add(_fmt(f["value"]))
+                    card_nums.add(_fmt(int(f["value"])) if isinstance(f["value"], float)
+                                  and f["value"] == int(f["value"]) else _fmt(f["value"]))
+    allowed = stat_nums | card_nums | {_fmt(len(cl)), _fmt(len(order))}
+    # Values that resolve_placeholders COMPUTES rather than reads: N_CERT is a
+    # count of cards carrying a certified value, so it appears in neither
+    # stats.json nor any card field. G3 flagged "18" as unverified on a number
+    # this build had itself derived from the evidence. The substituted values
+    # are the canonical ones by construction, so admit them explicitly.
+    allowed |= {str(v) for v in abs_vals.values() if v is not None}
+    allowed |= {re.sub(r"[^\d.]", "", str(v)) for v in abs_vals.values()
+                if v is not None}
+    bad_nums = [n for n in re.findall(r"\b\d+(?:\.\d+)?\b", ab)
+                if n not in allowed and n not in {"80", "2", "1"}]
+    gate["G3-abstract"] = {
+        "status": "pass" if not bad_nums else "fail",
+        "detail": {"unverified": bad_nums[:8], "words": len(ab.split()),
+                   "placeholders_resolved": abs_tokens}}
+
+    # G3c: a substituted value must be PHYSICALLY POSSIBLE for the quantity it
+    # is presented as.
+    #
+    # G3 asks only "does this number trace to a card?". June 2026's abstract
+    # said "32.95% in single-junction inverted cells", and 32.95 DID trace to a
+    # card, so G3 passed it. The number was real; the device was wrong. That is
+    # 7.2 with the arithmetic intact -- a misattribution, not a fabrication, and
+    # tracing alone cannot see it.
+    #
+    # A certified single-junction perovskite above the Shockley-Queisser limit
+    # (~33.7% ideal, ~29.4% for a 1.55 eV absorber) is impossible, so the
+    # rendered claim was self-refuting to any reader who knows the physics.
+    # Havid is that reader; this gate is so the build does not need him to be.
+    SQ_SINGLE_JUNCTION_PCT = 29.4
+    implausible = []
+    sj_val = abs_vals.get("P_TOP_SJ")
+    if sj_val:
+        try:
+            n = float(re.sub(r"[^\d.]", "", str(sj_val)))
+        except ValueError:
+            n = 0.0
+        if n > SQ_SINGLE_JUNCTION_PCT:
+            implausible.append(
+                {"token": "P_TOP_SJ", "value": n,
+                 "limit": SQ_SINGLE_JUNCTION_PCT,
+                 "why": ("a single-junction perovskite cannot exceed the "
+                         "Shockley-Queisser limit; this is a tandem or module "
+                         "value attached to the wrong device")})
+    gate["G3c-abstract-physics"] = {
+        "status": "pass" if not implausible else "fail",
+        "detail": {"implausible": implausible,
+                   "sj_limit_pct": SQ_SINGLE_JUNCTION_PCT}}
+
+    # G3d: a value presented as a performance record must have been measured
+    # under one-sun AM1.5G.
+    #
+    # Havid read the v5 Table 1 and flagged a >30% single-junction PCE, asking
+    # whether it was a tandem or a simulation. It was neither: a real,
+    # experimental, correctly-labelled single-junction cell reporting
+    # "a PCE(i) of 44.36% (a power output of 127.94 uW cm-2)" at 1000 lx LED.
+    # The number is CORRECT. An indoor PCE above the one-sun Shockley-Queisser
+    # limit is physically ordinary, because that limit is defined for AM1.5G
+    # and a narrow low-flux indoor spectrum is far better matched to a
+    # wide-bandgap absorber.
+    #
+    # Every guard already in this build passed it, each for a good reason:
+    #   measured()                  asks about LENS      -> it is an experiment
+    #   anchor_contradicts_family() asks about the DEVICE -> it is single junction
+    #   G3c                         bounds CERTIFIED only -> this is self-reported
+    #   pce_champion                had no plausibility check at all
+    #
+    # So illumination is a fourth, independent axis. The stats and figure layers
+    # exclude indoor values (stages/illumination.py), but that guard lived
+    # outside the gate set, which means a future consumer computing a frontier
+    # by a new code path would bypass it silently. This gate closes that: it
+    # re-derives the check from the CARDS BACKING THE ABSTRACT, so it holds
+    # regardless of which layer produced the number.
+    illum_bad = []
+    try:
+        from stages.illumination import classify, indoor_markers
+        _byk = {c.get("work_key"): c for c in cl}
+        for tok in ("P_TOP_CERT", "P_TOP_SJ", "P_AREA_MAX"):
+            raw = abs_vals.get(tok)
+            if not raw:
+                continue
+            try:
+                want = float(re.sub(r"[^\d.]", "", str(raw)))
+            except ValueError:
+                continue
+            for c in cl:
+                for fld in ("pce_certified", "pce_champion"):
+                    f = (c.get("performance") or {}).get(fld)
+                    if not isinstance(f, dict):
+                        continue
+                    if f.get("value") != want:
+                        continue
+                    anch = f.get("anchor") or ""
+                    if classify(anch) != "one_sun":
+                        illum_bad.append({
+                            "token": tok, "value": want,
+                            "work_key": c.get("work_key"),
+                            "condition": classify(anch),
+                            "markers": indoor_markers(anch),
+                            "anchor": anch[:150],
+                            "why": ("an indoor or low-light efficiency is not "
+                                    "comparable to a one-sun record and must "
+                                    "not be presented as one")})
+    except ImportError:
+        # The module is part of the period layer. A monthly build without it
+        # reports the gate as skipped rather than silently passing.
+        illum_bad = None
+    gate["G3d-illumination"] = {
+        "status": ("skip" if illum_bad is None
+                   else "pass" if not illum_bad else "fail"),
+        "detail": {"non_one_sun_values": illum_bad or []}}
+
+    alo, ahi = G["abstract"]["word_band"]
+    naw = len(ab.split())
+    gate["G3b-abstract-form"] = {
+        "status": "pass" if (alo <= naw <= ahi and not re.search(r"\[\d", ab)
+                             and "[@" not in ab) else "fail",
+        "detail": {"words": naw, "band": [alo, ahi],
+                   "citation_markers": len(re.findall(r"\[[@\d]", ab))}}
+
+    unexp = []
+    for abv, full in (("PCE", "power conversion efficiency"),
+                      ("SAM", "self-assembled monolayer"),
+                      ("ISOS", "International Summit on Organic Photovoltaic Stability")):
+        first = prose.find(abv)
+        if first >= 0 and full.lower() not in prose[:first + 90].lower():
+            unexp.append(abv)
+    gate["G7-abbrev"] = {"status": "pass" if not unexp else "fail",
+                         "detail": {"expanded_automatically": expanded,
+                                    "still_bare": unexp}}
+
+    gate["G8-novelty"] = novelty_gate(month, secs, ab, smap, G,
+                                      prior_path=prior_path)
+
+    # ---- G9-format: the four defects Havid found in the August v4 PDF ----
+    # Per 0.2 each becomes an assertion, not a prompt reminder. All four are
+    # measured on the SOURCE the build just emitted; verify_pdf re-measures
+    # the rendered page, because markdown inspection has missed every format
+    # defect this project has shipped (0.3).
+    all_prose = ab + "\n" + "\n".join(secs.values())
+
+    # 1. notation: nothing may remain flat after the formatting pass
+    notation_report = check_notation(all_prose)
+    gate["G9a-notation"] = {
+        "status": "pass" if not notation_report["defects"] else "fail",
+        "detail": {"residual_defects": notation_report["defects"],
+                   "ambiguous_for_human_review": notation_report["ambiguous"],
+                   "substitutions_applied": sum(notation_counts.values())}}
+
+    # 2. citations must be clickable. A body citation that is not wrapped in
+    #    \href sends the reader nowhere, which was the whole point of the fix.
+    n_href = len(re.findall(r"\\href\{https://doi\.org/", all_prose))
+    plain = re.findall(r"(?<!\{)\[(\d+(?:,\d+)*)\](?!\})", all_prose)
+    plain_real = [g for g in plain
+                  if all(0 < int(x) <= len(order) for x in g.split(","))]
+    no_doi = [wk for wk in order if not doi_of.get(wk)]
+    gate["G9b-cite-links"] = {
+        "status": "pass" if (n_href > 0 and not plain_real) else "fail",
+        "detail": {"hyperlinked_markers": n_href,
+                   "unlinked_markers": plain_real[:6],
+                   "works_without_doi": len(no_doi)}}
+
+    # 3. one figure file may appear at most once. F3 attached twice in the
+    #    August build and LaTeX numbered it as both Figure 2 and Figure 3.
+    attached = [fn for fn, _ in fig_for.values()]
+    dupes = sorted({f for f in attached if attached.count(f) > 1})
+    gate["G9c-figure-unique"] = {
+        "status": "pass" if not dupes else "fail",
+        "detail": {"attached": attached, "duplicates": dupes,
+                   "n_attached": len(attached),
+                   "n_distinct": len(set(attached))}}
+
+    # 4. the AI declaration must name models the way a reader expects.
+    #    "opus" is a CLI slug, not a product name.
+    #
+    #    Checker bug caught on first run (7.3, seventh instance): matching the
+    #    lowercased substring "used opus" fires on the CORRECT string
+    #    "used Opus 5", because "Opus 5".lower() starts with "opus". The
+    #    artifact was right and the check was wrong. Require a bare slug that
+    #    is NOT followed by a version token, and match case-sensitively so a
+    #    capitalised product name is never a hit.
+    ai_txt = "\n".join(str(x) for x in md
+                       if "Structured extraction used" in str(x))
+    BARE_SLUGS = ("opus", "sonnet", "haiku", "gemini", "qwen", "muse-spark")
+    bad_names = []
+    for slug in BARE_SLUGS:
+        # bare slug, lowercase, not part of a longer token and not followed by
+        # a version number or a hyphenated variant
+        if re.search(rf"\b{re.escape(slug)}\b(?![\w.\-]*\s*\d)(?![\w.\-])",
+                     ai_txt):
+            bad_names.append(slug)
+    gate["G9d-model-names"] = {
+        "status": "pass" if not bad_names else "fail",
+        "detail": {"bare_slugs_found": bad_names,
+                   "declared": re.findall(r"(?:used|by) ([\w.\-]+(?: \d+)?)",
+                                          ai_txt)[:4]}}
+    # ---- G10-title-block: spacing MEASURED on the rendered page ----------
+    # Deferred until after the PDF exists (like G5), because the whole point
+    # is that source em-values lie: three blind tunings (0.9 -> 2.2 -> 3.6em)
+    # all failed, and the fourth measurement showed \vspace after
+    # \end{minipage} was being discarded in horizontal mode -- 3.6em in the
+    # source rendered as 0.11 pt on the page.
+    gate["G10-title-block"] = {"status": "warn",
+                               "detail": {"reason": "not yet measured"}}
+    for k, v in gate.items():
+        print(f"[18d] {k}: {v['status']}  {json.dumps(v['detail'])[:135]}")
+    return gate
+
+
+def page_gate(pdf: pathlib.Path, G: dict) -> tuple:
+    """G5: page bands measured on the rendered PDF. Returns (pages, g5)."""
+    band_c = G["paper_v3"]["content_page_band"]
+    band_t = G["paper_v3"]["total_page_band"]
+    TBF = 0.40
+    pages, g5 = None, {"status": "warn", "detail": {"reason": "pymupdf unavailable"}}
+    try:
+        import pymupdf
+        refs_page = None
+        with pymupdf.open(pdf) as d:
+            pages = d.page_count
+            for i in range(d.page_count):
+                if re.search(r"^\s*(?:\d+\.\s*)?References\s*$", d[i].get_text(), re.M):
+                    refs_page = i + 1
+                    break
+        if refs_page:
+            content = refs_page - TBF
+            ok_c = band_c[0] <= content <= band_c[1]
+            ok_t = band_t[0] <= pages <= band_t[1]
+            g5 = {"status": "pass" if (ok_c and ok_t) else "fail",
+                  "detail": {"pages_to_refs": refs_page, "title_block_fraction": TBF,
+                             "content_pages": round(content, 2), "total_pages": pages,
+                             "reference_pages": pages - refs_page,
+                             "content_band": band_c, "total_band": band_t,
+                             "content_ok": ok_c, "total_ok": ok_t}}
+        else:
+            g5 = {"status": "warn", "detail": {"reason": "References heading not located",
+                                               "total_pages": pages}}
+    except Exception as e:
+        g5 = {"status": "warn", "detail": {"error": str(e)[:140]}}
+    return pages, g5
+
+
 def build(month: str, out_dir_override: pathlib.Path | None = None) -> dict:
     rd = run_dir(month)
     MON = month_name(month)
@@ -653,7 +978,6 @@ def build(month: str, out_dir_override: pathlib.Path | None = None) -> dict:
             if g not in seen:
                 seen.add(g)
                 seq.append(g)
-    monotonic = seq == sorted(seq)
 
     # --- references -------------------------------------------------------
     refs = []
@@ -855,272 +1179,13 @@ def build(month: str, out_dir_override: pathlib.Path | None = None) -> dict:
     (rd / "manuscript_v4.md").write_text(manuscript, encoding="utf-8")
 
     # ---------------- gates ----------------
-    BANNED = ["delve", "harness", "pivotal", "seamless", "leverage", "moreover",
-              "furthermore", "it is worth noting", "noteworthy", "comprehensive",
-              "cutting-edge", "tapestry", "unlock", "showcase", "underscore",
-              "realm", "ever-evolving", "a myriad of", "state-of-the-art"]
-    prose = ab + "\n" + "\n".join(secs.values())
-    low = prose.lower()
-    gate: dict = {}
-
-    bad = {b: len(re.findall(rf"\b{re.escape(b)}\b", low)) for b in BANNED}
-    bad = {k: v for k, v in bad.items() if v}
-    # Narration detection uses stages.hygiene, the single canonical filter.
-    # The old private LEAK_RX here was NARROWER than the draft-stage copy, so a
-    # line that slipped clean() also passed G4 and shipped. G4 is the last line
-    # of defence and is FAIL-CLOSED: the draft stage strips per line, so any
-    # narration still present at build time means the strip was bypassed
-    # (hand-edited draft, stale cache, divergent filter) and the build must
-    # stop rather than emit a PDF a human has to catch.
-    leak = find_narration(prose)
-    gate["G4"] = {"status": "pass" if not bad and not prose.count("\u2014") and not leak
-                  else "fail",
-                  "detail": {"em_dash": prose.count("\u2014"), "banned": bad,
-                             "self_report_leak": leak[:5]}}
-    gate["G1"] = {"status": "pass" if not unresolved else "fail",
-                  "detail": {"resolved": len(order),
-                             "unresolved": unresolved[:8],
-                             "aliased": aliased}}
-
-    lo, hi = G["citations"]["total_band"]
-    gate["G2c-cite-count"] = {
-        "status": "pass" if lo <= len(order) <= hi else "fail",
-        "detail": {"cited": len(order), "target_range": [lo, hi],
-                   "words_per_citation": round(body_words / max(len(order), 1), 1)}}
-
-    ceil_total = int(smap["total_ceiling"] * 1.15)
-    per_sec_ok = {s["id"]: len(secs[s["id"]].split()) <= int(s["ceiling"] * 1.35)
-                  for s in smap["sections"]}
-    gate["G2"] = {"status": "pass" if body_words <= ceil_total and all(per_sec_ok.values())
-                  else "fail",
-                  "detail": {"prose_words": body_words, "ceiling": ceil_total,
-                             "per_section_within_135pct": per_sec_ok,
-                             "map_sha256": smap["sha256"],
-                             "input_freeze": frozen}}
-    gate["G2b-cite-order"] = {"status": "pass" if monotonic else "fail",
-                              "detail": {"first_appearance_sequence": seq[:20],
-                                         "monotonic": monotonic}}
-    g6 = re.findall(r"\bwe (?:measured|fabricated|synthesi[sz]ed|simulated)\b", low)
-    gate["G6"] = {"status": "pass" if not g6 else "fail", "detail": {"hits": g6}}
-
-    # G3: every abstract numeral must trace to stats or a card. With
-    # substitution this should be automatic, so a failure means the writer
-    # smuggled a digit past the no-digit contract.
-    stat_nums = {str(v) for v in S.values() if isinstance(v, (int, float))}
-    stat_nums |= {_fmt(v) for v in S.values() if isinstance(v, (int, float))}
-    card_nums = set()
-    for c in cl:
-        for grp in ("performance", "stability"):
-            for f in (c.get(grp) or {}).values():
-                if isinstance(f, dict) and f.get("value") is not None:
-                    card_nums.add(_fmt(f["value"]))
-                    card_nums.add(_fmt(int(f["value"])) if isinstance(f["value"], float)
-                                  and f["value"] == int(f["value"]) else _fmt(f["value"]))
-    allowed = stat_nums | card_nums | {_fmt(len(cl)), _fmt(len(order))}
-    # Values that resolve_placeholders COMPUTES rather than reads: N_CERT is a
-    # count of cards carrying a certified value, so it appears in neither
-    # stats.json nor any card field. G3 flagged "18" as unverified on a number
-    # this build had itself derived from the evidence. The substituted values
-    # are the canonical ones by construction, so admit them explicitly.
-    allowed |= {str(v) for v in abs_vals.values() if v is not None}
-    allowed |= {re.sub(r"[^\d.]", "", str(v)) for v in abs_vals.values()
-                if v is not None}
-    bad_nums = [n for n in re.findall(r"\b\d+(?:\.\d+)?\b", ab)
-                if n not in allowed and n not in {"80", "2", "1"}]
-    gate["G3-abstract"] = {
-        "status": "pass" if not bad_nums else "fail",
-        "detail": {"unverified": bad_nums[:8], "words": len(ab.split()),
-                   "placeholders_resolved": abs_tokens}}
-
-    # G3c: a substituted value must be PHYSICALLY POSSIBLE for the quantity it
-    # is presented as.
-    #
-    # G3 asks only "does this number trace to a card?". June 2026's abstract
-    # said "32.95% in single-junction inverted cells", and 32.95 DID trace to a
-    # card, so G3 passed it. The number was real; the device was wrong. That is
-    # 7.2 with the arithmetic intact -- a misattribution, not a fabrication, and
-    # tracing alone cannot see it.
-    #
-    # A certified single-junction perovskite above the Shockley-Queisser limit
-    # (~33.7% ideal, ~29.4% for a 1.55 eV absorber) is impossible, so the
-    # rendered claim was self-refuting to any reader who knows the physics.
-    # Havid is that reader; this gate is so the build does not need him to be.
-    SQ_SINGLE_JUNCTION_PCT = 29.4
-    implausible = []
-    sj_val = abs_vals.get("P_TOP_SJ")
-    if sj_val:
-        try:
-            n = float(re.sub(r"[^\d.]", "", str(sj_val)))
-        except ValueError:
-            n = 0.0
-        if n > SQ_SINGLE_JUNCTION_PCT:
-            implausible.append(
-                {"token": "P_TOP_SJ", "value": n,
-                 "limit": SQ_SINGLE_JUNCTION_PCT,
-                 "why": ("a single-junction perovskite cannot exceed the "
-                         "Shockley-Queisser limit; this is a tandem or module "
-                         "value attached to the wrong device")})
-    gate["G3c-abstract-physics"] = {
-        "status": "pass" if not implausible else "fail",
-        "detail": {"implausible": implausible,
-                   "sj_limit_pct": SQ_SINGLE_JUNCTION_PCT}}
-
-    # G3d: a value presented as a performance record must have been measured
-    # under one-sun AM1.5G.
-    #
-    # Havid read the v5 Table 1 and flagged a >30% single-junction PCE, asking
-    # whether it was a tandem or a simulation. It was neither: a real,
-    # experimental, correctly-labelled single-junction cell reporting
-    # "a PCE(i) of 44.36% (a power output of 127.94 uW cm-2)" at 1000 lx LED.
-    # The number is CORRECT. An indoor PCE above the one-sun Shockley-Queisser
-    # limit is physically ordinary, because that limit is defined for AM1.5G
-    # and a narrow low-flux indoor spectrum is far better matched to a
-    # wide-bandgap absorber.
-    #
-    # Every guard already in this build passed it, each for a good reason:
-    #   measured()                  asks about LENS      -> it is an experiment
-    #   anchor_contradicts_family() asks about the DEVICE -> it is single junction
-    #   G3c                         bounds CERTIFIED only -> this is self-reported
-    #   pce_champion                had no plausibility check at all
-    #
-    # So illumination is a fourth, independent axis. The stats and figure layers
-    # exclude indoor values (stages/illumination.py), but that guard lived
-    # outside the gate set, which means a future consumer computing a frontier
-    # by a new code path would bypass it silently. This gate closes that: it
-    # re-derives the check from the CARDS BACKING THE ABSTRACT, so it holds
-    # regardless of which layer produced the number.
-    illum_bad = []
-    try:
-        from stages.illumination import classify, indoor_markers
-        _byk = {c.get("work_key"): c for c in cl}
-        for tok in ("P_TOP_CERT", "P_TOP_SJ", "P_AREA_MAX"):
-            raw = abs_vals.get(tok)
-            if not raw:
-                continue
-            try:
-                want = float(re.sub(r"[^\d.]", "", str(raw)))
-            except ValueError:
-                continue
-            for c in cl:
-                for fld in ("pce_certified", "pce_champion"):
-                    f = (c.get("performance") or {}).get(fld)
-                    if not isinstance(f, dict):
-                        continue
-                    if f.get("value") != want:
-                        continue
-                    anch = f.get("anchor") or ""
-                    if classify(anch) != "one_sun":
-                        illum_bad.append({
-                            "token": tok, "value": want,
-                            "work_key": c.get("work_key"),
-                            "condition": classify(anch),
-                            "markers": indoor_markers(anch),
-                            "anchor": anch[:150],
-                            "why": ("an indoor or low-light efficiency is not "
-                                    "comparable to a one-sun record and must "
-                                    "not be presented as one")})
-    except ImportError:
-        # The module is part of the period layer. A monthly build without it
-        # reports the gate as skipped rather than silently passing.
-        illum_bad = None
-    gate["G3d-illumination"] = {
-        "status": ("skip" if illum_bad is None
-                   else "pass" if not illum_bad else "fail"),
-        "detail": {"non_one_sun_values": illum_bad or []}}
-
-    alo, ahi = G["abstract"]["word_band"]
-    naw = len(ab.split())
-    gate["G3b-abstract-form"] = {
-        "status": "pass" if (alo <= naw <= ahi and not re.search(r"\[\d", ab)
-                             and "[@" not in ab) else "fail",
-        "detail": {"words": naw, "band": [alo, ahi],
-                   "citation_markers": len(re.findall(r"\[[@\d]", ab))}}
-
-    unexp = []
-    for abv, full in (("PCE", "power conversion efficiency"),
-                      ("SAM", "self-assembled monolayer"),
-                      ("ISOS", "International Summit on Organic Photovoltaic Stability")):
-        first = prose.find(abv)
-        if first >= 0 and full.lower() not in prose[:first + 90].lower():
-            unexp.append(abv)
-    gate["G7-abbrev"] = {"status": "pass" if not unexp else "fail",
-                         "detail": {"expanded_automatically": expanded,
-                                    "still_bare": unexp}}
-
-    gate["G8-novelty"] = novelty_gate(month, secs, ab, smap, G)
-
-    # ---- G9-format: the four defects Havid found in the August v4 PDF ----
-    # Per 0.2 each becomes an assertion, not a prompt reminder. All four are
-    # measured on the SOURCE the build just emitted; verify_pdf re-measures
-    # the rendered page, because markdown inspection has missed every format
-    # defect this project has shipped (0.3).
-    all_prose = ab + "\n" + "\n".join(secs.values())
-
-    # 1. notation: nothing may remain flat after the formatting pass
-    notation_report = check_notation(all_prose)
-    gate["G9a-notation"] = {
-        "status": "pass" if not notation_report["defects"] else "fail",
-        "detail": {"residual_defects": notation_report["defects"],
-                   "ambiguous_for_human_review": notation_report["ambiguous"],
-                   "substitutions_applied": sum(notation_counts.values())}}
-
-    # 2. citations must be clickable. A body citation that is not wrapped in
-    #    \href sends the reader nowhere, which was the whole point of the fix.
-    n_href = len(re.findall(r"\\href\{https://doi\.org/", all_prose))
-    plain = re.findall(r"(?<!\{)\[(\d+(?:,\d+)*)\](?!\})", all_prose)
-    plain_real = [g for g in plain
-                  if all(0 < int(x) <= len(order) for x in g.split(","))]
-    no_doi = [wk for wk in order if not doi_of.get(wk)]
-    gate["G9b-cite-links"] = {
-        "status": "pass" if (n_href > 0 and not plain_real) else "fail",
-        "detail": {"hyperlinked_markers": n_href,
-                   "unlinked_markers": plain_real[:6],
-                   "works_without_doi": len(no_doi)}}
-
-    # 3. one figure file may appear at most once. F3 attached twice in the
-    #    August build and LaTeX numbered it as both Figure 2 and Figure 3.
-    attached = [fn for fn, _ in fig_for.values()]
-    dupes = sorted({f for f in attached if attached.count(f) > 1})
-    gate["G9c-figure-unique"] = {
-        "status": "pass" if not dupes else "fail",
-        "detail": {"attached": attached, "duplicates": dupes,
-                   "n_attached": len(attached),
-                   "n_distinct": len(set(attached))}}
-
-    # 4. the AI declaration must name models the way a reader expects.
-    #    "opus" is a CLI slug, not a product name.
-    #
-    #    Checker bug caught on first run (7.3, seventh instance): matching the
-    #    lowercased substring "used opus" fires on the CORRECT string
-    #    "used Opus 5", because "Opus 5".lower() starts with "opus". The
-    #    artifact was right and the check was wrong. Require a bare slug that
-    #    is NOT followed by a version token, and match case-sensitively so a
-    #    capitalised product name is never a hit.
-    ai_txt = "\n".join(str(x) for x in md
-                       if "Structured extraction used" in str(x))
-    BARE_SLUGS = ("opus", "sonnet", "haiku", "gemini", "qwen", "muse-spark")
-    bad_names = []
-    for slug in BARE_SLUGS:
-        # bare slug, lowercase, not part of a longer token and not followed by
-        # a version number or a hyphenated variant
-        if re.search(rf"\b{re.escape(slug)}\b(?![\w.\-]*\s*\d)(?![\w.\-])",
-                     ai_txt):
-            bad_names.append(slug)
-    gate["G9d-model-names"] = {
-        "status": "pass" if not bad_names else "fail",
-        "detail": {"bare_slugs_found": bad_names,
-                   "declared": re.findall(r"(?:used|by) ([\w.\-]+(?: \d+)?)",
-                                          ai_txt)[:4]}}
-    # ---- G10-title-block: spacing MEASURED on the rendered page ----------
-    # Deferred until after the PDF exists (like G5), because the whole point
-    # is that source em-values lie: three blind tunings (0.9 -> 2.2 -> 3.6em)
-    # all failed, and the fourth measurement showed \vspace after
-    # \end{minipage} was being discarded in horizontal mode -- 3.6em in the
-    # source rendered as 0.11 pt on the page.
-    gate["G10-title-block"] = {"status": "warn",
-                               "detail": {"reason": "not yet measured"}}
-    for k, v in gate.items():
-        print(f"[18d] {k}: {v['status']}  {json.dumps(v['detail'])[:135]}")
+    gate = text_gates(month=month, ab=ab, secs=secs, order=order,
+                      unresolved=unresolved, aliased=aliased,
+                      body_words=body_words, smap=smap, frozen=frozen,
+                      seq=seq, S=S, cl=cl, abs_vals=abs_vals,
+                      abs_tokens=abs_tokens, expanded=expanded, G=G,
+                      notation_counts=notation_counts, doi_of=doi_of,
+                      fig_for=fig_for, md=md)
     # Callers that are not a month must be able to say where their artifacts
     # go. Deriving this path from `month` is correct for the monthly pipeline
     # and wrong for every adapter: h1_build_v6 calls build("2026-H1"), so the
@@ -1162,34 +1227,7 @@ def build(month: str, out_dir_override: pathlib.Path | None = None) -> dict:
     for f in figdir.glob("*.pdf"):
         shutil.copy(f, outdir / "fig" / f.name)
 
-    band_c = G["paper_v3"]["content_page_band"]
-    band_t = G["paper_v3"]["total_page_band"]
-    TBF = 0.40
-    pages, g5 = None, {"status": "warn", "detail": {"reason": "pymupdf unavailable"}}
-    try:
-        import pymupdf
-        refs_page = None
-        with pymupdf.open(pdf) as d:
-            pages = d.page_count
-            for i in range(d.page_count):
-                if re.search(r"^\s*(?:\d+\.\s*)?References\s*$", d[i].get_text(), re.M):
-                    refs_page = i + 1
-                    break
-        if refs_page:
-            content = refs_page - TBF
-            ok_c = band_c[0] <= content <= band_c[1]
-            ok_t = band_t[0] <= pages <= band_t[1]
-            g5 = {"status": "pass" if (ok_c and ok_t) else "fail",
-                  "detail": {"pages_to_refs": refs_page, "title_block_fraction": TBF,
-                             "content_pages": round(content, 2), "total_pages": pages,
-                             "reference_pages": pages - refs_page,
-                             "content_band": band_c, "total_band": band_t,
-                             "content_ok": ok_c, "total_ok": ok_t}}
-        else:
-            g5 = {"status": "warn", "detail": {"reason": "References heading not located",
-                                               "total_pages": pages}}
-    except Exception as e:
-        g5 = {"status": "warn", "detail": {"error": str(e)[:140]}}
+    pages, g5 = page_gate(pdf, G)
     gate["G5"] = g5
 
     # G10: measure the title block on the rendered page, sharing the exact

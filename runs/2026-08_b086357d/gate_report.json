@@ -1,0 +1,342 @@
+{
+  "G4": {
+    "status": "pass",
+    "detail": {
+      "em_dash": 0,
+      "banned": {},
+      "self_report_leak": []
+    }
+  },
+  "G1": {
+    "status": "pass",
+    "detail": {
+      "resolved": 75,
+      "unresolved": [],
+      "aliased": {}
+    }
+  },
+  "G2c-cite-count": {
+    "status": "pass",
+    "detail": {
+      "cited": 75,
+      "target_range": [
+        60,
+        85
+      ],
+      "words_per_citation": 38.2
+    }
+  },
+  "G2": {
+    "status": "pass",
+    "detail": {
+      "prose_words": 2867,
+      "ceiling": 3771,
+      "per_section_within_135pct": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true,
+        "7": true,
+        "8": true
+      },
+      "map_sha256": "05f30c1551fc1dfb",
+      "input_freeze": {
+        "1": {
+          "words": 186,
+          "sha256": "8e59d2fb6e80bddb"
+        },
+        "2": {
+          "words": 235,
+          "sha256": "c3b8b5f740ccd5f1"
+        },
+        "3": {
+          "words": 594,
+          "sha256": "13fcaf235cdb2a87"
+        },
+        "4": {
+          "words": 542,
+          "sha256": "5da785113553832b"
+        },
+        "5": {
+          "words": 419,
+          "sha256": "1c3894684671930c"
+        },
+        "6": {
+          "words": 282,
+          "sha256": "8c7c75a74e31712b"
+        },
+        "7": {
+          "words": 264,
+          "sha256": "eb02e48e5d089908"
+        },
+        "8": {
+          "words": 345,
+          "sha256": "b5b1cf99202cbc18"
+        }
+      }
+    }
+  },
+  "G2b-cite-order": {
+    "status": "pass",
+    "detail": {
+      "first_appearance_sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "monotonic": true
+    }
+  },
+  "G6": {
+    "status": "pass",
+    "detail": {
+      "hits": []
+    }
+  },
+  "G3-abstract": {
+    "status": "pass",
+    "detail": {
+      "unverified": [],
+      "words": 288,
+      "placeholders_resolved": [
+        "A_MAX",
+        "H_T80_MAX",
+        "N_CERT",
+        "N_CORPUS",
+        "N_DEPTH",
+        "N_PROTO",
+        "N_T80",
+        "PCT_CERT",
+        "PCT_EFF",
+        "P_AREA_MAX",
+        "P_TOP_CERT",
+        "P_TOP_SJ"
+      ]
+    }
+  },
+  "G3c-abstract-physics": {
+    "status": "pass",
+    "detail": {
+      "implausible": [],
+      "sj_limit_pct": 29.4
+    }
+  },
+  "G3d-illumination": {
+    "status": "pass",
+    "detail": {
+      "non_one_sun_values": []
+    }
+  },
+  "G3b-abstract-form": {
+    "status": "pass",
+    "detail": {
+      "words": 288,
+      "band": [
+        260,
+        340
+      ],
+      "citation_markers": 0
+    }
+  },
+  "G7-abbrev": {
+    "status": "pass",
+    "detail": {
+      "expanded_automatically": [],
+      "still_bare": []
+    }
+  },
+  "G8-novelty": {
+    "status": "fail",
+    "detail": {
+      "prior_issue": "2026-07",
+      "worst_section_ratio": 0.061,
+      "worst_pair": [
+        "Introduction",
+        "introduction"
+      ],
+      "body_max_ratio": 0.25,
+      "abstract_ratio": 0.014,
+      "abstract_max_ratio": 0.3,
+      "per_section": {
+        "1": {
+          "ratio": 0.061,
+          "title": "Introduction",
+          "closest_prior": "introduction"
+        },
+        "2": {
+          "ratio": 0.035,
+          "title": "The Certified Frontier in August 2026",
+          "closest_prior": "introduction"
+        },
+        "3": {
+          "ratio": 0.022,
+          "title": "Defect Tolerance, Passivation and Ion Migration",
+          "closest_prior": "wide-bandgap subcells and recombination layers"
+        },
+        "4": {
+          "ratio": 0.034,
+          "title": "Buried Interfaces and Contact Chemistry",
+          "closest_prior": "research gaps and outlook"
+        },
+        "5": {
+          "ratio": 0.021,
+          "title": "Composition, Phase Control and Crystallisation",
+          "closest_prior": "introduction"
+        },
+        "6": {
+          "ratio": 0.03,
+          "title": "Wide-Bandgap Absorbers and Tandem Integration",
+          "closest_prior": "wide-bandgap subcells and recombination layers"
+        },
+        "7": {
+          "ratio": 0.039,
+          "title": "Operational Stability and Degradation Pathways",
+          "closest_prior": "research gaps and outlook"
+        },
+        "8": {
+          "ratio": 0.028,
+          "title": "Research Gaps and Outlook",
+          "closest_prior": "stability under load, heat and illumination"
+        }
+      },
+      "shared_shingles": [
+        "review distinguishes what the month s literature verified from what it asserted",
+        "this review distinguishes what the month s literature verified from what it"
+      ],
+      "n_shared_shingles": 2
+    }
+  },
+  "G9a-notation": {
+    "status": "pass",
+    "detail": {
+      "residual_defects": {},
+      "ambiguous_for_human_review": {
+        "bare anion": [
+          "Br-"
+        ]
+      },
+      "substitutions_applied": 0
+    }
+  },
+  "G9b-cite-links": {
+    "status": "pass",
+    "detail": {
+      "hyperlinked_markers": 122,
+      "unlinked_markers": [],
+      "works_without_doi": 0
+    }
+  },
+  "G9c-figure-unique": {
+    "status": "pass",
+    "detail": {
+      "attached": [
+        "F1_certified_frontier.pdf",
+        "F3_effort_map.pdf",
+        "F2_area_penalty.pdf",
+        "F4_stability_evidence.pdf"
+      ],
+      "duplicates": [],
+      "n_attached": 4,
+      "n_distinct": 4
+    }
+  },
+  "G9d-model-names": {
+    "status": "pass",
+    "detail": {
+      "bare_slugs_found": [],
+      "declared": [
+        "qwen3.8-flash",
+        "gemini-3.8-flash-high",
+        "Opus 5"
+      ]
+    }
+  },
+  "G10-title-block": {
+    "status": "pass",
+    "detail": {
+      "gaps_pt": {
+        "author_to_affil": 14.42,
+        "affil_to_date": 22.52,
+        "date_to_abstract": 23.74,
+        "abstract_to_body": 10.17
+      },
+      "bands": {
+        "author_to_affil": [
+          8.0,
+          24.0
+        ],
+        "affil_to_date": [
+          14.0,
+          34.0
+        ],
+        "date_to_abstract": [
+          14.0,
+          40.0
+        ],
+        "abstract_to_body": [
+          5.0,
+          20.0
+        ]
+      },
+      "middle_ratio": 1.05,
+      "max_middle_ratio": 2.5,
+      "title_block_fraction_measured": 0.355,
+      "page_count": 14,
+      "status": "pass",
+      "failures": []
+    }
+  },
+  "G5": {
+    "status": "pass",
+    "detail": {
+      "pages_to_refs": 10,
+      "title_block_fraction": 0.4,
+      "content_pages": 9.6,
+      "total_pages": 14,
+      "reference_pages": 4,
+      "content_band": [
+        8,
+        11
+      ],
+      "total_band": [
+        12,
+        17
+      ],
+      "content_ok": true,
+      "total_ok": true,
+      "title_block_fraction_measured": 0.355
+    }
+  },
+  "_regate": {
+    "status": "info",
+    "detail": {
+      "edition": "2026-08",
+      "source_markdown": "manuscript.md",
+      "source_pdf": "manuscript.pdf",
+      "pages": 14,
+      "references": 75,
+      "date_on_title_block": "September 9, 2026",
+      "prior_issue_file": "manuscript/2026-07/manuscript.md",
+      "method": "regate of finished text via scripts/regate_edition.py; gate code is s18d_build_v4.text_gates/page_gate. body_words counted on finished sections with citation markup removed; expanded/notation_counts not re-derived."
+    }
+  }
+}

@@ -93,6 +93,10 @@ def build(month: str) -> dict:
     labels = {l["work_key"]: l for l in read_jsonl(rd / "06_labels.jsonl")}
     md = rd / f"manuscript_{ver}.md"
     mdir = ROOT / "manuscript" / f"{month}_{ver}"
+    if not md.exists() and (mdir / md.name).exists():
+        # A hand-revised edition (v5) lives only in its edition folder: it was
+        # never produced by the build, so the run dir holds no copy of it.
+        md = mdir / md.name
     # Directory named from the platform slug, so a future platform change is a
     # config edit rather than another repo-wide rename.
     out = mdir / P["platform_slug"]
@@ -266,7 +270,7 @@ def build(month: str) -> dict:
     # "July 2026" here and it survived the whole August build unnoticed,
     # because nothing reads a README.
     pack_title = f"Perovskite Photovoltaics in {month}"
-    if ver == "v4":
+    if ver != "v3":
         try:
             from stages.section_map import load_map
             from stages.s18d_build_v4 import derive_title

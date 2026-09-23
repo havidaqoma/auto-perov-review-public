@@ -1,4 +1,0 @@
-role,cli,model,calls_total,calls_shipped,calls_reported,calls_estimated,tokens_in,tokens_out_total,tokens_out_shipped,cache_read,est_tokens_out_total,est_tokens_out_shipped,words_out_total,words_out_shipped
-extractor,opencode,opencode-go/qwen3.8-flash,12,1,12,0,72,134472,10827,83897,0,0,0,0
-llm,agy,gemini-3.8-flash-high,37,17,0,37,0,0,0,0,17717,8269,13321,6218
-none,python,,14,14,0,0,0,0,0,0,0,0,0,0

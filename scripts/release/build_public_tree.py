@@ -41,6 +41,9 @@ import time
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 DEFAULT_DEST = ROOT.parent / "auto-perov-review-public"
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import release_layout  # noqa: E402
+
 # Files above this size are shipped gzipped; tools/unpack_payloads.py restores
 # them. Only two tracked files exceed it, and one is 81 MB, which GitHub warns
 # on at 50 MB and blocks at 100 MB.
@@ -280,7 +283,9 @@ def main() -> int:
 
     files = tracked_files()
     copied = skipped = digested = gzipped = n_sanitised = 0
+    n_relinked = n_repacked = 0
     plan: list[tuple[str, str, str]] = []
+    renames: list[tuple[str, str | None]] = []
 
     for rel in files:
         d = destination(rel)
@@ -291,6 +296,14 @@ def main() -> int:
         if not src.exists():          # tracked but deleted on disk
             skipped += 1
             continue
+        # Latest edition only, version tokens off output names. See
+        # release_layout.py for the rules and why step names keep theirs.
+        pub = release_layout.public_path(rel)
+        renames.append((rel, pub))
+        if pub is None:
+            skipped += 1
+            continue
+        d = pathlib.Path(pub)
 
         if rel.endswith(ABSTRACT_SUFFIXES):
             plan.append((rel, str(d.parent / "ABSTRACTS_DIGEST_"
@@ -312,6 +325,16 @@ def main() -> int:
                 print(f"  [{kind}] {rel} -> {out}")
         return 0
 
+    # Fail before writing anything if the layout rules left a versioned
+    # output name or mapped two private files onto one public path.
+    outs = [pathlib.PurePath(o).as_posix() for _, o, _ in plan]
+    bad = release_layout.unversioned_violations(outs)
+    dup = sorted({o for o in outs if outs.count(o) > 1})
+    if bad or dup:
+        print(f"FAIL-CLOSED layout: versioned={bad[:10]} collisions={dup[:10]}",
+              file=sys.stderr)
+        return 2
+
     if dest.exists():
         robust_rmtree(dest)
     dest.mkdir(parents=True)
@@ -319,6 +342,7 @@ def main() -> int:
     for rel, out, kind in plan:
         src = ROOT / rel
         dst = dest / out
+        pub = pathlib.PurePath(out).as_posix()
         dst.parent.mkdir(parents=True, exist_ok=True)
         if kind == "copy":
             if src.suffix.lower() in SANITISE_EXT:
@@ -329,12 +353,22 @@ def main() -> int:
                     copied += 1
                     continue
                 clean, k = sanitise(txt)
+                # Point shipped text at the renamed files (scoped per file).
+                clean, r = release_layout.rewrite_text(pub, clean)
+                n_relinked += r
                 # Write with newline="" so the original line endings survive:
                 # a gate report's sha256 is computed over bytes, and silently
                 # converting CRLF to LF here would change hashes the
                 # verification manifests then record as drift.
                 dst.write_text(clean, encoding="utf-8", newline="")
                 n_sanitised += k
+                copied += 1
+                continue
+            if rel.endswith(".tar.gz") and rel.startswith("manuscript/"):
+                # The ChemRxiv tarball names its PDFs manuscript_vN.pdf.
+                dst.write_bytes(release_layout.repack_tarball(
+                    src.read_bytes(), pub))
+                n_repacked += 1
                 copied += 1
                 continue
             shutil.copy2(src, dst)
@@ -412,11 +446,20 @@ def main() -> int:
     if ycf.parent.is_dir() and not ycf.exists():
         shutil.copy2(dest / "tests" / "conftest.py", ycf)
 
+    # The rename record, so a reader can map every public name back to the
+    # name the pipeline step wrote (tools/stage_inputs.py uses it).
+    vdir = dest / "verification"
+    vdir.mkdir(parents=True, exist_ok=True)
+    (vdir / "release_renames.json").write_text(
+        json.dumps(release_layout.rename_manifest(renames), indent=1) + "\n",
+        encoding="utf-8")
+
     print(f"[build] dest={dest}")
     print(f"[build] copied={copied} gzipped={gzipped} "
           f"abstract-digests={digested} dropped={skipped} "
           f"overlay={n_overlay} pointers={n_ptr}+{n_derived}derived "
-          f"host-paths-rewritten={n_sanitised}")
+          f"host-paths-rewritten={n_sanitised} "
+          f"renamed-refs-rewritten={n_relinked} tarballs-repacked={n_repacked}")
     print("[build] next:")
     print("  python scripts/release/make_verification_manifests.py "
           f"--tree {dest}")

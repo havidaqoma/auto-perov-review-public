@@ -16,6 +16,7 @@ import yaml
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from stages.editions import build_manuscript  # noqa: E402
 from stages.section_map import build_map, month_name, TITLE_BANK  # noqa: E402
 from stages.s13d_draft_v4 import AGENT_NARRATION, clean  # noqa: E402
 from stages.hygiene import (KNOWN_LEAKS, KNOWN_CLEAN,  # noqa: E402
@@ -293,7 +294,7 @@ def test_g8_ignores_mandated_abbreviation_expansions():
     long = "International Summit on Organic Photovoltaic Stability"
     shared = (f"only four papers named an {long} (ISOS) protocol "
               "https://doi.org/10.1002/adma.74243 in this sample ")
-    prior = ROOT / "runs" / "2026-06_cf764cbb" / "manuscript_v4.md"
+    prior = build_manuscript(ROOT, ROOT / "runs" / "2026-06_cf764cbb")
     if not prior.exists():
         pytest.skip("June v4 manuscript not present")
     secs = {"1": shared + ("wholly different words about contacts here " * 12)}

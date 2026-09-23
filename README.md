@@ -29,7 +29,7 @@ Measured contents of this tree:
 - **21 gate reports**, of which **9 verdicts are not `pass`** and every one of
   them is explained in `verification/gate_verdicts.json`
 - **46 rendered PDFs**, 721 pages total
-- **305 unit tests** (223 at the root, 82 under `yearly/`)
+- **336 unit tests** (254 at the root, 82 under `yearly/`)
 
 The failing verdicts are deliberately left standing. A repository that shows
 only clean gate reports teaches the reader nothing about what the gates
@@ -162,15 +162,26 @@ scripts/stages/           the pipeline, one module per stage
 scripts/verify_*.py       standalone verifiers (anchors, PDFs, citations)
 config/                   gate thresholds, mechanism axes, model roles
 runs/<period>_<hash>/     stored artifacts per run, stage by stage
-manuscript/<period>_vN/   shipped drafts and rendered PDFs
+manuscript/<period>/      the final edition of each period: markdown, PDFs,
+                          gate report, SI, ChemRxiv package
 papers/studies/           evaluation study data behind the system paper
-tests/                    223 unit tests
+tests/                    254 unit tests
 yearly/                   the yearly cadence, same shape, 82 tests
 ```
 
 Run directories are addressed through `runs/<period>.active`, which holds the
 run id that shipped. The stages read that pointer rather than guessing the
 newest directory.
+
+**One edition per period, no version numbers.** Each issue went through
+several editions privately (July 2026 had four). This tree ships only the
+final one, and output names carry no version token: `manuscript.md`, not
+`manuscript_v5.md`; `runs/<run>/draft/`, not `draft_v4/`. Pipeline step names
+keep theirs (`s18d_build_v4.py`, `18d_build_v4.done`) because they name code,
+not an edition. `verification/release_renames.json` maps every public path
+to the name the pipeline wrote, and the July and August folders carry a
+`REVISION_NOTE.md` saying what the final edition changed and how it was
+gated.
 
 ## Honest limitations
 
@@ -179,12 +190,12 @@ newest directory.
   the abstract traces to a claim card and is physically possible for the
   quantity it is presented as. It cannot confirm the underlying paper measured
   it correctly.
-- **Nine gate verdicts in this tree are not `pass`.** Two monthly issues carry
-  a failing `G8-novelty` from shingle reuse of the review's own framing
-  sentence, one carries a `G5` page-band failure against a band written for a
-  superseded layout, and several report `skip` or `cold-start` where there was
-  no prior issue to compare against. All nine are in
-  `verification/gate_verdicts.json` with a reason.
+- **Three shipped issues have a gate verdict that is not `pass`.** August 2026
+  carries a failing `G8-novelty`: one 12-word framing sentence is shared with
+  July, while every per-section similarity ratio sits far under its bound.
+  June 2026 reports `G8-novelty: skip` and the 2025 yearly issue reports
+  `cold-start`, because there was no earlier issue of that cadence to compare
+  against. Each is in `verification/gate_verdicts.json` with a reason.
 - **The system-paper manuscript is not in this repository.** It is unpublished.
   Its evidence is here: `papers/studies/` holds the study data and
   `papers/scripts/studies/` the scripts that produced it.

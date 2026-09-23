@@ -15,6 +15,7 @@ import pytest
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from stages.editions import draft_dir  # noqa: E402
 from stages.notation import (KNOWN_FIXES, KNOWN_UNTOUCHED,  # noqa: E402
                              check_notation, format_notation)
 
@@ -171,7 +172,7 @@ def test_anions_are_reported_not_converted():
 def test_real_august_drafts_format_clean():
     """The actual shipped drafts must contain no residual defects after a
     formatting pass."""
-    dd = ROOT / "runs" / "2026-08_b086357d" / "draft_v4"
+    dd = draft_dir(ROOT, ROOT / "runs" / "2026-08_b086357d")
     if not dd.exists():
         pytest.skip("August drafts not present")
     residual = {}
@@ -186,7 +187,7 @@ def test_real_august_drafts_format_clean():
 def test_august_drafts_actually_needed_formatting():
     """Guard against a no-op formatter passing the test above by doing nothing:
     the August drafts are known to contain cm2, Pb2+, PbI2 and friends."""
-    dd = ROOT / "runs" / "2026-08_b086357d" / "draft_v4"
+    dd = draft_dir(ROOT, ROOT / "runs" / "2026-08_b086357d")
     if not dd.exists():
         pytest.skip("August drafts not present")
     total = 0

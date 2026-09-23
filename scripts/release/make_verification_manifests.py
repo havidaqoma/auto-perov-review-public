@@ -9,7 +9,7 @@ hardcoded constant that drifts from the artifact.
 So they are measured. This script reads the built public tree, records what it
 finds, and writes two manifests into `<tree>/verification/`. It never asserts
 that a gate passed: it records the verdict, pass or fail, so a third party can
-see that two monthly issues shipped with a failing G8-novelty and the yearly
+see that the August issue shipped with a failing G8-novelty and the yearly
 issue shipped with G8 in cold-start. Hiding that would make the repository a
 worse record of the work than the paper is.
 
@@ -63,6 +63,11 @@ KNOWN_NON_PASS: dict[str, str] = {
         "The illumination classifier is part of the period layer. A build "
         "without that layer reports the gate skipped rather than passing a "
         "check it never ran."),
+    "_regate:info": (
+        "Not a gate. A report written by scripts/regate_edition.py carries "
+        "this record of how it was produced: the build's own gate functions "
+        "were run on a hand-revised edition without rebuilding it, and the "
+        "entry names the source files and the prior issue used for G8."),
 }
 
 

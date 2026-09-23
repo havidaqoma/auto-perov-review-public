@@ -1,6 +1,9 @@
 {
   "edition": "2026-H1",
+  "version": "v2",
+  "structure": "device_family",
   "period_label": "January-June 2026",
+  "month_name": "January-June 2026",
   "months": [
     "2026-01",
     "2026-02",
@@ -14,170 +17,122 @@
     {
       "id": "1",
       "role": "intro",
-      "axis": null,
-      "axes": [],
+      "family": null,
       "title": "Introduction",
       "ceiling": 700,
       "cite_target": 0
     },
     {
       "id": "2",
-      "role": "trajectory",
-      "axis": null,
-      "axes": [],
-      "title": "The Certified Frontier Across January-June 2026",
+      "role": "frontier",
+      "family": null,
+      "title": "What January-June 2026 Verified, by Device Family",
       "ceiling": 900,
       "cite_target": 18
     },
     {
       "id": "3",
-      "role": "mechanism",
-      "axis": "defects",
-      "axes": [
-        "defects"
-      ],
-      "title": "Trap States, Passivation and Ionic Motion",
-      "ceiling": 1500,
-      "cite_target": 33,
-      "n_depth": 223
+      "role": "family",
+      "family": "sj",
+      "title": "The Single-Junction Frontier and Its Remaining Losses",
+      "ceiling": 2100,
+      "cite_target": 34,
+      "n_cards": 692,
+      "label": "Single junction",
+      "share_pct": 79.4,
+      "declared_weight": 0.34
     },
     {
       "id": "4",
-      "role": "mechanism",
-      "axis": "interfaces",
-      "axes": [
-        "interfaces"
-      ],
-      "title": "Contact Chemistry at the Buried Interface",
-      "ceiling": 1500,
-      "cite_target": 33,
-      "n_depth": 206
+      "role": "family",
+      "family": "ap",
+      "title": "All-Perovskite Tandems: Narrow-Bandgap Stability as the Limit",
+      "ceiling": 1210,
+      "cite_target": 27,
+      "n_cards": 60,
+      "label": "All-perovskite tandem",
+      "share_pct": 6.9,
+      "declared_weight": 0.21
     },
     {
       "id": "5",
-      "role": "mechanism",
-      "axis": "composition",
-      "axes": [
-        "composition"
-      ],
-      "title": "A-Site and Halide Composition Engineering",
-      "ceiling": 1250,
-      "cite_target": 28,
-      "n_depth": 151
+      "role": "family",
+      "family": "hyb",
+      "title": "Hybrid Tandems: Silicon, CIGS and Organic Partners",
+      "ceiling": 1400,
+      "cite_target": 31,
+      "n_cards": 77,
+      "label": "Perovskite/silicon and other hybrid tandems",
+      "share_pct": 8.8,
+      "declared_weight": 0.24
     },
     {
       "id": "6",
-      "role": "mechanism",
-      "axis": "architecture",
-      "axes": [
-        "architecture"
-      ],
-      "title": "Tandem Architecture and Current Matching",
-      "ceiling": 910,
-      "cite_target": 20,
-      "n_depth": 110
+      "role": "family",
+      "family": "mod",
+      "title": "Modules and the Cost of Area",
+      "ceiling": 1160,
+      "cite_target": 26,
+      "n_cards": 43,
+      "label": "Module",
+      "share_pct": 4.9,
+      "declared_weight": 0.21
     },
     {
       "id": "7",
-      "role": "mechanism",
-      "axis": "stability",
-      "axes": [
-        "stability"
-      ],
-      "title": "Degradation Mechanisms Under Operation",
-      "ceiling": 900,
-      "cite_target": 20,
-      "n_depth": 109
-    },
-    {
-      "id": "8",
-      "role": "mechanism",
-      "axis": "scale_up",
-      "axes": [
-        "scale_up"
-      ],
-      "title": "Large-Area Coating and the Area Penalty",
-      "ceiling": 700,
-      "cite_target": 16,
-      "n_depth": 73
-    },
-    {
-      "id": "9",
       "role": "synthesis",
-      "axis": null,
-      "axes": [],
-      "title": "Cross-Cutting Synthesis: What the Mechanisms Say Together",
+      "family": null,
+      "title": "Reading the Device Families Together",
       "ceiling": 900,
       "cite_target": 10
     },
     {
-      "id": "10",
+      "id": "8",
       "role": "audit",
-      "axis": null,
-      "axes": [],
-      "title": "Reporting Practice Over Six Months",
+      "family": null,
+      "title": "How Each Device Family Reports Itself",
       "ceiling": 700,
       "cite_target": 7
     },
     {
-      "id": "11",
+      "id": "9",
       "role": "gaps",
-      "axis": null,
-      "axes": [],
+      "family": null,
       "title": "Research Gaps and Outlook",
       "ceiling": 900,
       "cite_target": 9
     }
   ],
-  "depth_distribution": {
-    "defects": 223,
-    "interfaces": 206,
-    "composition": 151,
-    "architecture": 110,
-    "stability": 109,
-    "scale_up": 73
+  "family_mass": {
+    "sj": 692,
+    "ap": 60,
+    "hyb": 77,
+    "mod": 43
   },
-  "chosen_axes": [
-    "defects",
-    "interfaces",
-    "composition",
-    "architecture",
-    "stability",
-    "scale_up"
-  ],
-  "folded": {
-    "defects": [
-      "defects"
-    ],
-    "interfaces": [
-      "interfaces"
-    ],
-    "composition": [
-      "composition"
-    ],
-    "architecture": [
-      "architecture"
-    ],
-    "stability": [
-      "stability"
-    ],
-    "scale_up": [
-      "scale_up"
-    ]
+  "family_share_pct": {
+    "sj": 79.4,
+    "ap": 6.9,
+    "hyb": 8.8,
+    "mod": 4.9
   },
-  "total_ceiling": 10860,
+  "declared_weights": {
+    "sj": 0.34,
+    "hyb": 0.24,
+    "ap": 0.21,
+    "mod": 0.21
+  },
+  "damp": 0.3,
+  "total_ceiling": 9970,
   "params": {
-    "MIN_MECH": 5,
-    "MAX_MECH": 6,
-    "MIN_DEPTH": 20,
     "BODY_WORDS": 7200,
+    "FAM_MIN_WORDS": 900,
+    "FAM_MAX_WORDS": 2100,
     "WORDS_PER_CITE": 45,
     "CITE_CLAMP": [
       8,
       34
     ]
   },
-  "cite_target_sum": 194,
-  "sha256": "ef27cc7244d6f5de",
-  "month_name": "January-June 2026"
+  "cite_target_sum": 162,
+  "sha256": "62044c6bbcc31f39"
 }

@@ -1,0 +1,43 @@
+{
+  "platform": "ChemRxiv",
+  "platform_url": "https://chemrxiv.org",
+  "submission_route": "manual_portal",
+  "api_submission_supported": false,
+  "title": "Perovskite Photovoltaics in July 2026: Trap density and ion migration, self-assembled monolayer contacts",
+  "abstract": "Across 648 indexed publications evaluated this month, with 181 examined in depth, the verified performance ceiling reaches a power conversion efficiency (PCE) of 33.1% in monolithic tandems and 27.31% in single-junction inverted devices. Tandem benchmarks rely on current matching across complementary bandgaps, whereas single-junction records depend on multidentate chelating agents and self-assembled monolayer (SAM) contacts that passivate undercoordinated lead cations and align interfacial dipoles. Yet only 22 closely read studies provide independently certified efficiency values, as uncertified reports frequently mask mobile ionic defects and non-radiative recombination under transient voltage sweeps. Scaling introduces severe resistive and geometric transport losses, establishing an area penalty that restricts certified efficiency to 27.31% at the largest reported aperture area of \\qty{766}{\\centi\\meter}$^2$. This scaling deficit arises because molecular passivators that eliminate trap states on microscale cells aggregate during meniscus drying, intensifying non-radiative recombination across laser-scribed module interconnects. Operational durability evidence remains narrow across the literature: only 4 investigations quantify lifetime metrics, with the longest duration reaching \\qty{9800}{\\hour}, while only 6 studies adhere to standardized International Summit on Organic Photovoltaic Stability (ISOS) protocols. A pronounced reporting disparity persists between claimed and verified performance, with 50.4% of abstracts reporting efficiency but only 8.3% documenting independent certification. Mechanistic evaluation demonstrates that contact stabilization through self-assembled monolayers (SAMs) and multidentate coordination fails to establish resilience against thermo-mechanical fatigue, as thermal expansion mismatches induce cyclic shear stresses that trigger interfacial delamination. Depth-resolved degradation profiles confirm that breakdown initiates at buried selective contacts before penetrating bulk absorbers. Chemical treatments and interlayers also fail to achieve permanent suppression of halide phase segregation in wide-bandgap absorbers, where illumination and thermal cycling drive phase demixing without resolving the boundary between thermodynamic stability and kinetic demixing arrest. Finally, unstandardized aging without continuous tracking leaves the division between reversible ionic polarization and irreversible lattice degradation unquantified.",
+  "authors": [
+    {
+      "name": "Havid Aqoma",
+      "email": "havidaqoma.khoiruddin@xmu.edu.my",
+      "corresponding_author": true,
+      "orcid": "0000-0003-1264-1916",
+      "affiliations": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "affiliations": {
+    "1": "School of Energy and Chemical Engineering, Xiamen University Malaysia, Selangor Darul Ehsan 43900, Malaysia",
+    "2": "Kelip-kelip! Center of Excellence for Light Enabling Technologies, School of Energy and Chemical Engineering, Xiamen University Malaysia, Selangor Darul Ehsan 43900, Malaysia",
+    "3": "Centre of Excellence for Green and Advanced Technologies in Efficient Separations (GATES), School of Energy and Chemical Engineering, Xiamen University Malaysia, Selangor Darul Ehsan 43900, Malaysia",
+    "4": "Gulei Innovation Institute, Xiamen University, Zhangzhou 363200, China"
+  },
+  "corresponding_email": "havidaqoma.khoiruddin@xmu.edu.my",
+  "subject_category_primary": "Energy",
+  "subject_categories_secondary": [
+    "Materials Chemistry"
+  ],
+  "license": "CC BY 4.0",
+  "preprint_doi": null,
+  "doi_prefix_if_assigned": "10.26434",
+  "main_content_file": "manuscript.pdf",
+  "supplementary_files": [
+    "supplementary.pdf"
+  ],
+  "funding_statement": "The authors would like to acknowledge the financial support from Xiamen University Malaysia through the Xiamen University Malaysia Research Fund (XMUMRF/2022-C10/IENG/0046), and from National Natural Science Foundation of China (Ref. No.: 52503390). The authors would also like to thank Anthropic for support through the Anthropic AI for Science program.",
+  "conflict_of_interest": "The author declares no conflict of interest.",
+  "comments": "181 papers read closely; machine-assisted monthly review; data and extraction records in Supplementary Information"
+}

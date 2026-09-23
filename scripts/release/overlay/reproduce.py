@@ -184,8 +184,8 @@ def check_anchors(r: Result) -> None:
 def check_gate_reports(r: Result) -> None:
     """Re-read every shipped gate report and re-assert the recorded verdict.
 
-    This is deliberately NOT 'assert everything passed'. Two shipped issues
-    carry a failing G8-novelty and the yearly issue carries a cold-start G8.
+    This is deliberately NOT 'assert everything passed'. The August issue
+    carries a failing G8-novelty and the yearly issue carries a cold-start G8.
     Rewriting history to make the repo look clean is exactly the behaviour
     the paper argues against, so the check asserts the KNOWN verdict per
     report and fails when a report's verdict has changed.

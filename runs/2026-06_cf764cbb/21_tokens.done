@@ -1,8 +1,8 @@
 {
   "stage": "21_tokens",
   "at": "2026-09-08T22:01:27",
-  "detail_csv": "manuscript\\2026-06_v4\\data\\token_usage.csv",
-  "summary_csv": "manuscript\\2026-06_v4\\data\\token_summary.csv",
+  "detail_csv": "manuscript\\2026-06\\data\\token_usage.csv",
+  "summary_csv": "manuscript\\2026-06\\data\\token_summary.csv",
   "rows": 37,
   "llm_calls": 14,
   "models": [

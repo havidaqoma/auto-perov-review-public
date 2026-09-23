@@ -29,12 +29,19 @@ import pytest
 
 from stages.si_facts import (manuscript_title, measured_citations,
                              pdf_front_has_title, si_cited, si_title)
+from stages import editions
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 MS = ROOT / "manuscript"
+# The public release ships only the final edition of each period, with the
+# version token dropped from names (manuscript/2026-07/manuscript.md).
+RELEASE = editions.is_release_tree(ROOT)
 
 # The period edition the public release ships. Gated strictly: no allowance.
-H1 = MS / "2026-H1_v6"
+H1 = editions.edition_dir(ROOT, "2026-H1")
+H1_SI = editions.edition_file(ROOT, "2026-H1", "supplementary", ".md")
+H1_SI_PDF = H1_SI.with_suffix(".pdf")
+H1_MD = editions.manuscript_md(ROOT, "2026-H1")
 
 # (edition dir, SI file) -> the defect it shipped with before this gate.
 KNOWN_DEFECTS = {
@@ -56,8 +63,10 @@ KNOWN_DEFECTS = {
 
 # The shipped v4+ editions whose rendered SI is gated strictly: the PDF shows
 # the manuscript's citation count, and Figure S1 draws Table S2's numbers.
-STRICT_RENDERED = ["2026-06_v4", "2026-07_v4", "2026-08_v4",
-                   "2026-07_v5", "2026-08_v5", "2026-H1_v6"]
+# The public tree holds only the final edition of each period.
+STRICT_RENDERED = (["2026-06_v4", "2026-07_v4", "2026-08_v4",
+                    "2026-07_v5", "2026-08_v5", "2026-H1_v6"] if not RELEASE
+                   else [f"{p}_{v}" for p, v in editions.FINAL.items()])
 _TABLE_S2 = ["Passed the scope gate", "Usable abstract (eligibility)",
              "Depth tier (selected for close reading)",
              "Extraction records surviving all guards",
@@ -69,8 +78,14 @@ PRE_V3 = {("2026-07_v2", "supplementary.md"),
           ("2026-07_v3", "supplementary.md")}
 
 
+def _edition_dirs():
+    if RELEASE:
+        return [editions.edition_dir(ROOT, p) for p in editions.FINAL]
+    return sorted(MS.glob("*_v[0-9]"))
+
+
 def _pairs():
-    for d in sorted(MS.glob("*_v[0-9]")):
+    for d in _edition_dirs():
         for si in sorted(d.glob("supplementary*.md")):
             key = (d.name, si.name)
             if key in PRE_V3:
@@ -103,7 +118,9 @@ PAIRS = list(_pairs())
 
 def test_scan_found_editions():
     # A glob that silently matched nothing would make every test below pass.
-    assert len(PAIRS) >= 8, [k for k, *_ in PAIRS]
+    # The release ships exactly one edition per period.
+    want = len(editions.FINAL) if RELEASE else 8
+    assert len(PAIRS) >= want, [k for k, *_ in PAIRS]
 
 
 @pytest.mark.parametrize("key,si,m", PAIRS, ids=[f"{a}/{b}" for (a, b), *_ in PAIRS])
@@ -119,9 +136,8 @@ def test_si_matches_its_manuscript(key, si, m):
 
 def test_h1_v6_si_is_strict():
     """The shipped period SI: exact title, exact citation count, no allowance."""
-    st = (H1 / "supplementary_v6.md").read_text(encoding="utf-8")
-    mt = (H1.parent.parent / "runs" / "2026-H1" / "manuscript_v6.md"
-          ).read_text(encoding="utf-8")
+    st = H1_SI.read_text(encoding="utf-8")
+    mt = H1_MD.read_text(encoding="utf-8")
     title = manuscript_title(mt)
     assert title and "Cell to Module" in title
     assert si_title(st) == title
@@ -130,16 +146,15 @@ def test_h1_v6_si_is_strict():
     assert si_cited(st) == n_cited
 
 
-@pytest.mark.parametrize("pdf", [H1 / "supplementary_v6.pdf",
-                                 H1 / "chemrxiv" / "supplementary_v6.pdf"],
+@pytest.mark.parametrize("pdf", [H1_SI_PDF,
+                                 H1 / "chemrxiv" / H1_SI_PDF.name],
                          ids=["edition", "chemrxiv-package"])
 def test_h1_v6_rendered_si_names_the_manuscript(pdf):
     """The RENDERED SI, both copies: the one in the edition and the one the
     ChemRxiv package uploads. The 17 Sep hand-patched PDF lived only in the
     package copy, which is how the two came to disagree."""
     pytest.importorskip("pymupdf")
-    mt = (ROOT / "runs" / "2026-H1" / "manuscript_v6.md").read_text(
-        encoding="utf-8")
+    mt = H1_MD.read_text(encoding="utf-8")
     assert pdf.exists(), pdf
     assert pdf_front_has_title(pdf, manuscript_title(mt)), (
         f"{pdf.name}: front page does not carry the manuscript title")
@@ -166,7 +181,10 @@ def test_counter_sees_both_marker_forms():
 
 
 def _edition_files(ed: str):
-    ver = ed.rsplit("_", 1)[1]
+    period, ver = ed.rsplit("_", 1)
+    if RELEASE:
+        si = editions.edition_file(ROOT, period, "supplementary", ".md")
+        return si, editions.manuscript_md(ROOT, period), si.with_suffix(".pdf")
     d = MS / ed
     m = d / f"manuscript_{ver}.md"
     if ed == "2026-H1_v6":        # the edition copy is the v2 render's name

@@ -77,6 +77,16 @@ def main(months: list[str]) -> int:
             md = d / f"{stem}.md"
             if not md.exists():
                 raise SystemExit(f"FAIL-CLOSED: {md} missing")
+            if stem.startswith("supplementary"):
+                # The SI goes through the SI renderer, not the main-text one.
+                # The main-text flags (implicit figures off, main preamble)
+                # dropped both SI figure captions in the first v5 render.
+                sys.path.insert(0, str(ROOT / "scripts"))
+                from stages import s19_si
+                pdf = d / f"{stem}.pdf"
+                s19_si.render_pdf(md, pdf, d)
+                print(f"  rendered {pdf.relative_to(ROOT)}  {pdf.stat().st_size:,} bytes")
+                continue
             render(md, d / f"{stem}.pdf")
     return 0
 

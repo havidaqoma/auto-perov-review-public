@@ -38,3 +38,10 @@
 \clubpenalty=10000
 \widowpenalty=10000
 \displaywidowpenalty=10000
+
+% Hold every SI figure where the text puts it. As a floating 'htbp'
+% figure, Figure S2 of the June and August SIs was placed at the page foot
+% and ran off the page (LaTeX log: Overfull vbox 187pt while output is
+% active); its caption was lost. [H] moves it whole to the next page.
+\usepackage{float}
+\floatplacement{figure}{H}

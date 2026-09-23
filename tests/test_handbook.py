@@ -15,11 +15,15 @@ from __future__ import annotations
 import json
 import pathlib
 import re
+import sys
 
 import pytest
 import yaml
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+from stages.editions import build_gate_report  # noqa: E402
+
 HANDBOOK = ROOT / "MASTER_HANDBOOK.md"
 TEXT = HANDBOOK.read_text(encoding="utf-8")
 
@@ -80,7 +84,7 @@ def _gate_report() -> dict | None:
     merged: dict = {}
     for ptr in sorted((ROOT / "runs").glob("*.active")):
         rd = ROOT / "runs" / ptr.read_text(encoding="utf-8").strip()
-        f = rd / "gate_report_v4.json"
+        f = build_gate_report(ROOT, rd)
         if f.exists():
             merged.update(json.loads(f.read_text(encoding="utf-8")))
     return merged or None
@@ -95,7 +99,7 @@ def test_gate_table_matches_a_real_gate_report():
     if rep is None:
         pytest.skip("no v4 gate report on disk yet")
 
-    emitted = set(rep)
+    emitted = {k for k in rep if not k.startswith("_")}   # _regate is info
     # Gate names appear in the §6 table as **G1-cite** etc. Match the prefix
     # up to the first dash so table prose can stay readable.
     documented = set()
