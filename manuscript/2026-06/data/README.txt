@@ -1,5 +1,5 @@
 Data pack for "Perovskite Photovoltaics in June 2026: Defect passivation, composition and phase control"
-Generated 2026-09-23 16:31 from run 2026-06_cf764cbb
+Generated 2026-09-23 17:57 from run 2026-06_cf764cbb
 
 corpus_metadata.csv      every work passing the scope gate, with its
                          mechanism axis, lens and depth-tier flag

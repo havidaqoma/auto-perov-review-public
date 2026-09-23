@@ -54,6 +54,7 @@ from stages.section_map import load_map, month_name  # noqa: E402
 # Boilerplate and typography live in their own module so no superseded build
 # stage has to stay on the live path just to hold shared constants. s18d used
 # to import these from s18c_build_v3, which blocked archiving v3 to OLD/.
+from stages.boilerplate import data_availability  # noqa: E402
 from stages.boilerplate import (AFFIL, ACK, AI_DECL, ABBREV,  # noqa: E402
                                 tex_esc, md_esc, expand_abbrev)
 # G4 uses the SAME compiled filter as the draft stage. It previously carried a
@@ -795,10 +796,7 @@ def build(month: str) -> dict:
            "## Declaration of Competing Interest", "",
            "The authors declare no conflict of interest.", "",
            "## Data Availability Statement", "",
-           "The corpus table for the month, the per-paper extraction records with "
-           "their verbatim source quotations, the statistics file underlying every "
-           "number in the text, and the gate report are provided as Supplementary "
-           "Information. Abstract text and full texts are not redistributed.", "",
+           data_availability("half-year" if "-H" in month else "month"), "",
            "## AI Usage Declaration", "",
            AI_DECL.format(**provenance(rd, cl, models)),
            "", "## References", ""] + refs

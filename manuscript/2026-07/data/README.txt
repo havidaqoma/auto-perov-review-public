@@ -1,5 +1,5 @@
 Data pack for "Perovskite Photovoltaics in July 2026: Trap density and ion migration, self-assembled monolayer contacts"
-Generated 2026-09-23 16:31 from run 2026-07_197abe83
+Generated 2026-09-23 17:57 from run 2026-07_197abe83
 
 corpus_metadata.csv      every work passing the scope gate, with its
                          mechanism axis, lens and depth-tier flag

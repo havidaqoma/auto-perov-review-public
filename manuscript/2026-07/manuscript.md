@@ -132,7 +132,7 @@ The authors declare no conflict of interest.
 
 ## Data Availability Statement
 
-The corpus table for the month, the per-paper extraction records with their verbatim source quotations, the statistics file underlying every number in the text, and the gate report are provided as Supplementary Information. Abstract text and full texts are not redistributed.
+The corpus table for the month, the per-paper extraction records with their verbatim source quotations, the statistics file underlying every number in the text, and the gate report are provided as Supplementary Information. The pipeline code, the stored run artifacts, the gate reports and the rendered documents for every issue are openly available at <https://github.com/havidaqoma/auto-perov-review-public>. Abstract text and full texts are not redistributed.
 
 ## AI Usage Declaration
 

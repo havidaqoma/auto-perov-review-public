@@ -1,5 +1,5 @@
 Data pack for "Perovskite Photovoltaics in August 2026: Non-radiative recombination control and buried-interface treatment"
-Generated 2026-09-23 16:31 from run 2026-08_b086357d
+Generated 2026-09-23 17:57 from run 2026-08_b086357d
 
 corpus_metadata.csv      every work passing the scope gate, with its
                          mechanism axis, lens and depth-tier flag

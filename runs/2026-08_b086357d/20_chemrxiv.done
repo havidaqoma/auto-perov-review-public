@@ -1,6 +1,6 @@
 {
   "stage": "20_chemrxiv",
-  "at": "2026-09-23T16:31:37",
+  "at": "2026-09-23T17:57:28",
   "platform": "ChemRxiv",
   "package_dir": "manuscript\\2026-08\\chemrxiv",
   "main_content_pdf": "manuscript\\2026-08\\chemrxiv\\manuscript.pdf",
@@ -8,7 +8,7 @@
   "tex": "manuscript\\2026-08\\chemrxiv\\manuscript.tex",
   "tex_compiles": true,
   "tarball": "manuscript\\2026-08\\chemrxiv_2026-08.tar.gz",
-  "tarball_bytes": 300515,
+  "tarball_bytes": 301001,
   "tarball_members": [
     "manuscript.tex",
     "submission_metadata.json",

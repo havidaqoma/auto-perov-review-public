@@ -1,6 +1,6 @@
 # ChemRxiv submission checklist
 
-Generated 2026-09-23 10:17 from run `2026-H1`.
+Generated 2026-09-23 17:57 from run `2026-H1`.
 Route: **manual_portal** at https://chemrxiv.org -- there is no automated submission code path in this repo, by design.
 
 ## Upload

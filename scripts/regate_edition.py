@@ -245,8 +245,9 @@ def main() -> int:
         # A gate added after the reference build has no verdict to match;
         # it is listed, not counted as a mismatch.
         newer = sorted(set(gate) - set(ref))
+        # "_regate" is the info record a regate writes, not a gate verdict.
         diff = {k: (ref[k].get("status"), gate.get(k, {}).get("status"))
-                for k in sorted(ref)
+                for k in sorted(ref) if not k.startswith("_")
                 if ref[k].get("status") != gate.get(k, {}).get("status")}
         for k, keys in CAL_DETAIL.items():
             for dk in keys:

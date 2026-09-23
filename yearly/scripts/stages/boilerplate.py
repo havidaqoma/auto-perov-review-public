@@ -42,6 +42,28 @@ ACK = ("The authors would like to acknowledge the financial support from Xiamen 
        "of China (Ref. No.: 52503390). The authors also thank the Anthropic AI "
        "for Science program for its support of this work.")
 
+# The public reproducibility repository (made public by Havid 2026-09-23).
+# Every manuscript's Data Availability Statement points at it, so it is
+# defined ONCE here and imported by every build (monthly, half-year, yearly,
+# and the system paper) rather than re-typed in each.
+REPO_URL = "https://github.com/havidaqoma/auto-perov-review-public"
+
+
+def data_availability(period_word: str) -> str:
+    """The Data Availability Statement for one issue.
+
+    `period_word` is "month", "half-year" or "year". The URL is written as a
+    pandoc autolink (<...>) so it renders as a clickable link in the PDF.
+    """
+    return (f"The corpus table for the {period_word}, the per-paper extraction "
+            "records with their verbatim source quotations, the statistics file "
+            "underlying every number in the text, and the gate report are "
+            "provided as Supplementary Information. The pipeline code, the "
+            "stored run artifacts, the gate reports and the rendered documents "
+            "for every issue are openly available at "
+            f"<{REPO_URL}>. Abstract text and full texts are not "
+            "redistributed.")
+
 AI_DECL = (
     "This manuscript was prepared as part of our Research Project for making a "
     "reliable Autonomous Researcher Agent. The agent executed the monthly review "

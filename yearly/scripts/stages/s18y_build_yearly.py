@@ -52,6 +52,7 @@ import yaml
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
+from stages.boilerplate import data_availability  # noqa: E402
 from stages.boilerplate import (ACK, AFFIL, AI_DECL, CORRESP_NOTE,  # noqa: E402
                                 expand_abbrev, md_esc, tex_esc)
 from stages.hygiene import find_narration                    # noqa: E402
@@ -699,11 +700,7 @@ def build(year: str) -> dict:
            "## Declaration of Competing Interest", "",
            "The authors declare no conflict of interest.", "",
            "## Data Availability Statement", "",
-           "The corpus table for the year, the per-paper extraction records "
-           "with their verbatim source quotations, the statistics file "
-           "underlying every number in the text, and the gate report are "
-           "provided as Supplementary Information. Abstract text and full "
-           "texts are not redistributed.", "",
+           data_availability("year"), "",
            "## AI Usage Declaration", "",
            AI_DECL.format(**provenance(rd, cl, models)),
            "", "## References", ""] + refs

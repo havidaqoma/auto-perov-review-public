@@ -1,5 +1,5 @@
-Data pack for "Perovskite Photovoltaics in 2026-H1"
-Generated 2026-09-23 10:17 from run 2026-H1
+Data pack for "Perovskite Photovoltaics in January-June 2026: The Certified Frontier From Cell to Module"
+Generated 2026-09-23 17:57 from run 2026-H1
 
 corpus_metadata.csv      every work passing the scope gate, with its
                          mechanism axis, lens and depth-tier flag

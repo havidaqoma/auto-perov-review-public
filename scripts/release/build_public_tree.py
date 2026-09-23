@@ -122,6 +122,11 @@ EXCLUDE_EXACT: tuple[str, ...] = (
     # Reads scratch/exemplars/, which holds the copyrighted third-party PDFs
     # excluded above. Shipping it would hand a reader a script that cannot run.
     "scripts/measure_style_any.py",
+    # A format exemplar from another project, not a manuscript of this
+    # pipeline. Havid removed it from the public repository (6b96c8a,
+    # "remove unverified manuscript"); a rebuild must not bring it back.
+    "manuscript/example_manuscript_v2.md",
+    "manuscript/example_manuscript_v2.pdf",
 )
 
 # Abstract payloads are replaced by a digest. See _abstract_digest.
@@ -377,7 +382,12 @@ def main() -> int:
             dst.write_bytes(_abstract_digest(src))
             digested += 1
         elif kind == "gzip":
-            with src.open("rb") as fi, gzip.open(dst, "wb", compresslevel=9) as fo:
+            # mtime=0 and no stored file name: a gzip header otherwise records
+            # the build time, so every rebuild rewrote an 80 MB payload whose
+            # content had not changed and grew the public history by it.
+            with src.open("rb") as fi, open(dst, "wb") as raw, \
+                    gzip.GzipFile(filename="", mode="wb", fileobj=raw,
+                                  compresslevel=9, mtime=0) as fo:
                 shutil.copyfileobj(fi, fo)
             gzipped += 1
 
