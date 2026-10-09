@@ -1,0 +1,104 @@
+{
+ "meta": {
+  "study": "T1 transfer of the anchor contract to non-perovskite schemas",
+  "source_repo": "General_topic_monthly",
+  "source_commit": "5e0c8854ff5673f00078e78cafc278b57487aa61",
+  "source_tree_clean": false,
+  "source_uncommitted": [
+   "M MANIFEST.md",
+   " M config/domains/cqd_led.yaml",
+   " M config/domains/zno_pv.yaml",
+   " M evidence/log_tests.txt",
+   " M scripts/domain_registry.py",
+   " M scripts/stages/boilerplate.py",
+   " M tests/test_upstream_manifest.py",
+   "?? MASTER_HANDBOOK_GENERAL_v3_DRAFT.md",
+   "?? REFERENCE/MASTER_HANDBOOK_GENERAL_v2_snapshot_2026-09-11.md",
+   "?? docs/",
+   "?? evidence/FORMAT_GAP_2026-09-09.md",
+   "?? evidence/RECALL_VS_PREVALENCE_2026-09-09.md",
+   "?? evidence/REVIEW_TYPE_2026-09-10.md",
+   "?? evidence/log_s10b_cqd_led.txt",
+   "?? evidence/log_s10b_zno_pv.txt",
+   "?? evidence/log_s13d_cqd.txt",
+   "?? evidence/log_s13d_znopv.txt",
+   "?? evidence/log_s18d_ack.txt",
+   "?? evidence/log_s18d_cqd_led.txt",
+   "?? evidence/log_s18d_fmt.txt",
+   "?? evidence/log_s18d_fmt2.txt",
+   "?? evidence/log_s18d_zno_pv.txt",
+   "?? scripts/stages/manuscript_format.py",
+   "?? scripts/stages/s10b_audit.py",
+   "?? scripts/stages/s18d_build.py"
+  ],
+  "verifier": "General_topic_monthly/scripts/verify_cards.py (independent of its extractor)",
+  "n_domains": 2,
+  "n_fields_total": 100,
+  "n_fields_verified_total": 100,
+  "n_cards_total": 158,
+  "supports": "the verbatim-anchor contract can be re-declared for another extraction schema and every extracted field then verifies",
+  "does_not_support": "a fabrication reduction in these domains: no ungated arm was run, and n is small",
+  "caveats": [
+   "same extractor model and same operator as the perovskite deployment",
+   "both periods ran before the extractor tool-access fix, with default tool access; every value still had to appear verbatim in its abstract",
+   "the source working tree carries uncommitted edits, listed in source_uncommitted; the verified card files are hashed here"
+  ]
+ },
+ "rows": [
+  {
+   "domain": "cqd_led",
+   "name": "Colloidal quantum-dot light-emitting diodes",
+   "schema_type": "P",
+   "period": "2026-08",
+   "n_papers_selected": 139,
+   "n_cards": 76,
+   "n_fields": 52,
+   "n_fields_verified": 52,
+   "n_fields_failed": 0,
+   "n_metrics": 6,
+   "per_metric": {
+    "eqe_max": 32,
+    "fwhm_nm": 2,
+    "luminance_cd_m2": 12,
+    "t95_h": 3,
+    "emission_peak_nm": 2,
+    "turn_on_voltage_v": 1
+   },
+   "extractor_models": [
+    "opencode-go/qwen3.8-flash"
+   ],
+   "reverified_equals_stored": true,
+   "sha256": {
+    "04_selected.jsonl": "61fa8ff291027903eb4010038db22854d5502ade5321b80f290c38d4d651c227",
+    "09_claim_cards.jsonl": "c80d2468d11e003ef10b97b85096475fd7124ca3b9c10bd6e406c793cd5d07a2"
+   }
+  },
+  {
+   "domain": "zno_pv",
+   "name": "ZnO in solar-cell devices",
+   "schema_type": "D",
+   "period": "2026-08",
+   "n_papers_selected": 161,
+   "n_cards": 82,
+   "n_fields": 48,
+   "n_fields_verified": 48,
+   "n_fields_failed": 0,
+   "n_metrics": 5,
+   "per_metric": {
+    "pce_context_pct": 29,
+    "retention_pct": 4,
+    "stability_protocol": 5,
+    "transmittance_pct": 4,
+    "layer_thickness_nm": 6
+   },
+   "extractor_models": [
+    "opencode-go/qwen3.8-flash"
+   ],
+   "reverified_equals_stored": true,
+   "sha256": {
+    "04_selected.jsonl": "e26c14f35c0d65839bf0b17a469716f06a990c0b50599115535cec690cad4d61",
+    "09_claim_cards.jsonl": "c219c8136627fc48aea4d1c41d5e9ab5f77a4cf4d9b2284075212f7c616050f1"
+   }
+  }
+ ]
+}

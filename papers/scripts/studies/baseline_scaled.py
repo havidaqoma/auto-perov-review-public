@@ -18,9 +18,9 @@ Both regimes use the SAME extractor model as the pipeline, and grounding stays
 deterministic -- is the value present in its own source abstract. No model is
 asked to judge its own output.
 
-    python -u scripts/studies/baseline_scaled.py                 # R3
-    python -u scripts/studies/baseline_scaled.py --harsh         # R4
-    python -u scripts/studies/baseline_scaled.py --harsh 2026-07 # one month
+    python -u papers/scripts/studies/baseline_scaled.py                 # R3
+    python -u papers/scripts/studies/baseline_scaled.py --harsh         # R4
+    python -u papers/scripts/studies/baseline_scaled.py --harsh 2026-07 # one month
 """
 from __future__ import annotations
 
@@ -31,7 +31,10 @@ import sys
 import time
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
-from studies.study_common import (active_run, norm_text,  # noqa: E402
+# the pipeline stages live in <repo>/scripts; this file moved to
+# papers/scripts/studies in the 2026-09-14 restructure and lost that path.
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3] / "scripts"))
+from studies.study_common import (ROOT, active_run, norm_text,  # noqa: E402
                                   number_present, wilson, write_report)
 from stages.s09_cards import call_opencode, parse_array  # noqa: E402
 
@@ -55,7 +58,9 @@ def extractor_of(cards: list) -> str:
     return seen.pop()
 
 HARSH = "--harsh" in sys.argv
-MONTHS = [a for a in sys.argv[1:] if not a.startswith("--")] or [
+_argv = [a for i, a in enumerate(sys.argv[1:], 1)
+         if not a.startswith("--") and sys.argv[i - 1] != "--shard"]
+MONTHS = [a for a in _argv if len(a) == 7 and a[4] == "-"] or [
     "2026-01", "2026-02", "2026-03", "2026-04",
     "2026-05", "2026-06", "2026-07", "2026-08"]
 
@@ -190,13 +195,32 @@ def main() -> int:
     print(f"[r3] regime={regime} papers={len(pool)} model={model} (from the cards)")
 
     # ---- ungated arm ----------------------------------------------------
+    # Every batch reply is cached under runs/studies/<name>_raw/ so a run can
+    # be sharded (--shard i/n fills the cache and exits) and the final report
+    # assembled from the cache (--from-cache). The cache records the tool
+    # regime: the 2026-09-12 title-only run executed webfetch/grep in 13 of 84
+    # sessions (tool_use_audit.json), so only replies made with tools OFF are
+    # accepted into a report.
+    name = "baseline_title_only" if HARSH else "baseline_scaled"
+    cache = ROOT / "runs" / "studies" / f"{name}_raw"
+    cache.mkdir(parents=True, exist_ok=True)
+    shard = next((a.split("=", 1)[1] if "=" in a else None
+                  for a in sys.argv if a.startswith("--shard")), None)
+    if shard is None and "--shard" in sys.argv:
+        shard = sys.argv[sys.argv.index("--shard") + 1]
+    si, sn = map(int, shard.split("/")) if shard else (0, 1)
+    from_cache = "--from-cache" in sys.argv
     arm_a, batch_of, n_lost = [], {}, 0
     nb = (len(pool) + BATCH - 1) // BATCH
     for b0 in range(0, len(pool), BATCH):
         batch = pool[b0:b0 + BATCH]
+        bi = b0 // BATCH
         keys = [c["work_key"].lower() for _m, c in batch]
         for k in keys:
             batch_of[k] = keys
+        cf = cache / f"batch_{bi:03d}.json"
+        if shard and bi % sn != si:
+            continue
         body = []
         for i, (_m, c) in enumerate(batch):
             t = titles.get(c["work_key"], "")
@@ -206,13 +230,30 @@ def main() -> int:
                 body.append(f"[{i}] TITLE: {t}\n"
                             f"ABSTRACT: {abst.get(c['work_key'].lower(), '')}")
         t0 = time.time()
-        try:
-            raw, _meta = call_opencode(UNGATED_PROMPT + "\n\n".join(body),
-                                       timeout=900)
-            arr = parse_array(raw)
-        except Exception as e:
-            print(f"[r3] batch {b0//BATCH}: FAILED {type(e).__name__}: {e}")
-            arr = []
+        arr = []
+        if cf.exists():
+            rec = json.loads(cf.read_text(encoding="utf-8"))
+            if rec.get("work_keys") != keys:
+                raise SystemExit(f"FAIL-CLOSED: {cf.name} was made for other papers")
+            if not str(rec.get("tools", "")).startswith("off"):
+                raise SystemExit(f"FAIL-CLOSED: {cf.name} was made with tools enabled")
+            arr = parse_array(rec["raw"])
+        elif from_cache:
+            print(f"[r3] batch {bi}: NOT CACHED (counted as lost)")
+        else:
+            try:
+                raw, _meta = call_opencode(UNGATED_PROMPT + "\n\n".join(body),
+                                           timeout=900)
+                arr = parse_array(raw)
+                cf.write_text(json.dumps(
+                    {"batch": bi, "work_keys": keys, "model": model, "raw": raw,
+                     "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+                     "sec": round(time.time() - t0, 1),
+                     "at": time.strftime("%Y-%m-%dT%H:%M:%S")},
+                    ensure_ascii=False, indent=1), encoding="utf-8")
+            except Exception as e:
+                print(f"[r3] batch {bi}: FAILED {type(e).__name__}: {e}")
+                arr = []
         got = 0
         for o in arr:
             try:
@@ -235,6 +276,10 @@ def main() -> int:
         else:
             print(f"[r3] batch {b0//BATCH}/{nb}: {got}/{len(batch)} "
                   f"({round(time.time()-t0,1)}s)")
+
+    if shard:
+        print(f"[r3] shard {shard} done; assemble with --from-cache")
+        return 0
 
     # ---- guarded arm: the shipped cards for the SAME papers -------------
     arm_b = []
@@ -295,6 +340,9 @@ def main() -> int:
     p_repr = f"< {P_FLOOR:.0e}" if p <= P_FLOOR else f"{p:.3e}"
     meta = dict(regime=regime, months=MONTHS, n_papers=len(pool), model=model,
                 n_papers_lost_to_partial_batches=n_lost,
+                extractor_tools="off (opencode run --pure with every tool denied; "
+                                "a reply that executed any tool fails the call)",
+                raw_cache=str(cache.relative_to(ROOT)).replace("\\", "/"),
                 arms=[sa, sb], fisher_exact_p=p, fisher_exact_p_repr=p_repr,
                 p_floor=P_FLOOR,
                 significant_at_0_05=bool(p < 0.05))

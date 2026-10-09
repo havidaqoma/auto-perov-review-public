@@ -40,6 +40,8 @@ import time
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 RUNS = ROOT / "runs"
 VERSION = "v4"
+sys.path.insert(0, str(ROOT / "scripts"))
+from stages.gate_policy import verdict  # noqa: E402
 
 #: (label, path relative to ROOT, extra args after the month)
 STAGES: list[tuple[str, str, list[str]]] = [
@@ -127,11 +129,20 @@ def verify_artifacts(month: str) -> tuple[bool, list[str]]:
         except Exception as e:
             problems.append(f"{report.name} unreadable: {e}")
             g = {}
-        failed = _failed_gates(g)
+        # One shipping rule for every consumer (stages/gate_policy.py). The
+        # old walker here counted only PASS/FAIL strings, so a "warn" (an
+        # unmeasured gate) passed silently.
+        v = verdict(g) if g and all(isinstance(x, dict) and "status" in x
+                                    for x in g.values()) else None
+        failed = (sorted(f"{k}={s}" for k, s in v["blocking"].items())
+                  if v is not None else _failed_gates(g))
         if failed:
             problems.append("failed gates: " + ", ".join(sorted(failed)))
+    if (pdf.parent / "BUILD_FAILED.json").is_file():
+        problems.append("BUILD_FAILED.json present: the last build did not publish")
 
-    pdf = ROOT / "manuscript" / f"{month}_{VERSION}" / "manuscript.pdf"
+    # The PDF name was "manuscript.pdf" here while the build writes
+    # manuscript_v4.pdf, so this check could never pass (review 2026-10-09).
     if not pdf.is_file():
         problems.append(f"missing {pdf}")
     elif pdf.stat().st_size < 50_000:
@@ -263,7 +274,7 @@ def main() -> int:
         return 1
 
     rd = resolve_run_dir(month)
-    pdf = ROOT / "manuscript" / f"{month}_{VERSION}" / "manuscript.pdf"
+    pdf = ROOT / "manuscript" / f"{month}_{VERSION}" / f"manuscript_{VERSION}.pdf"
     print(f"\nRESULT: PASS — {month} {VERSION}")
     print(f"  run dir : {rd.name if rd else '?'}")
     print(f"  pdf     : {pdf}  ({pdf.stat().st_size} bytes)")

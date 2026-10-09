@@ -1,0 +1,411 @@
+{
+ "what": "R2/R3/R4 re-scored with the corrected number metric (digit grouping read as grouping). No model calls; rows unchanged.",
+ "studies": {
+  "baseline_fabrication": {
+   "study": "baseline_fabrication",
+   "arms": {
+    "ungated_baseline": {
+     "stored": {
+      "n_values": 159,
+      "n_ungrounded": 2,
+      "ungrounded_rate": 0.0126,
+      "ungrounded_ci95": [
+       0.0035,
+       0.0447
+      ]
+     },
+     "fixed_metric": {
+      "n_values": 159,
+      "n_ungrounded": 1,
+      "ungrounded_rate": 0.0063,
+      "ungrounded_ci95": [
+       0.0011,
+       0.0348
+      ]
+     }
+    },
+    "guarded_pipeline": {
+     "stored": {
+      "n_values": 152,
+      "n_ungrounded": 0,
+      "ungrounded_rate": 0.0,
+      "ungrounded_ci95": [
+       0.0,
+       0.0247
+      ]
+     },
+     "fixed_metric": {
+      "n_values": 152,
+      "n_ungrounded": 0,
+      "ungrounded_rate": 0.0,
+      "ungrounded_ci95": [
+       0.0,
+       0.0247
+      ]
+     }
+    }
+   },
+   "tests": {
+    "fixed_metric": {
+     "fisher_exact_p": 0.99999999999992,
+     "repr": "1.000e+00"
+    },
+    "no_arithmetic_link_only": {
+     "n_ungated": 0,
+     "n_guarded": 0,
+     "rate_ungated": 0.0,
+     "ci95_ungated": [
+      0.0,
+      0.0236
+     ],
+     "fisher_exact_p": 1.0,
+     "repr": "1.000e+00"
+    }
+   },
+   "stored_matches_legacy_metric": true,
+   "ungrounded_by_class": {
+    "ungated_baseline:unit_conversion": 1
+   },
+   "ungrounded_rows": [
+    {
+     "arm": "ungated_baseline",
+     "month": null,
+     "work_key": "10.1016/j.nanoen.2026.112222",
+     "field": "active_area_cm2",
+     "value": 0.0405,
+     "ungrounded_class": "unit_conversion",
+     "grounded_legacy": false
+    }
+   ],
+   "recovered_by_fix": [
+    {
+     "arm": "ungated_baseline",
+     "work_key": "10.1002/smll.74604",
+     "field": "t80_h",
+     "value": 1500
+    }
+   ]
+  },
+  "baseline_scaled": {
+   "study": "baseline_scaled",
+   "arms": {
+    "ungated_baseline": {
+     "stored": {
+      "n_values": 1107,
+      "n_ungrounded": 9,
+      "ungrounded_rate": 0.0081,
+      "ungrounded_ci95": [
+       0.0043,
+       0.0154
+      ]
+     },
+     "fixed_metric": {
+      "n_values": 1107,
+      "n_ungrounded": 9,
+      "ungrounded_rate": 0.0081,
+      "ungrounded_ci95": [
+       0.0043,
+       0.0154
+      ]
+     }
+    },
+    "guarded_pipeline": {
+     "stored": {
+      "n_values": 1084,
+      "n_ungrounded": 0,
+      "ungrounded_rate": 0.0,
+      "ungrounded_ci95": [
+       0.0,
+       0.0035
+      ]
+     },
+     "fixed_metric": {
+      "n_values": 1084,
+      "n_ungrounded": 0,
+      "ungrounded_rate": 0.0,
+      "ungrounded_ci95": [
+       0.0,
+       0.0035
+      ]
+     }
+    }
+   },
+   "tests": {
+    "fixed_metric": {
+     "fisher_exact_p": 0.0038577063813772725,
+     "repr": "3.858e-03"
+    },
+    "no_arithmetic_link_only": {
+     "n_ungated": 0,
+     "n_guarded": 0,
+     "rate_ungated": 0.0,
+     "ci95_ungated": [
+      0.0,
+      0.0035
+     ],
+     "fisher_exact_p": 1.0,
+     "repr": "1.000e+00"
+    }
+   },
+   "stored_matches_legacy_metric": false,
+   "ungrounded_by_class": {
+    "ungated_baseline:unit_conversion": 9
+   },
+   "ungrounded_rows": [
+    {
+     "arm": "ungated_baseline",
+     "month": "2026-01",
+     "work_key": "10.1002/aenm.202505931",
+     "field": "active_area_cm2",
+     "value": 900,
+     "ungrounded_class": "unit_conversion",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_baseline",
+     "month": "2026-03",
+     "work_key": "10.1038/s41467-026-70002-4",
+     "field": "active_area_cm2",
+     "value": 2000,
+     "ungrounded_class": "unit_conversion",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_baseline",
+     "month": "2026-04",
+     "work_key": "10.1002/adma.73036",
+     "field": "active_area_cm2",
+     "value": 0.04,
+     "ungrounded_class": "unit_conversion",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_baseline",
+     "month": "2026-04",
+     "work_key": "10.1038/s41467-026-71845-7",
+     "field": "active_area_cm2",
+     "value": 900,
+     "ungrounded_class": "unit_conversion",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_baseline",
+     "month": "2026-05",
+     "work_key": "10.1016/j.esci.2026.100601",
+     "field": "active_area_cm2",
+     "value": 900,
+     "ungrounded_class": "unit_conversion",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_baseline",
+     "month": "2026-06",
+     "work_key": "10.1002/adma.73679",
+     "field": "t80_h",
+     "value": 87600,
+     "ungrounded_class": "unit_conversion",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_baseline",
+     "month": "2026-07",
+     "work_key": "10.1002/adma.74033",
+     "field": "active_area_cm2",
+     "value": 900,
+     "ungrounded_class": "unit_conversion",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_baseline",
+     "month": "2026-07",
+     "work_key": "10.1016/j.nanoen.2026.112222",
+     "field": "active_area_cm2",
+     "value": 0.0405,
+     "ungrounded_class": "unit_conversion",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_baseline",
+     "month": "2026-08",
+     "work_key": "10.1021/acsaem.6c02041",
+     "field": "t80_h",
+     "value": 1080,
+     "ungrounded_class": "unit_conversion",
+     "grounded_legacy": false
+    }
+   ],
+   "recovered_by_fix": [],
+   "review": {
+    "reviewer": "Hermes conductor (Claude) classified each value from the abstract text; the extractor under test is opencode-go/qwen3.8-flash, so the reviewer is not the generator. Confirmed by the operator, Havid Aqoma, on 2026-09-23 (verdict_confirmation.json); one disagreement resolved by ruling (verdict_rulings.json).",
+    "by_verdict": {
+     "correct_conversion": 2,
+     "footprint_as_area": 5,
+     "wrong": 2
+    },
+    "counts_as_error": [
+     "wrong"
+    ],
+    "ruling": "operator ruling 2026-09-23, papers/studies/verdict_rulings.json",
+    "n_wrong": 2,
+    "wrong_rate": 0.0018,
+    "wrong_ci95": [
+     0.0005,
+     0.0066
+    ],
+    "fisher_wrong_vs_guarded_p": 0.4998268133018404,
+    "repr": "4.998e-01",
+    "n_not_correct": 7,
+    "not_correct_rate": 0.0063,
+    "not_correct_ci95": [
+     0.0031,
+     0.013
+    ],
+    "not_correct_is": "sensitivity: errors plus footprints (stricter reading, overruled)",
+    "fisher_not_correct_vs_guarded_p": 0.01551152984011624,
+    "not_correct_repr": "1.551e-02",
+    "quotes_verified_verbatim": true
+   }
+  },
+  "baseline_title_only": {
+   "study": "baseline_title_only",
+   "arms": {
+    "ungated_title_only": {
+     "stored": {
+      "n_values": 29,
+      "n_ungrounded": 7,
+      "ungrounded_rate": 0.2414,
+      "ungrounded_ci95": [
+       0.1222,
+       0.4211
+      ]
+     },
+     "fixed_metric": {
+      "n_values": 29,
+      "n_ungrounded": 7,
+      "ungrounded_rate": 0.2414,
+      "ungrounded_ci95": [
+       0.1222,
+       0.4211
+      ]
+     }
+    },
+    "guarded_pipeline": {
+     "stored": {
+      "n_values": 1084,
+      "n_ungrounded": 0,
+      "ungrounded_rate": 0.0,
+      "ungrounded_ci95": [
+       0.0,
+       0.0035
+      ]
+     },
+     "fixed_metric": {
+      "n_values": 1084,
+      "n_ungrounded": 0,
+      "ungrounded_rate": 0.0,
+      "ungrounded_ci95": [
+       0.0,
+       0.0035
+      ]
+     }
+    }
+   },
+   "tests": {
+    "fixed_metric": {
+     "fisher_exact_p": 3.7889276377121774e-12,
+     "repr": "3.789e-12"
+    },
+    "no_arithmetic_link_only": {
+     "n_ungated": 0,
+     "n_guarded": 0,
+     "rate_ungated": 0.0,
+     "ci95_ungated": [
+      0.0,
+      0.117
+     ],
+     "fisher_exact_p": 1.0,
+     "repr": "1.000e+00"
+    }
+   },
+   "stored_matches_legacy_metric": true,
+   "ungrounded_by_class": {
+    "ungated_title_only:rounding": 7
+   },
+   "ungrounded_rows": [
+    {
+     "arm": "ungated_title_only",
+     "month": "2026-01",
+     "work_key": "10.1002/smll.202512942",
+     "field": "pce_champion",
+     "value": 26.1,
+     "ungrounded_class": "rounding",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_title_only",
+     "month": "2026-02",
+     "work_key": "10.1021/acsaem.6c00408",
+     "field": "pce_champion",
+     "value": 25.0,
+     "ungrounded_class": "rounding",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_title_only",
+     "month": "2026-04",
+     "work_key": "10.1002/ente.202502317",
+     "field": "pce_champion",
+     "value": 28.0,
+     "ungrounded_class": "rounding",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_title_only",
+     "month": "2026-04",
+     "work_key": "10.1002/solr.70354",
+     "field": "pce_champion",
+     "value": 13.8,
+     "ungrounded_class": "rounding",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_title_only",
+     "month": "2026-07",
+     "work_key": "10.1002/adfm.77164",
+     "field": "pce_champion",
+     "value": 26.0,
+     "ungrounded_class": "rounding",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_title_only",
+     "month": "2026-07",
+     "work_key": "10.1002/adma.73807",
+     "field": "pce_champion",
+     "value": 27.3,
+     "ungrounded_class": "rounding",
+     "grounded_legacy": false
+    },
+    {
+     "arm": "ungated_title_only",
+     "month": "2026-07",
+     "work_key": "10.1126/sciadv.aeg1456",
+     "field": "pce_champion",
+     "value": 27.3,
+     "ungrounded_class": "rounding",
+     "grounded_legacy": false
+    }
+   ],
+   "recovered_by_fix": [],
+   "title_only_provenance": {
+    "n_values": 29,
+    "in_title": 28,
+    "in_abstract_not_title": 1,
+    "in_neither": 0,
+    "n_papers_with_any_value": 29,
+    "n_papers_pool": 767,
+    "n_papers_lost_to_partial_batches": 0
+   }
+  }
+ }
+}

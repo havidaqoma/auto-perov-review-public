@@ -127,6 +127,16 @@ EXCLUDE_EXACT: tuple[str, ...] = (
     # "remove unverified manuscript"); a rebuild must not bring it back.
     "manuscript/example_manuscript_v2.md",
     "manuscript/example_manuscript_v2.pdf",
+    # The R6 blind labelling sheet embeds full publisher abstracts. Its
+    # sampling frame and preregistration ship (with their digests); the HTML
+    # tool does not, so this release does not widen the abstract text already
+    # public in the R1 sheets. That older exposure is an open decision for
+    # Havid, not something a rebuild should change silently (2026-10-09).
+    "papers/studies/r6_numeric/r6_sheet.html",
+    # Same reason: labelling tools that embed full abstracts. The labels they
+    # produced ship as CSV (r1_second_filled.csv, verdict_confirmations.csv).
+    "papers/studies/label_sheet/second_labeller_sheet.html",
+    "papers/studies/verdict_review.html",
 )
 
 # Abstract payloads are replaced by a digest. See _abstract_digest.
@@ -337,6 +347,24 @@ def main() -> int:
     dup = sorted({o for o in outs if outs.count(o) > 1})
     if bad or dup:
         print(f"FAIL-CLOSED layout: versioned={bad[:10]} collisions={dup[:10]}",
+              file=sys.stderr)
+        return 2
+
+    # Ship only issues that passed their gates (stages/gate_policy). The 2026-10
+    # review found the August issue in the public tree with G8-novelty failed:
+    # this script copied whatever the edition folder held.
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from stages.gate_policy import verdict
+    refused = {}
+    for rel, _, _ in plan:
+        p = pathlib.PurePosixPath(rel)
+        if p.parts[0] == "manuscript" and p.name.startswith("gate_report"):
+            g = json.loads((ROOT / rel).read_text(encoding="utf-8"))
+            v = verdict(g)
+            if not v["ok"] or (ROOT / p.parent / "BUILD_FAILED.json").exists():
+                refused[str(p.parent)] = v["blocking"] or {"BUILD_FAILED.json": "present"}
+    if refused:
+        print(f"FAIL-CLOSED gates: editions that did not pass {refused}",
               file=sys.stderr)
         return 2
 

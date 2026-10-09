@@ -18,12 +18,15 @@ month,attempt,shipped,stage,process,role,cli,model,batch,n_papers,words_out,toke
 2026-06,1,yes,13d_s3,13d_s3,llm,agy,gemini-3.8-flash-high,,,601,,,,799,estimated,
 2026-06,1,yes,13d_s4,13d_s4,llm,agy,gemini-3.8-flash-high,,,594,,,,790,estimated,
 2026-06,1,yes,13d_s5,13d_s5,llm,agy,gemini-3.8-flash-high,,,423,,,,563,estimated,
-2026-06,1,yes,13d_s6,13d_s6,llm,agy,gemini-3.8-flash-high,,,330,,,,439,estimated,
+2026-06,1,no,13d_s6,13d_s6,llm,agy,gemini-3.8-flash-high,,,330,,,,439,estimated,
 2026-06,1,yes,13d_s7,13d_s7,llm,agy,gemini-3.8-flash-high,,,311,,,,414,estimated,
-2026-06,1,yes,13d_s8,13d_s8,llm,agy,gemini-3.8-flash-high,,,309,,,,411,estimated,
+2026-06,1,no,13d_s8,13d_s8,llm,agy,gemini-3.8-flash-high,,,309,,,,411,estimated,
 2026-06,1,no,13d_abstract,13d_abstract,llm,agy,gemini-3.8-flash-high,,,295,,,,392,estimated,
 2026-06,2,yes,13d_s2,13d_s2,llm,agy,gemini-3.8-flash-high,,,235,,,,313,estimated,
-2026-06,2,yes,13d_abstract,13d_abstract,llm,agy,gemini-3.8-flash-high,,,306,,,,407,estimated,
+2026-06,2,no,13d_abstract,13d_abstract,llm,agy,gemini-3.8-flash-high,,,306,,,,407,estimated,
+2026-06,2,yes,13d_s6,13d_s6,llm,agy,gemini-3.8-flash-high,,,311,,,,414,estimated,
+2026-06,2,yes,13d_s8,13d_s8,llm,agy,gemini-3.8-flash-high,,,361,,,,480,estimated,
+2026-06,3,yes,13d_abstract,13d_abstract,llm,agy,gemini-3.8-flash-high,,,287,,,,382,estimated,
 2026-06,1,yes,01_harvest,OpenAlex/S2/Crossref/arXiv harvest (no LLM),none,python,,,,,0,0,,0,deterministic,2026-09-08T18:05:08
 2026-06,1,yes,02_normalize,"DOI/title normalisation, language detect",none,python,,,,,0,0,,0,deterministic,2026-09-08T18:09:03
 2026-06,1,yes,04_venues,journal citation percentile,none,python,,,,,0,0,,0,deterministic,2026-09-08T18:09:39
@@ -32,7 +35,8 @@ month,attempt,shipped,stage,process,role,cli,model,batch,n_papers,words_out,toke
 2026-06,1,yes,08_subset,depth-tier selection + sensitivity draws,none,python,,,,,0,0,,0,deterministic,2026-09-08T18:09:39
 2026-06,1,yes,10_stats,every citable number,none,python,,,,,0,0,,0,deterministic,2026-09-08T18:09:39
 2026-06,1,yes,11_figures,figures plotted from stats/cards,none,python,,,,,0,0,,0,deterministic,2026-09-08T21:54:54
-2026-06,1,yes,18d_build_v4,format assembly + gates + PDF,none,python,,,,,0,0,,0,deterministic,2026-09-08T22:00:59
-2026-06,1,yes,19_si,supplementary information,none,python,,,,,0,0,,0,deterministic,2026-09-08T22:01:22
-2026-06,1,yes,20_arxiv,arXiv bundle + CSV data pack,none,python,,,,,0,0,,0,deterministic,2026-09-08T22:01:27
-2026-06,1,yes,21_tokens,21_tokens,none,python,,,,,0,0,,0,deterministic,2026-09-08T19:46:15
+2026-06,1,yes,18d_build_v4,format assembly + gates + PDF,none,python,,,,,0,0,,0,deterministic,2026-10-09T18:34:43
+2026-06,1,yes,19_si,supplementary information,none,python,,,,,0,0,,0,deterministic,2026-10-09T18:35:28
+2026-06,1,yes,20_arxiv,20_arxiv,none,python,,,,,0,0,,0,deterministic,2026-09-08T22:01:27
+2026-06,1,yes,20_chemrxiv,ChemRxiv package + CSV data pack,none,python,,,,,0,0,,0,deterministic,2026-10-09T18:35:36
+2026-06,1,yes,21_tokens,21_tokens,none,python,,,,,0,0,,0,deterministic,2026-09-08T22:01:27

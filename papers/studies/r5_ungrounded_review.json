@@ -1,0 +1,47 @@
+{
+ "what": "Hand-read verdict for every R5 gate-off value that the corrected metric counts as ungrounded. Same classes and rules as r3_ungrounded_review.json: each verdict carries a quote that must occur verbatim in the paper's abstract, and the scorer (ablation_gate.py --score) fails closed unless every ungrounded row has exactly one verdict.",
+ "reviewer": "Hermes conductor (Claude) classified each value from the abstract text; the extractor under test is opencode-go/qwen3.8-flash, so the reviewer is not the generator. Confirmed by the operator, Havid Aqoma, on 2026-09-23 (verdict_confirmation.json); one disagreement resolved by ruling (verdict_rulings.json).",
+ "classes": {
+  "correct_conversion": "the value is the quantity the abstract states for this field, converted to the field unit",
+  "footprint_as_area": "a module, submodule or panel size, multiplied out where needed, entered as the area. Counted as a valid area by operator ruling (verdict_rulings.json)",
+  "wrong": "the value does not represent the field: wrong entity, a slip, an extrapolation, a truncation, or a non-T80 retention"
+ },
+ "rows": [
+  {
+   "work_key": "10.1002/aenm.202505931",
+   "field": "active_area_cm2",
+   "value": 900,
+   "verdict": "footprint_as_area",
+   "quote": "30 × 30 cm 2 semi‐transparent module",
+   "why": "30 x 30 cm2 = 900 cm2 is the module size, not an active area; same paper and verdict as in R3"
+  },
+  {
+   "work_key": "10.1002/adfm.202532100",
+   "field": "pce_champion",
+   "value": 25,
+   "verdict": "wrong",
+   "quote": "PSCs reach 25.24% PCE",
+   "why": "the abstract states 25.24%; the extractor truncated it to 25"
+  },
+  {
+   "work_key": "10.1002/adma.73358",
+   "field": "active_area_cm2",
+   "value": 25,
+   "verdict": "footprint_as_area",
+   "quote": "5 cm × 5 cm flexible mini-modules",
+   "why": "5 cm x 5 cm = 25 cm2 is the mini-module size, not an active area"
+  },
+  {
+   "work_key": "10.1016/j.nanoen.2026.112222",
+   "field": "active_area_cm2",
+   "value": 0.0405,
+   "verdict": "correct_conversion",
+   "quote": "aperture area 4.05 mm 2",
+   "why": "4.05 mm2 = 0.0405 cm2 (aperture area); same paper and verdict as in R3"
+  }
+ ],
+ "counts_as_error": [
+  "wrong"
+ ],
+ "counts_as_error_source": "operator ruling 2026-09-23, papers/studies/verdict_rulings.json"
+}

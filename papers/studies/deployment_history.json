@@ -1,0 +1,37 @@
+{
+  "repo_start": "2026-09-05",
+  "repo_start_text": "5 September 2026",
+  "n_monthly_runs": 8,
+  "monthly_runs": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08"
+  ],
+  "issues_built": [
+    "2026-06",
+    "2026-07",
+    "2026-08"
+  ],
+  "n_issues_built": 3,
+  "editions_passing": [
+    "2026-06",
+    "2026-07_v2",
+    "2026-07_v3",
+    "2026-07_v4",
+    "2026-07",
+    "2026-08_v3"
+  ],
+  "halfyear_built": [
+    "2026-H1_v4",
+    "2026-H1"
+  ],
+  "n_halfyear_built": 1,
+  "n_posted": 0,
+  "posted": [],
+  "posted_rule": "a ChemRxiv DOI (10.26434) recorded in the edition folder"
+}

@@ -197,6 +197,7 @@
   "runs/2026-06_cf764cbb/draft_v4/sec8.md": "runs/2026-06_cf764cbb/draft/sec8.md",
   "runs/2026-06_cf764cbb/gate_report_v4.json": "runs/2026-06_cf764cbb/gate_report.json",
   "runs/2026-06_cf764cbb/manuscript_v4.md": "runs/2026-06_cf764cbb/manuscript.md",
+  "runs/2026-06_cf764cbb/manuscript_v4.pdf": "runs/2026-06_cf764cbb/manuscript.pdf",
   "runs/2026-06_cf764cbb/supplementary_v4.md": "runs/2026-06_cf764cbb/supplementary.md",
   "runs/2026-07_197abe83/draft_v4/_map.sha": "runs/2026-07_197abe83/draft/_map.sha",
   "runs/2026-07_197abe83/draft_v4/abstract.md": "runs/2026-07_197abe83/draft/abstract.md",
@@ -209,6 +210,8 @@
   "runs/2026-07_197abe83/draft_v4/sec7.md": "runs/2026-07_197abe83/draft/sec7.md",
   "runs/2026-07_197abe83/draft_v4/sec8.md": "runs/2026-07_197abe83/draft/sec8.md",
   "runs/2026-07_197abe83/gate_report_v5.json": "runs/2026-07_197abe83/gate_report.json",
+  "runs/2026-07_197abe83/manuscript_v5.md": "runs/2026-07_197abe83/manuscript.md",
+  "runs/2026-07_197abe83/supplementary_v5.md": "runs/2026-07_197abe83/supplementary.md",
   "runs/2026-08_b086357d/draft_v4/_map.sha": "runs/2026-08_b086357d/draft/_map.sha",
   "runs/2026-08_b086357d/draft_v4/abstract.md": "runs/2026-08_b086357d/draft/abstract.md",
   "runs/2026-08_b086357d/draft_v4/sec1.md": "runs/2026-08_b086357d/draft/sec1.md",
@@ -220,6 +223,8 @@
   "runs/2026-08_b086357d/draft_v4/sec7.md": "runs/2026-08_b086357d/draft/sec7.md",
   "runs/2026-08_b086357d/draft_v4/sec8.md": "runs/2026-08_b086357d/draft/sec8.md",
   "runs/2026-08_b086357d/gate_report_v5.json": "runs/2026-08_b086357d/gate_report.json",
+  "runs/2026-08_b086357d/manuscript_v5.md": "runs/2026-08_b086357d/manuscript.md",
+  "runs/2026-08_b086357d/supplementary_v5.md": "runs/2026-08_b086357d/supplementary.md",
   "runs/2026-H1/12_section_map_v6.json": "runs/2026-H1/12_section_map.json",
   "runs/2026-H1/13_draft_h1_v6.json": "runs/2026-H1/13_draft_h1.json",
   "runs/2026-H1/draft_h1_v6/_map.sha": "runs/2026-H1/draft_h1/_map.sha",
@@ -239,5 +244,5 @@
   "runs/_style_contract/augv5.json": "runs/_style_contract/aug.json",
   "runs/_style_contract/julv5.json": "runs/_style_contract/jul.json"
  },
- "dropped_count": 336
+ "dropped_count": 338
 }

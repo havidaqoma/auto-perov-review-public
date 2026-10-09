@@ -115,6 +115,15 @@ def test_gate_table_matches_a_real_gate_report():
     assert not phantom, \
         f"handbook documents gates the build never emits: {sorted(phantom)}"
 
+    # The section opens with the gate count in words; it read "Seventeen"
+    # while the build emitted nineteen, because nothing compared them.
+    words = {"seventeen": 17, "eighteen": 18, "nineteen": 19, "twenty": 20,
+             "twenty-one": 21, "twenty-two": 22}
+    m = re.search(r"\n([A-Za-z-]+) gates\. All are computed", TEXT)
+    assert m, "section 6 must open with the gate count in words"
+    assert words.get(m.group(1).lower()) == len(emitted), \
+        f"handbook says {m.group(1)} gates, the build emits {len(emitted)}"
+
 
 def test_documented_thresholds_match_config():
     """Numbers in the handbook must be the numbers the code reads. A handbook

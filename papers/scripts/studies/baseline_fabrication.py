@@ -29,7 +29,7 @@ own output. Three rates are reported per arm:
 Wilson intervals throughout: at k=0 the normal approximation reports a zero-width
 interval, and a zero-width interval on a fabrication rate is a false claim.
 
-Run: python -u scripts/studies/baseline_fabrication.py [month] [n_papers]
+Run: python -u papers/scripts/studies/baseline_fabrication.py [month] [n_papers]
 """
 from __future__ import annotations
 
@@ -40,6 +40,7 @@ import sys
 import time
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3] / "scripts"))
 from studies.study_common import (active_run, norm_text,  # noqa: E402
                                   number_present, numbers_in, wilson,
                                   write_report)

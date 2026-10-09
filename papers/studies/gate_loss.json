@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "source": "papers/studies/ablation_gate.json + runs/studies/ablation_raw",
+    "model": "opencode-go/qwen3.8-flash",
+    "n_lost": 20,
+    "by_cause": {
+      "paraphrase": 5,
+      "typography": 14,
+      "not_object": 1
+    },
+    "per_field": {
+      "active_area_cm2": {
+        "grounded": 147,
+        "lost": 5,
+        "lost_rate": 0.034,
+        "lost_ci95": [
+          0.0146,
+          0.0771
+        ]
+      },
+      "pce_certified": {
+        "grounded": 154,
+        "lost": 1,
+        "lost_rate": 0.0065,
+        "lost_ci95": [
+          0.0011,
+          0.0359
+        ]
+      },
+      "pce_champion": {
+        "grounded": 730,
+        "lost": 11,
+        "lost_rate": 0.0151,
+        "lost_ci95": [
+          0.0084,
+          0.0268
+        ]
+      },
+      "t80_h": {
+        "grounded": 39,
+        "lost": 3,
+        "lost_rate": 0.0769,
+        "lost_ci95": [
+          0.0265,
+          0.2032
+        ]
+      }
+    },
+    "recoverable_by_normalisation": 14,
+    "steps_needed": {
+      "dash": 14,
+      "quote": 0,
+      "nfkc_or_combined": 0
+    },
+    "counterfactual_dash_guard": {
+      "grounded_kept": 1064,
+      "grounded_lost": 6,
+      "ungrounded_admitted": 0,
+      "rule": "hyphen and dash variants mapped to ASCII hyphen in anchor and abstract"
+    },
+    "note": "loss is measured on grounded values only; the gate's protective effect is reported separately in ablation_gate.json"
+  },
+  "rows": [
+    {
+      "work_key": "10.1002/adma.202518582",
+      "field": "pce_champion",
+      "value": 26.61,
+      "anchor": "PCE of 26.61%",
+      "cause": "paraphrase",
+      "evidence": "reworded; not recoverable by normalisation"
+    },
+    {
+      "work_key": "10.1002/anie.202513535",
+      "field": "pce_champion",
+      "value": 26.29,
+      "anchor": "MTBH-incorporated devices achieve a champion power conversion efficiency (PCE) of 26.29% (versus 23.62% for control)",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.1021/acsaem.5c03966",
+      "field": "pce_champion",
+      "value": 12.46,
+      "anchor": "The resulting champion CsPbI2Br PSCs deliver a PCE of 12.46%, significantly surpassing the control device (10.85%).",
+      "cause": "paraphrase",
+      "evidence": "reworded; not recoverable by normalisation"
+    },
+    {
+      "work_key": "10.1002/adfm.202532203",
+      "field": "pce_champion",
+      "value": 19.89,
+      "anchor": "the resulting perovskite-organic tandem module achieves a PCE of 19.89% at 16.41 cm 2 active area",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.1002/adfm.202532205",
+      "field": "active_area_cm2",
+      "value": 900,
+      "anchor": "A 5 × 5 perovskite platform reaches a decimeter-scale footprint (∼900 cm 2 )",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.1002/adfm.74893",
+      "field": "pce_champion",
+      "value": 25.81,
+      "anchor": "optimized co-deposition devices achieved a champion power conversion efficiency of 25.81%",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.1002/adfm.74893",
+      "field": "t80_h",
+      "value": 4000,
+      "anchor": "with a T 80 lifetime exceeding 4000 h under ISOS-L-1I protocol",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.1002/adma.72936",
+      "field": "pce_champion",
+      "value": 29.01,
+      "anchor": "all‐perovskite tandem (with a maximum steady-state PCE of 29.01%)",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.1002/advs.202524360",
+      "field": "t80_h",
+      "value": 2000,
+      "anchor": "Unencapsulated devices retain 80% of their initial efficiency after 2000 h of ambient storage, confirming improved long-term stability.",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.1002/anie.9286497",
+      "field": "pce_champion",
+      "value": 26.87,
+      "anchor": "NMePS-modified devices achieve efficiencies of 26.87% (0.045 cm 2 )",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.1002/anie.9286497",
+      "field": "active_area_cm2",
+      "value": 0.045,
+      "anchor": "NMePS-modified devices achieve efficiencies of 26.87% (0.045 cm 2 )",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.1002/smll.73319",
+      "field": "pce_champion",
+      "value": 25.32,
+      "anchor": "the target NTANa-modified PSCs deliver a markedly increased power conversion efficiency (PCE) of 25.32%",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.1002/smtd.70654",
+      "field": "active_area_cm2",
+      "value": 3.9,
+      "anchor": "enable a perovskite mini module (3.9 cm 2 ), achieving over 38% efficiency at 900 lux under TL84 illumination",
+      "cause": "paraphrase",
+      "evidence": "reworded; not recoverable by normalisation"
+    },
+    {
+      "work_key": "10.1038/s41467-026-72794-x",
+      "field": "t80_h",
+      "value": 800,
+      "anchor": null,
+      "cause": "not_object",
+      "evidence": "field returned as int"
+    },
+    {
+      "work_key": "10.1002/adfm.76623",
+      "field": "pce_champion",
+      "value": 26.62,
+      "anchor": "These combined effects yield peak power conversion efficiencies of 25.28% in the n‐i‐p configuration and 26.62% in the p‐i‐n configuration along with exceptional thermal and operational stability.",
+      "cause": "paraphrase",
+      "evidence": "reworded; not recoverable by normalisation"
+    },
+    {
+      "work_key": "10.1002/aenm.71159",
+      "field": "pce_certified",
+      "value": 26.61,
+      "anchor": "certified efficiency of 26.61% for small-area PSCs",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.1002/aenm.71159",
+      "field": "active_area_cm2",
+      "value": 62.37,
+      "anchor": "large-area modules (62.37 cm 2 )",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.1002/aenm.71170",
+      "field": "active_area_cm2",
+      "value": 65,
+      "anchor": "large-scale PSC modules (65cm 2 )",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.1002/anie.2884874",
+      "field": "pce_champion",
+      "value": 25.8,
+      "anchor": "Perovskite solar cells incorporating this co‐assembled layer achieve a power conversion efficiency (PCE) of 25.8%",
+      "cause": "typography",
+      "evidence": "needs: dash"
+    },
+    {
+      "work_key": "10.26434/chemrxiv.15006632/v1",
+      "field": "pce_champion",
+      "value": 26.0,
+      "anchor": "Integrating a formamidinium-rich 3D|2D stack (FA 0.9 Cs 0.1 PbI 3 |(3AMP)FA 2 Pb 3 I 10 ) into p-i-n solar cells increases efficiency from 24.0% to 26.0%",
+      "cause": "paraphrase",
+      "evidence": "reworded; not recoverable by normalisation"
+    }
+  ]
+}

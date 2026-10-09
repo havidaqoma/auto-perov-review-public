@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "comparison": "generic prompt (R3 ungated) vs production prompt (R5 gate off); same extractor, tools off, no gate",
+    "generic_n": 1107,
+    "generic_bad": 9,
+    "generic_bad_papers": 9,
+    "production_n": 1074,
+    "production_bad": 4,
+    "production_bad_papers": 4,
+    "fisher_p": 0.2661,
+    "fisher_p_repr": "2.661e-01",
+    "test": "Fisher exact, two-sided, values treated as independent; the paper counts are given so clustering is visible"
+  }
+}

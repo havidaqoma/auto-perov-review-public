@@ -1,0 +1,19 @@
+{
+ "confirmed_by": "Havid Aqoma",
+ "date": "2026-09-24",
+ "n_values": 13,
+ "n_agree": 12,
+ "n_disagree": 1,
+ "disagreements": [
+  {
+   "id": "R3|10.1038/s41467-026-70002-4|active_area_cm2|2000",
+   "note": "there are 2 type of device, single junction perovskite with 60 cm2 , and perovskite/Si tandem with 2000 cm2. I think usually the footprint area is active area in perovskite PV report in abstract",
+   "resolved_by": "verdict_rulings.json"
+  }
+ ],
+ "n_unresolved": 0,
+ "review_files_sha256": {
+  "r3_ungrounded_review.json": "74be040989aec0b6203fc217b7516f13eae06ec218d54ccd961da271d8821571",
+  "r5_ungrounded_review.json": "f9ac7d648ddcf93714613dd24670cec0f22d1892bd2df7e357f8bee21032430b"
+ }
+}

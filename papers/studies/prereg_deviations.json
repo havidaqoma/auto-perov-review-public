@@ -1,0 +1,95 @@
+{
+ "meta": {
+  "preregistration": "papers/studies/label_sheet/preregistration.json",
+  "n_secondary": 3,
+  "n_ran": 1,
+  "n_not_run": 2,
+  "n_rows_with_pce_value": 0,
+  "n_rows_labelled": 100,
+  "n_extractor_models": 1,
+  "extractor_models": [
+   "opencode-go/qwen3.8-flash"
+  ],
+  "n_analysis_changes_after_labels": 2,
+  "t80_recall_without_guard": 0.0526,
+  "t80_n_excluded_by_guard": 12
+ },
+ "items": [
+  {
+   "metric": "numeric accuracy of the declared headline PCE",
+   "ran": false,
+   "evidence": {
+    "rows_labelled": 100,
+    "rows_states_pce_Y": 72,
+    "rows_with_human_pce_value": 0
+   },
+   "reason": "the labeller filled the yes/no flags only; the pce_value column is blank in every row, so there is no human number to score against"
+  },
+  {
+   "metric": "intra-rater agreement (kappa) on a 20-paper re-label",
+   "ran": true,
+   "evidence": {
+    "r1_relabel_filled.csv": true
+   },
+   "reason": null
+  },
+  {
+   "metric": "per-extractor-model breakdown (qwen3.8-flash vs glm-5.3-flash)",
+   "ran": false,
+   "evidence": {
+    "extractor_models_in_labelled_months": [
+     "opencode-go/qwen3.8-flash"
+    ],
+    "cards_per_month": {
+     "2026-01": {
+      "opencode-go/qwen3.8-flash": 110
+     },
+     "2026-02": {
+      "opencode-go/qwen3.8-flash": 131
+     },
+     "2026-03": {
+      "opencode-go/qwen3.8-flash": 146
+     },
+     "2026-04": {
+      "opencode-go/qwen3.8-flash": 164
+     },
+     "2026-05": {
+      "opencode-go/qwen3.8-flash": 154
+     },
+     "2026-06": {
+      "opencode-go/qwen3.8-flash": 167
+     },
+     "2026-07": {
+      "opencode-go/qwen3.8-flash": 169
+     },
+     "2026-08": {
+      "opencode-go/qwen3.8-flash": 144
+     }
+    }
+   },
+   "reason": "every claim card in the labelled months was extracted by opencode-go/qwen3.8-flash; there is no second model to compare"
+  }
+ ],
+ "analysis_changes_after_labels": [
+  {
+   "change": "lifetime (states_t80) recall scored only on sampled papers that have a claim card; papers without a card are excluded instead of counted as misses",
+   "when": "2026-09-12 15:35 +0800, commit 165735c, the same commit that added the 100 labels",
+   "registered": "precision and recall of each extractor flag vs human label, all sampled rows",
+   "effect": {
+    "n_human_yes_with_card": 26,
+    "n_human_yes_no_card": 12,
+    "tp": 2,
+    "recall_with_guard": 0.0769,
+    "recall_without_guard": 0.0526
+   },
+   "status": "reported with the guard; the unguarded value is given beside it"
+  },
+  {
+   "change": "the 20-paper re-label was done 24 minutes after the first pass, in the same session, so it measures same-session consistency, not stability over time",
+   "when": "2026-09-12 15:59 +0800, commit 024ea13",
+   "registered": "intra-rater agreement (kappa) on a 20-paper re-label (timing not fixed)",
+   "effect": null,
+   "status": "reported as a same-session repeat; inter-rater kappa is the primary reliability figure"
+  }
+ ]
+}

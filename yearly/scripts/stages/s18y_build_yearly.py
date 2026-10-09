@@ -59,6 +59,7 @@ from stages.hygiene import find_narration                    # noqa: E402
 from stages.layout import measure as measure_title_block     # noqa: E402
 from stages.notation import check_notation, format_notation  # noqa: E402
 from stages.util import CONFIG, ROOT, done, read_jsonl, run_dir, is_year  # noqa: E402
+from stages import writer_lock  # noqa: E402
 from stages.yearly_corpus import (aggregate, axis_mass,      # noqa: E402
                                   canon_work_key, yearly_dir)
 from stages.device_class import is_indoor_value             # noqa: E402
@@ -362,20 +363,17 @@ def build(year: str) -> dict:
     newest = max(newest, abs_f.stat().st_mtime)
     if time.time() - newest < 20:
         raise SystemExit("FAIL-CLOSED: a draft changed <20s ago; writer still running")
+    # Detect and REFUSE; never kill. Only writers recorded by this document's drafting stage count; an agy
+    # run by another project no longer blocks the build (stages/writer_lock.py).
     try:
-        ps = subprocess.run(
-            ["powershell", "-NoProfile", "-Command",
-             "(Get-Process agy -ErrorAction SilentlyContinue).Id -join ','"],
-            capture_output=True, text=True, timeout=60)
-        live = (ps.stdout or "").strip()
-        if live:
-            # Detect and REFUSE; never kill. Killing by broad name match would
-            # take down the orchestrator running the build.
-            raise SystemExit(f"FAIL-CLOSED: agy writer still running (PID {live}).")
-    except FileNotFoundError:
-        print("[18y] WARN: powershell unavailable; orphan check skipped")
-    except subprocess.TimeoutExpired:
-        print("[18y] WARN: orphan check timed out; not treated as clear")
+        live = writer_lock.live_writers(writer_lock.lock_path(dd))
+    except RuntimeError as e:
+        raise SystemExit(f"FAIL-CLOSED (7.4): {e}")
+    if live:
+        raise SystemExit(
+            f"FAIL-CLOSED (7.4): drafting writer still running (PID {live}).")
+    if live is None:
+        print("[18y] note: drafts predate the writer lock; freshness guard only")
 
     frozen = {s: {"words": len(v.split()),
                   "sha256": hashlib.sha256(v.encode()).hexdigest()[:16]}
@@ -391,8 +389,10 @@ def build(year: str) -> dict:
     expanded = []
     ab, e = expand_abbrev(ab)
     expanded += e
+    body_done: list = []   # the body is one document: expand once, not per section
     for sid in ids:
-        secs[sid], e = expand_abbrev(secs[sid])
+        secs[sid], e = expand_abbrev(secs[sid], skip=body_done)
+        body_done += e
         expanded += e
 
     # ---- citation numbering: ONE pass over the body --------------------

@@ -71,6 +71,10 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
 from stages.hygiene import strip_narration                  # noqa: E402
 from stages.util import CONFIG, done, is_year, read_jsonl, run_dir  # noqa: E402
+from stages import writer_lock  # noqa: E402
+
+# Set by the drafting entry point: every agy child is recorded before it writes.
+LOCK: pathlib.Path | None = None
 from stages.yearly_corpus import aggregate, axis_mass, yearly_dir  # noqa: E402
 from stages.device_class import (CLASS_LABEL, CLASS_SHORT,  # noqa: E402
                                  classify)
@@ -148,10 +152,17 @@ def write_llm(prompt: str, timeout: int = 1800, attempts: int = 3) -> str:
     exe = _agy()
     last = ""
     for i in range(attempts):
-        p = subprocess.run(
+        p = subprocess.Popen(
             [exe, "-p", prompt, "--model", MODEL,
              "--dangerously-skip-permissions", "--print-timeout", "1500s"],
-            capture_output=True, text=True, timeout=timeout, cwd=str(CONFIG.parent))
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, cwd=str(CONFIG.parent))
+        writer_lock.register(LOCK, p.pid, "agy")
+        try:
+            p.stdout, p.stderr = p.communicate(timeout=timeout)
+        except subprocess.TimeoutExpired:
+            p.kill()
+            p.communicate()
+            raise
         out = (p.stdout or "").strip()
         if p.returncode == 0 and len(out) > 200:
             return out
@@ -379,6 +390,9 @@ def draft(year: str, only: list | None = None) -> dict:
 
     dd = rd / "draft_yearly"
     dd.mkdir(exist_ok=True)
+    global LOCK
+    LOCK = writer_lock.lock_path(dd)
+    writer_lock.start(LOCK)
 
     abstracts = {x["work_key"]: x["abstract"]
                  for x in read_jsonl(rd / "private" / "02_abstracts.jsonl")}

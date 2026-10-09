@@ -17,7 +17,7 @@ FAIL-CLOSED ON THE ARTIFACT. If every judgement matches, that is far more
 likely to be localStorage restoring the first pass than a human reproducing
 100 judgements exactly. The run refuses to report kappa in that case.
 
-Run: python -u scripts/studies/relabel_kappa.py
+Run: python -u papers/scripts/studies/relabel_kappa.py
 """
 from __future__ import annotations
 
@@ -74,9 +74,16 @@ def boot_ci(pairs: list[tuple[str, str]], n_boot: int = 4000) -> tuple:
     return (round(ks[int(0.025 * len(ks))], 4), round(ks[int(0.975 * len(ks))], 4))
 
 
+SECOND = "--second" in sys.argv
+
+
 def main() -> int:
     P = load(SHEET / "r1_labels_filled.csv")
-    R = load(SHEET / "r1_relabel_filled.csv")
+    rfile = SHEET / ("r1_second_filled.csv" if SECOND else "r1_relabel_filled.csv")
+    if not rfile.exists():
+        raise SystemExit(f"FAIL-CLOSED: {rfile.name} not found. The second "
+                         "labeller is a human; no model may fill this sheet.")
+    R = load(rfile)
     fr = json.loads((SHEET / "relabel_frame.json").read_text(encoding="utf-8"))
     want = set(fr["work_keys"])
 
@@ -116,7 +123,7 @@ def main() -> int:
 
     # A perfect match across every judgement is the localStorage artifact
     # signature, not a reliability result. Refuse rather than report it.
-    if n_agree == n_all and n_all > 0:
+    if n_agree == n_all and n_all > 0 and not SECOND:
         raise SystemExit(
             "FAIL-CLOSED: every judgement is identical. That is the "
             "localStorage-restore artifact, not intra-rater reliability. "
@@ -130,12 +137,17 @@ def main() -> int:
     ]
 
     meta = dict(
-        study="R1b intra-rater reliability",
-        design="same labeller, same instrument, 20 papers re-labelled",
+        study=("R1c inter-rater reliability" if SECOND
+               else "R1b intra-rater reliability"),
+        design=("a second, independent human labels the same 20 papers on the "
+                "same blinded instrument" if SECOND else
+                "same labeller, same instrument, 20 papers re-labelled"),
         measures="kappa is reported WITH PABAK and prevalence: under skew the "
                  "kappa paradox drives kappa down while agreement stays high",
-        limitation="intra-rater reliability shows labels are STABLE, not "
-                   "CORRECT. A consistently mistaken labeller scores 1.0.",
+        limitation=("inter-rater agreement shows the labels are reproducible "
+                    "across people; it still does not prove them correct" if SECOND
+                    else "intra-rater reliability shows labels are STABLE, not "
+                    "CORRECT. A consistently mistaken labeller scores 1.0."),
         n_papers=len(want), n_judgements=n_all, n_agree=n_agree,
         overall_raw_agreement=round(po_all, 4),
         overall_kappa=None if k_all != k_all else round(k_all, 4),
@@ -145,7 +157,7 @@ def main() -> int:
         disagreements=disagreements,
         per_flag=rows,
     )
-    write_report("relabel_kappa", rows, meta)
+    write_report("interrater_kappa" if SECOND else "relabel_kappa", rows, meta)
     print(json.dumps({k: v for k, v in meta.items() if k != "per_flag"}, indent=2))
     print("\nper flag:")
     for r in rows:

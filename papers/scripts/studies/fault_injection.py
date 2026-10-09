@@ -16,7 +16,7 @@ Three rules this harness will not break:
 An expected miss that the handbooks already document (absent figures, intra-issue
 duplication) is recorded as `known_blind`, not presented as a discovery.
 
-Run: python -u scripts/studies/fault_injection.py [month]
+Run: python -u papers/scripts/studies/fault_injection.py [month]
 """
 from __future__ import annotations
 
@@ -280,6 +280,37 @@ def m_bare_abbreviation(sb):
     return "FI_ABBREV_BYPASS"
 
 
+def _cited_key(sb, name):
+    m = re.search(r"\[@([^\]\s]+)\]", _draft(sb, name).read_text(encoding="utf-8"))
+    return m.group(1) if m else None
+
+
+def m_fabricated_body_numeral(sb):
+    """A number no verified span contains, typed into body prose (G3e).
+
+    The external review of 2026-10-09 found body numerals were model-typed and
+    never read back; this is the mutation that gap would have let through."""
+    k = _cited_key(sb, "sec3.md")
+    if not k:
+        return None
+    p = _draft(sb, "sec3.md")
+    p.write_text(p.read_text(encoding="utf-8").rstrip()
+                 + f"\n\nThe same device later reached 31.77% PCE [@{k}].\n", encoding="utf-8")
+    return "31.77% PCE"
+
+
+def m_wrong_protocol_count(sb):
+    """A small-integer count claim that disagrees with the computed count (G3e).
+
+    Small integers are exempt from tracing, so a wrong count ('only 9 papers
+    named an ISOS protocol') needs the count check, not the numeral check."""
+    p = _draft(sb, "sec4.md")
+    p.write_text(p.read_text(encoding="utf-8").rstrip()
+                 + "\n\nOnly 9 papers named an International Summit on Organic Photovoltaic "
+                   "Stability (ISOS) protocol.\n", encoding="utf-8")
+    return "Only 9 papers named"
+
+
 def m_model_slug(sb):
     """Back matter naming a CLI slug instead of a product (G9d).
 
@@ -354,6 +385,12 @@ REGISTRY = [
     dict(id="FI-17", desc="AI declaration names a CLI slug, not a product",
          oracle="G9d-model-names", expect="catch", runner="build",
          fn=m_model_slug),
+    dict(id="FI-18", desc="fabricated numeral typed into body prose",
+         oracle="G3e-body-numbers", expect="catch", runner="build",
+         fn=m_fabricated_body_numeral),
+    dict(id="FI-19", desc="body count claim disagrees with the computed count",
+         oracle="G3e-body-numbers", expect="catch", runner="build",
+         fn=m_wrong_protocol_count),
 ]
 
 
@@ -400,10 +437,17 @@ def main() -> int:
             caught = r["rc"] != 0
             fired = "verify_anchors" if caught else ""
         else:
+            pub = sb / "manuscript" / f"{MONTH}_v4" / "manuscript_v4.pdf"
+            pub.unlink(missing_ok=True)
             r = run([PY, "-u", "scripts/stages/s18d_build_v4.py", MONTH], sb, timeout=900)
             gates = gate_status(sb, MONTH)
-            failed = [k for k, v in gates.items() if v == "fail"]
-            caught = bool(failed) or r["rc"] != 0
+            failed = [k for k, v in gates.items() if v not in ("pass", None)
+                      and not (k == "G8-novelty" and v == "skip")]
+            published = pub.exists()
+            # CAUGHT means the run STOPPED: non-zero exit and no PDF published.
+            # Until 2026-10 a failed gate counted as caught even when the build
+            # exited 0 and wrote the PDF; that row is now `recorded_not_stopped`.
+            caught = r["rc"] != 0 and not published
             fired = ",".join(failed) or ("build-fail-closed" if r["rc"] != 0 else "")
 
         oracle_hit = mut["oracle"] in fired.split(",") or (
@@ -422,9 +466,14 @@ def main() -> int:
         else:
             verdict = "MISSED"
 
+        if mut["runner"] == "verify_anchors":
+            published = None
+        recorded_not_stopped = bool(fired) and not caught
         rows.append(dict(id=mut["id"], desc=mut["desc"], oracle=mut["oracle"],
                          expect=mut["expect"], runner=mut["runner"],
                          injection_landed=landed, rc=r["rc"], sec=r["sec"],
+                         pdf_published=published,
+                         recorded_not_stopped=recorded_not_stopped,
                          caught=caught, gates_fired=fired, verdict=verdict))
         print(f"[{mut['id']}] {verdict:24s} fired={fired or '-':28s} "
               f"rc={r['rc']} {r['sec']}s  {mut['desc'][:48]}")
@@ -436,7 +485,10 @@ def main() -> int:
                 n_testable=len(n_real), n_caught=len(caught),
                 controls_ok=all(r["verdict"] == "control_ok"
                                 for r in rows if r["expect"] == "pass"),
-                known_blind=[r["id"] for r in rows if r["expect"] == "known_blind"])
+                known_blind=[r["id"] for r in rows if r["expect"] == "known_blind"],
+                caught_definition="run exits non-zero AND no PDF is published",
+                n_recorded_not_stopped=sum(r["recorded_not_stopped"] for r in rows),
+                n_caught_by_oracle=sum(r["verdict"] == "caught_by_oracle" for r in rows))
     csv_p, json_p = write_report("fault_injection", rows, meta)
     print("\n== SUMMARY ==")
     print(json.dumps(meta, indent=2))

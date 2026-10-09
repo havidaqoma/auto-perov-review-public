@@ -1,9 +1,9 @@
 {
- "note": "Gate verdicts as recorded by the builds that produced the shipped issues, measured from the reports in this tree on 2026-09-23. reproduce.py fails if any verdict CHANGES. Non-pass verdicts are part of the record and are explained per gate; see non_pass_explained.",
- "recorded": "2026-09-23",
+ "note": "Gate verdicts as recorded by the builds that produced the shipped issues, measured from the reports in this tree on 2026-10-09. reproduce.py fails if any verdict CHANGES. Non-pass verdicts are part of the record and are explained per gate; see non_pass_explained.",
+ "recorded": "2026-10-09",
  "reports": {
   "manuscript/2026-06/gate_report.json": {
-   "gates": 17,
+   "gates": 19,
    "statuses": {
     "G4": "pass",
     "G1": "pass",
@@ -13,9 +13,11 @@
     "G6": "pass",
     "G3-abstract": "pass",
     "G3c-abstract-physics": "pass",
+    "G3d-illumination": "pass",
     "G3b-abstract-form": "pass",
     "G7-abbrev": "pass",
     "G8-novelty": "skip",
+    "G3e-body-numbers": "pass",
     "G9a-notation": "pass",
     "G9b-cite-links": "pass",
     "G9c-figure-unique": "pass",
@@ -28,7 +30,7 @@
    }
   },
   "manuscript/2026-07/gate_report.json": {
-   "gates": 19,
+   "gates": 20,
    "statuses": {
     "G4": "pass",
     "G1": "pass",
@@ -42,6 +44,7 @@
     "G3b-abstract-form": "pass",
     "G7-abbrev": "pass",
     "G8-novelty": "pass",
+    "G3e-body-numbers": "pass",
     "G9a-notation": "pass",
     "G9b-cite-links": "pass",
     "G9c-figure-unique": "pass",
@@ -55,7 +58,7 @@
    }
   },
   "manuscript/2026-08/gate_report.json": {
-   "gates": 19,
+   "gates": 20,
    "statuses": {
     "G4": "pass",
     "G1": "pass",
@@ -68,7 +71,8 @@
     "G3d-illumination": "pass",
     "G3b-abstract-form": "pass",
     "G7-abbrev": "pass",
-    "G8-novelty": "fail",
+    "G8-novelty": "pass",
+    "G3e-body-numbers": "pass",
     "G9a-notation": "pass",
     "G9b-cite-links": "pass",
     "G9c-figure-unique": "pass",
@@ -78,7 +82,6 @@
     "_regate": "info"
    },
    "non_pass_explained": {
-    "G8-novelty": "Section-vs-prior-issue similarity exceeded no threshold; the gate fired on >=12-word shingle reuse (n_shared_shingles: 2), both instances being the review's own framing sentence carried over from the prior issue. Every per-section ratio was far under the 0.25 bound (worst 0.061) and the abstract ratio was 0.014 against 0.30. It shipped as a recorded failure rather than being waived, because handbook 6.1 forbids widening a gate to make output pass.",
     "_regate": "Not a gate. A report written by scripts/regate_edition.py carries this record of how it was produced: the build's own gate functions were run on a hand-revised edition without rebuilding it, and the entry names the source files and the prior issue used for G8."
    }
   },
@@ -135,7 +138,7 @@
    }
   },
   "runs/2026-06_cf764cbb/gate_report.json": {
-   "gates": 17,
+   "gates": 19,
    "statuses": {
     "G4": "pass",
     "G1": "pass",
@@ -145,9 +148,11 @@
     "G6": "pass",
     "G3-abstract": "pass",
     "G3c-abstract-physics": "pass",
+    "G3d-illumination": "pass",
     "G3b-abstract-form": "pass",
     "G7-abbrev": "pass",
     "G8-novelty": "skip",
+    "G3e-body-numbers": "pass",
     "G9a-notation": "pass",
     "G9b-cite-links": "pass",
     "G9c-figure-unique": "pass",
@@ -160,7 +165,7 @@
    }
   },
   "runs/2026-07_197abe83/gate_report.json": {
-   "gates": 19,
+   "gates": 20,
    "statuses": {
     "G4": "pass",
     "G1": "pass",
@@ -174,6 +179,7 @@
     "G3b-abstract-form": "pass",
     "G7-abbrev": "pass",
     "G8-novelty": "pass",
+    "G3e-body-numbers": "pass",
     "G9a-notation": "pass",
     "G9b-cite-links": "pass",
     "G9c-figure-unique": "pass",
@@ -187,7 +193,7 @@
    }
   },
   "runs/2026-08_b086357d/gate_report.json": {
-   "gates": 19,
+   "gates": 20,
    "statuses": {
     "G4": "pass",
     "G1": "pass",
@@ -200,7 +206,8 @@
     "G3d-illumination": "pass",
     "G3b-abstract-form": "pass",
     "G7-abbrev": "pass",
-    "G8-novelty": "fail",
+    "G8-novelty": "pass",
+    "G3e-body-numbers": "pass",
     "G9a-notation": "pass",
     "G9b-cite-links": "pass",
     "G9c-figure-unique": "pass",
@@ -210,7 +217,6 @@
     "_regate": "info"
    },
    "non_pass_explained": {
-    "G8-novelty": "Section-vs-prior-issue similarity exceeded no threshold; the gate fired on >=12-word shingle reuse (n_shared_shingles: 2), both instances being the review's own framing sentence carried over from the prior issue. Every per-section ratio was far under the 0.25 bound (worst 0.061) and the abstract ratio was 0.014 against 0.30. It shipped as a recorded failure rather than being waived, because handbook 6.1 forbids widening a gate to make output pass.",
     "_regate": "Not a gate. A report written by scripts/regate_edition.py carries this record of how it was produced: the build's own gate functions were run on a hand-revised edition without rebuilding it, and the entry names the source files and the prior issue used for G8."
    }
   },

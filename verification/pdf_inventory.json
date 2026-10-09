@@ -1,6 +1,6 @@
 {
- "note": "Page count and a year anchor for every shipped manuscript and supplement, measured on 2026-09-23. Byte-identical rebuilds are NOT expected: tectonic embeds a build timestamp and subsets fonts. Page count plus gates passing is the reproduction criterion.",
- "recorded": "2026-09-23",
+ "note": "Page count and a year anchor for every shipped manuscript and supplement, measured on 2026-10-09. Byte-identical rebuilds are NOT expected: tectonic embeds a build timestamp and subsets fonts. Page count plus gates passing is the reproduction criterion.",
+ "recorded": "2026-10-09",
  "pdfs": {
   "manuscript/2026-06/chemrxiv/manuscript.pdf": {
    "pages": 15,
@@ -57,7 +57,7 @@
    ]
   },
   "manuscript/2026-08/chemrxiv/supplementary.pdf": {
-   "pages": 5,
+   "pages": 6,
    "first_page_contains": [
     "2026"
    ]
@@ -69,7 +69,7 @@
    ]
   },
   "manuscript/2026-08/supplementary.pdf": {
-   "pages": 5,
+   "pages": 6,
    "first_page_contains": [
     "2026"
    ]
@@ -94,6 +94,12 @@
   },
   "manuscript/2026-H1/supplementary.pdf": {
    "pages": 13,
+   "first_page_contains": [
+    "2026"
+   ]
+  },
+  "runs/2026-06_cf764cbb/manuscript.pdf": {
+   "pages": 15,
    "first_page_contains": [
     "2026"
    ]

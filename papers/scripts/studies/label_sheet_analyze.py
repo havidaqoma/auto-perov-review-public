@@ -23,8 +23,8 @@ WHAT IT COMPUTES
 a measurement of how often the abstract itself is ambiguous, which is a finding
 about the literature, not a labelling failure.
 
-    python -u scripts/studies/label_sheet_analyze.py --selftest
-    python -u scripts/studies/label_sheet_analyze.py r1_labels_filled.csv
+    python -u papers/scripts/studies/label_sheet_analyze.py --selftest
+    python -u papers/scripts/studies/label_sheet_analyze.py r1_labels_filled.csv
 """
 from __future__ import annotations
 
@@ -35,6 +35,7 @@ import random
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3] / "scripts"))
 from studies.study_common import active_run, wilson, write_report  # noqa: E402
 from stages.s04_10 import AUDIT_RX, audit_hit  # noqa: E402
 

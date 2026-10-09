@@ -36,7 +36,7 @@ FOUR RULES THIS BUILDER ENFORCES.
    still yields a valid subsample and fatigue spreads evenly instead of
    landing entirely on the rare cells.
 
-Run: python -u scripts/studies/label_sheet_build.py [N] [--months 2026-07 ...]
+Run: python -u papers/scripts/studies/label_sheet_build.py [N] [--months 2026-07 ...]
 """
 from __future__ import annotations
 
@@ -49,6 +49,7 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3] / "scripts"))
 from studies.study_common import active_run  # noqa: E402
 from stages.s04_10 import AUDIT_RX, audit_hit  # noqa: E402
 

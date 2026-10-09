@@ -90,7 +90,32 @@ class WriterFailure(RuntimeError):
     """Q41: writer failed. Never silently substituted, never silently skipped."""
 
 
-def call_opencode(prompt: str, timeout: int = 900, attempts: int = 3) -> tuple[str, dict]:
+def _no_tools_env() -> dict:
+    """Environment that makes `opencode run` a plain completion call.
+
+    `opencode run` is an agent runtime: by default the model can call bash,
+    read, grep, webfetch, write and edit. The tool-use audit
+    (papers/studies/tool_use_audit.json, key s09_production) found the
+    extractor writing and running its own helper scripts, in opencode's temp
+    folder, in 4 of the 192 calls behind the shipped issues, and the
+    title-only study model fetching papers from the web in 6 of 84. An
+    extractor that can fetch or grep has more input than its prompt says, so
+    every tool is switched off here and plugins are disabled (--pure).
+    Verified by papers/scripts/studies/probe_no_tools.py: asked to call bash
+    and webfetch, the model emits the request as text and nothing executes.
+    """
+    import os
+    off = {t: False for t in ("bash", "read", "write", "edit", "grep", "glob",
+                              "list", "webfetch", "websearch", "task",
+                              "todowrite", "todoread", "patch", "skill",
+                              "codesearch", "lsp", "multiedit")}
+    env = dict(os.environ)
+    env["OPENCODE_CONFIG_CONTENT"] = json.dumps({"tools": off})
+    return env
+
+
+def call_opencode(prompt: str, timeout: int = 900, attempts: int = 3,
+                  expect_array: bool = True) -> tuple[str, dict]:
     """Run the writer non-interactively (P-08 flags).
 
     Q41: retry the SAME model up to 3 times with backoff; never fall back to a
@@ -99,16 +124,22 @@ def call_opencode(prompt: str, timeout: int = 900, attempts: int = 3) -> tuple[s
     "0 cards" with no error at all. That silent-zero shape is exactly what
     section 0 rule 4 forbids, and it is the second time this run has appeared
     (see run_dir relocation), so it now fails loudly.
+
+    A reply with text but no JSON array is the same silent zero one level
+    down: the model put its answer in the reasoning part and closed with a
+    sentence, so parse_array returned [] and the batch became 0 cards. It is
+    retried like any other failure and raises when attempts run out.
     """
     exe = _opencode_exe()
     last = ""
     for i in range(attempts):
         p = subprocess.run(
-            [exe, "run", "-m", MODEL, "--format", "json", prompt],
-            capture_output=True, text=True, timeout=timeout, cwd=ROOT)
+            [exe, "run", "--pure", "-m", MODEL, "--format", "json", prompt],
+            capture_output=True, text=True, timeout=timeout, cwd=ROOT,
+            env=_no_tools_env(), stdin=subprocess.DEVNULL)
         out = p.stdout or ""
         if p.returncode == 0 and out.strip():
-            text, tokens = "", {}
+            text, tokens, ran = "", {}, []
             for line in out.splitlines():
                 line = line.strip()
                 if not line.startswith("{"):
@@ -120,11 +151,18 @@ def call_opencode(prompt: str, timeout: int = 900, attempts: int = 3) -> tuple[s
                 part = ev.get("part") or {}
                 if part.get("type") == "text" and part.get("text"):
                     text += part["text"]
+                if part.get("type") == "tool":
+                    ran.append(str(part.get("tool")))
                 if isinstance(part.get("tokens"), dict):
                     tokens = part["tokens"]
-            if text.strip():
+            if ran:
+                # fail closed: a tool call means the answer may rest on input
+                # the prompt did not give. Never retried into acceptance.
+                raise WriterFailure(f"extractor executed tools {ran}; tools must be off")
+            if text.strip() and (not expect_array or parse_array(text)):
                 return text, tokens
-            last = "rc=0 but no text part in the JSON event stream"
+            last = ("rc=0 but no JSON array in the reply (answer left in reasoning?)"
+                    if text.strip() else "rc=0 but no text part in the JSON event stream")
         else:
             last = f"rc={p.returncode} stdout={len(out)}B stderr={(p.stderr or '')[:200]!r}"
         if i < attempts - 1:
@@ -197,6 +235,13 @@ def guard_field(fld, source: str, stats: dict):
             "anchor": anchor, "anchor_truncated": truncated}
 
 
+# "1,080 h" / "20,000 h": a comma followed by exactly three digits is digit
+# grouping. The first guard read every comma as a decimal point, so the anchor
+# "retained 80% after 1,080 h" never proved a value of 1080 and a CORRECT field
+# was nulled (measured by the R5 ablation, papers/studies/ablation_gate.json).
+GROUPED = re.compile(r"(?<![\d.,])\d{1,3}(?:,\d{3})+(?![\d]|[.,]\d)")
+
+
 def _num_in(want: str, text: str) -> bool:
     want = want.replace(",", ".")
     if not _isnum(want):
@@ -204,6 +249,10 @@ def _num_in(want: str, text: str) -> bool:
     for m in NUM.finditer(text):
         g = m.group(0).replace(",", ".")
         if _isnum(g) and abs(float(want) - float(g)) < 1e-6:
+            return True
+    for m in GROUPED.finditer(text):
+        g = m.group(0)
+        if not g.startswith("0") and abs(float(want) - float(g.replace(",", ""))) < 1e-6:
             return True
     return False
 
@@ -243,6 +292,15 @@ def cards(month: str) -> dict:
                         "batch": b0 // BATCH, "n_papers": len(batch),
                         "tokens_in": tok.get("input"), "tokens_out": tok.get("output"),
                         "cache_read": (tok.get("cache") or {}).get("read"),
+                        # opencode reports `input` NET of the prompt cache, so
+                        # tokens_in alone is a handful of tokens per call. The
+                        # prompt lives in cache read + cache write; the write
+                        # count was not logged before 2026-10, which is why
+                        # earlier runs cannot give a true input total.
+                        "cache_write": (tok.get("cache") or {}).get("write"),
+                        "tokens_in_total": sum(x or 0 for x in (
+                            tok.get("input"), (tok.get("cache") or {}).get("read"),
+                            (tok.get("cache") or {}).get("write"))) if tok else None,
                         "token_source": "reported" if tok else "missing",
                         "at": time.strftime("%H:%M:%S")})
 

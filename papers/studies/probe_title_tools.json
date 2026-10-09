@@ -1,0 +1,36 @@
+{
+ "model": "opencode-go/qwen3.8-flash",
+ "rc": 0,
+ "sec": 45.3,
+ "n_papers": 12,
+ "work_keys": [
+  "10.1038/s41467-026-68904-4",
+  "10.1126/science.aea0656",
+  "10.1126/science.aea8228",
+  "10.1186/s43074-025-00219-x",
+  "10.26434/chemrxiv.10001581/v1",
+  "10.3390/nano16030188",
+  "10.48550/arxiv.2601.23191",
+  "10.1002/adfm.202524302",
+  "10.1002/adfm.202529457",
+  "10.1002/adfm.202532066",
+  "10.1002/adfm.202532100",
+  "10.26434/chemrxiv.15003250/v2"
+ ],
+ "event_types": {
+  "step_start": 1,
+  "text": 1,
+  "step_finish": 1
+ },
+ "part_types": {
+  "step-start": 1,
+  "text": 1,
+  "step-finish": 1
+ },
+ "tool_calls": {},
+ "n_tool_calls": 0,
+ "n_values": 0,
+ "n_values_in_abstract_not_title": 0,
+ "at": "2026-09-23T20:23:10",
+ "raw_events": "runs\\studies\\probe_title_tools_events.jsonl"
+}

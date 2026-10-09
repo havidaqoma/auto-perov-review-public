@@ -127,7 +127,7 @@ VERSIONED = re.compile(r"(^|[_./-])v\d+([_./-]|$)")
 STEP_NAME = re.compile(
     r"(^|/)(s\d+[a-z]?_[a-z0-9_]+_v\d+\.py|\d+[a-z]?_[a-z0-9_]+_v\d+\.done|"
     r"h1_[a-z0-9_]+_v\d+\.py|test_[a-z0-9_]+_v\d+\.py|"
-    r"render_v\d+\.py|_v\d+_clobber_audit\.py|archive_h1_v\d+\.py|"
+    r"render_v\d+\.py|splice_v\d+\.py|_v\d+_clobber_audit\.py|archive_h1_v\d+\.py|"
     r"rename_v\d+_to_v\d+\.py|probe_h1v\d+_[a-z_]+\.py|"
     r"MASTER_HANDBOOK_YEARLY_v\d+\.md)$")
 

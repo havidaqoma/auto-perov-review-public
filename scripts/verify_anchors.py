@@ -52,6 +52,15 @@ def num_in(want: str, text: str) -> bool:
         g = m.group(0).replace(",", ".")
         if isnum(g) and abs(float(want) - float(g)) < 1e-6:
             return True
+    # Digit grouping ("1,080", "20,000"). Written independently of s09 on
+    # purpose: this verifier must not share code with the stage it checks.
+    toks = re.findall(r"[\d,]+", text)
+    for t in toks:
+        parts = t.strip(",").split(",")
+        if (len(parts) > 1 and 1 <= len(parts[0]) <= 3 and parts[0][0] != "0"
+                and all(len(p) == 3 and p.isdigit() for p in parts[1:])):
+            if abs(float(want) - float("".join(parts))) < 1e-6:
+                return True
     return False
 
 

@@ -47,3 +47,6 @@
 {"stage": "13d_abstract", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 307}
 {"stage": "13d_s8", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 350}
 {"stage": "13d_abstract", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 289}
+{"stage": "13d_s1", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 216}
+{"stage": "13d_abstract", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 350}
+{"stage": "13d_abstract", "cli": "agy", "model": "gemini-3.8-flash-high", "words": 317}

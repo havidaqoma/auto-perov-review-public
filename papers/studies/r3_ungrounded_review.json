@@ -1,0 +1,109 @@
+{
+ "what": "Hand-read verdict for every R3 ungated value that the corrected metric still counts as ungrounded. The arithmetic classifier (study_common.explain_ungrounded) only says HOW a value relates to a source number; this file says whether it is the RIGHT quantity.",
+ "reviewer": "Hermes conductor (Claude) classified each value from the abstract text; the extractor under test is opencode-go/qwen3.8-flash, so the reviewer is not the generator. Confirmed by the operator, Havid Aqoma, on 2026-09-23 (verdict_confirmation.json); one disagreement resolved by ruling (verdict_rulings.json).",
+ "classes": {
+  "correct_conversion": "the value is the quantity the abstract states for this field, converted to the field unit",
+  "footprint_as_area": "a module, submodule or panel size, multiplied out where needed, entered as the area. Counted as a valid area by operator ruling (verdict_rulings.json)",
+  "wrong": "the value does not represent the field: wrong entity, a slip, an extrapolation, or a non-T80 retention"
+ },
+ "rows": [
+  {
+   "work_key": "10.1002/adma.73036",
+   "field": "active_area_cm2",
+   "value": 0.04,
+   "verdict": "correct_conversion",
+   "quote": "the small‐area cell (4 mm 2 )",
+   "why": "4 mm2 = 0.04 cm2"
+  },
+  {
+   "work_key": "10.1016/j.nanoen.2026.112222",
+   "field": "active_area_cm2",
+   "value": 0.0405,
+   "verdict": "correct_conversion",
+   "quote": "aperture area 4.05 mm 2",
+   "why": "4.05 mm2 = 0.0405 cm2 (aperture area)"
+  },
+  {
+   "work_key": "10.1002/aenm.202505931",
+   "field": "active_area_cm2",
+   "value": 900.0,
+   "verdict": "footprint_as_area",
+   "quote": "30 × 30 cm 2 semi‐transparent module",
+   "why": "module size multiplied out; no active area is stated"
+  },
+  {
+   "work_key": "10.1038/s41467-026-71845-7",
+   "field": "active_area_cm2",
+   "value": 900,
+   "verdict": "footprint_as_area",
+   "quote": "30×30 cm² solar modules",
+   "why": "module size multiplied out; no active area is stated"
+  },
+  {
+   "work_key": "10.1016/j.esci.2026.100601",
+   "field": "active_area_cm2",
+   "value": 900,
+   "verdict": "footprint_as_area",
+   "quote": "30 × 30 cm 2 submodules",
+   "why": "submodule size multiplied out; no active area is stated"
+  },
+  {
+   "work_key": "10.1038/s41467-026-70002-4",
+   "field": "active_area_cm2",
+   "value": 2000,
+   "verdict": "footprint_as_area",
+   "quote": "four terminal tandem panel (0.2 m 2 )",
+   "why": "0.2 m2 = 2000 cm2 is the tandem panel footprint; the abstract also gives 60 cm2 active area for the perovskite module",
+   "hermes_verdict": "wrong"
+  },
+  {
+   "work_key": "10.1002/adma.73679",
+   "field": "t80_h",
+   "value": 87600,
+   "verdict": "wrong",
+   "quote": "extrapolated T 80 lifetime exceeding 10 years",
+   "why": "an extrapolated lower bound in years, converted to hours; not a measured T80"
+  },
+  {
+   "work_key": "10.1021/acsaem.6c02041",
+   "field": "t80_h",
+   "value": 1080,
+   "verdict": "wrong",
+   "quote": "after 45 days of ambient exposure",
+   "why": "45 days x 24 h; the device kept 80.2%, so 1080 h is a test duration, not a T80"
+  },
+  {
+   "work_key": "10.1002/adma.74033",
+   "field": "active_area_cm2",
+   "value": 900,
+   "verdict": "footprint_as_area",
+   "quote": "large‐area modules (30 × 30 cm 2 )",
+   "why": "30 x 30 cm2 = 900 cm2 is the module size, not an active area"
+  }
+ ],
+ "not_in_tools_off_run": {
+  "what": "Reviewed in the tools-on R3 run (now in superseded/). The tools-off re-run did not produce these values, so they are not scored.",
+  "rows": [
+   {
+    "work_key": "10.1126/science.aeg1730",
+    "field": "active_area_cm2",
+    "value": 0.08313,
+    "verdict": "correct_conversion",
+    "quote": "active area 8.313 square millimeters",
+    "why": "8.313 mm2 = 0.08313 cm2"
+   },
+   {
+    "work_key": "10.1021/acsami.6c00384",
+    "field": "active_area_cm2",
+    "value": 0.0148,
+    "verdict": "wrong",
+    "quote": "(0.148 cm 2 )",
+    "why": "decimal slip: the abstract says 0.148 cm2"
+   }
+  ]
+ },
+ "counts_as_error": [
+  "wrong"
+ ],
+ "counts_as_error_source": "operator ruling 2026-09-23, papers/studies/verdict_rulings.json"
+}

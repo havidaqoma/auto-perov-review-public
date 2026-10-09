@@ -52,12 +52,27 @@ import time
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 from stages.util import ROOT, RUNS, done, read_jsonl, run_dir  # noqa: E402
+from stages.protocol import n_isos_specified  # noqa: E402
+from stages import writer_lock  # noqa: E402
+
+# Set by draft(): every agy child is recorded here before it can write.
+LOCK: pathlib.Path | None = None
 from stages.section_map import (month_name, write_map,  # noqa: E402
                                 load_map, gaps_id)
 
 MODEL = "gemini-3.8-flash-high"
 
-ABSTRACT_WORDS = (260, 340)   # measured: July 295, August 326
+# Read from the gate configuration so the drafter and G3b cannot disagree.
+# The old hard-coded copy was asked for in the prompt but never checked, so a
+# 350-word abstract left this stage and was refused only at build time.
+def _abstract_band() -> tuple[int, int]:
+    import yaml
+    g = yaml.safe_load((ROOT / "config" / "gates.yaml").read_text(encoding="utf-8"))
+    lo, hi = g["abstract"]["word_band"]
+    return int(lo), int(hi)
+
+
+ABSTRACT_WORDS = _abstract_band()
 
 # Reused verbatim from v3 -- these are load-bearing and were tuned against
 # real leaks. Do not paraphrase them.
@@ -104,6 +119,10 @@ WRITING RULES (violations fail an automated gate, so treat them as hard):
 - Cite as [@work_key] straight after the sentence using that paper. Use ONLY
   the work_keys given below.
 - Use ONLY the numbers given. Never invent, round, or extrapolate a value.
+  A number may appear ONLY in a sentence that cites the paper it came from,
+  written exactly as given. The build checks every numeral against the
+  verified evidence of the papers cited in its sentence and rejects the
+  issue if one does not match.
   Your own physical reasoning is welcome; invented data is not.
 - No em-dash. Do not use: delve, harness, pivotal, seamless, leverage,
   moreover, furthermore, noteworthy, comprehensive, robust, cutting-edge,
@@ -139,10 +158,17 @@ def write_llm(prompt: str, timeout: int = 1200, attempts: int = 3) -> str:
     exe = _agy()
     last = ""
     for i in range(attempts):
-        p = subprocess.run(
+        p = subprocess.Popen(
             [exe, "-p", prompt, "--model", MODEL,
              "--dangerously-skip-permissions", "--print-timeout", "900s"],
-            capture_output=True, text=True, timeout=timeout, cwd=ROOT)
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, cwd=ROOT)
+        writer_lock.register(LOCK, p.pid, "agy")
+        try:
+            p.stdout, p.stderr = p.communicate(timeout=timeout)
+        except subprocess.TimeoutExpired:
+            p.kill()
+            p.communicate()
+            raise
         out = (p.stdout or "").strip()
         if p.returncode == 0 and len(out) > 200:
             return out
@@ -301,6 +327,9 @@ def draft(month: str) -> dict:
     cards = read_jsonl(rd / "claim_cards.jsonl")
     dd = rd / "draft_v4"
     dd.mkdir(exist_ok=True)
+    global LOCK
+    LOCK = writer_lock.lock_path(dd)
+    writer_lock.start(LOCK)
     MON = month_name(month)
 
     smap = write_map(month, S)
@@ -314,7 +343,7 @@ def draft(month: str) -> dict:
                     if _v(c, "active_area_cm2")), key=lambda x: -x[0])
     t80 = sorted(((_v(c, "t80_h"), c) for c in cards if _v(c, "t80_h")),
                  key=lambda x: -x[0])
-    n_proto = len([c for c in cards if c["stability"].get("protocol")])
+    n_proto = n_isos_specified(cards)   # specified ISOS only; see s18d
     n = S["corpus.n"]
 
     top_cert = "; ".join(f"{v}% ({c['venue']}, {c['device']['architecture']}) "
@@ -363,8 +392,9 @@ from any previous issue of this review.
    works met the scope gate in {MON} and {S['selection.n_depth']} were read
    closely.
 3. Name the mechanistic threads this issue follows: {threads}.
-4. Declare the critical stance. This review distinguishes what the month's
-   literature verified from what it asserted.
+4. Declare the critical stance IN YOUR OWN WORDS: the review separates what
+   the month's literature verified from what it only asserted. Do not reuse
+   this wording; G8 rejects an issue that repeats the previous one.
 
 Spell out power conversion efficiency (PCE) on first use.
 Do not cite individual papers here."""
@@ -547,11 +577,15 @@ THE FINISHED REVIEW:
         if stray:
             print(f"[13d]   REJECT abstract has literal digits {stray[:6]}")
             continue
+        nw = len(cand.split())
+        if not ABSTRACT_WORDS[0] <= nw <= ABSTRACT_WORDS[1]:
+            print(f"[13d]   REJECT abstract {nw}w outside band {ABSTRACT_WORDS}")
+            continue
         ab = cand
         break
     if not ab:
         raise SystemExit("FAIL-CLOSED: abstract failed the no-citation / "
-                         "no-digit contract in 3 attempts")
+                         "no-digit / word-band contract in 3 attempts")
     af.write_text(ab, encoding="utf-8")
     print(f"[13d]   abstract {len(ab.split())}w (placeholders unresolved)")
     log.append({"stage": "13d_abstract", "cli": "agy", "model": MODEL,

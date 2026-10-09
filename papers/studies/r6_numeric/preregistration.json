@@ -1,0 +1,42 @@
+{
+  "study": "R6 -- numeric accuracy and condition binding of extracted values",
+  "built": "2026-10-09",
+  "seed": 20261009,
+  "population": "R1 sample rows the human labeller marked states_pce = Y",
+  "n_rows": 72,
+  "inclusion_rule_uses": "human labels only (r1_labels_filled.csv)",
+  "fields": [
+    "pce_champion",
+    "pce_certified",
+    "active_area_cm2",
+    "pce_control"
+  ],
+  "field_definitions": {
+    "pce_champion": "the highest efficiency the abstract gives for this paper's OWN device. If only a module or tandem value is given, that value.",
+    "pce_certified": "only a value the abstract says was independently certified, for this paper's OWN device.",
+    "active_area_cm2": "the area of the paper's own device as written, e.g. 0.09 cm2 or 9 mm2.",
+    "pce_control": "the efficiency of the untreated or reference device, if the abstract states one."
+  },
+  "primary_metrics": [
+    "exact-match rate of pce_champion where both human and card give a value",
+    "exact-match rate of pce_certified where both give a value",
+    "exact-match rate of active_area_cm2 where both give a value"
+  ],
+  "secondary_metrics": [
+    "binding errors: wrong champion value equal to the human control value",
+    "human-only values (card missing or field null) and machine-only values"
+  ],
+  "match_rule": "equal after unit normalisation (% ; cm2, mm2/100, m2*1e4), |m-h| <= 1e-6*max(1,|h|)",
+  "intervals": "Wilson 95%",
+  "p_values": "none; there is no comparison to test",
+  "weighting": "unweighted; rates describe this sample, not the corpus",
+  "machine_side": "shipped claim cards after anchor verification, joined by work_key inside r6_analyze.py, never shown on the sheet",
+  "blinding": "the sheet shows title, venue and abstract only; no extractor output, no pre-filled answer, no flag",
+  "blind_check": "r6_build_sheet.blind_check passed before the sheet was written",
+  "labeller": "Havid Aqoma (human). No model may label, pre-label or assist any row.",
+  "prior_exposure": "the labeller read these abstracts for R1 (yes/no flags) on 2026-09-12; R1 recorded no numbers (pce_value blank in every row)",
+  "analysis_script": "papers/scripts/studies/r6_analyze.py",
+  "analysis_script_sha256": "fc488ccd5cc2da5749638576df0c8498ed1323690ba0c111785dbedcbb640afe",
+  "sheet_sha256": "fd43bf593417ce94f8be6a7d8f4b928fd651bb3dd228929f86e910443bf62abe",
+  "analysis_frozen_before_labelling": true
+}

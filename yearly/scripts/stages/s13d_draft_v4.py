@@ -52,6 +52,10 @@ import time
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 from stages.util import ROOT, RUNS, done, read_jsonl, run_dir  # noqa: E402
+from stages import writer_lock  # noqa: E402
+
+# Set by the drafting entry point: every agy child is recorded before it writes.
+LOCK: pathlib.Path | None = None
 from stages.section_map import (month_name, write_map,  # noqa: E402
                                 load_map, gaps_id)
 
@@ -139,10 +143,17 @@ def write_llm(prompt: str, timeout: int = 1200, attempts: int = 3) -> str:
     exe = _agy()
     last = ""
     for i in range(attempts):
-        p = subprocess.run(
+        p = subprocess.Popen(
             [exe, "-p", prompt, "--model", MODEL,
              "--dangerously-skip-permissions", "--print-timeout", "900s"],
-            capture_output=True, text=True, timeout=timeout, cwd=ROOT)
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, cwd=ROOT)
+        writer_lock.register(LOCK, p.pid, "agy")
+        try:
+            p.stdout, p.stderr = p.communicate(timeout=timeout)
+        except subprocess.TimeoutExpired:
+            p.kill()
+            p.communicate()
+            raise
         out = (p.stdout or "").strip()
         if p.returncode == 0 and len(out) > 200:
             return out
@@ -301,6 +312,9 @@ def draft(month: str) -> dict:
     cards = read_jsonl(rd / "claim_cards.jsonl")
     dd = rd / "draft_v4"
     dd.mkdir(exist_ok=True)
+    global LOCK
+    LOCK = writer_lock.lock_path(dd)
+    writer_lock.start(LOCK)
     MON = month_name(month)
 
     smap = write_map(month, S)

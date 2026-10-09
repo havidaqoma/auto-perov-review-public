@@ -23,13 +23,13 @@
         60,
         85
       ],
-      "words_per_citation": 38.4
+      "words_per_citation": 37.8
     }
   },
   "G2": {
     "status": "pass",
     "detail": {
-      "prose_words": 3033,
+      "prose_words": 2990,
       "ceiling": 3886,
       "per_section_within_135pct": {
         "1": true,
@@ -48,32 +48,32 @@
           "sha256": "16265e98076c413e"
         },
         "2": {
-          "words": 252,
-          "sha256": "637e27981686a8fd"
+          "words": 249,
+          "sha256": "38702f83a8eb9ba2"
         },
         "3": {
-          "words": 591,
-          "sha256": "dda606e8391adaa6"
+          "words": 588,
+          "sha256": "2db596d48c39c05d"
         },
         "4": {
-          "words": 508,
-          "sha256": "9f25e784cd840407"
+          "words": 503,
+          "sha256": "b49bf702c272782f"
         },
         "5": {
-          "words": 501,
-          "sha256": "1115d574d953f7fc"
+          "words": 494,
+          "sha256": "c59cb3d7f36e797d"
         },
         "6": {
-          "words": 331,
-          "sha256": "5261b9ee7bb872cf"
+          "words": 316,
+          "sha256": "2ec7b17e6fc3215e"
         },
         "7": {
-          "words": 304,
-          "sha256": "fe072f60d86edfc1"
+          "words": 297,
+          "sha256": "cc83236a2ade3aad"
         },
         "8": {
-          "words": 363,
-          "sha256": "4dbbd4e06cc7960f"
+          "words": 360,
+          "sha256": "4315cbf62319791b"
         }
       }
     }
@@ -174,7 +174,7 @@
         "the certified frontier in june 2026"
       ],
       "body_max_ratio": 0.25,
-      "abstract_ratio": 0.033,
+      "abstract_ratio": 0.031,
       "abstract_max_ratio": 0.3,
       "per_section": {
         "1": {
@@ -188,9 +188,9 @@
           "closest_prior": "the certified frontier in june 2026"
         },
         "3": {
-          "ratio": 0.028,
+          "ratio": 0.024,
           "title": "Passivation Chemistry and Ion Migration Under Bias",
-          "closest_prior": "operational lifetime and failure pathways"
+          "closest_prior": "interfacial energetics and contact design"
         },
         "4": {
           "ratio": 0.039,
@@ -198,28 +198,50 @@
           "closest_prior": "subcell design and tandem interconnection"
         },
         "5": {
-          "ratio": 0.023,
+          "ratio": 0.025,
           "title": "Precursor Chemistry and Phase Purity",
           "closest_prior": "operational lifetime and failure pathways"
         },
         "6": {
-          "ratio": 0.029,
+          "ratio": 0.034,
           "title": "Stability Under Load, Heat and Illumination",
           "closest_prior": "operational lifetime and failure pathways"
         },
         "7": {
-          "ratio": 0.035,
+          "ratio": 0.03,
           "title": "Wide-Bandgap Subcells and Recombination Layers",
           "closest_prior": "operational lifetime and failure pathways"
         },
         "8": {
-          "ratio": 0.055,
+          "ratio": 0.075,
           "title": "Research Gaps and Outlook",
           "closest_prior": "research gaps and outlook"
         }
       },
       "shared_shingles": [],
       "n_shared_shingles": 0
+    }
+  },
+  "G3e-body-numbers": {
+    "status": "pass",
+    "detail": {
+      "bound": 185,
+      "in_cited_abstract": 6,
+      "para_bound": 36,
+      "para_in_cited_abstract": 2,
+      "aggregate": 11,
+      "month_bound": 0,
+      "exempt": 45,
+      "count_claims_checked": 4,
+      "n_failed": 0,
+      "untraced": 0,
+      "misbound": 0,
+      "count_mismatch": 0,
+      "expected_counts": {
+        "ISOS": 4,
+        "T80": 4
+      },
+      "failures": []
     }
   },
   "G9a-notation": {

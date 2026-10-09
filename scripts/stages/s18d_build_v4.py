@@ -71,6 +71,10 @@ from stages.notation import check_notation, format_notation  # noqa: E402
 # \end{minipage} is discarded in horizontal mode. Shared with
 # verify_pdf so the two cannot diverge (7.6 #10).
 from stages.layout import measure as measure_title_block  # noqa: E402
+from stages.protocol import n_isos_specified  # noqa: E402
+from stages.gate_policy import verdict  # noqa: E402
+from stages import writer_lock  # noqa: E402
+from stages.body_numbers import card_aggregates, check_body_numbers, numbers_in  # noqa: E402
 
 TITLE_FRAME = "Perovskite Photovoltaics"
 
@@ -117,7 +121,10 @@ def resolve_placeholders(ab: str, S: dict, cl: list) -> tuple[str, dict, list]:
                     if _v(c, "active_area_cm2")), key=lambda x: -x[0])
     t80 = sorted(((_v(c, "t80_h"), c) for c in cl if _v(c, "t80_h")),
                  key=lambda x: -x[0])
-    n_proto = len([c for c in cl if c["stability"].get("protocol")])
+    # "Named an ISOS protocol" counts only SPECIFIED ISOS protocols. The old
+    # count took any protocol string (including "ISOS" with no test and
+    # non-ISOS labels) and overstated the figure in shipped abstracts.
+    n_proto = n_isos_specified(cl)
 
     # Highest certified SINGLE-JUNCTION value.
     #
@@ -477,6 +484,50 @@ def provenance(rd: pathlib.Path, cards: list, models: dict) -> dict:
     }
 
 
+TREND_KEYS = ("audit.corpus.certified.pct", "audit.corpus.efficiency_stated.pct",
+              "corpus.n", "selection.n_depth")
+
+
+def _g3e_aggregates(month: str, S: dict, cl: list, abs_vals: dict) -> set:
+    """Values the build itself computed, which body prose may quote: every
+    number in stats.json, every substituted abstract value, the counts and
+    extremes the drafting prompt states, and the prior month's values for
+    the four keys the trend block offers (s13d.trend_block)."""
+    out: set = set()
+
+    def walk(x):
+        if isinstance(x, dict):
+            for v in x.values():
+                walk(v)
+        elif isinstance(x, list):
+            for v in x:
+                walk(v)
+        elif isinstance(x, (int, float)) and not isinstance(x, bool):
+            out.add(float(x))
+    walk(S)
+    for v in (abs_vals or {}).values():
+        out |= numbers_in(str(v or ""))
+    out |= card_aggregates(cl, S)
+    hist = ROOT / "stats_history"
+    prior = sorted(p for p in hist.glob("*.json") if p.stem < month) if hist.exists() else []
+    if prior:
+        P = json.loads(prior[-1].read_text(encoding="utf-8"))
+        out |= {float(P[k]) for k in TREND_KEYS if isinstance(P.get(k), (int, float))}
+    return out
+
+
+def _g3e_abstracts(month: str) -> dict:
+    """Stored source abstracts by DOI, for the in-cited-abstract tier."""
+    try:
+        f = run_dir(month) / "private" / "02_abstracts.jsonl"
+    except Exception:
+        return {}
+    if not f.exists():
+        return {}
+    return {(r.get("doi") or r.get("work_key") or "").lower(): r.get("abstract") or ""
+            for r in read_jsonl(f)}
+
+
 def text_gates(*, month: str, ab: str, secs: dict, order: list,
                unresolved: list, aliased: dict, body_words: int,
                smap: dict, frozen: dict, seq: list, S: dict, cl: list,
@@ -689,6 +740,13 @@ def text_gates(*, month: str, ab: str, secs: dict, order: list,
     gate["G8-novelty"] = novelty_gate(month, secs, ab, smap, G,
                                       prior_path=prior_path)
 
+    # ---- G3e: every numeral in the BODY must trace to verified evidence ----
+    # G3-abstract keeps digits out of the abstract, but the body was drafted
+    # from card values the model typed and no gate read them back (external
+    # review, 2026-10-09). Rule and tiers: stages/body_numbers.py.
+    gate["G3e-body-numbers"] = check_body_numbers(
+        secs, cl, _g3e_aggregates(month, S, cl, abs_vals), _g3e_abstracts(month))
+
     # ---- G9-format: the four defects Havid found in the August v4 PDF ----
     # Per 0.2 each becomes an assertion, not a prompt reminder. All four are
     # measured on the SOURCE the build just emitted; verify_pdf re-measures
@@ -830,19 +888,17 @@ def build(month: str, out_dir_override: pathlib.Path | None = None) -> dict:
     newest = max(newest, abs_f.stat().st_mtime)
     if time.time() - newest < 20:
         raise SystemExit("FAIL-CLOSED: a draft changed <20s ago; writer still running")
+    # Only writers recorded by this issue's drafting stage count; an agy run
+    # by another project no longer blocks the build (stages/writer_lock.py).
     try:
-        ps = subprocess.run(
-            ["powershell", "-NoProfile", "-Command",
-             "(Get-Process agy -ErrorAction SilentlyContinue).Id -join ','"],
-            capture_output=True, text=True, timeout=60)
-        live = (ps.stdout or "").strip()
-        if live:
-            raise SystemExit(
-                f"FAIL-CLOSED (7.4): agy writer still running (PID {live}).")
-    except FileNotFoundError:
-        print("[18d] WARN: powershell unavailable; orphan check skipped")
-    except subprocess.TimeoutExpired:
-        print("[18d] WARN: orphan check timed out; not treated as clear")
+        live = writer_lock.live_writers(writer_lock.lock_path(dd))
+    except RuntimeError as e:
+        raise SystemExit(f"FAIL-CLOSED (7.4): {e}")
+    if live:
+        raise SystemExit(
+            f"FAIL-CLOSED (7.4): drafting writer still running (PID {live}).")
+    if live is None:
+        print("[18d] note: drafts predate the writer lock; freshness guard only")
 
     frozen = {s: {"words": len(v.split()),
                   "sha256": hashlib.sha256(v.encode()).hexdigest()[:16]}
@@ -857,8 +913,12 @@ def build(month: str, out_dir_override: pathlib.Path | None = None) -> dict:
     expanded = []
     ab, e = expand_abbrev(ab)
     expanded += e
+    # The abstract stands alone; the body is one document, so an abbreviation
+    # expanded in an earlier section is not expanded again.
+    body_done: list = []
     for sid in ids:
-        secs[sid], e = expand_abbrev(secs[sid])
+        secs[sid], e = expand_abbrev(secs[sid], skip=body_done)
+        body_done += e
         expanded += e
 
     # --- citation numbering: ONE pass over the body -----------------------
@@ -1192,7 +1252,10 @@ def build(month: str, out_dir_override: pathlib.Path | None = None) -> dict:
     # re-ran h1_build.py. The default is unchanged, so the monthly path and
     # every existing caller behave exactly as before.
     outdir = out_dir_override or (ROOT / "manuscript" / f"{month}_v4")
-    outdir.mkdir(parents=True, exist_ok=True)
+    # FAIL-CLOSED ORDER: render into the RUN folder, run every gate on that
+    # staged PDF, and publish to `outdir` only if gate_policy.verdict is ok.
+    # Until 2026-10 the PDF was rendered straight into manuscript/ and the
+    # gate report was written beside it, so a failed issue still shipped.
     pandoc = shutil.which("pandoc")
     if not pandoc:
         for c in (pathlib.Path.home() / "AppData/Local/Pandoc/pandoc.exe",
@@ -1201,7 +1264,7 @@ def build(month: str, out_dir_override: pathlib.Path | None = None) -> dict:
                 pandoc = str(c)
                 break
     tectonic = shutil.which("tectonic") or "tectonic"
-    pdf = outdir / "manuscript_v4.pdf"
+    pdf = rd / "manuscript_v4.pdf"
     p = subprocess.run(
         [pandoc, str(rd / "manuscript_v4.md"),
          "-f", "markdown+raw_tex-implicit_figures",
@@ -1217,13 +1280,6 @@ def build(month: str, out_dir_override: pathlib.Path | None = None) -> dict:
         raise SystemExit(f"FAIL-CLOSED: pandoc rc={p.returncode}\n"
                          f"{(p.stderr or '')[:1400]}")
 
-    for f in ("manuscript_v4.md", "stats.json", "claim_cards.jsonl",
-              "gate_report_v4.json", "12_section_map.json"):
-        if (rd / f).exists():
-            shutil.copy(rd / f, outdir / f)
-    (outdir / "fig").mkdir(exist_ok=True)
-    for f in figdir.glob("*.pdf"):
-        shutil.copy(f, outdir / "fig" / f.name)
 
     pages, g5 = page_gate(pdf, G)
     gate["G5"] = g5
@@ -1247,8 +1303,33 @@ def build(month: str, out_dir_override: pathlib.Path | None = None) -> dict:
         print(f"[18d] G10-title-block: warn  {str(e)[:120]}")
 
     (rd / "gate_report_v4.json").write_text(json.dumps(gate, indent=2), encoding="utf-8")
-    shutil.copy(rd / "gate_report_v4.json", outdir / "gate_report_v4.json")
     print(f"[18d] G5: {g5['status']}  {json.dumps(g5['detail'])[:220]}")
+
+    v = verdict(gate)
+    outdir.mkdir(parents=True, exist_ok=True)
+    if not v["ok"]:
+        # Nothing new is published, and a PDF left from an earlier build is
+        # withdrawn: manuscript/ must never hold a PDF beside a failed report.
+        stale = outdir / "manuscript_v4.pdf"
+        if stale.exists():
+            stale.unlink()
+        shutil.copy(rd / "gate_report_v4.json", outdir / "gate_report_v4.json")
+        (outdir / "BUILD_FAILED.json").write_text(json.dumps(
+            {"month": month, "blocking": v["blocking"], "allowed": v["allowed"],
+             "staged_pdf": str(pdf)}, indent=2), encoding="utf-8")
+        raise SystemExit(f"FAIL-CLOSED: gates failed {v['blocking']}; "
+                         f"staged PDF kept at {pdf}, nothing published")
+    (outdir / "BUILD_FAILED.json").unlink(missing_ok=True)
+    for f in ("manuscript_v4.md", "stats.json", "claim_cards.jsonl",
+              "gate_report_v4.json", "12_section_map.json", "manuscript_v4.pdf"):
+        if (rd / f).exists():
+            shutil.copy(rd / f, outdir / f)
+    (outdir / "fig").mkdir(exist_ok=True)
+    for f in figdir.glob("*.pdf"):
+        shutil.copy(f, outdir / "fig" / f.name)
+    pdf = outdir / "manuscript_v4.pdf"
+    if v["allowed"]:
+        print(f"[18d] allowed non-pass: {v['allowed']}")
 
     meta = {"pdf": str(pdf), "bytes": pdf.stat().st_size, "pages": pages,
             "title": TITLE, "prose_words": body_words,

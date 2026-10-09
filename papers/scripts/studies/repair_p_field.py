@@ -10,7 +10,7 @@ re-extracts nothing, and touches no row. If the recomputed arm counts disagree
 with the row-level records, it refuses to write -- a repair that silently
 disagrees with its own evidence is worse than the defect.
 
-Run: python -u scripts/studies/repair_p_field.py <artifact.json>
+Run: python -u papers/scripts/studies/repair_p_field.py <artifact.json>
 """
 from __future__ import annotations
 

@@ -23,13 +23,13 @@
         60,
         85
       ],
-      "words_per_citation": 38.2
+      "words_per_citation": 37.9
     }
   },
   "G2": {
     "status": "pass",
     "detail": {
-      "prose_words": 2867,
+      "prose_words": 2845,
       "ceiling": 3771,
       "per_section_within_135pct": {
         "1": true,
@@ -44,36 +44,36 @@
       "map_sha256": "05f30c1551fc1dfb",
       "input_freeze": {
         "1": {
-          "words": 186,
-          "sha256": "8e59d2fb6e80bddb"
+          "words": 216,
+          "sha256": "54deea92c00ba986"
         },
         "2": {
-          "words": 235,
-          "sha256": "c3b8b5f740ccd5f1"
+          "words": 232,
+          "sha256": "991ed8e6f307e7fa"
         },
         "3": {
-          "words": 594,
-          "sha256": "13fcaf235cdb2a87"
+          "words": 591,
+          "sha256": "571cc085bac16f4a"
         },
         "4": {
-          "words": 542,
-          "sha256": "5da785113553832b"
+          "words": 535,
+          "sha256": "daf3c8f8ed68bd83"
         },
         "5": {
-          "words": 419,
-          "sha256": "1c3894684671930c"
+          "words": 416,
+          "sha256": "261bf22c43a9efcd"
         },
         "6": {
-          "words": 282,
-          "sha256": "8c7c75a74e31712b"
+          "words": 272,
+          "sha256": "9813dd301b694eda"
         },
         "7": {
-          "words": 264,
-          "sha256": "eb02e48e5d089908"
+          "words": 254,
+          "sha256": "8c64d67e7d0ebc4b"
         },
         "8": {
-          "words": 345,
-          "sha256": "b5b1cf99202cbc18"
+          "words": 329,
+          "sha256": "d5f947561c854ad9"
         }
       }
     }
@@ -165,10 +165,10 @@
     }
   },
   "G8-novelty": {
-    "status": "fail",
+    "status": "pass",
     "detail": {
-      "prior_issue": "2026-07",
-      "worst_section_ratio": 0.061,
+      "prior_issue": "2026-07_197abe83",
+      "worst_section_ratio": 0.082,
       "worst_pair": [
         "Introduction",
         "introduction"
@@ -178,7 +178,7 @@
       "abstract_max_ratio": 0.3,
       "per_section": {
         "1": {
-          "ratio": 0.061,
+          "ratio": 0.082,
           "title": "Introduction",
           "closest_prior": "introduction"
         },
@@ -208,7 +208,7 @@
           "closest_prior": "wide-bandgap subcells and recombination layers"
         },
         "7": {
-          "ratio": 0.039,
+          "ratio": 0.041,
           "title": "Operational Stability and Degradation Pathways",
           "closest_prior": "research gaps and outlook"
         },
@@ -218,11 +218,30 @@
           "closest_prior": "stability under load, heat and illumination"
         }
       },
-      "shared_shingles": [
-        "review distinguishes what the month s literature verified from what it asserted",
-        "this review distinguishes what the month s literature verified from what it"
-      ],
-      "n_shared_shingles": 2
+      "shared_shingles": [],
+      "n_shared_shingles": 0
+    }
+  },
+  "G3e-body-numbers": {
+    "status": "pass",
+    "detail": {
+      "bound": 138,
+      "in_cited_abstract": 0,
+      "para_bound": 5,
+      "para_in_cited_abstract": 1,
+      "aggregate": 12,
+      "month_bound": 0,
+      "exempt": 27,
+      "count_claims_checked": 4,
+      "n_failed": 0,
+      "untraced": 0,
+      "misbound": 0,
+      "count_mismatch": 0,
+      "expected_counts": {
+        "ISOS": 2,
+        "T80": 5
+      },
+      "failures": []
     }
   },
   "G9a-notation": {
@@ -335,7 +354,7 @@
       "pages": 14,
       "references": 75,
       "date_on_title_block": "September 9, 2026",
-      "prior_issue_file": "manuscript/2026-07/manuscript.md",
+      "prior_issue_file": "build default",
       "method": "regate of finished text via scripts/regate_edition.py; gate code is s18d_build_v4.text_gates/page_gate. body_words counted on finished sections with citation markup removed; expanded/notation_counts not re-derived."
     }
   }

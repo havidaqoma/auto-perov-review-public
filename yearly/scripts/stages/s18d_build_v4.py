@@ -47,6 +47,7 @@ import yaml
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 from stages.util import CONFIG, ROOT, done, read_jsonl, run_dir  # noqa: E402
+from stages import writer_lock  # noqa: E402
 from stages.section_map import load_map, month_name  # noqa: E402
 # Reuse v3's typography and boilerplate. These were tuned against real PDF
 # defects (centring, doubled titles, longest-key-first abbreviations) and
@@ -494,19 +495,17 @@ def build(month: str) -> dict:
     newest = max(newest, abs_f.stat().st_mtime)
     if time.time() - newest < 20:
         raise SystemExit("FAIL-CLOSED: a draft changed <20s ago; writer still running")
+    # Only writers recorded by this document's drafting stage count; an agy
+    # run by another project no longer blocks the build (stages/writer_lock.py).
     try:
-        ps = subprocess.run(
-            ["powershell", "-NoProfile", "-Command",
-             "(Get-Process agy -ErrorAction SilentlyContinue).Id -join ','"],
-            capture_output=True, text=True, timeout=60)
-        live = (ps.stdout or "").strip()
-        if live:
-            raise SystemExit(
-                f"FAIL-CLOSED (7.4): agy writer still running (PID {live}).")
-    except FileNotFoundError:
-        print("[18d] WARN: powershell unavailable; orphan check skipped")
-    except subprocess.TimeoutExpired:
-        print("[18d] WARN: orphan check timed out; not treated as clear")
+        live = writer_lock.live_writers(writer_lock.lock_path(dd))
+    except RuntimeError as e:
+        raise SystemExit(f"FAIL-CLOSED (7.4): {e}")
+    if live:
+        raise SystemExit(
+            f"FAIL-CLOSED (7.4): drafting writer still running (PID {live}).")
+    if live is None:
+        print("[18d] note: drafts predate the writer lock; freshness guard only")
 
     frozen = {s: {"words": len(v.split()),
                   "sha256": hashlib.sha256(v.encode()).hexdigest()[:16]}
@@ -521,8 +520,10 @@ def build(month: str) -> dict:
     expanded = []
     ab, e = expand_abbrev(ab)
     expanded += e
+    body_done: list = []   # the body is one document: expand once, not per section
     for sid in ids:
-        secs[sid], e = expand_abbrev(secs[sid])
+        secs[sid], e = expand_abbrev(secs[sid], skip=body_done)
+        body_done += e
         expanded += e
 
     # --- citation numbering: ONE pass over the body -----------------------

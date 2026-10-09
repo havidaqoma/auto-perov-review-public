@@ -126,17 +126,33 @@ def md_esc(t: str) -> str:
     return t.replace("&", r"\&").replace("%", r"\%").replace("#", r"\#").strip()
 
 
-def expand_abbrev(text: str) -> tuple[str, list]:
+def expand_abbrev(text: str, skip=()) -> tuple[str, list]:
     """Deterministic first-use expansion (Q62).
 
     A bare abbreviation on first mention is replaced by
     "expansion (ABBREV)". Later mentions are untouched. Skips any occurrence
     already inside an expansion, and skips citation markers.
+
+    `skip` names abbreviations already expanded earlier in the same document,
+    so a multi-section body is expanded once, not once per section (the
+    2026-06 issue printed the ISOS expansion three times). When the first
+    mention is a designation such as ISOS-L-1, the expansion is placed before
+    it and the designation is kept whole, instead of producing "(ISOS)-L-1".
     """
     done_list = []
     for ab, full in ABBREV:
+        pat = rf"{re.escape(full)}\s*\(({re.escape(ab)}s?)\)"
+        if ab in skip:
+            # Expanded earlier in this document. Each section is drafted on
+            # its own and the writer spells abbreviations out per section, so
+            # collapse a repeated expansion back to the abbreviation.
+            text = re.sub(pat, r"\1", text, flags=re.I)
+            # "ISOS ISOS-L-1" left by the collapse reads as a stutter
+            text = re.sub(rf"\b{re.escape(ab)}\s+(?={re.escape(ab)}-)", "", text)
+            continue
         # already expanded somewhere by the writer?
-        if re.search(rf"{re.escape(full)}\s*\({re.escape(ab)}s?\)", text, re.I):
+        if re.search(pat, text, re.I):
+            done_list.append(ab)
             continue
         m = re.search(rf"(?<![A-Za-z0-9\-]){re.escape(ab)}(?![A-Za-z0-9])", text)
         if not m:
@@ -145,7 +161,10 @@ def expand_abbrev(text: str) -> tuple[str, list]:
         pre = text[max(0, m.start() - 90):m.start()].lower()
         if full.lower() in pre:
             continue
-        text = text[:m.start()] + f"{full} ({ab})" + text[m.end():]
+        if text[m.end():m.end() + 1] == "-":
+            text = text[:m.start()] + f"{full} ({ab}) " + text[m.start():]
+        else:
+            text = text[:m.start()] + f"{full} ({ab})" + text[m.end():]
         done_list.append(ab)
     return text, done_list
 

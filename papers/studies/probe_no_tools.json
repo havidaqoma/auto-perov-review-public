@@ -1,0 +1,29 @@
+{
+ "default": {
+  "variant": "default",
+  "rc": 0,
+  "sec": 26.8,
+  "tool_parts": {
+   "bash:completed": 1,
+   "webfetch:completed": 1
+  },
+  "text": "**`ls` returned:**\n```\narchive\nconfig\ncsv\ndata\ndocs\nexample of review paper\nIDEA.md\nmanuscript\nMASTER_HANDBOOK.md\nMASTER_HANDBOOK_H1.md\nOLD\npapers\nPLAN_monthly_perovskite_review_v5.md\nQUESTIONS.md\nruns\nsandbox\nscratch\nscripts\nstats_history\ntests\nyearly\n```\n\n**webfetch returned:**\n```\nExample Domain\n",
+  "stderr_tail": ""
+ },
+ "agent_tools_off_pure": {
+  "variant": "agent_tools_off_pure",
+  "rc": 0,
+  "sec": 32.8,
+  "tool_parts": {},
+  "text": "[\n  {\n    \"type\": \"tool_use\",\n    \"id\": \"call_1\",\n    \"name\": \"bash\",\n    \"input\": {\n      \"command\": \"ls\",\n      \"description\": \"List files\"\n    }\n  }\n]",
+  "stderr_tail": ""
+ },
+ "global_tools_off_pure": {
+  "variant": "global_tools_off_pure",
+  "rc": 0,
+  "sec": 9.8,
+  "tool_parts": {},
+  "text": "<tool_call>\n<function=bash>\n<parameter=command>\nls\n</parameter>\n<parameter=description>\nList files in current directory\n</parameter>\n</function>\n</tool_call>\n<tool_call>\n<function=webfetch>\n<parameter=format>\nmarkdown\n</parameter>\n<parameter=url>\nhttps://example.com\n</parameter>\n</function>\n</tool_c",
+  "stderr_tail": ""
+ }
+}

@@ -745,8 +745,18 @@ efficiency frontier until a human noticed. Filter
 
 ## 6. Gates
 
-Seventeen gates. All are computed in `s18d_build_v4.py` and written to
+Nineteen gates. All are computed in `s18d_build_v4.py` and written to
 `runs/<m>/gate_report_v4.json`.
+
+Which results let an issue ship is decided in one place,
+`stages/gate_policy.py::verdict`, read by the build, `run_month.py`, the
+ChemRxiv packager and the public-tree builder alike. `pass` ships, `fail`
+never ships, and `warn` (a gate that could not measure) blocks like a fail.
+`skip` ships only where the policy names it: today only **G8-novelty** on the
+first issue, which has no prior issue to compare against. The build renders
+and gates inside `runs/<m>/` and copies to `manuscript/` only on a passing
+verdict; otherwise it writes `BUILD_FAILED.json`, withdraws any older PDF from
+`manuscript/`, and exits nonzero.
 
 The count is stated here and asserted against a real report by
 `tests/test_handbook.py::test_gate_table_matches_a_real_gate_report`. It read
@@ -765,6 +775,7 @@ Update this number and this table in the same commit as any new gate.
 | **G3b-abstract-form** | abstract word band, zero citation markers | `abstract.word_band` 260-340 | `abstract_word_max: 250` sat in config while a 326-word abstract shipped, because no gate read it |
 | **G3c-abstract-physics** | a substituted value must be physically possible for the quantity it is presented as | single junction ≤ 29.4% | a **real** certified tandem value shipped as single-junction; it traced to a card, so G3 passed it (§7.8) |
 | **G3d-illumination** | a value presented as a one-sun record must come from a card whose anchor classifies as one-sun | 0 non-one-sun values in `P_TOP_CERT`, `P_TOP_SJ`, `P_AREA_MAX` | indoor and low-light efficiencies reach 40%+ under a lamp and are not comparable to AM1.5G. The stats and figure layers already excluded them via `stages/illumination.py`, but that guard sat **outside** the gate set, so any new consumer computing a frontier by a different code path would have bypassed it silently. Re-derived from the cards backing the abstract, so it holds whichever layer produced the number. Reports `skip`, not `pass`, when the period layer is absent |
+| **G3e-body-numbers** | every numeral in the drafted body is in the card or abstract of a paper cited in the same sentence (or, for an uncited follow-up sentence, its paragraph), or equals an aggregate the build computed; a count stated as "only N" must equal the computed count, with the counted keyword in the same clause | 0 unbound numerals, 0 count mismatches | the body was never checked: G3 covered the abstract only, and two issues printed the any-protocol count in a sentence about ISOS protocols (external review 2026-10-09). Convention numbers (AM1.5G, ISOS-L-1, T80) are exempt by regex, not by list |
 | **G4-hygiene** | em-dash, banned vocabulary, **agent-narration leak** | 0 each | 25 lines of status chatter shipped; then a 26th (§6.4) |
 | **G5-build** | page bands measured from the References page index | `paper_v3` 12-17 total, 8-11 content | `pages > 5` was right by luck |
 | **G6-novelty** | no first-person experimental claims | 0 hits | this reviews others' work |

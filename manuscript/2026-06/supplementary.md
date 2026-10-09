@@ -2,13 +2,13 @@
 
 For "Perovskite Photovoltaics in June 2026: Defect passivation, composition and phase control"
 
-Havid Aqoma, September 8, 2026
+Havid Aqoma, October 9, 2026
 
 This Supplementary Information contains the corpus construction and selection method (Note S1), the extraction and evidence-chain method (Note S2), the full reporting audit (Note S3), the corpus statistics (Note S4), the complete certified-record table (Note S5), the limitations (Note S6), and the automated gate report for this build (Note S7).
 
 ## Note S1. Corpus construction and selection
 
-The corpus came from an OpenAlex title-and-abstract search for perovskite AND ("solar cell" OR photovoltaic), restricted to June 2026 publication dates and to the work types article, preprint and review. That set was unioned with records from Semantic Scholar, Crossref and arXiv and de-duplicated by DOI. Exclusion terms are applied in Python after retrieval, never inside the query. Of 623 works meeting the scope gate, 426 had a usable abstract and 167 met the depth-review threshold.
+The corpus came from an OpenAlex title-and-abstract search for perovskite AND ("solar cell" OR photovoltaic), restricted to June 2026 publication dates and to the work types article, preprint and review. That set was unioned with records from Semantic Scholar, Crossref and arXiv and de-duplicated by DOI; exclusion terms are applied in Python after retrieval, never inside the query. Of 623 works meeting the scope gate, 426 had a usable abstract and 167 met the depth-review threshold.
 
 The depth tier is built on abstracts by decision, not by omission: a full-text retrieval probe succeeded for about 5% of a month's papers, and the failure is publisher refusal of automated retrieval rather than indexing delay. Selection is a constrained draw over venue citation percentile and mechanism axis with per-axis minima and venue and institution share caps, seeded for reproducibility. Across 200 sensitivity draws the median Jaccard overlap of the selected set was 0.994, with 157 papers appearing in every draw.
 
@@ -34,14 +34,14 @@ The depth tier is built on abstracts by decision, not by omission: a full-text r
 | Depth tier (selected for close reading) | 167 |
 | Extraction records surviving all guards | 167 |
 | Dropped: no verifiable claim survived | 0 |
-| Cited in the main text | 76 |
-| Audited but not cited individually | 91 |
+| Cited in the main text | 75 |
+| Audited but not cited individually | 92 |
 
 ![**Figure S1.** Corpus construction funnel.](runs/2026-06_cf764cbb/fig/S2_corpus_funnel.pdf){width=85%}
 
 ## Note S2. Extraction and the evidence chain
 
-Every closely read paper was passed through a structured extraction step that returned numeric fields, each bound to a verbatim quotation from that paper's own abstract. Three deterministic guards were then applied by script, never by the extracting model. First, the quotation must appear word for word in the source abstract. Second, the numeric value must appear inside its own quotation. Third, the quotation is truncated to 25 words before that check rather than after it, so a value can never be separated from the words that prove it. Any field failing a guard is nulled and counted, and a paper whose extraction left no verifiable claim was dropped from the cited set rather than shipped with an unprovable record (0 of 167 this month).
+Every closely read paper was passed through a structured extraction step that returned numeric fields, each bound to a verbatim quotation from that paper's own abstract. Three deterministic guards were then applied by script, never by the extracting model: first, the quotation must appear word for word in the source abstract. Second, the numeric value must appear inside its own quotation, and third, the quotation is truncated to 25 words before that check rather than after it, so a value can never be separated from the words that prove it. Any field failing a guard is nulled and counted, and a paper whose extraction left no verifiable claim was dropped from the cited set rather than shipped with an unprovable record (0 of 167 this month).
 
 Independent re-verification of the shipped records, run as a separate script against the source abstracts, found every quotation present verbatim, none exceeding 25 words, and no numeric value missing from its own quotation. The abstract of the main text carries an additional gate: every numeral in it must exist either in the statistics file or in an extraction record, and each named scientific highlight is bound to one explicit record by its DOI, so a highlight cannot silently attach a real number to the wrong paper.
 
@@ -80,13 +80,13 @@ Two properties of these rates govern how they should be read. They are measured 
 | stability | 50 | 22 | 8.0% |
 | scale up | 24 | 12 | 3.9% |
 
-Axis assignment uses weighted keyword scoring over title and abstract across six fixed axes, with the title weighted twice. Mechanism centrality is the winning axis score normalised by that axis maximum. Selection into the depth tier scores venue citation percentile (0.40), mechanism centrality (0.35) and novelty (0.25), subject to a floor of 12 papers per axis, a preprint reservation, and per-venue and per-institution caps.
+Axis assignment uses weighted keyword scoring over title and abstract across six fixed axes, with the title weighted twice, and mechanism centrality is the winning axis score normalised by that axis maximum. Selection into the depth tier scores venue citation percentile (0.40), mechanism centrality (0.35) and novelty (0.25), subject to a floor of 12 papers per axis, a preprint reservation, and per-venue and per-institution caps.
 
-One caveat on the selection statistics is worth stating plainly. In this first issue the novelty term is constant, because it is defined against a cumulative history of extracted records that does not yet exist, so ranking reduces to venue percentile plus mechanism centrality. Repeating the selection under 200 perturbed weightings therefore returns a selection overlap of 0.994 with 157 papers selected in almost every draw. That number should be read as a consequence of the flat novelty term, not as evidence that the selector is robust; it becomes informative from the third issue onward.
+One caveat on the selection statistics is worth stating plainly: in this first issue the novelty term is constant, because it is defined against a cumulative history of extracted records that does not yet exist, so ranking reduces to venue percentile plus mechanism centrality. Repeating the selection under 200 perturbed weightings therefore returns a selection overlap of 0.994 with 157 papers selected in almost every draw. That number should be read as a consequence of the flat novelty term, not as evidence that the selector is robust; it becomes informative from the third issue onward.
 
 ## Note S5. Every certified efficiency reported in the month
 
-Of 167 closely read papers, 14 reported an independently certified efficiency. The complete list follows, highest first. Each DOI is a live link.
+Of 167 closely read papers, 14 reported an independently certified efficiency; the complete list follows, highest first, and each DOI is a live link.
 
 | Certified PCE (%) | Venue | Architecture | DOI |
 | --- | --- | --- | --- |
@@ -111,25 +111,27 @@ Venue-impact-prioritised selection under-samples preprints, regional journals an
 
 Because indexing lags publication, this review describes the indexed record of June 2026 as retrieved at build time, not the month itself. The lag is uneven, and work published late in the month is systematically under-represented relative to work published early. A later rebuild of the same month would retrieve a larger corpus, which is why no publication count appears in the title.
 
-Four limitations are specific to this build. First, the reporting audit is unvalidated pending the human label set (Note S3). Second, the depth tier is built on abstracts by decision: a full-text retrieval probe succeeded for only 5% of the month's papers, and a diagnostic across three months of differing age showed the failure is publisher refusal of automated retrieval rather than indexing delay, since a fourteen-month-old month retrieved worse than a two-month-old one. The audit therefore measures reported summaries, and the extraction records quote abstracts rather than full texts. Third, operational stability evidence is thin in an absolute sense: 6 papers reported a T80 lifetime and 5 named an ISOS protocol, which limits what any review can conclude about degradation this month. Fourth, this issue covers a single month, so nothing in it is a trend; the first month-over-month comparison becomes possible with the next issue.
+Four limitations are specific to this build: first, the reporting audit is unvalidated pending the human label set (Note S3). Second, the depth tier is built on abstracts by decision: a full-text retrieval probe succeeded for only 5% of the month's papers, and a diagnostic across three months of differing age showed the failure is publisher refusal of automated retrieval rather than indexing delay, since a fourteen-month-old month retrieved worse than a two-month-old one. The audit therefore measures reported summaries, and the extraction records quote abstracts rather than full texts. Third, operational stability evidence is thin in an absolute sense: 6 papers reported a T80 lifetime and 5 named an ISOS protocol, which limits what any review can conclude about degradation this month. Fourth, this issue covers a single month, so nothing in it is a trend; the first month-over-month comparison becomes possible with the next issue.
 
 ## Note S7. Automated gate report for this build
 
 | Gate | Status | Summary |
 | --- | --- | --- |
 | G4 | pass | em-dash 0, banned 0, self-report leaks 0 |
-| G1 | pass | 76 citations resolved, 0 unresolved |
-| G2c-cite-count | pass | 76 cited, target [60, 85], 39.3 words per citation |
-| G2 | pass | 2987 words, 8 sections within 135% of ceiling |
+| G1 | pass | 75 citations resolved, 0 unresolved |
+| G2c-cite-count | pass | 75 cited, target [60, 85], 40.3 words per citation |
+| G2 | pass | 3020 words, 8 sections within 135% of ceiling |
 | G2b-cite-order | pass | {"first_appearance_sequence": [], "monotonic": true} |
 | G6 | pass | {"hits": []} |
-| G3-abstract | pass | {"unverified": [], "words": 306, "placeholders_resolved": ["A_MAX", "H |
+| G3-abstract | pass | {"unverified": [], "words": 287, "placeholders_resolved": ["A_MAX", "H |
 | G3c-abstract-physics | pass | {"implausible": [], "sj_limit_pct": 29.4} |
-| G3b-abstract-form | pass | {"words": 306, "band": [260, 340], "citation_markers": 0} |
-| G7-abbrev | pass | {"expanded_automatically": ["PCE", "HTL", "ETL", "HTL", "MPPT", "HTL"] |
+| G3d-illumination | pass | {"non_one_sun_values": []} |
+| G3b-abstract-form | pass | {"words": 287, "band": [260, 340], "citation_markers": 0} |
+| G7-abbrev | pass | {"expanded_automatically": ["ISOS", "PCE", "SAM", "PCE", "MPPT", "HTL" |
 | G8-novelty | skip | no prior issue on record |
+| G3e-body-numbers | pass | {"bound": 130, "in_cited_abstract": 14, "para_bound": 0, "para_in_cite |
 | G9a-notation | pass | {"residual_defects": {}, "ambiguous_for_human_review": {}, "substituti |
-| G9b-cite-links | pass | {"hyperlinked_markers": 112, "unlinked_markers": [], "works_without_do |
+| G9b-cite-links | pass | {"hyperlinked_markers": 113, "unlinked_markers": [], "works_without_do |
 | G9c-figure-unique | pass | {"attached": ["F1_certified_frontier.pdf", "F4_stability_evidence.pdf" |
 | G9d-model-names | pass | {"bare_slugs_found": [], "declared": ["qwen3.8-flash", "gemini-3.8-fla |
 | G10-title-block | pass | {"gaps_pt": {"author_to_affil": 14.42, "affil_to_date": 22.52, "date_t |

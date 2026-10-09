@@ -200,6 +200,8 @@ def build(month: str) -> dict:
 
     t6 = ["| Gate | Status | Summary |", "| --- | --- | --- |"]
     for k, gv in gates.items():
+        if k.startswith("_"):   # metadata such as _regate, not a gate
+            continue
         d = gv["detail"]
         if k == "G1":
             sm = f"{d['resolved']} citations resolved, {len(d['unresolved'])} unresolved"

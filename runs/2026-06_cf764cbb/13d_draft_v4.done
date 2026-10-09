@@ -1,21 +1,42 @@
 {
   "stage": "13d_draft_v4",
-  "at": "2026-09-08T21:57:36",
+  "at": "2026-10-09T17:11:24",
   "words": {
     "1": 184,
     "2": 235,
     "3": 601,
     "4": 594,
     "5": 423,
-    "6": 330,
+    "6": 311,
     "7": 311,
-    "8": 309
+    "8": 361
   },
-  "abstract_words_raw": 306,
-  "total_words": 2987,
+  "abstract_words_raw": 287,
+  "total_words": 3020,
   "sections": 8,
   "map_sha256": "0eb2c11a35305cac",
   "angle_index": 2,
-  "trend_deltas": {},
+  "trend_deltas": {
+    "audit.corpus.certified.pct": {
+      "prev": 11.6,
+      "now": 5.9,
+      "prev_month": "2026-05"
+    },
+    "audit.corpus.efficiency_stated.pct": {
+      "prev": 55.3,
+      "now": 48.1,
+      "prev_month": "2026-05"
+    },
+    "corpus.n": {
+      "prev": 583,
+      "now": 623,
+      "prev_month": "2026-05"
+    },
+    "selection.n_depth": {
+      "prev": 154,
+      "now": 167,
+      "prev_month": "2026-05"
+    }
+  },
   "writer": "agy/gemini-3.8-flash-high"
 }

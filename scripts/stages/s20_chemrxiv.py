@@ -55,6 +55,7 @@ from stages.util import CONFIG, ROOT, done, read_jsonl, run_dir
 # title page; the submission metadata must not carry a second copy that could
 # drift away from the one in the PDF.
 from stages.boilerplate import AFFIL, ACK, CORRESP_EMAIL
+from stages.gate_policy import verdict
 
 AX = ["composition", "defects", "interfaces", "architecture", "stability", "scale_up"]
 
@@ -97,6 +98,16 @@ def build(month: str) -> dict:
         # A hand-revised edition (v5) lives only in its edition folder: it was
         # never produced by the build, so the run dir holds no copy of it.
         md = mdir / md.name
+    # Refuse to package an issue whose gates did not pass (gate_policy). The
+    # packager used to copy whatever gate report it found, failed or not.
+    rep = mdir / f"gate_report_{ver}.json"
+    rep = rep if rep.exists() else rd / f"gate_report_{ver}.json"
+    if not rep.exists():
+        raise SystemExit(f"FAIL-CLOSED: no gate report for {month} {ver}")
+    gv = verdict(json.loads(rep.read_text(encoding="utf-8")))
+    if not gv["ok"] or (mdir / "BUILD_FAILED.json").exists():
+        raise SystemExit(f"FAIL-CLOSED: {month} {ver} did not pass its gates "
+                         f"{gv['blocking']}; nothing packaged")
     # Directory named from the platform slug, so a future platform change is a
     # config edit rather than another repo-wide rename.
     out = mdir / P["platform_slug"]

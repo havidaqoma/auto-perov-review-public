@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "rule_old": "cards with any stability.protocol string",
+    "rule_new": "cards naming a specified ISOS protocol",
+    "n_issues": 3,
+    "n_issues_overcounted": 2,
+    "max_overcount": 2,
+    "fixed_in": "s18d_build_v4.py and s13d_draft_v4.py, 2026-10-09"
+  },
+  "rows": [
+    {
+      "issue": "2026-06",
+      "printed": 5,
+      "correct": 3,
+      "n_cards": 167
+    },
+    {
+      "issue": "2026-07",
+      "printed": 6,
+      "correct": 4,
+      "n_cards": 169
+    },
+    {
+      "issue": "2026-08",
+      "printed": 2,
+      "correct": 2,
+      "n_cards": 144
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+ "ruled_by": "Havid Aqoma (operator)",
+ "date": "2026-09-23",
+ "rule": "A module, submodule or panel footprint entered in the active-area field counts as a valid area, not an error: perovskite PV abstracts conventionally report the footprint as the device area.",
+ "operator_note_verbatim": "there are 2 type of device, single junction perovskite with 60 cm2 , and perovskite/Si tandem with 2000 cm2. I think usually the footprint area is active area in perovskite PV report in abstract",
+ "triggered_by": "R3|10.1038/s41467-026-70002-4|active_area_cm2|2000",
+ "effect": "footprint_as_area is not counted as an error in any study; only 'wrong' is. The operator chose this reading knowing it reverses the error status of footprint values he had agreed were footprints.",
+ "applies_to": [
+  "R3|10.1002/adma.74033|active_area_cm2|900",
+  "R3|10.1002/aenm.202505931|active_area_cm2|900.0",
+  "R3|10.1016/j.esci.2026.100601|active_area_cm2|900",
+  "R3|10.1038/s41467-026-70002-4|active_area_cm2|2000",
+  "R3|10.1038/s41467-026-71845-7|active_area_cm2|900",
+  "R5|10.1002/adma.73358|active_area_cm2|25",
+  "R5|10.1002/aenm.202505931|active_area_cm2|900"
+ ],
+ "caveat": "For 10.1038/s41467-026-70002-4 the abstract also states a separate 60 cm2 active area; under this rule the 2000 cm2 panel value still counts as a valid area."
+}

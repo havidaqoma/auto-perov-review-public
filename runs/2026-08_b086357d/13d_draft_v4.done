@@ -1,8 +1,8 @@
 {
   "stage": "13d_draft_v4",
-  "at": "2026-09-08T13:21:58",
+  "at": "2026-10-09T18:32:12",
   "words": {
-    "1": 186,
+    "1": 216,
     "2": 249,
     "3": 609,
     "4": 555,
@@ -11,8 +11,8 @@
     "7": 277,
     "8": 350
   },
-  "abstract_words_raw": 289,
-  "total_words": 2949,
+  "abstract_words_raw": 317,
+  "total_words": 2979,
   "sections": 8,
   "map_sha256": "05f30c1551fc1dfb",
   "angle_index": 0,
