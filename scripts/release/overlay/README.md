@@ -145,7 +145,12 @@ python scripts/verify_anchors.py 2026-08
 The rehydrator rebuilds each abstract from the OpenAlex inverted index and
 checks it against the shipped digest. A hash mismatch is reported, never
 silently accepted: it usually means the publisher revised the abstract after
-our harvest, which is a real finding about the corpus.
+our harvest, which is a real finding about the corpus. The rehydrator then
+exits 1 by design, after writing every abstract that did match. A fresh clone
+on 2026-10-10 with `--monthly` accounted for all 9,213 digest rows: 8,468
+verified, 237 changed since harvest, 80 with no OpenAlex id in the shipped
+records, 130 with no abstract at harvest or now, and 298 that OpenAlex no
+longer returned. The checks below still run on what was recovered.
 
 The same applies to the model-only studies. Every model reply behind them is
 stored under `runs/studies/*_raw/` (paper identifiers, model name and the raw

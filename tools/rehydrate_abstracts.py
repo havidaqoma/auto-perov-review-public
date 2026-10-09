@@ -55,6 +55,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASES = [ROOT, ROOT / "yearly"]
 API = "https://api.openalex.org/works"
 PAGE = 50
+EMPTY_SHA256 = hashlib.sha256(b"").hexdigest()   # digest of a work with no abstract
 RETRIES = 6          # attempts per page; waits 5, 10, 20, 40, 80 s between them
 
 
@@ -175,6 +176,7 @@ def main() -> int:
 
     mt = "dry-run@example.org" if a.dry_run else mailto()
     total_rows = total_ok = total_bad = total_unresolved = 0
+    total_none = total_lost = 0
 
     for base in BASES:
         if not base.is_dir():
@@ -220,8 +222,15 @@ def main() -> int:
             with out_p.open("w", encoding="utf-8", newline="\n") as fh:
                 for r in rows:
                     fh.write(json.dumps(r, ensure_ascii=False) + "\n")
+            # Works OpenAlex sent no abstract for. Most had none at harvest
+            # either (empty digest); the rest are lost and count as failures.
+            seen = {rev[o] for o in got if o in rev} | set(unresolved)
+            silent = [k for k in want if k not in seen]
+            none = sum(want[k] == EMPTY_SHA256 for k in silent)
+            lost = len(silent) - none
             print(f"    wrote {out_p.name}: {ok} verified, {len(bad)} hash "
-                  f"mismatches, {len(unresolved)} unresolved")
+                  f"mismatches, {len(unresolved)} unresolved, {none} without an "
+                  f"abstract then or now, {lost} with no abstract returned")
             if bad:
                 (dig_p.parent / f"MISMATCH_{stem}.json").write_text(
                     json.dumps(bad, indent=1), encoding="utf-8")
@@ -232,13 +241,18 @@ def main() -> int:
             total_ok += ok
             total_bad += len(bad)
             total_unresolved += len(unresolved)
+            total_none += none
+            total_lost += lost
 
     if a.dry_run:
         print(f"\ndry run: {total_rows} abstract rows would be refetched")
         return 0
     print(f"\n{total_ok}/{total_rows} abstracts verified against the shipped "
-          f"digest; {total_bad} mismatched; {total_unresolved} unresolvable")
-    return 1 if (total_bad or not total_ok) else 0
+          f"digest; {total_bad} mismatched; {total_unresolved} unresolvable; "
+          f"{total_none} had no abstract at harvest or now; {total_lost} not "
+          "returned by OpenAlex")
+    assert total_ok + total_bad + total_unresolved + total_none + total_lost == total_rows
+    return 1 if (total_bad or total_lost or not total_ok) else 0
 
 
 if __name__ == "__main__":
