@@ -1,0 +1,22 @@
+{
+ "batch": 60,
+ "work_keys": [
+  "10.1002/smll.75360",
+  "10.1002/smll.75482",
+  "10.1002/smll.75536",
+  "10.1002/solr.70449",
+  "10.1002/solr.70454",
+  "10.1002/solr.70461",
+  "10.1007/s40820-026-02278-6",
+  "10.1016/j.decarb.2026.100190",
+  "10.1016/j.jcis.2026.141449",
+  "10.1016/j.joule.2026.102645",
+  "10.1016/j.joule.2026.102646",
+  "10.1016/j.solener.2026.114961"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "[{\"i\":0,\"architecture\":\"n-i-p\",\"pce_champion\":26.17,\"pce_certified\":null,\"active_area_cm2\":0.0729,\"t80_h\":null},{\"i\":1,\"architecture\":\"unknown\",\"pce_champion\":23.95,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":2,\"architecture\":\"unknown\",\"pce_champion\":21.36,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":3,\"architecture\":\"n-i-p\",\"pce_champion\":15.77,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":4,\"architecture\":\"unknown\",\"pce_champion\":14.13,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":720},{\"i\":5,\"architecture\":\"p-i-n\",\"pce_champion\":23.72,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":6,\"architecture\":\"p-i-n\",\"pce_champion\":26.21,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":7,\"architecture\":\"p-i-n\",\"pce_champion\":22.38,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":8,\"architecture\":\"unknown\",\"pce_champion\":22.73,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":9,\"architecture\":\"tandem_2T\",\"pce_champion\":30.3,\"pce_certified\":29.7,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":10,\"architecture\":\"tandem_2T\",\"pce_champion\":27.0,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":11,\"architecture\":\"unknown\",\"pce_champion\":0.53,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null}]",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 39.5,
+ "at": "2026-09-23T21:30:38"
+}

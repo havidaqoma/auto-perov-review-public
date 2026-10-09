@@ -1,0 +1,22 @@
+{
+ "batch": 23,
+ "work_keys": [
+  "10.1002/aenm.70901",
+  "10.1002/aenm.70902",
+  "10.1002/aenm.70910",
+  "10.1002/aenm.70922",
+  "10.1002/aenm.70925",
+  "10.1002/aenm.70939",
+  "10.1002/aenm.70945",
+  "10.1002/aenm.70966",
+  "10.1002/aenm.70991",
+  "10.1002/aenm.71005",
+  "10.1002/anie.202525625",
+  "10.1002/anie.202525646"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "[{\"i\":0,\"architecture\":\"unknown\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":1,\"architecture\":\"tandem_2T\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":2,\"architecture\":\"tandem_2T\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":3,\"architecture\":\"unknown\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":4,\"architecture\":\"p-i-n\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":5,\"architecture\":\"unknown\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":6,\"architecture\":\"tandem_2T\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":7,\"architecture\":\"p-i-n\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":8,\"architecture\":\"n-i-p\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":9,\"architecture\":\"p-i-n\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":10,\"architecture\":\"p-i-n\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":11,\"architecture\":\"p-i-n\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null}]",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 22.7,
+ "at": "2026-09-23T20:48:55"
+}

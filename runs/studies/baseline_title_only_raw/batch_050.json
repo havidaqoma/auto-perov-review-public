@@ -1,0 +1,22 @@
+{
+ "batch": 50,
+ "work_keys": [
+  "10.1002/anie.4177367",
+  "10.1002/anie.5216345",
+  "10.1002/anie.5530609",
+  "10.1002/anie.7090517",
+  "10.1002/anie.7827890",
+  "10.1002/anie.8080769",
+  "10.1002/cnl2.70189",
+  "10.1002/ece2.70102",
+  "10.1002/ente.70590",
+  "10.1002/pip.70131",
+  "10.1002/smll.74289",
+  "10.1002/smll.74356"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "[{\"i\":0,\"architecture\":\"unknown\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":1,\"architecture\":\"unknown\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":2,\"architecture\":\"tandem_2T\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":3,\"architecture\":\"p-i-n\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":4,\"architecture\":\"unknown\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":5,\"architecture\":\"p-i-n\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":6,\"architecture\":\"unknown\",\"pce_champion\":21.54,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":7,\"architecture\":\"unknown\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":8,\"architecture\":\"unknown\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":9,\"architecture\":\"unknown\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":10,\"architecture\":\"unknown\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":11,\"architecture\":\"p-i-n\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null}]",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 31.1,
+ "at": "2026-09-23T20:52:57"
+}

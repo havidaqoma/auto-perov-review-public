@@ -1,0 +1,22 @@
+{
+ "batch": 29,
+ "work_keys": [
+  "10.1038/s41467-026-72099-z",
+  "10.1038/s41467-026-72115-2",
+  "10.1038/s41467-026-72159-4",
+  "10.1038/s41467-026-72160-x",
+  "10.1038/s41467-026-72272-4",
+  "10.1038/s41565-026-02165-6",
+  "10.1126/sciadv.aec3238",
+  "10.1126/sciadv.aed2200",
+  "10.20517/energymater.2025.183",
+  "10.22541/au.177516296.69014470/v1",
+  "10.26434/chemrxiv.15001694/v1",
+  "10.48550/arxiv.2604.11264"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "[{\"i\":0,\"architecture\":\"unknown\",\"pce_champion\":21.54,\"pce_certified\":21.54,\"active_area_cm2\":null,\"t80_h\":1210},{\"i\":1,\"architecture\":\"p-i-n\",\"pce_champion\":26.84,\"pce_certified\":26.79,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":2,\"architecture\":\"p-i-n\",\"pce_champion\":26.48,\"pce_certified\":26.48,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":3,\"architecture\":\"tandem_2T\",\"pce_champion\":33.4,\"pce_certified\":32.45,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":4,\"architecture\":\"unknown\",\"pce_champion\":11.22,\"pce_certified\":11.22,\"active_area_cm2\":0.022,\"t80_h\":null},{\"i\":5,\"architecture\":\"tandem_2T\",\"pce_champion\":30.3,\"pce_certified\":30.3,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":6,\"architecture\":\"unknown\",\"pce_champion\":26.59,\"pce_certified\":25.55,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":7,\"architecture\":\"tandem_2T\",\"pce_champion\":26.3,\"pce_certified\":25.6,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":8,\"architecture\":\"n-i-p\",\"pce_champion\":24.18,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":9,\"architecture\":\"n-i-p\",\"pce_champion\":24.32,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":10,\"architecture\":\"tandem_2T\",\"pce_champion\":32.1,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":11,\"architecture\":\"unknown\",\"pce_champion\":23.62,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null}]",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 66.4,
+ "at": "2026-09-23T21:16:23"
+}

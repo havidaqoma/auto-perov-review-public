@@ -1,0 +1,22 @@
+{
+ "batch": 50,
+ "work_keys": [
+  "10.1002/anie.4177367",
+  "10.1002/anie.5216345",
+  "10.1002/anie.5530609",
+  "10.1002/anie.7090517",
+  "10.1002/anie.7827890",
+  "10.1002/anie.8080769",
+  "10.1002/cnl2.70189",
+  "10.1002/ece2.70102",
+  "10.1002/ente.70590",
+  "10.1002/pip.70131",
+  "10.1002/smll.74289",
+  "10.1002/smll.74356"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "[\n  {\"i\":0,\"architecture\":\"unknown\",\"pce_champion\":25.24,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":1430},\n  {\"i\":1,\"architecture\":\"unknown\",\"pce_champion\":26.12,\"pce_certified\":null,\"active_area_cm2\":0.09,\"t80_h\":null},\n  {\"i\":2,\"architecture\":\"tandem_2T\",\"pce_champion\":32.03,\"pce_certified\":null,\"active_area_cm2\":1.05,\"t80_h\":1200},\n  {\"i\":3,\"architecture\":\"p-i-n\",\"pce_champion\":26.82,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":4,\"architecture\":\"p-i-n\",\"pce_champion\":15.56,\"pce_certified\":14.67,\"active_area_cm2\":0.049,\"t80_h\":null},\n  {\"i\":5,\"architecture\":\"p-i-n\",\"pce_champion\":27.06,\"pce_certified\":26.82,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":6,\"architecture\":\"tandem_2T\",\"pce_champion\":28.72,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":7,\"architecture\":\"unknown\",\"pce_champion\":22.68,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":1000},\n  {\"i\":8,\"architecture\":\"n-i-p\",\"pce_champion\":30.81,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":9,\"architecture\":\"n-i-p\",\"pce_champion\":29.64,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":10,\"architecture\":\"n-i-p\",\"pce_champion\":25.53,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":11,\"architecture\":\"p-i-n\",\"pce_champion\":20.71,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null}\n]",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 144.1,
+ "at": "2026-09-23T21:30:15"
+}

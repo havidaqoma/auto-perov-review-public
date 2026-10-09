@@ -1,0 +1,22 @@
+{
+ "batch": 62,
+ "work_keys": [
+  "10.1021/acsami.6c13903",
+  "10.1021/acsenergylett.6c01191",
+  "10.1021/acsenergylett.6c01444",
+  "10.1021/acsenergylett.6c01485",
+  "10.1021/acsenergylett.6c02033",
+  "10.1021/acsnano.5c21962",
+  "10.1021/acsnano.6c07355",
+  "10.1021/jacs.6c12975",
+  "10.1038/s41467-026-76266-0",
+  "10.1038/s41467-026-76425-3",
+  "10.1038/s41467-026-76497-1",
+  "10.1038/s41467-026-76713-y"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "[\n  {\"i\":0,\"architecture\":\"p-i-n\",\"pce_champion\":20.98,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":1,\"architecture\":\"n-i-p\",\"pce_champion\":25.59,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":2,\"architecture\":\"n-i-p\",\"pce_champion\":26.22,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":3,\"architecture\":\"n-i-p\",\"pce_champion\":20.0,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":4,\"architecture\":\"unknown\",\"pce_champion\":26.13,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":5,\"architecture\":\"p-i-n\",\"pce_champion\":25.19,\"pce_certified\":null,\"active_area_cm2\":0.113,\"t80_h\":null},\n  {\"i\":6,\"architecture\":\"tandem_2T\",\"pce_champion\":29.47,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":7,\"architecture\":\"unknown\",\"pce_champion\":25.2,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":8,\"architecture\":\"tandem_2T\",\"pce_champion\":33.66,\"pce_certified\":33.66,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":9,\"architecture\":\"n-i-p\",\"pce_champion\":26.32,\"pce_certified\":null,\"active_area_cm2\":0.06,\"t80_h\":null},\n  {\"i\":10,\"architecture\":\"p-i-n\",\"pce_champion\":27.59,\"pce_certified\":27.2,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":11,\"architecture\":\"tandem_2T\",\"pce_champion\":30.77,\"pce_certified\":30.77,\"active_area_cm2\":1.164,\"t80_h\":null}\n]",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 70.5,
+ "at": "2026-09-23T21:35:37"
+}

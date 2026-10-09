@@ -1,0 +1,21 @@
+{
+ "batch": 63,
+ "work_keys": [
+  "10.1038/s41467-026-76786-9",
+  "10.1038/s41467-026-76847-z",
+  "10.1038/s41467-026-76848-y",
+  "10.1038/s43246-026-01321-8",
+  "10.1093/nsr/nwag484",
+  "10.1126/sciadv.aec3096",
+  "10.1126/science.aeg8415",
+  "10.22541/authorea.15007746/v1",
+  "10.26434/chemrxiv.15007814/v1",
+  "10.26434/chemrxiv.15008059/v1",
+  "10.48550/arxiv.2608.29341"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "```json\n[\n  {\"i\":0,\"architecture\":\"tandem_2T\",\"pce_champion\":28.14,\"pce_certified\":27.84,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":1,\"architecture\":\"unknown\",\"pce_champion\":20.36,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":2,\"architecture\":\"p-i-n\",\"pce_champion\":26.32,\"pce_certified\":25.67,\"active_area_cm2\":0.08,\"t80_h\":null},\n  {\"i\":3,\"architecture\":\"tandem_2T\",\"pce_champion\":27.7,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":4,\"architecture\":\"n-i-p\",\"pce_champion\":26.54,\"pce_certified\":26.03,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":5,\"architecture\":\"p-i-n\",\"pce_champion\":26.76,\"pce_certified\":26.45,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":6,\"architecture\":\"p-i-n\",\"pce_champion\":27.7,\"pce_certified\":27.4,\"active_area_cm2\":0.06,\"t80_h\":null},\n  {\"i\":7,\"architecture\":\"n-i-p\",\"pce_champion\":25.13,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":8,\"architecture\":\"unknown\",\"pce_champion\":22.19,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":9,\"architecture\":\"n-i-p\",\"pce_champion\":20.31,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":10,\"architecture\":\"p-i-n\",\"pce_champion\":26.06,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null}\n]\n```",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 56.1,
+ "at": "2026-09-23T21:34:24"
+}

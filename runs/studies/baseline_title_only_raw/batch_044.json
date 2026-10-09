@@ -1,0 +1,22 @@
+{
+ "batch": 44,
+ "work_keys": [
+  "10.1021/acsaem.6c00330",
+  "10.1021/acsaem.6c00778",
+  "10.1021/acsaem.6c01329",
+  "10.1021/acsaem.6c01363",
+  "10.1021/acsaem.6c01434",
+  "10.1021/acsaem.6c01493",
+  "10.1021/acsami.6c01472",
+  "10.1021/acsami.6c01787",
+  "10.1021/acsami.6c02373",
+  "10.1021/acsami.6c04650",
+  "10.1021/acsami.6c05001",
+  "10.1021/acsami.6c05326"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "[\n  {\"i\": 0, \"architecture\": \"unknown\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 1, \"architecture\": \"p-i-n\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 2, \"architecture\": \"unknown\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 3, \"architecture\": \"unknown\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 4, \"architecture\": \"unknown\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 5, \"architecture\": \"p-i-n\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 6, \"architecture\": \"p-i-n\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 7, \"architecture\": \"unknown\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 8, \"architecture\": \"p-i-n\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 9, \"architecture\": \"unknown\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 10, \"architecture\": \"tandem_2T\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 11, \"architecture\": \"n-i-p\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null}\n]",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 77.0,
+ "at": "2026-09-23T20:55:59"
+}

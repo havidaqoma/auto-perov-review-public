@@ -1,0 +1,22 @@
+{
+ "batch": 18,
+ "work_keys": [
+  "10.1021/acs.jpclett.6c00286",
+  "10.1021/acs.jpclett.6c00402",
+  "10.1021/acs.nanolett.5c06029",
+  "10.1021/acsaem.5c03696",
+  "10.1021/acsaem.5c04004",
+  "10.1021/acsaem.5c04098",
+  "10.1021/acsaem.6c00059",
+  "10.1021/acsaem.6c00375",
+  "10.1021/acsaem.6c00562",
+  "10.1021/acsami.5c20743",
+  "10.1021/acsami.5c24915",
+  "10.1021/acsami.6c00026"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "[\n  {\"i\":0,\"architecture\":\"n-i-p\",\"pce_champion\":24.13,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":1,\"architecture\":\"unknown\",\"pce_champion\":11.81,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":2,\"architecture\":\"p-i-n\",\"pce_champion\":25.75,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":1400},\n  {\"i\":3,\"architecture\":\"p-i-n\",\"pce_champion\":19.16,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":4,\"architecture\":\"n-i-p\",\"pce_champion\":17.13,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":5,\"architecture\":\"unknown\",\"pce_champion\":17.07,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":1360},\n  {\"i\":6,\"architecture\":\"p-i-n\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":0.09,\"t80_h\":null},\n  {\"i\":7,\"architecture\":\"p-i-n\",\"pce_champion\":20.69,\"pce_certified\":null,\"active_area_cm2\":0.148,\"t80_h\":null},\n  {\"i\":8,\"architecture\":\"p-i-n\",\"pce_champion\":26.41,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":9,\"architecture\":\"p-i-n\",\"pce_champion\":25.47,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":10,\"architecture\":\"unknown\",\"pce_champion\":25.04,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":11,\"architecture\":\"p-i-n\",\"pce_champion\":21.83,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":560}\n]",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 178.8,
+ "at": "2026-09-23T21:14:14"
+}

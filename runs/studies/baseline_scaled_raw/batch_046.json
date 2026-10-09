@@ -1,0 +1,22 @@
+{
+ "batch": 46,
+ "work_keys": [
+  "10.1038/s41467-026-74107-8",
+  "10.1038/s41467-026-74285-5",
+  "10.1038/s41467-026-74288-2",
+  "10.1038/s43246-026-01252-4",
+  "10.1088/2752-5724/ae7817",
+  "10.1126/sciadv.aef6596",
+  "10.1126/science.aef5355",
+  "10.3390/nano16130795",
+  "10.48550/arxiv.2606.12083",
+  "10.1002/adfm.76731",
+  "10.1002/adfm.76848",
+  "10.1002/adfm.76878"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "```json\n[\n  {\"i\": 0, \"architecture\": \"unknown\", \"pce_champion\": 27.29, \"pce_certified\": 26.84, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 1, \"architecture\": \"unknown\", \"pce_champion\": 25.54, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 2, \"architecture\": \"p-i-n\", \"pce_champion\": 26.88, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 3, \"architecture\": \"unknown\", \"pce_champion\": 12.1, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 4, \"architecture\": \"unknown\", \"pce_champion\": 22.21, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 5, \"architecture\": \"unknown\", \"pce_champion\": 27.28, \"pce_certified\": 27.28, \"active_area_cm2\": null, \"t80_h\": 3566},\n  {\"i\": 6, \"architecture\": \"tandem_2T\", \"pce_champion\": 33.6, \"pce_certified\": 33.6, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 7, \"architecture\": \"p-i-n\", \"pce_champion\": 15.44, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 8, \"architecture\": \"unknown\", \"pce_champion\": 28.85, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 9, \"architecture\": \"unknown\", \"pce_champion\": 16.16, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": 1150},\n  {\"i\": 10, \"architecture\": \"n-i-p\", \"pce_champion\": 25.67, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 11, \"architecture\": \"p-i-n\", \"pce_champion\": 25.75, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null}\n]\n```",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 90.4,
+ "at": "2026-09-23T21:27:51"
+}

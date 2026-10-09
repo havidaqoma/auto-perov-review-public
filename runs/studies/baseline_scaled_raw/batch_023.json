@@ -1,0 +1,22 @@
+{
+ "batch": 23,
+ "work_keys": [
+  "10.1002/aenm.70901",
+  "10.1002/aenm.70902",
+  "10.1002/aenm.70910",
+  "10.1002/aenm.70922",
+  "10.1002/aenm.70925",
+  "10.1002/aenm.70939",
+  "10.1002/aenm.70945",
+  "10.1002/aenm.70966",
+  "10.1002/aenm.70991",
+  "10.1002/aenm.71005",
+  "10.1002/anie.202525625",
+  "10.1002/anie.202525646"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "```json\n[{\"i\":0,\"architecture\":\"unknown\",\"pce_champion\":18,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n {\"i\":1,\"architecture\":\"p-i-n\",\"pce_champion\":22.91,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n {\"i\":2,\"architecture\":\"p-i-n\",\"pce_champion\":23.36,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n {\"i\":3,\"architecture\":\"p-i-n\",\"pce_champion\":24.08,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n {\"i\":4,\"architecture\":\"p-i-n\",\"pce_champion\":26.87,\"pce_certified\":26.33,\"active_area_cm2\":0.058,\"t80_h\":null},\n {\"i\":5,\"architecture\":\"unknown\",\"pce_champion\":23.39,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n {\"i\":6,\"architecture\":\"p-i-n\",\"pce_champion\":25.78,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n {\"i\":7,\"architecture\":\"p-i-n\",\"pce_champion\":26.78,\"pce_certified\":26.44,\"active_area_cm2\":0.08,\"t80_h\":null},\n {\"i\":8,\"architecture\":\"n-i-p\",\"pce_champion\":26.10,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n {\"i\":9,\"architecture\":\"p-i-n\",\"pce_champion\":26.62,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n {\"i\":10,\"architecture\":\"p-i-n\",\"pce_champion\":25.54,\"pce_certified\":25.36,\"active_area_cm2\":null,\"t80_h\":null},\n {\"i\":11,\"architecture\":\"p-i-n\",\"pce_champion\":26.19,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null}]\n```",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 75.2,
+ "at": "2026-09-23T21:13:16"
+}

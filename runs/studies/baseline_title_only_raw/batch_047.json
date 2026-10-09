@@ -1,0 +1,22 @@
+{
+ "batch": 47,
+ "work_keys": [
+  "10.1002/adfm.76974",
+  "10.1002/adfm.77015",
+  "10.1002/adfm.77164",
+  "10.1002/adfm.77175",
+  "10.1002/adfm.77211",
+  "10.1002/adfm.77373",
+  "10.1002/adfm.77378",
+  "10.1002/adma.73807",
+  "10.1002/adma.73886",
+  "10.1002/adma.73950",
+  "10.1002/adma.74033",
+  "10.1002/adma.74060"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "[\n  {\n    \"i\": 0,\n    \"architecture\": \"unknown\",\n    \"pce_champion\": null,\n    \"pce_certified\": null,\n    \"active_area_cm2\": null,\n    \"t80_h\": null\n  },\n  {\n    \"i\": 1,\n    \"architecture\": \"unknown\",\n    \"pce_champion\": null,\n    \"pce_certified\": null,\n    \"active_area_cm2\": null,\n    \"t80_h\": null\n  },\n  {\n    \"i\": 2,\n    \"architecture\": \"unknown\",\n    \"pce_champion\": 26.0,\n    \"pce_certified\": null,\n    \"active_area_cm2\": null,\n    \"t80_h\": null\n  },\n  {\n    \"i\": 3,\n    \"architecture\": \"unknown\",\n    \"pce_champion\": null,\n    \"pce_certified\": null,\n    \"active_area_cm2\": null,\n    \"t80_h\": null\n  },\n  {\n    \"i\": 4,\n    \"architecture\": \"unknown\",\n    \"pce_champion\": null,\n    \"pce_certified\": null,\n    \"active_area_cm2\": null,\n    \"t80_h\": null\n  },\n  {\n    \"i\": 5,\n    \"architecture\": \"unknown\",\n    \"pce_champion\": null,\n    \"pce_certified\": null,\n    \"active_area_cm2\": null,\n    \"t80_h\": null\n  },\n  {\n    \"i\": 6,\n    \"architecture\": \"unknown\",\n    \"pce_champion\": null,\n    \"pce_certified\": null,\n    \"active_area_cm2\": null,\n    \"t80_h\": null\n  },\n  {\n    \"i\": 7,\n    \"architecture\": \"module\",\n    \"pce_champion\": 27.3,\n    \"pce_certified\": null,\n    \"active_area_cm2\": null,\n    \"t80_h\": null\n  },\n  {\n    \"i\": 8,\n    \"architecture\": \"p-i-n\",\n    \"pce_champion\": null,\n    \"pce_certified\": null,\n    \"active_area_cm2\": null,\n    \"t80_h\": null\n  },\n  {\n    \"i\": 9,\n    \"architecture\": \"unknown\",\n    \"pce_champion\": null,\n    \"pce_certified\": null,\n    \"active_area_cm2\": null,\n    \"t80_h\": null\n  },\n  {\n    \"i\": 10,\n    \"architecture\": \"unknown\",\n    \"pce_champion\": null,\n    \"pce_certified\": null,\n    \"active_area_cm2\": null,\n    \"t80_h\": null\n  },\n  {\n    \"i\": 11,\n    \"architecture\": \"p-i-n\",\n    \"pce_champion\": null,\n    \"pce_certified\": null,\n    \"active_area_cm2\": null,\n    \"t80_h\": null\n  }\n]",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 61.4,
+ "at": "2026-09-23T20:52:40"
+}

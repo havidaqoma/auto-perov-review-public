@@ -1,0 +1,22 @@
+{
+ "batch": 48,
+ "work_keys": [
+  "10.1002/adma.74078",
+  "10.1002/adma.74183",
+  "10.1002/adma.74220",
+  "10.1002/adma.74243",
+  "10.1002/adma.74247",
+  "10.1002/adma.74316",
+  "10.1002/adma.74416",
+  "10.1002/advs.76463",
+  "10.1002/advs.76508",
+  "10.1002/aenm.202506753",
+  "10.1002/aenm.71259",
+  "10.1002/aenm.71267"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "```json\n[{\"i\":0,\"architecture\":\"tandem_2T\",\"pce_champion\":30.13,\"pce_certified\":29.57,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":1,\"architecture\":\"tandem_2T\",\"pce_champion\":25.92,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":2,\"architecture\":\"n-i-p\",\"pce_champion\":26.60,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":3,\"architecture\":\"n-i-p\",\"pce_champion\":26.54,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":9800},{\"i\":4,\"architecture\":\"unknown\",\"pce_champion\":26.61,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":5,\"architecture\":\"p-i-n\",\"pce_champion\":26.94,\"pce_certified\":26.94,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":6,\"architecture\":\"p-i-n\",\"pce_champion\":26.78,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":7,\"architecture\":\"tandem_2T\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":8,\"architecture\":\"unknown\",\"pce_champion\":26.32,\"pce_certified\":null,\"active_area_cm2\":0.072,\"t80_h\":null},{\"i\":9,\"architecture\":\"tandem_2T\",\"pce_champion\":null,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":10,\"architecture\":\"tandem_2T\",\"pce_champion\":29.40,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":11,\"architecture\":\"tandem_2T\",\"pce_champion\":26.01,\"pce_certified\":25.9,\"active_area_cm2\":null,\"t80_h\":null}]\n```",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 67.6,
+ "at": "2026-09-23T21:28:08"
+}

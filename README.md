@@ -116,8 +116,8 @@ python scripts/run_month.py 2026-09
 have. The contract that matters is structural and holds regardless of which
 models you use:
 
-- `writer_rule: strict` — exactly one agent writes; the reviewers cannot edit
-- `fallback_policy: fail_closed` — a missing model stops the run instead of
+- `writer_rule: strict`: exactly one agent writes; the reviewers cannot edit
+- `fallback_policy: fail_closed`: a missing model stops the run instead of
   silently degrading to a weaker one
 - no gate calls a model, so swapping models cannot loosen a threshold
 
@@ -146,6 +146,23 @@ The rehydrator rebuilds each abstract from the OpenAlex inverted index and
 checks it against the shipped digest. A hash mismatch is reported, never
 silently accepted: it usually means the publisher revised the abstract after
 our harvest, which is a real finding about the corpus.
+
+The same applies to the model-only studies. Every model reply behind them is
+stored under `runs/studies/*_raw/` (paper identifiers, model name and the raw
+reply; no prompt, no abstract). After rehydration, these commands rescore the
+studies from those replies without calling any model, and should reproduce
+the stored outputs byte for byte:
+
+```bash
+python papers/scripts/studies/ablation_gate.py --score
+python papers/scripts/studies/baseline_scaled.py --from-cache
+python papers/scripts/studies/baseline_scaled.py --harsh --from-cache
+python papers/scripts/studies/gate_loss_analysis.py
+git status --short runs/studies papers/studies   # expect no output
+```
+
+`ablation_raw_tools_on/` holds an earlier run made with the model's tools
+switched on. It is kept as evidence and no reported number uses it.
 
 ## Layout
 

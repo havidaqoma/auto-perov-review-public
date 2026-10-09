@@ -1,0 +1,22 @@
+{
+ "batch": 58,
+ "work_keys": [
+  "10.1002/aenm.71396",
+  "10.1002/aenm.71419",
+  "10.1002/aenm.71474",
+  "10.1002/aenm.71482",
+  "10.1002/aenm.71497",
+  "10.1002/aenm.71512",
+  "10.1002/aenm.71514",
+  "10.1002/anie.2425823",
+  "10.1002/anie.3095986",
+  "10.1002/anie.3716107",
+  "10.1002/anie.3883037",
+  "10.1002/anie.4221605"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "```json\n[{\"i\":0,\"architecture\":\"n-i-p\",\"pce_champion\":25.67,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":1,\"architecture\":\"n-i-p\",\"pce_champion\":25.34,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":2,\"architecture\":\"unknown\",\"pce_champion\":26.21,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":3,\"architecture\":\"p-i-n\",\"pce_champion\":26.38,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":4,\"architecture\":\"unknown\",\"pce_champion\":24.1,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":5,\"architecture\":\"tandem_2T\",\"pce_champion\":32.16,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":6,\"architecture\":\"n-i-p\",\"pce_champion\":26.17,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":900},{\"i\":7,\"architecture\":\"n-i-p\",\"pce_champion\":26.67,\"pce_certified\":26.44,\"active_area_cm2\":null,\"t80_h\":800},{\"i\":8,\"architecture\":\"p-i-n\",\"pce_champion\":27.06,\"pce_certified\":26.77,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":9,\"architecture\":\"p-i-n\",\"pce_champion\":26.79,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":10,\"architecture\":\"unknown\",\"pce_champion\":23.24,\"pce_certified\":null,\"active_area_cm2\":0.062,\"t80_h\":null},{\"i\":11,\"architecture\":\"p-i-n\",\"pce_champion\":26.99,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null}]\n```",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 47.0,
+ "at": "2026-09-23T21:34:27"
+}

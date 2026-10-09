@@ -1,0 +1,22 @@
+{
+ "batch": 56,
+ "work_keys": [
+  "10.26599/pom.2026.9140147",
+  "10.48550/arxiv.2607.19789",
+  "10.1002/adfm.77504",
+  "10.1002/adfm.77637",
+  "10.1002/adfm.77712",
+  "10.1002/adfm.77729",
+  "10.1002/adfm.77805",
+  "10.1002/adfm.77833",
+  "10.1002/adfm.77855",
+  "10.1002/adfm.77942",
+  "10.1002/adfm.78067",
+  "10.1002/adma.74438"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "```json\n[\n  {\"i\":0,\"architecture\":\"p-i-n\",\"pce_champion\":25.15,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":1,\"architecture\":\"n-i-p\",\"pce_champion\":28.18,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":2,\"architecture\":\"n-i-p\",\"pce_champion\":22.30,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":3,\"architecture\":\"tandem_2T\",\"pce_champion\":33.02,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":4,\"architecture\":\"p-i-n\",\"pce_champion\":26.49,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":5,\"architecture\":\"p-i-n\",\"pce_champion\":26.1,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":6,\"architecture\":\"tandem_2T\",\"pce_champion\":24.25,\"pce_certified\":null,\"active_area_cm2\":0.08,\"t80_h\":864},\n  {\"i\":7,\"architecture\":\"n-i-p\",\"pce_champion\":17.07,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":8,\"architecture\":\"tandem_2T\",\"pce_champion\":26.20,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":9,\"architecture\":\"p-i-n\",\"pce_champion\":26.14,\"pce_certified\":25.23,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":10,\"architecture\":\"unknown\",\"pce_champion\":26.12,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":11,\"architecture\":\"p-i-n\",\"pce_champion\":27.06,\"pce_certified\":null,\"active_area_cm2\":0.09,\"t80_h\":null}\n]\n```",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 74.5,
+ "at": "2026-09-23T21:29:59"
+}

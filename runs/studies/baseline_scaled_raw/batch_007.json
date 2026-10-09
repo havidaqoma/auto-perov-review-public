@@ -1,0 +1,22 @@
+{
+ "batch": 7,
+ "work_keys": [
+  "10.1002/aenm.202505854",
+  "10.1002/aenm.202506610",
+  "10.1002/aenm.70755",
+  "10.1002/anie.202516537",
+  "10.1002/anie.202523799",
+  "10.1002/anie.202525815",
+  "10.1002/ente.202502217",
+  "10.1002/pip.70076",
+  "10.1002/pip.70083",
+  "10.1002/smll.202511627",
+  "10.1002/smll.202512151",
+  "10.1002/smll.202512729"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "[{\"i\":0,\"architecture\":\"unknown\",\"pce_champion\":22.53,\"pce_certified\":21.95,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":1,\"architecture\":\"unknown\",\"pce_champion\":22.2,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":500},{\"i\":2,\"architecture\":\"tandem_2T\",\"pce_champion\":28.34,\"pce_certified\":20.02,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":3,\"architecture\":\"p-i-n\",\"pce_champion\":26.41,\"pce_certified\":null,\"active_area_cm2\":64.68,\"t80_h\":null},{\"i\":4,\"architecture\":\"n-i-p\",\"pce_champion\":25.79,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":5,\"architecture\":\"unknown\",\"pce_champion\":26.9,\"pce_certified\":26.75,\"active_area_cm2\":10.24,\"t80_h\":null},{\"i\":6,\"architecture\":\"unknown\",\"pce_champion\":17.79,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":7,\"architecture\":\"unknown\",\"pce_champion\":25.77,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":8,\"architecture\":\"p-i-n\",\"pce_champion\":21.12,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":9,\"architecture\":\"unknown\",\"pce_champion\":22.21,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":10,\"architecture\":\"unknown\",\"pce_champion\":20.41,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":11,\"architecture\":\"n-i-p\",\"pce_champion\":24.79,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null}]",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 136.1,
+ "at": "2026-09-23T21:07:45"
+}

@@ -1,0 +1,22 @@
+{
+ "batch": 28,
+ "work_keys": [
+  "10.1021/acsenergylett.5c03637",
+  "10.1021/acsenergylett.6c00044",
+  "10.1021/acsenergylett.6c00166",
+  "10.1021/acsenergylett.6c00507",
+  "10.1021/acsenergylett.6c00617",
+  "10.1021/acsenergylett.6c00983",
+  "10.1021/acssuschemeng.5c13860",
+  "10.1021/jacs.6c02024",
+  "10.1038/s41467-026-71301-6",
+  "10.1038/s41467-026-71845-7",
+  "10.1038/s41467-026-72094-4",
+  "10.1038/s41467-026-72097-1"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "[{\"i\":0,\"architecture\":\"p-i-n\",\"pce_champion\":25.65,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":1,\"architecture\":\"unknown\",\"pce_champion\":16.33,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":2,\"architecture\":\"tandem_2T\",\"pce_champion\":32.15,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":3,\"architecture\":\"n-i-p\",\"pce_champion\":24.10,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":4,\"architecture\":\"tandem_2T\",\"pce_champion\":28.77,\"pce_certified\":28.53,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":5,\"architecture\":\"unknown\",\"pce_champion\":25.1,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":1380},{\"i\":6,\"architecture\":\"p-i-n\",\"pce_champion\":26.31,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":7,\"architecture\":\"tandem_2T\",\"pce_champion\":29.6,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":8,\"architecture\":\"p-i-n\",\"pce_champion\":26.95,\"pce_certified\":26.57,\"active_area_cm2\":0.0717,\"t80_h\":null},{\"i\":9,\"architecture\":\"module\",\"pce_champion\":27.21,\"pce_certified\":27.02,\"active_area_cm2\":900,\"t80_h\":null},{\"i\":10,\"architecture\":\"unknown\",\"pce_champion\":31.04,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":11,\"architecture\":\"p-i-n\",\"pce_champion\":27.03,\"pce_certified\":27.03,\"active_area_cm2\":null,\"t80_h\":null}]",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 62.6,
+ "at": "2026-09-23T21:19:13"
+}

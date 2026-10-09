@@ -1,0 +1,22 @@
+{
+ "batch": 0,
+ "work_keys": [
+  "10.1002/adfm.202521919",
+  "10.1002/adfm.202524231",
+  "10.1002/adfm.202526993",
+  "10.1002/adfm.202529837",
+  "10.1002/adfm.202530978",
+  "10.1002/adfm.202531784",
+  "10.1002/adfm.202531831",
+  "10.1002/adfm.202531852",
+  "10.1002/adma.202517596",
+  "10.1002/adma.202518582",
+  "10.1002/adma.202519138",
+  "10.1002/adma.202519934"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "[\n  {\"i\":0,\"architecture\":\"p-i-n\",\"pce_champion\":22.5,\"pce_certified\":20.04,\"active_area_cm2\":null,\"t80_h\":600},\n  {\"i\":1,\"architecture\":\"p-i-n\",\"pce_champion\":26.08,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":2,\"architecture\":\"p-i-n\",\"pce_champion\":26.18,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":3,\"architecture\":\"p-i-n\",\"pce_champion\":25.53,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":4,\"architecture\":\"unknown\",\"pce_champion\":23.27,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":5,\"architecture\":\"unknown\",\"pce_champion\":25.05,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":1000},\n  {\"i\":6,\"architecture\":\"p-i-n\",\"pce_champion\":25.24,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":7,\"architecture\":\"n-i-p\",\"pce_champion\":25.32,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":8,\"architecture\":\"p-i-n\",\"pce_champion\":27.1,\"pce_certified\":27.1,\"active_area_cm2\":null,\"t80_h\":null},\n  {\"i\":9,\"architecture\":\"module\",\"pce_champion\":26.61,\"pce_certified\":null,\"active_area_cm2\":100,\"t80_h\":null},\n  {\"i\":10,\"architecture\":\"p-i-n\",\"pce_champion\":26.35,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":1392},\n  {\"i\":11,\"architecture\":\"unknown\",\"pce_champion\":16.29,\"pce_certified\":15.88,\"active_area_cm2\":null,\"t80_h\":null}\n]",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 112.0,
+ "at": "2026-09-23T21:06:44"
+}

@@ -1,0 +1,22 @@
+{
+ "batch": 49,
+ "work_keys": [
+  "10.1002/aenm.71282",
+  "10.1002/aenm.71305",
+  "10.1002/aenm.71312",
+  "10.1002/aenm.71317",
+  "10.1002/aenm.71336",
+  "10.1002/anie.1018855",
+  "10.1002/anie.1676645",
+  "10.1002/anie.1678852",
+  "10.1002/anie.1864800",
+  "10.1002/anie.2884874",
+  "10.1002/anie.2924886",
+  "10.1002/anie.4031162"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "```json\n[\n  {\"i\": 0, \"architecture\": \"p-i-n\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 1, \"architecture\": \"p-i-n\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 2, \"architecture\": \"unknown\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 3, \"architecture\": \"tandem_2T\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 4, \"architecture\": \"p-i-n\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 5, \"architecture\": \"p-i-n\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 6, \"architecture\": \"tandem_2T\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 7, \"architecture\": \"p-i-n\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 8, \"architecture\": \"p-i-n\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 9, \"architecture\": \"unknown\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 10, \"architecture\": \"n-i-p\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null},\n  {\"i\": 11, \"architecture\": \"p-i-n\", \"pce_champion\": null, \"pce_certified\": null, \"active_area_cm2\": null, \"t80_h\": null}\n]\n```",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 69.3,
+ "at": "2026-09-23T20:53:14"
+}

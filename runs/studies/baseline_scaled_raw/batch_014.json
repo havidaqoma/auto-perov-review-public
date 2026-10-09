@@ -1,0 +1,22 @@
+{
+ "batch": 14,
+ "work_keys": [
+  "10.1002/adom.202503341",
+  "10.1002/advs.202524311",
+  "10.1002/advs.202524338",
+  "10.1002/aenm.202506423",
+  "10.1002/aenm.202506494",
+  "10.1002/aenm.202506760",
+  "10.1002/aenm.202506762",
+  "10.1002/aenm.70806",
+  "10.1002/aenm.70814",
+  "10.1002/anie.202519239",
+  "10.1002/anie.202520159",
+  "10.1002/anie.2660254"
+ ],
+ "model": "opencode-go/qwen3.8-flash",
+ "raw": "[{\"i\":0,\"architecture\":\"tandem_2T\",\"pce_champion\":34.85,\"pce_certified\":34.85,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":1,\"architecture\":\"unknown\",\"pce_champion\":25.54,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":2,\"architecture\":\"p-i-n\",\"pce_champion\":21.65,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":1440},{\"i\":3,\"architecture\":\"n-i-p\",\"pce_champion\":25.29,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":4,\"architecture\":\"n-i-p\",\"pce_champion\":22.2,\"pce_certified\":null,\"active_area_cm2\":0.12,\"t80_h\":null},{\"i\":5,\"architecture\":\"unknown\",\"pce_champion\":25.92,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":6,\"architecture\":\"unknown\",\"pce_champion\":23.5,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":7,\"architecture\":\"p-i-n\",\"pce_champion\":26.35,\"pce_certified\":26.35,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":8,\"architecture\":\"p-i-n\",\"pce_champion\":26.73,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":9,\"architecture\":\"unknown\",\"pce_champion\":25.53,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null},{\"i\":10,\"architecture\":\"unknown\",\"pce_champion\":25.57,\"pce_certified\":null,\"active_area_cm2\":0.09,\"t80_h\":null},{\"i\":11,\"architecture\":\"n-i-p\",\"pce_champion\":25.47,\"pce_certified\":null,\"active_area_cm2\":null,\"t80_h\":null}]",
+ "tools": "off (s09._no_tools_env + --pure; any tool part fails the call)",
+ "sec": 45.6,
+ "at": "2026-09-23T21:11:15"
+}
