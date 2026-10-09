@@ -1,6 +1,6 @@
 {
- "note": "Gate verdicts as recorded by the builds that produced the shipped issues, measured from the reports in this tree on 2026-10-09. reproduce.py fails if any verdict CHANGES. Non-pass verdicts are part of the record and are explained per gate; see non_pass_explained.",
- "recorded": "2026-10-09",
+ "note": "Gate verdicts as recorded by the builds that produced the shipped issues, measured from the reports in this tree on 2026-10-10. reproduce.py fails if any verdict CHANGES. Non-pass verdicts are part of the record and are explained per gate; see non_pass_explained.",
+ "recorded": "2026-10-10",
  "reports": {
   "manuscript/2026-06/gate_report.json": {
    "gates": 19,

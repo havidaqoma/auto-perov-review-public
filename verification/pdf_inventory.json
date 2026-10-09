@@ -1,6 +1,6 @@
 {
- "note": "Page count and a year anchor for every shipped manuscript and supplement, measured on 2026-10-09. Byte-identical rebuilds are NOT expected: tectonic embeds a build timestamp and subsets fonts. Page count plus gates passing is the reproduction criterion.",
- "recorded": "2026-10-09",
+ "note": "Page count and a year anchor for every shipped manuscript and supplement, measured on 2026-10-10. Byte-identical rebuilds are NOT expected: tectonic embeds a build timestamp and subsets fonts. Page count plus gates passing is the reproduction criterion.",
+ "recorded": "2026-10-10",
  "pdfs": {
   "manuscript/2026-06/chemrxiv/manuscript.pdf": {
    "pages": 15,

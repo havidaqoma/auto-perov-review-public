@@ -28,8 +28,12 @@ a time with a pause between pages.
 Usage
 -----
     python tools/rehydrate_abstracts.py --all
+    python tools/rehydrate_abstracts.py --monthly        # what the studies need
     python tools/rehydrate_abstracts.py --period 2026-08
     python tools/rehydrate_abstracts.py --all --dry-run
+
+A transient server error (HTTP 429 or 5xx, or a timeout) is retried with
+backoff; a page that still fails after the last attempt stops the run.
 """
 from __future__ import annotations
 
@@ -38,8 +42,10 @@ import hashlib
 import json
 import os
 import pathlib
+import re
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -49,6 +55,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASES = [ROOT, ROOT / "yearly"]
 API = "https://api.openalex.org/works"
 PAGE = 50
+RETRIES = 6          # attempts per page; waits 5, 10, 20, 40, 80 s between them
 
 
 def mailto() -> str:
@@ -88,6 +95,27 @@ def invert(inv: dict | None) -> str:
     return " ".join(w for _, w in pos)
 
 
+def get_json(req: urllib.request.Request) -> dict:
+    """One page, retrying transient failures; any other error stops the run."""
+    for attempt in range(RETRIES):
+        try:
+            with urllib.request.urlopen(req, timeout=90) as fh:
+                return json.loads(fh.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            if e.code != 429 and e.code < 500:
+                raise
+            why = f"HTTP {e.code}"
+        except (urllib.error.URLError, TimeoutError) as e:
+            why = type(e).__name__
+        if attempt == RETRIES - 1:
+            raise SystemExit(f"FAIL: OpenAlex still failing after {RETRIES} attempts "
+                             f"({why}); rerun later, finished runs are kept")
+        wait = 5 * 2 ** attempt
+        print(f"    {why}; retrying in {wait} s")
+        time.sleep(wait)
+    raise AssertionError("unreachable")
+
+
 def fetch(ids: list[str], mt: str) -> dict[str, str]:
     """work_id -> reconstructed abstract text."""
     out: dict[str, str] = {}
@@ -101,8 +129,7 @@ def fetch(ids: list[str], mt: str) -> dict[str, str]:
         })
         req = urllib.request.Request(
             f"{API}?{q}", headers={"User-Agent": f"auto-perov-review ({mt})"})
-        with urllib.request.urlopen(req, timeout=90) as fh:
-            data = json.loads(fh.read().decode("utf-8"))
+        data = get_json(req)
         for r in data.get("results", []):
             out[r["id"]] = invert(r.get("abstract_inverted_index"))
         print(f"    fetched {min(i + PAGE, len(ids))}/{len(ids)}")
@@ -138,11 +165,13 @@ def work_ids_for(rd: pathlib.Path) -> dict[str, str]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--all", action="store_true")
+    ap.add_argument("--monthly", action="store_true",
+                    help="only the monthly runs at the repository root")
     ap.add_argument("--period")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
-    if not (a.all or a.period):
-        ap.error("pass --all or --period")
+    if not (a.all or a.period or a.monthly):
+        ap.error("pass --all, --monthly or --period")
 
     mt = "dry-run@example.org" if a.dry_run else mailto()
     total_rows = total_ok = total_bad = total_unresolved = 0
@@ -153,6 +182,8 @@ def main() -> int:
         for dig_p in digests(base):
             rd = dig_p.parent.parent
             if a.period and a.period not in rd.name:
+                continue
+            if a.monthly and (base != ROOT or not re.match(r"\d{4}-\d{2}_", rd.name)):
                 continue
             dig = json.loads(dig_p.read_text(encoding="utf-8"))
             want = {r["work_key"]: r["abstract_sha256"] for r in dig["digest"]}

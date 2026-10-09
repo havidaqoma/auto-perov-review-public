@@ -44,7 +44,7 @@ import unicodedata
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3] / "scripts"))
 import studies.ablation_gate as ag  # noqa: E402
-from studies.study_common import ROOT, wilson  # noqa: E402
+from studies.study_common import ROOT, compare_partial, wilson  # noqa: E402
 
 OUT = ROOT / "papers" / "studies" / "gate_loss.json"
 ABL = ROOT / "papers" / "studies" / "ablation_gate.json"
@@ -103,6 +103,8 @@ def main() -> int:
             k[0] += 1
             k[1] += 0 if r["shipped_fixed_guard"] else 1
     _pool, abst, model = ag.load_pool()
+    unrec = ag.UNRECOVERED
+    lost_keys = {k for k in lost_keys if k[0].lower() not in unrec}
     rows = []
     for f in sorted(ag.RAW_DIR.glob("batch_[0-9][0-9][0-9].json")):
         rec = json.loads(f.read_text(encoding="utf-8"))
@@ -131,7 +133,7 @@ def main() -> int:
                if isinstance(o, dict) and str(o.get("i", "")).isdigit()}
         for n, wk in enumerate(rec["work_keys"]):
             o = got.get(n)
-            if o is None:
+            if o is None or wk.lower() in unrec:
                 continue
             src = abst[wk.lower()][:ag.ABSTRACT_CUT]
             for fld in ag.FIELDS:
@@ -165,6 +167,9 @@ def main() -> int:
                 "rule": "hyphen and dash variants mapped to ASCII hyphen in anchor and abstract"},
             "note": "loss is measured on grounded values only; the gate's protective "
                     "effect is reported separately in ablation_gate.json"}
+    if unrec:
+        return compare_partial(OUT, rows, lambda r: r["work_key"].lower() not in unrec,
+                               len(unrec))
     OUT.write_text(json.dumps({"meta": meta, "rows": rows}, indent=2, ensure_ascii=False),
                    encoding="utf-8")
     print(json.dumps(meta, indent=1))

@@ -13,6 +13,7 @@ the artifacts the papers were built from.
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import os
 import pathlib
@@ -204,6 +205,70 @@ def explain_ungrounded(value, field: str, text: str) -> str:
 def active_run(month: str, root: pathlib.Path = ROOT) -> pathlib.Path:
     ptr = root / "runs" / f"{month}.active"
     return root / "runs" / ptr.read_text(encoding="utf-8").strip()
+
+
+EMPTY_SHA256 = hashlib.sha256(b"").hexdigest()
+
+
+def read_abstracts(rd: pathlib.Path, name: str = "02_abstracts.jsonl"
+                   ) -> tuple[dict[str, str], set[str]]:
+    """work_key (lower case) -> abstract text, plus the works left UNRECOVERED.
+
+    In the private tree every harvested abstract is on disk and the set is
+    empty. The public tree ships a sha256 digest per abstract instead of the
+    text (private/ABSTRACTS_DIGEST_<stem>.json) and tools/rehydrate_abstracts.py
+    re-fetches the text, keeping only texts that match their digest. A work
+    whose harvested abstract was non-empty but did not come back byte for byte
+    (the publisher revised it, or OpenAlex has no id for it) is unrecovered.
+    It keeps its place in every study pool, because pool membership was fixed
+    at harvest and the digest records it, but nothing is scored against it:
+    see compare_partial().
+    """
+    p = rd / "private" / name
+    abst: dict[str, str] = {}
+    for line in p.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            o = json.loads(line)
+            abst[o["work_key"].lower()] = o.get("abstract") or ""
+    dig_p = rd / "private" / f"ABSTRACTS_DIGEST_{name.rsplit('.', 1)[0]}.json"
+    unrecovered: set[str] = set()
+    if dig_p.exists():
+        for r in json.loads(dig_p.read_text(encoding="utf-8"))["digest"]:
+            wk, want = r["work_key"].lower(), r["abstract_sha256"]
+            have = abst.get(wk)
+            if have is not None and hashlib.sha256(have.encode("utf-8")).hexdigest() == want:
+                continue
+            abst.pop(wk, None)            # never score against unverified text
+            if want != EMPTY_SHA256:
+                unrecovered.add(wk)
+    return abst, unrecovered
+
+
+def compare_partial(path: pathlib.Path, rows: list[dict], keep, n_unrecovered: int) -> int:
+    """Rescore check when some abstracts did not rehydrate byte for byte.
+
+    The full report cannot be rebuilt then, so nothing is written. The rows
+    that could be rescored are compared with the stored rows for the same
+    values; keep(row) selects the stored rows whose inputs were all recovered.
+    Returns 0 only when the two lists are identical.
+    """
+    shipped = json.loads(path.read_text(encoding="utf-8"))["rows"]
+    want = [r for r in shipped if keep(r)]
+    got = json.loads(json.dumps(rows))
+    rel = str(path.relative_to(ROOT)).replace("\\", "/")
+    if got == want:
+        print(f"[rescore] PARTIAL CHECK PASSED: {len(got)} of {len(shipped)} rows of {rel} "
+              f"rescored from the stored replies are identical to the stored rows. "
+              f"{len(shipped) - len(want)} rows depend on the {n_unrecovered} abstracts "
+              "that did not rehydrate byte for byte and were not checked. "
+              "Nothing was written.")
+        return 0
+    diff = next((i for i, (a, b) in enumerate(zip(got, want)) if a != b), min(len(got), len(want)))
+    print(f"[rescore] PARTIAL CHECK FAILED for {rel}: {len(got)} rescored rows vs "
+          f"{len(want)} stored; first difference at row {diff}:")
+    print("  rescored:", got[diff] if diff < len(got) else None)
+    print("  stored:  ", want[diff] if diff < len(want) else None)
+    return 1
 
 
 def _ignore(_dir, names):

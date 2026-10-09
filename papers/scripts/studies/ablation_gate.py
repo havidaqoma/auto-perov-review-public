@@ -40,9 +40,11 @@ import time
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3] / "scripts"))
-from studies.study_common import (ROOT, active_run, explain_ungrounded,  # noqa: E402
+from studies.study_common import (ROOT, STUDY_OUT, active_run,  # noqa: E402
+                                  compare_partial, explain_ungrounded,
                                   norm_text, number_present,
-                                  number_present_legacy, wilson, write_report)
+                                  number_present_legacy, read_abstracts,
+                                  wilson, write_report)
 import stages.s09_cards as s09  # noqa: E402
 
 MONTHS = ["2026-01", "2026-02", "2026-03", "2026-04",
@@ -51,24 +53,25 @@ FIELDS = ("pce_champion", "pce_certified", "active_area_cm2", "t80_h")
 RAW_DIR = ROOT / "runs" / "studies" / "ablation_raw"
 ABSTRACT_CUT = 2600          # s09.cards() slices abst[wk][:2600]
 P_FLOOR = 1e-12
+# Works whose abstract did not rehydrate byte for byte (public tree only;
+# empty in the private tree). Filled by load_pool(); see read_abstracts().
+UNRECOVERED: set[str] = set()
 
 
 def load_pool():
     """Identical selection to R3 (baseline_scaled.load_month), all months."""
     pool, abst, models = [], {}, set()
+    UNRECOVERED.clear()
     for m in MONTHS:
         rd = active_run(m)
-        a = {}
-        for line in (rd / "private" / "02_abstracts.jsonl").read_text(
-                encoding="utf-8").splitlines():
-            if line.strip():
-                o = json.loads(line)
-                a[o["work_key"].lower()] = o.get("abstract") or ""
+        a, unrec = read_abstracts(rd)
+        UNRECOVERED.update(unrec)
         cards = [json.loads(l) for l in (rd / "claim_cards.jsonl").read_text(
             encoding="utf-8").splitlines() if l.strip()]
         models |= {(c.get("extractor") or {}).get("model") for c in cards}
         sel = [c for c in cards if (c.get("performance") or {})
-               and a.get((c.get("work_key") or "").lower())]
+               and (a.get((c.get("work_key") or "").lower())
+                    or (c.get("work_key") or "").lower() in unrec)]
         sel.sort(key=lambda c: c["work_key"])
         pool += [(m, c) for c in sel]
         abst.update(a)
@@ -237,6 +240,8 @@ def score() -> int:
             if isinstance(o, dict) and str(o.get("i", "")).isdigit():
                 got[int(o["i"])] = o
         for n, wk in enumerate(rec["work_keys"]):
+            if wk.lower() in UNRECOVERED:
+                continue
             o = got.get(n)
             if o is None:
                 n_obj_missing += 1
@@ -397,6 +402,10 @@ def score() -> int:
             "review": review,
             "grounded_lost_fixed_guard_by_reason": reasons,
             "by_field": by_field}
+    if UNRECOVERED:
+        return compare_partial(STUDY_OUT / "ablation_gate.json", rows,
+                               lambda r: r["work_key"].lower() not in UNRECOVERED,
+                               len(UNRECOVERED))
     write_report("ablation_gate", rows, meta)
     print(json.dumps(meta, indent=1))
     return 0
@@ -409,4 +418,4 @@ if __name__ == "__main__":
     if "--run" in sys.argv:
         run(lim)
     if "--score" in sys.argv:
-        score()
+        raise SystemExit(score())

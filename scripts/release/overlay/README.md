@@ -138,7 +138,7 @@ extracted value maps to a work in the published corpus. For quotation-level
 verification, re-fetch the text yourself:
 
 ```bash
-python tools/rehydrate_abstracts.py --all
+python tools/rehydrate_abstracts.py --all        # or --monthly, which is all the studies need
 python scripts/verify_anchors.py 2026-08
 ```
 
@@ -150,8 +150,7 @@ our harvest, which is a real finding about the corpus.
 The same applies to the model-only studies. Every model reply behind them is
 stored under `runs/studies/*_raw/` (paper identifiers, model name and the raw
 reply; no prompt, no abstract). After rehydration, these commands rescore the
-studies from those replies without calling any model, and should reproduce
-the stored outputs byte for byte:
+studies from those replies without calling any model:
 
 ```bash
 python papers/scripts/studies/ablation_gate.py --score
@@ -160,6 +159,16 @@ python papers/scripts/studies/baseline_scaled.py --harsh --from-cache
 python papers/scripts/studies/gate_loss_analysis.py
 git status --short runs/studies papers/studies   # expect no output
 ```
+
+Expect a partial check, not a full rebuild. Some publishers revise an
+abstract after harvest, and a revised abstract no longer matches its digest.
+When any abstract is missing this way, each script compares only the values
+whose abstracts came back exactly with the stored rows, writes nothing, and
+prints `PARTIAL CHECK PASSED` (or `FAILED` with the first differing row).
+In a fresh clone on 2026-10-10, 206 of the 3,126 non-empty abstracts the
+studies read did not come back exactly, and the scripts checked 1,042 of 1,074, 2,127 of 2,191,
+1,080 of 1,113 and 20 of 20 stored rows, all identical. With every abstract
+recovered they rebuild the full outputs, which then match byte for byte.
 
 `ablation_raw_tools_on/` holds an earlier run made with the model's tools
 switched on. It is kept as evidence and no reported number uses it.

@@ -34,8 +34,9 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 # the pipeline stages live in <repo>/scripts; this file moved to
 # papers/scripts/studies in the 2026-09-14 restructure and lost that path.
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[3] / "scripts"))
-from studies.study_common import (ROOT, active_run, norm_text,  # noqa: E402
-                                  number_present, wilson, write_report)
+from studies.study_common import (ROOT, active_run, compare_partial,  # noqa: E402
+                                  norm_text, number_present, read_abstracts,
+                                  wilson, write_report)
 from stages.s09_cards import call_opencode, parse_array  # noqa: E402
 
 
@@ -110,19 +111,15 @@ FIELDS = ("pce_champion", "pce_certified", "active_area_cm2", "t80_h")
 
 def load_month(month: str):
     rd = active_run(month)
-    abst = {}
-    for line in (rd / "private" / "02_abstracts.jsonl").read_text(
-            encoding="utf-8").splitlines():
-        if line.strip():
-            o = json.loads(line)
-            abst[o["work_key"].lower()] = o.get("abstract") or ""
+    abst, unrec = read_abstracts(rd)
     cards = [json.loads(l) for l in (rd / "claim_cards.jsonl").read_text(
         encoding="utf-8").splitlines() if l.strip()]
     pool = [c for c in cards
             if (c.get("performance") or {})
-            and abst.get((c.get("work_key") or "").lower())]
+            and (abst.get((c.get("work_key") or "").lower())
+                 or (c.get("work_key") or "").lower() in unrec)]
     pool.sort(key=lambda c: c["work_key"])       # deterministic, never sampled
-    return pool, abst
+    return pool, abst, unrec
 
 
 def _val(c, field):
@@ -168,10 +165,10 @@ def fisher_exact(a: int, b: int, c: int, d: int) -> float:
 
 
 def main() -> int:
-    pool, abst, titles = [], {}, {}
+    pool, abst, titles, unrec = [], {}, {}, set()
     for m in MONTHS:
         try:
-            mp, ma = load_month(m)
+            mp, ma, mu = load_month(m)
         except FileNotFoundError as e:
             print(f"[r3] skip {m}: {e}")
             continue
@@ -179,6 +176,7 @@ def main() -> int:
             pool.append((m, c))
             titles[c["work_key"]] = c.get("title", "")
         abst.update(ma)
+        unrec |= mu
         print(f"[r3] {m}: {len(mp)} papers")
 
     regime = "title_only" if HARSH else "abstract_in_context"
@@ -210,6 +208,9 @@ def main() -> int:
         shard = sys.argv[sys.argv.index("--shard") + 1]
     si, sn = map(int, shard.split("/")) if shard else (0, 1)
     from_cache = "--from-cache" in sys.argv
+    if unrec and not from_cache:
+        raise SystemExit(f"FAIL-CLOSED: {len(unrec)} abstracts did not rehydrate byte for "
+                         "byte; a new model call would see a different prompt. Use --from-cache.")
     arm_a, batch_of, n_lost = [], {}, 0
     nb = (len(pool) + BATCH - 1) // BATCH
     for b0 in range(0, len(pool), BATCH):
@@ -290,10 +291,14 @@ def main() -> int:
         rec["month"] = m
         arm_b.append(rec)
 
+    undetermined = set()     # cross-paper status needs an unrecovered peer
+
     def score(arm: str, src_rows: list[dict]) -> list[dict]:
         out = []
         for r in src_rows:
             wk = r["work_key"].lower()
+            if wk in unrec:
+                continue
             src = norm_text(abst.get(wk, ""))
             peers = batch_of.get(wk, [])
             for f in FIELDS:
@@ -302,6 +307,9 @@ def main() -> int:
                     continue
                 grounded = number_present(v, src)
                 cross = False
+                if not grounded and any(pk in unrec for pk in peers if pk != wk):
+                    undetermined.add((arm, r["work_key"], f))
+                    continue
                 if not grounded:
                     for pk in peers:
                         if pk != wk and number_present(v, norm_text(abst.get(pk, ""))):
@@ -347,6 +355,12 @@ def main() -> int:
                 p_floor=P_FLOOR,
                 significant_at_0_05=bool(p < 0.05))
     name = "baseline_title_only" if HARSH else "baseline_scaled"
+    if unrec:
+        return compare_partial(
+            ROOT / "runs" / "studies" / f"{name}.json", rows,
+            lambda r: (r["work_key"].lower() not in unrec
+                       and (r["arm"], r["work_key"], r["field"]) not in undetermined),
+            len(unrec))
     csv_p, json_p = write_report(name, rows, meta)
     print("\n== SUMMARY ==")
     print(json.dumps(meta, indent=2))

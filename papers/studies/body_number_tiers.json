@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "source": "manuscript/<issue>_v4/gate_report_v4.json, G3e-body-numbers.detail",
+    "issues": [
+      "2026-06",
+      "2026-07",
+      "2026-08"
+    ],
+    "n_numerals": 660,
+    "total": {
+      "bound": 492,
+      "para_bound": 2,
+      "in_cited_abstract": 23,
+      "para_in_cited_abstract": 0,
+      "aggregate": 36,
+      "month_bound": 0,
+      "exempt": 107
+    },
+    "n_card_bound": 494,
+    "n_loose_tiers": 23,
+    "exempt_rule": "a whole number from 0 to 10 not followed by a count noun (papers, works, ...), or a whole number from 1900 to 2100",
+    "not_scanned": "figure environments and markdown table lines; in an issue the figures and SI tables are emitted by build code from the cards",
+    "fi_old_rule_caught": 15,
+    "fi_old_rule_caught_clean_exit": 11,
+    "fi_old_rule_clean_exit_ids": [
+      "FI-04",
+      "FI-05",
+      "FI-07",
+      "FI-08",
+      "FI-09",
+      "FI-10",
+      "FI-11",
+      "FI-12",
+      "FI-15",
+      "FI-16",
+      "FI-17"
+    ],
+    "fi_original_caught_strict": 15,
+    "fi_added_after_g3e": [
+      "FI-18",
+      "FI-19"
+    ]
+  },
+  "rows": [
+    {
+      "issue": "2026-06",
+      "bound": 130,
+      "para_bound": 0,
+      "in_cited_abstract": 14,
+      "para_in_cited_abstract": 0,
+      "aggregate": 13,
+      "month_bound": 0,
+      "exempt": 35,
+      "count_claims_checked": 4,
+      "n_failed": 0
+    },
+    {
+      "issue": "2026-07",
+      "bound": 219,
+      "para_bound": 2,
+      "in_cited_abstract": 8,
+      "para_in_cited_abstract": 0,
+      "aggregate": 11,
+      "month_bound": 0,
+      "exempt": 45,
+      "count_claims_checked": 4,
+      "n_failed": 0
+    },
+    {
+      "issue": "2026-08",
+      "bound": 143,
+      "para_bound": 0,
+      "in_cited_abstract": 1,
+      "para_in_cited_abstract": 0,
+      "aggregate": 12,
+      "month_bound": 0,
+      "exempt": 27,
+      "count_claims_checked": 4,
+      "n_failed": 0
+    }
+  ]
+}
