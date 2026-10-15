@@ -9,8 +9,8 @@ costs money.
 
 The system's design claim is narrow and worth stating plainly: **a language
 model writes prose and extracts values, and a deterministic script decides
-whether that output is allowed to ship.** Seventeen gates compute over stored
-JSON. No gate consults a model, and the model that reviews an output is never
+whether that output is allowed to ship.** Every build runs 18 to 20 gates,
+depending on cadence, and all of them compute over stored JSON. No gate consults a model, and the model that reviews an output is never
 the model that produced it.
 
 ## What is here

@@ -137,6 +137,14 @@ EXCLUDE_EXACT: tuple[str, ...] = (
     # produced ship as CSV (r1_second_filled.csv, verdict_confirmations.csv).
     "papers/studies/label_sheet/second_labeller_sheet.html",
     "papers/studies/verdict_review.html",
+    # The R1 labelling sheets (100 and 20 abstracts). Public from 2026-09-23
+    # until Havid decided on 2026-10-15 to remove them before the first Zenodo
+    # version, so the permanent archive holds no publisher abstract text.
+    # Earlier public commits still contain them (history not rewritten, his
+    # choice). The labels, sampling frame and preregistration still ship, and
+    # label_sheet_build.py rebuilds the sheets after rehydrate_abstracts.py.
+    "papers/studies/label_sheet/label_sheet.html",
+    "papers/studies/label_sheet/relabel_sheet.html",
 )
 
 # Abstract payloads are replaced by a digest. See _abstract_digest.

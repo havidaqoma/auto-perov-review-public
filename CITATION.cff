@@ -4,18 +4,21 @@ message: >-
   cite this repository. The manuscripts it produces are not yet published, so
   there is no journal reference to cite instead.
 title: >-
-  Automated perovskite photovoltaics literature review: a validator-gated
-  pipeline at monthly, half-year, and yearly cadence
+  auto-perov-review: fail-closed provenance gating for language-model
+  literature review in perovskite photovoltaics
 abstract: >-
   A staged pipeline that turns a scholarly-database query into a review
   manuscript, where a language model writes prose and extracts values and
-  deterministic scripts decide whether that output may ship. Seventeen gates
-  compute over stored JSON, no gate consults a model, and the model that
+  deterministic scripts decide whether that output may ship. Every build runs
+  18 to 20 gates, depending on cadence, all computing over stored JSON; no gate consults a model, and the model that
   reviews an output is never the model that produced it. This repository holds
   the code, the stored run artifacts for eleven runs, the gate reports
   including the failing ones, and the rendered documents, so results can be
   re-verified offline without re-running any paid API or model call.
 type: software
+version: 1.0.0
+date-released: '2026-10-15'
+repository-code: 'https://github.com/havidaqoma/auto-perov-review-public'
 authors:
   - given-names: Havid
     family-names: Aqoma
