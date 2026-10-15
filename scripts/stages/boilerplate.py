@@ -13,6 +13,9 @@ paraphrased:
 """
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
 import re
 
 AFFIL = [
@@ -47,6 +50,30 @@ ACK = ("The authors would like to acknowledge the financial support from Xiamen 
 # defined ONCE here and imported by every build (monthly, half-year, yearly,
 # and the system paper) rather than re-typed in each.
 REPO_URL = "https://github.com/havidaqoma/auto-perov-review-public"
+
+# The Zenodo archive of that repository (concept DOI = all versions). Read
+# from the shipped docs/archive.json, never re-typed. A malformed record
+# raises; a missing file leaves ARCHIVE_DOI None, and every build that cites
+# the archive must refuse to run on None (fail closed).
+_ARCHIVE_FILE = Path(__file__).resolve().parents[2] / "docs" / "archive.json"
+
+
+def _load_archive_doi():
+    if not _ARCHIVE_FILE.exists():
+        return None
+    rec = json.loads(_ARCHIVE_FILE.read_text(encoding="utf-8"))
+    doi = rec.get("concept_doi", "")
+    if not re.fullmatch(r"10\.5281/zenodo\.\d+", doi):
+        raise ValueError(f"docs/archive.json: malformed concept_doi {doi!r}")
+    if rec.get("repository") != REPO_URL:
+        raise ValueError("docs/archive.json: repository does not equal REPO_URL")
+    for v in rec.get("versions", []):
+        if not re.fullmatch(r"10\.5281/zenodo\.\d+", v.get("doi", "")):
+            raise ValueError(f"docs/archive.json: malformed version doi {v!r}")
+    return doi
+
+
+ARCHIVE_DOI = _load_archive_doi()
 
 
 def data_availability(period_word: str) -> str:

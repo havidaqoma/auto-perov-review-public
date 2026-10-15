@@ -19,6 +19,14 @@ type: software
 version: 1.0.0
 date-released: '2026-10-15'
 repository-code: 'https://github.com/havidaqoma/auto-perov-review-public'
+doi: 10.5281/zenodo.23388376
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23388376
+    description: Concept DOI, all versions
+  - type: doi
+    value: 10.5281/zenodo.23388377
+    description: Version v1.0.0
 authors:
   - given-names: Havid
     family-names: Aqoma

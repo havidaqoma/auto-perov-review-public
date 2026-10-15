@@ -73,6 +73,10 @@ SUBTREES: dict[str, list[str]] = {
         "papers/studies/",
         "papers/scripts/studies/",
         "docs/decisions/",
+        # The Zenodo archive record: scripts/stages/boilerplate.py reads the
+        # DOI from it, and tests/test_archive_record.py checks the README and
+        # CITATION.cff repeat the same DOIs.
+        "docs/archive.json",
         "MASTER_HANDBOOK.md",
         "MASTER_HANDBOOK_H1.md",
         "PLAN_monthly_perovskite_review_v5.md",

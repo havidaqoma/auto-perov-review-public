@@ -1,0 +1,18 @@
+{
+  "note": "The archive record for the public repository. Recorded ONCE here; scripts/stages/boilerplate.py reads it and fails closed on a malformed value. Every value below was read from the Zenodo and GitHub APIs on 2026-10-15, not typed from memory.",
+  "repository": "https://github.com/havidaqoma/auto-perov-review-public",
+  "concept_doi": "10.5281/zenodo.23388376",
+  "concept_doi_meaning": "resolves to the latest archived version; cite this one",
+  "versions": [
+    {
+      "version": "v1.0.0",
+      "doi": "10.5281/zenodo.23388377",
+      "zenodo_record": 23388377,
+      "published": "2026-10-15",
+      "tag_commit": "b563781cd0223a2db02a1be682f95d8ec571b131",
+      "archive_file": "havidaqoma/auto-perov-review-public-v1.0.0.zip",
+      "archive_md5": "eece53c0a3a51a758568357ff195eab0",
+      "verified": "zip md5 equals the record checksum; 1240 files, same names and sha256 as git archive of the tag, 0 differences"
+    }
+  ]
+}

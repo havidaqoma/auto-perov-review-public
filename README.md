@@ -237,7 +237,13 @@ gated.
 ## Citation
 
 See `CITATION.cff`. The manuscripts are not yet published; cite the
-repository.
+repository through its Zenodo archive:
+
+- All versions (cite this): https://doi.org/10.5281/zenodo.23388376
+- v1.0.0: https://doi.org/10.5281/zenodo.23388377
+
+The archive record is in `docs/archive.json`, and the build scripts read the
+DOI from that file.
 
 ## License
 
