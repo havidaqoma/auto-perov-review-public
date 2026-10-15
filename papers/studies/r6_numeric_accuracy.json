@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "study": "R6 -- numeric accuracy and condition binding of extracted values",
+    "n_rows": 72,
+    "labeller": "Havid Aqoma (human). No model may label, pre-label or assist any row.",
+    "weighted": false,
+    "prereg_sha256": "452d68d5c4ba5bbd6797243579b829e1fb12cfe9c514d60bf493b84e08466791"
+  },
+  "fields": {
+    "pce_champion": {
+      "n_both": 33,
+      "n_exact": 33,
+      "exact_rate": 1.0,
+      "wilson95": [
+        0.8957,
+        1.0
+      ],
+      "human_only_no_card": 29,
+      "human_only_card_null": 3,
+      "machine_only": 0,
+      "mismatches": [],
+      "binding_errors": 0,
+      "n_with_human_control": 15
+    },
+    "pce_certified": {
+      "n_both": 17,
+      "n_exact": 17,
+      "exact_rate": 1.0,
+      "wilson95": [
+        0.8157,
+        1.0
+      ],
+      "human_only_no_card": 6,
+      "human_only_card_null": 0,
+      "machine_only": 1,
+      "mismatches": []
+    },
+    "active_area_cm2": {
+      "n_both": 10,
+      "n_exact": 8,
+      "exact_rate": 0.8,
+      "wilson95": [
+        0.4902,
+        0.9433
+      ],
+      "human_only_no_card": 6,
+      "human_only_card_null": 1,
+      "machine_only": 3,
+      "mismatches": [
+        {
+          "work_key": "10.1038/s41467-026-69685-6",
+          "human": 25.0,
+          "machine": 100,
+          "human_control": null
+        },
+        {
+          "work_key": "10.1038/s41467-026-69264-9",
+          "human": 0.04,
+          "machine": 10.13,
+          "human_control": null
+        }
+      ]
+    }
+  }
+}

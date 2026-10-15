@@ -8,9 +8,13 @@ What the sheet shows: title, venue and abstract. Nothing else: no extractor
 output, no pre-filled answer, no flag, no card, no model name. `blind_check`
 proves it mechanically before the file is written.
 
-What the labeller types: the numbers as the abstract writes them, for the
+What the labeller enters: the numbers as the abstract writes them, for the
 paper's OWN work: champion PCE, certified PCE, device area, and (if stated)
-the control/reference device PCE. Scoring is r6_analyze.py, whose hash is
+the control/reference device PCE. Entry is click-to-fill (amendment 1,
+2026-10-10, before any label): the page script makes EVERY number in the
+abstract clickable in the same way, and a click copies that number into the
+box the labeller selected. Nothing is pre-filled and nothing marks which
+number the extractor chose, so the sheet stays blind. Scoring is r6_analyze.py, whose hash is
 frozen into the pre-registration here, before anyone opens the sheet.
 
 Run once: python papers/scripts/studies/r6_build_sheet.py
@@ -82,12 +86,53 @@ def blind_check(page: str, rows: list) -> None:
             raise SystemExit(f"FAIL-CLOSED: card {r['order']} has a pre-filled input")
 
 
+# Click-to-fill (amendment 1). Runs in the browser after load: wraps every
+# number in each abstract, with no knowledge of any machine output, and copies
+# a clicked number into the selected box. Decimal commas become points and
+# thousands commas are removed, because r6_analyze.parse drops commas.
+FILL_JS = r"""
+const NUMRE=/(?<![A-Za-z0-9.])(\d+(?:[.,]\d+)*)(\s*%|\s?(?:cm|mm|m)\s?(?:2|\u00b2)(?![0-9]))?/g;
+const ACT={};
+function fieldsOf(c){return [...c.querySelectorAll(".f")];}
+function setAct(c,i){const fs=fieldsOf(c);i=Math.max(0,Math.min(i,fs.length-1));ACT[c.dataset.wk]=i;
+ fs.forEach((f,j)=>f.classList.toggle("act",j===i));}
+function normNum(s){if(/^\d{1,3}(,\d{3})+$/.test(s))return s.replace(/,/g,"");return s.replace(/,/g,".");}
+function fillFrom(tok,k){const m=new RegExp(NUMRE.source).exec(tok);if(!m)return tok;const n=normNum(m[1]);
+ if(k!=="active_area_cm2")return n;const u=(m[2]||"").replace(/\s|\u00b2/g,x=>x==="\u00b2"?"2":"");
+ return u&&u!=="%"?n+" "+u:n;}
+function wrapNums(el){const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);const ns=[];
+ while(w.nextNode())ns.push(w.currentNode);
+ for(const t of ns){const s=t.nodeValue;NUMRE.lastIndex=0;if(!NUMRE.test(s))continue;NUMRE.lastIndex=0;
+  const fr=document.createDocumentFragment();let last=0,m;
+  while((m=NUMRE.exec(s))){fr.append(s.slice(last,m.index));const sp=document.createElement("span");
+   sp.className="nm";sp.textContent=m[0];fr.append(sp);last=m.index+m[0].length;}
+  fr.append(s.slice(last));t.replaceWith(fr);}}
+document.querySelectorAll(".abs").forEach(wrapNums);
+cards.forEach(c=>setAct(c,0));
+function put(c,k,v,none){const a=(A[c.dataset.wk]=A[c.dataset.wk]||{});a[k]=v;
+ if(none)a["none_"+k]="1";else delete a["none_"+k];save();}
+document.addEventListener("focusin",e=>{const f=e.target.closest(".f");if(!f)return;
+ const c=f.closest(".card");setAct(c,fieldsOf(c).indexOf(f));});
+document.addEventListener("input",e=>{const f=e.target.closest(".f");if(!f)return;
+ const a=A[f.closest(".card").dataset.wk]||{};delete a["none_"+f.dataset.k];save();});
+document.addEventListener("click",e=>{const n=e.target.closest(".nm"),b=e.target.closest(".nb");
+ if(!n&&!b)return;const c=e.target.closest(".card");const i=b?fieldsOf(c).indexOf(b.closest(".f")):(ACT[c.dataset.wk]||0);
+ const f=fieldsOf(c)[i];if(b)put(c,f.dataset.k,"",true);else put(c,f.dataset.k,fillFrom(n.textContent,f.dataset.k),false);
+ setAct(c,i+1);});
+const paint0=paint;paint=function(){paint0();cards.forEach(c=>{const a=A[c.dataset.wk]||{};
+ fieldsOf(c).forEach(f=>{const on=a["none_"+f.dataset.k]==="1";f.classList.toggle("none",on);
+ f.querySelector("input").placeholder=on?"none stated":"";});});};
+"""
+
+
 def build_html(rows: list) -> str:
     cards = []
     for r in rows:
         inputs = "".join(
             f'<label class="f" data-k="{k}"><span class="lab">{html.escape(lab)}</span>'
-            f'<input type="text" autocomplete="off"><span class="hint">{html.escape(hint)}</span></label>'
+            f'<input type="text" autocomplete="off">'
+            f'<button class="nb" type="button">None stated</button>'
+            f'<span class="hint">{html.escape(hint)}</span></label>'
             for k, lab, hint in FIELDS)
         cards.append(
             f'<section class="card" id="c{r["order"]}" data-wk="{html.escape(r["work_key"])}">'
@@ -105,7 +150,12 @@ header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--
 .card{max-width:820px;margin:26px auto;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:22px 26px}
 .card.done{opacity:.55}h2{font-size:18px;margin:8px 0 4px}.ven,.hd{color:var(--mut);font-size:13px}
 .abs{background:#fbfaf8;border-left:3px solid var(--bd);padding:12px 14px;font-size:15px;margin:12px 0 18px}
-.f{display:grid;grid-template-columns:230px 140px 1fr;gap:10px;align-items:center;padding:6px 0;border-top:1px solid #f0eeea;font-size:14px}
+.f{display:grid;grid-template-columns:190px 130px 96px 1fr;gap:10px;align-items:center;padding:6px 8px;border-top:1px solid #f0eeea;font-size:14px;border-radius:6px}
+.f.act{background:#eef3fd;outline:2px solid var(--acc)}.f.none input::placeholder{color:var(--acc)}
+.nb{font-size:12px;padding:3px 6px;border:1px solid var(--bd);border-radius:5px;background:#fff;cursor:pointer}
+.f.none .nb{background:var(--acc);color:#fff}
+.nm{background:#fff3c4;border-bottom:1px solid #d9b84a;border-radius:3px;padding:0 2px;cursor:pointer}
+.nm:hover{background:#ffe27a}
 .f input{font-size:15px;padding:4px 8px;border:1px solid var(--bd);border-radius:5px}.hint{color:var(--mut);font-size:12.5px}
 .done-b{margin-top:12px;padding:6px 14px;border:1px solid var(--bd);border-radius:6px;background:#fff;cursor:pointer}
 .card.done .done-b{background:var(--acc);color:#fff}
@@ -113,8 +163,14 @@ header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--
 </style>
 <header><b>R6 numeric sheet</b><span id="prog"></span><div id="bar"><div id="barf"></div></div>
 <button onclick="exp()">Export CSV</button></header>
-<div class="rules"><p><b>Rules.</b> You, Havid, fill this alone. No model may label, pre-label or
-assist any row. Type each number <b>as the abstract writes it</b>; leave a box empty when the
+<div class="rules"><p><b>How to fill.</b> The blue box is the one you are filling. Click a
+<span class="nm">highlighted number</span> in the abstract to copy it into the blue box (with its
+unit for the area); the next box then turns blue. Click any box to choose it yourself, and type or
+edit in it whenever you like. Press <b>None stated</b> when the abstract does not give that number.
+Every number in the abstract is highlighted the same way: the highlight only makes it clickable,
+it says nothing about which number is right.</p>
+<p><b>Rules.</b> You, Havid, fill this alone. No model may label, pre-label or
+assist any row. Enter each number <b>as the abstract writes it</b>; leave a box empty when the
 abstract does not state that number. Label only the paper's <b>own</b> work: a record quoted from
 another paper is not theirs. Press <b>Done</b> on every paper, including ones where every box
 stays empty, so an empty box means "not stated" and not "skipped". Answers save in this browser;
@@ -138,10 +194,12 @@ function exp(){const ks=__KEYS__;const L=[["work_key"].concat(ks,["done"]).join(
  for(const c of cards){const a=A[c.dataset.wk]||{};L.push([q(c.dataset.wk)].concat(ks.map(k=>q(a[k])),[q(a.done)]).join(","));}
  const b=new Blob([L.join("\\n")],{type:"text/csv"});const u=URL.createObjectURL(b),x=document.createElement("a");
  x.href=u;x.download="r6_labels_filled.csv";x.click();URL.revokeObjectURL(u);}
+__FILL_JS__
 paint();
 </script>"""
     return (tmpl.replace("__CARDS__", "\n".join(cards))
-                .replace("__KEYS__", json.dumps([k for k, _, _ in FIELDS])))
+                .replace("__KEYS__", json.dumps([k for k, _, _ in FIELDS]))
+                .replace("__FILL_JS__", FILL_JS))
 
 
 def main() -> int:
@@ -205,6 +263,19 @@ def main() -> int:
         # LF-normalised, so a CRLF checkout still verifies.
         "sheet_sha256": hashlib.sha256(page.encode("utf-8").replace(b"\r\n", b"\n")).hexdigest(),
         "analysis_frozen_before_labelling": True,
+        "amendments": [{
+            "n": 1,
+            "date": "2026-10-10",
+            "before_any_label": True,
+            "change": "click-to-fill entry: every number in each abstract is made clickable "
+                      "by the page script, and a click copies it into the box the labeller "
+                      "selected; a 'None stated' button per box",
+            "why": "labeller request to cut typing",
+            "blinding_unchanged": "all numbers are highlighted alike; nothing is pre-filled; "
+                                  "nothing marks the extractor's choice; blind_check re-run",
+            "analysis_unchanged": "r6_analyze.py and its sha256 are unchanged",
+            "superseded_sheet_sha256": "fd43bf593417ce94f8be6a7d8f4b928fd651bb3dd228929f86e910443bf62abe",
+        }],
     }
     body = json.dumps(pre, indent=2)
     (OUT / "preregistration.json").write_text(body, encoding="utf-8")
